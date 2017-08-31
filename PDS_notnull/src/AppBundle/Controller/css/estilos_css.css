@@ -1,0 +1,40 @@
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #E8EEF2;
+	font-family: "Oswald";
+}
+
+.visitantes {
+	background: #BB1F35;
+	width: 200px;
+	border-radius: 5px;
+	padding: 30px;
+	margin: 30px auto; 
+	text-align: center;
+}
+
+h1 {
+	font-weight: normal;
+	text-align: center;
+	margin: 30px 0;
+	color:#0D2C44;
+}
+
+.visitantes .numero {
+	font-weight: normal;
+	font-size: 60px;
+	color:#fff;
+}
+
+.visitantes .texto {
+	color: #fff;
+	font-weight: normal;
+	font-size: 30px;
+}

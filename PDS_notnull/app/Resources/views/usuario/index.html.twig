@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+
+    <title>Registrar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+  </head>
+
+  <body background="{{ asset('imagen/fondoauto1.jpg') }}">
+
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading"><font color="white">Registrarse</h2>
+        <label for="inputEmail" class="sr-only">Direccion de mail</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="recordar"> <font color="grey">Recordar cuenta
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">registrar</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ asset('js/ie10-viewport-bug-workaround.js') }}"></script>
+  </body>
+</html>

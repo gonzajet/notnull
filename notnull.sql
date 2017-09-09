@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-09-2017 a las 19:26:17
+-- Tiempo de generación: 09-09-2017 a las 20:07:30
 -- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.22-2+ubuntu16.04.1+deb.sury.org+4
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Auto` (
   `id` int(11) NOT NULL,
-  `Patente` varchar(12) NOT NULL,
-  `Marca` varchar(50) DEFAULT NULL,
-  `Modelo` varchar(50) DEFAULT NULL,
+  `Patente` varchar(255) NOT NULL,
+  `Marca` varchar(255) DEFAULT NULL,
+  `Modelo` varchar(255) DEFAULT NULL,
   `id_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,8 +42,8 @@ CREATE TABLE `Auto` (
 
 CREATE TABLE `Establecimiento` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Direccion` varchar(50) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Direccion` varchar(255) NOT NULL,
   `Telefono` int(12) NOT NULL,
   `Precio_hora` int(11) DEFAULT NULL,
   `Precio_estadia` int(11) DEFAULT NULL,
@@ -85,10 +85,12 @@ CREATE TABLE `Reserva` (
 
 CREATE TABLE `Usuario` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Apellido` varchar(50) NOT NULL,
-  `eMail` varchar(50) NOT NULL,
-  `Telefono` varchar(20) DEFAULT NULL,
+  `nombreUsuario` varchar(255) NOT NULL,
+  `Contraseña` varchar(255) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Apellido` varchar(255) NOT NULL,
+  `eMail` varchar(255) NOT NULL,
+  `Telefono` varchar(255) DEFAULT NULL,
   `id_establecimiento` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -130,6 +132,7 @@ ALTER TABLE `Reserva`
 --
 ALTER TABLE `Usuario`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nombreUsuario` (`nombreUsuario`),
   ADD KEY `id_establecimiento` (`id_establecimiento`);
 
 --

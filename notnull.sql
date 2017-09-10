@@ -48,8 +48,7 @@ CREATE TABLE `Establecimiento` (
   `Precio_hora` int(11) DEFAULT NULL,
   `Precio_estadia` int(11) DEFAULT NULL,
   `Abierto_desde` time DEFAULT NULL,
-  `Abierto_hasta` time DEFAULT NULL,
-  `id_usuario` int(11) DEFAULT NULL
+  `Abierto_hasta` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -92,7 +91,8 @@ CREATE TABLE `Usuario` (
   `Apellido` varchar(255) NOT NULL,
   `eMail` varchar(255) NOT NULL,
   `Telefono` varchar(255) DEFAULT NULL,
-  `id_rol` int(11) NOT NULL
+  `id_rol` int(11) NOT NULL,
+  `id_establecimiento` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -145,7 +145,8 @@ ALTER TABLE `Reserva`
 --
 ALTER TABLE `Usuario`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_rol` (`id_rol`);
+  ADD KEY `id_rol` (`id_rol`),
+  ADD KEY `id_establecimiento` (`id_establecimiento`);
 
 --
 --
@@ -160,8 +161,7 @@ ALTER TABLE `Auto`
 -- AUTO_INCREMENT de la tabla `Establecimiento`
 --
 ALTER TABLE `Establecimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
-  ADD KEY `id_usuario` (`id_usuario`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `Lugar`
 --
@@ -209,14 +209,12 @@ ALTER TABLE `Reserva`
 
   
 --
--- Filtros para la tabla `Establecimiento`
+-- Filtros para la tabla `Usuario`
 --
-ALTER TABLE `Establecimiento`
-  ADD CONSTRAINT `Usuario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id`);
-
-  
 ALTER TABLE `Usuario`
-  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `Roles` (`id`);
+  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `Roles` (`id`),
+  ADD CONSTRAINT `establecimiento_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `Establecimiento` (`id`);
+  ;
   
  
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -108,9 +108,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // app_auto_index
-        if ('/index' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\AutoController::indexAction',  '_route' => 'app_auto_index',);
+        // proyecto_homepage
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'proyecto_homepage');
+            }
+
+            return array (  '_controller' => 'ProyectoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'proyecto_homepage',);
         }
 
         // homepage

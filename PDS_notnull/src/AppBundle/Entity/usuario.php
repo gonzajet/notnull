@@ -24,6 +24,20 @@ class usuario
     /**
      * @var string
      *
+     * @ORM\Column(name="usuario", type="string", length=255)
+     */
+    private $usuario;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
@@ -38,9 +52,23 @@ class usuario
     /**
      * @var string
      *
-     * @ORM\Column(name="mail", type="string", length=255)
+     * @ORM\Column(name="rol", type="string", length=255)
      */
-    private $mail;
+    private $rol;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="e_mail", type="string", length=255)
+     */
+    private $eMail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=255)
+     */
+    private $telefono;
 
 
     /**
@@ -51,6 +79,54 @@ class usuario
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param string $usuario
+     *
+     * @return usuario
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return usuario
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     /**
@@ -102,27 +178,75 @@ class usuario
     }
 
     /**
-     * Set mail
+     * Set rol
      *
-     * @param string $mail
+     * @param string $rol
      *
      * @return usuario
      */
-    public function setMail($mail)
+    public function setRol($rol)
     {
-        $this->mail = $mail;
+        $this->rol = $rol;
 
         return $this;
     }
 
     /**
-     * Get mail
+     * Get rol
      *
      * @return string
      */
-    public function getMail()
+    public function getRol()
     {
-        return $this->mail;
+        return $this->rol;
+    }
+
+    /**
+     * Set eMail
+     *
+     * @param string $eMail
+     *
+     * @return usuario
+     */
+    public function setEMail($eMail)
+    {
+        $this->eMail = $eMail;
+
+        return $this;
+    }
+
+    /**
+     * Get eMail
+     *
+     * @return string
+     */
+    public function getEMail()
+    {
+        return $this->eMail;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     *
+     * @return usuario
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
     }
 }
 

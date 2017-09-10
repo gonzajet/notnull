@@ -21,61 +21,74 @@ class __TwigTemplate_7239c496dd62e91583fa85eb21a48355bb571abfe5acf48623f9075ecc0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0037bfe004ce6d03803cdee9688fbea421ebee702760fdca8ea6fade2c9c1052 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0037bfe004ce6d03803cdee9688fbea421ebee702760fdca8ea6fade2c9c1052->enter($__internal_0037bfe004ce6d03803cdee9688fbea421ebee702760fdca8ea6fade2c9c1052_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "usuario/new.html.twig"));
+        $__internal_d63cf8ef0b5cc1ba00cc625388aabca91de32e96b68791169b2f625e91b0ae88 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d63cf8ef0b5cc1ba00cc625388aabca91de32e96b68791169b2f625e91b0ae88->enter($__internal_d63cf8ef0b5cc1ba00cc625388aabca91de32e96b68791169b2f625e91b0ae88_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "usuario/new.html.twig"));
 
-        $__internal_90b4fbf783c0d150010e138919271d5a7f50a782a2773e0d1f6cebc6364c2abd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_90b4fbf783c0d150010e138919271d5a7f50a782a2773e0d1f6cebc6364c2abd->enter($__internal_90b4fbf783c0d150010e138919271d5a7f50a782a2773e0d1f6cebc6364c2abd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "usuario/new.html.twig"));
+        $__internal_cd3c56820d8ebd3c0578a2a077700c5fc2270bcde81111b3e4158367818a3d27 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_cd3c56820d8ebd3c0578a2a077700c5fc2270bcde81111b3e4158367818a3d27->enter($__internal_cd3c56820d8ebd3c0578a2a077700c5fc2270bcde81111b3e4158367818a3d27_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "usuario/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0037bfe004ce6d03803cdee9688fbea421ebee702760fdca8ea6fade2c9c1052->leave($__internal_0037bfe004ce6d03803cdee9688fbea421ebee702760fdca8ea6fade2c9c1052_prof);
+        $__internal_d63cf8ef0b5cc1ba00cc625388aabca91de32e96b68791169b2f625e91b0ae88->leave($__internal_d63cf8ef0b5cc1ba00cc625388aabca91de32e96b68791169b2f625e91b0ae88_prof);
 
         
-        $__internal_90b4fbf783c0d150010e138919271d5a7f50a782a2773e0d1f6cebc6364c2abd->leave($__internal_90b4fbf783c0d150010e138919271d5a7f50a782a2773e0d1f6cebc6364c2abd_prof);
+        $__internal_cd3c56820d8ebd3c0578a2a077700c5fc2270bcde81111b3e4158367818a3d27->leave($__internal_cd3c56820d8ebd3c0578a2a077700c5fc2270bcde81111b3e4158367818a3d27_prof);
 
     }
 
-    // line 3
+    // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_74ad4462299adf194f946d9793424a0631e129f5b1bc691aecc3f90959c00808 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_74ad4462299adf194f946d9793424a0631e129f5b1bc691aecc3f90959c00808->enter($__internal_74ad4462299adf194f946d9793424a0631e129f5b1bc691aecc3f90959c00808_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e932e47dacc716de0b91c1651020d80ec9a31d5dde3fe974f3f24b239fc0b129 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e932e47dacc716de0b91c1651020d80ec9a31d5dde3fe974f3f24b239fc0b129->enter($__internal_e932e47dacc716de0b91c1651020d80ec9a31d5dde3fe974f3f24b239fc0b129_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_2fceac195409b9836fad072fe9c961935cb46937c94d3887ef1668d59edae0b9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2fceac195409b9836fad072fe9c961935cb46937c94d3887ef1668d59edae0b9->enter($__internal_2fceac195409b9836fad072fe9c961935cb46937c94d3887ef1668d59edae0b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8ac1962cacbb75b272ff4e35adb7a0d9c6d15c30b9d831fab34c9ea5571a7101 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8ac1962cacbb75b272ff4e35adb7a0d9c6d15c30b9d831fab34c9ea5571a7101->enter($__internal_8ac1962cacbb75b272ff4e35adb7a0d9c6d15c30b9d831fab34c9ea5571a7101_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        echo "    <h1>Usuario creation</h1>
-
-    ";
-        // line 6
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
+        // line 3
         echo "
-        ";
-        // line 7
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
-        echo "
-        <input type=\"submit\" value=\"Create\" />
-    ";
-        // line 9
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
-        echo "
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 13
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("usuario_index");
-        echo "\">Back to the list</a>
-        </li>
-    </ul>
+    
+<form>
+  <div class=\"form-row\">
+    <div class=\"form-group col-md-6\">
+      <label for=\"inputEmail4\" class=\"col-form-label\">usuario</label>
+      <input type=\"text\" class=\"form-control\" id=\"inputEmail4\">
+    </div>
+    <div class=\"form-group col-md-6\">
+      <label for=\"inputPassword4\" class=\"col-form-label\">Password</label>
+      <input type=\"password\" class=\"form-control\" id=\"inputPassword4\">
+    </div>
+  </div>
+  <div class=\"form-group\">
+    <label for=\"inputAddress\" class=\"col-form-label\">Email</label>
+    <input type=\"Email\" class=\"form-control\" id=\"inputAddress\" >
+  </div>
+  <div class=\"form-group\">
+    <label for=\"inputAddress2\" class=\"col-form-label\">Nombre</label>
+    <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" >
+  </div>
+  <div class=\"form-row\">
+    <div class=\"form-group col-md-6\">
+      <label for=\"inputCity\" class=\"col-form-label\">Apellido</label>
+      <input type=\"text\" class=\"form-control\" id=\"inputCity\">
+    </div>
+    <div class=\"form-group col-md-4\">
+      <label for=\"inputState\" class=\"col-form-label\">Rol</label>
+      <select id=\"inputState\" class=\"form-control\">Choose</select>
+    </div>
+    <div class=\"form-group col-md-2\">
+      <label for=\"inputZip\" class=\"col-form-label\">Telefono</label>
+      <input type=\"text\" class=\"form-control\" id=\"inputZip\">
+    </div>
+  </div>
+  <button type=\"submit\" class=\"btn btn-primary\">Registrar</button>
+</form>
 ";
         
-        $__internal_2fceac195409b9836fad072fe9c961935cb46937c94d3887ef1668d59edae0b9->leave($__internal_2fceac195409b9836fad072fe9c961935cb46937c94d3887ef1668d59edae0b9_prof);
+        $__internal_8ac1962cacbb75b272ff4e35adb7a0d9c6d15c30b9d831fab34c9ea5571a7101->leave($__internal_8ac1962cacbb75b272ff4e35adb7a0d9c6d15c30b9d831fab34c9ea5571a7101_prof);
 
         
-        $__internal_74ad4462299adf194f946d9793424a0631e129f5b1bc691aecc3f90959c00808->leave($__internal_74ad4462299adf194f946d9793424a0631e129f5b1bc691aecc3f90959c00808_prof);
+        $__internal_e932e47dacc716de0b91c1651020d80ec9a31d5dde3fe974f3f24b239fc0b129->leave($__internal_e932e47dacc716de0b91c1651020d80ec9a31d5dde3fe974f3f24b239fc0b129_prof);
 
     }
 
@@ -91,7 +104,7 @@ class __TwigTemplate_7239c496dd62e91583fa85eb21a48355bb571abfe5acf48623f9075ecc0
 
     public function getDebugInfo()
     {
-        return array (  69 => 13,  62 => 9,  57 => 7,  53 => 6,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -105,20 +118,44 @@ class __TwigTemplate_7239c496dd62e91583fa85eb21a48355bb571abfe5acf48623f9075ecc0
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
-
 {% block body %}
-    <h1>Usuario creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type=\"submit\" value=\"Create\" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href=\"{{ path('usuario_index') }}\">Back to the list</a>
-        </li>
-    </ul>
+    
+<form>
+  <div class=\"form-row\">
+    <div class=\"form-group col-md-6\">
+      <label for=\"inputEmail4\" class=\"col-form-label\">usuario</label>
+      <input type=\"text\" class=\"form-control\" id=\"inputEmail4\">
+    </div>
+    <div class=\"form-group col-md-6\">
+      <label for=\"inputPassword4\" class=\"col-form-label\">Password</label>
+      <input type=\"password\" class=\"form-control\" id=\"inputPassword4\">
+    </div>
+  </div>
+  <div class=\"form-group\">
+    <label for=\"inputAddress\" class=\"col-form-label\">Email</label>
+    <input type=\"Email\" class=\"form-control\" id=\"inputAddress\" >
+  </div>
+  <div class=\"form-group\">
+    <label for=\"inputAddress2\" class=\"col-form-label\">Nombre</label>
+    <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" >
+  </div>
+  <div class=\"form-row\">
+    <div class=\"form-group col-md-6\">
+      <label for=\"inputCity\" class=\"col-form-label\">Apellido</label>
+      <input type=\"text\" class=\"form-control\" id=\"inputCity\">
+    </div>
+    <div class=\"form-group col-md-4\">
+      <label for=\"inputState\" class=\"col-form-label\">Rol</label>
+      <select id=\"inputState\" class=\"form-control\">Choose</select>
+    </div>
+    <div class=\"form-group col-md-2\">
+      <label for=\"inputZip\" class=\"col-form-label\">Telefono</label>
+      <input type=\"text\" class=\"form-control\" id=\"inputZip\">
+    </div>
+  </div>
+  <button type=\"submit\" class=\"btn btn-primary\">Registrar</button>
+</form>
 {% endblock %}
 ", "usuario/new.html.twig", "C:\\xampp\\htdocs\\notnull\\PDS_notnull\\app\\Resources\\views\\usuario\\new.html.twig");
     }

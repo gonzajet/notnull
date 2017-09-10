@@ -1,3 +1,12 @@
+app_usuario:
+    resource: "@AppBundle/Controller/usuarioController.php"
+    type:     annotation
+
+proyecto:
+        resource: "@ProyectoBundle/Resources/config/routing.yml"
+        prefix:   /
+
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

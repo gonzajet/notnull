@@ -1,17 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
-<<<<<<< HEAD
--- Tiempo de generación: 09-09-2017 a las 19:26:17
-=======
--- Tiempo de generación: 09-09-2017 a las 20:07:30
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
--- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
--- Versión de PHP: 7.0.22-2+ubuntu16.04.1+deb.sury.org+4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-09-2017 a las 18:54:56
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,44 +19,33 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `notnull`
+-- Base de datos: `estacionar`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Auto`
+-- Estructura de tabla para la tabla `auto`
 --
 
-CREATE TABLE `Auto` (
+CREATE TABLE `auto` (
   `id` int(11) NOT NULL,
-<<<<<<< HEAD
-  `Patente` varchar(12) NOT NULL,
-  `Marca` varchar(50) DEFAULT NULL,
-  `Modelo` varchar(50) DEFAULT NULL,
-=======
   `Patente` varchar(255) NOT NULL,
   `Marca` varchar(255) DEFAULT NULL,
   `Modelo` varchar(255) DEFAULT NULL,
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
   `id_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Establecimiento`
+-- Estructura de tabla para la tabla `establecimiento`
 --
 
-CREATE TABLE `Establecimiento` (
+CREATE TABLE `establecimiento` (
   `id` int(11) NOT NULL,
-<<<<<<< HEAD
-  `Nombre` varchar(50) NOT NULL,
-  `Direccion` varchar(50) NOT NULL,
-=======
   `Nombre` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
   `Telefono` int(12) NOT NULL,
   `Precio_hora` int(11) DEFAULT NULL,
   `Precio_estadia` int(11) DEFAULT NULL,
@@ -69,10 +56,10 @@ CREATE TABLE `Establecimiento` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Lugar`
+-- Estructura de tabla para la tabla `lugar`
 --
 
-CREATE TABLE `Lugar` (
+CREATE TABLE `lugar` (
   `id` int(11) NOT NULL,
   `id_establecimiento` int(11) NOT NULL,
   `Estado` tinyint(1) NOT NULL DEFAULT '1'
@@ -81,10 +68,10 @@ CREATE TABLE `Lugar` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Reserva`
+-- Estructura de tabla para la tabla `reserva`
 --
 
-CREATE TABLE `Reserva` (
+CREATE TABLE `reserva` (
   `id` int(11) NOT NULL,
   `id_auto` int(11) NOT NULL,
   `id_lugar` int(11) NOT NULL,
@@ -95,20 +82,22 @@ CREATE TABLE `Reserva` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Usuario`
+-- Estructura de tabla para la tabla `roles`
 --
 
-CREATE TABLE `Usuario` (
+CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
-<<<<<<< HEAD
-  `Nombre` varchar(50) NOT NULL,
-  `Apellido` varchar(50) NOT NULL,
-  `eMail` varchar(50) NOT NULL,
-  `Telefono` varchar(20) DEFAULT NULL,
-  `id_establecimiento` int(11) DEFAULT NULL
+  `rol` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-=======
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
   `Usuario` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
@@ -119,153 +108,118 @@ CREATE TABLE `Usuario` (
   `id_establecimiento` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
-CREATE TABLE `Roles` (
-  `id` int(11) NOT NULL,
-  `rol` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `Auto`
+-- Indices de la tabla `auto`
 --
-ALTER TABLE `Auto`
+ALTER TABLE `auto`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Patente` (`Patente`),
   ADD KEY `Usuario` (`id_Usuario`);
 
-<<<<<<< HEAD
-=======
-  
-ALTER TABLE `Roles`
-  ADD PRIMARY KEY (`id`);
-  
- 
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
 --
--- Indices de la tabla `Establecimiento`
+-- Indices de la tabla `establecimiento`
 --
-ALTER TABLE `Establecimiento`
+ALTER TABLE `establecimiento`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Lugar`
+-- Indices de la tabla `lugar`
 --
-ALTER TABLE `Lugar`
+ALTER TABLE `lugar`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_establecimiento` (`id_establecimiento`);
 
 --
--- Indices de la tabla `Reserva`
+-- Indices de la tabla `reserva`
 --
-ALTER TABLE `Reserva`
+ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_id_auto` (`id_auto`),
   ADD KEY `id_lugar` (`id_lugar`);
 
 --
--- Indices de la tabla `Usuario`
+-- Indices de la tabla `roles`
 --
-ALTER TABLE `Usuario`
-  ADD PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  ADD KEY `id_establecimiento` (`id_establecimiento`);
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
 
 --
-=======
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id_rol` (`id_rol`),
   ADD KEY `id_establecimiento` (`id_establecimiento`);
 
 --
---
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `Auto`
+-- AUTO_INCREMENT de la tabla `auto`
 --
-ALTER TABLE `Auto`
+ALTER TABLE `auto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-<<<<<<< HEAD
 --
-=======
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
--- AUTO_INCREMENT de la tabla `Establecimiento`
+-- AUTO_INCREMENT de la tabla `establecimiento`
 --
-ALTER TABLE `Establecimiento`
+ALTER TABLE `establecimiento`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Lugar`
+-- AUTO_INCREMENT de la tabla `lugar`
 --
-ALTER TABLE `Lugar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-<<<<<<< HEAD
-=======
-  
---
--- AUTO_INCREMENT de la tabla `Lugar`
---
-ALTER TABLE `Roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-  
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
---
--- AUTO_INCREMENT de la tabla `Reserva`
---
-ALTER TABLE `Reserva`
+ALTER TABLE `lugar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Usuario`
+-- AUTO_INCREMENT de la tabla `reserva`
 --
-ALTER TABLE `Usuario`
+ALTER TABLE `reserva`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `Auto`
+-- Filtros para la tabla `auto`
 --
-ALTER TABLE `Auto`
-  ADD CONSTRAINT `Auto_ibfk_1` FOREIGN KEY (`id_Usuario`) REFERENCES `Usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `auto`
+  ADD CONSTRAINT `Auto_ibfk_1` FOREIGN KEY (`id_Usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `Lugar`
+-- Filtros para la tabla `lugar`
 --
-ALTER TABLE `Lugar`
-  ADD CONSTRAINT `Lugar_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `Establecimiento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `lugar`
+  ADD CONSTRAINT `Lugar_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `Reserva`
+-- Filtros para la tabla `reserva`
 --
-ALTER TABLE `Reserva`
-  ADD CONSTRAINT `Reserva_ibfk_1` FOREIGN KEY (`id_auto`) REFERENCES `Auto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Reserva_ibfk_2` FOREIGN KEY (`id_lugar`) REFERENCES `Lugar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `reserva`
+  ADD CONSTRAINT `Reserva_ibfk_1` FOREIGN KEY (`id_auto`) REFERENCES `auto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Reserva_ibfk_2` FOREIGN KEY (`id_lugar`) REFERENCES `lugar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
 --
--- Filtros para la tabla `Usuario`
+-- Filtros para la tabla `usuario`
 --
-ALTER TABLE `Usuario`
-<<<<<<< HEAD
-  ADD CONSTRAINT `Usuario_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `Establecimiento` (`id`);
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `establecimiento_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`),
+  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id`);
+COMMIT;
 
-=======
-  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `Roles` (`id`),
-  ADD CONSTRAINT `establecimiento_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `Establecimiento` (`id`);
-  ;
-  
- 
->>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

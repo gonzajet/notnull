@@ -117,16 +117,35 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'ProyectoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'proyecto_homepage',);
         }
 
-        // homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
+        if (0 === strpos($pathinfo, '/user')) {
+            // proyecto_index
+            if ('/user/index' === $pathinfo) {
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::indexAction',  '_route' => 'proyecto_index',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            // proyecto_add
+            if ('/user/add' === $pathinfo) {
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::addAction',  '_route' => 'proyecto_add',);
+            }
+
+            // proyecto_edit
+            if (0 === strpos($pathinfo, '/user/edit') && preg_match('#^/user/edit(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_edit')), array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::editAction',  'id' => 1,));
+            }
+
+            // proyecto_view
+            if (0 === strpos($pathinfo, '/user/view') && preg_match('#^/user/view(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_view')), array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::viewAction',));
+            }
+
+            // proyecto_delete
+            if (0 === strpos($pathinfo, '/user/delete') && preg_match('#^/user/delete(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_delete')), array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::deleteAction',));
+            }
+
         }
 
-        if (0 === strpos($pathinfo, '/usuario')) {
+        elseif (0 === strpos($pathinfo, '/usuario')) {
             // usuario_index
             if ('/usuario' === $trimmedPathinfo) {
                 if ('GET' !== $canonicalMethod) {
@@ -186,6 +205,15 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_usuario_delete:
 
+        }
+
+        // homepage
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'homepage');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -4,16 +4,16 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" type="text.css" href="{{ asset('css/booptstrap.min.css')}}">
+            <link rel="stylesheet" type="text.css" href="{{ asset('public/css/style.css')}}">
+            <link rel="stylesheet" type="text.css" href="{{ asset('public/css/bootstrap.min.css')}}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script src="{{ asset('js/jquery-3.2.1.min.js')}}"></script>
-            <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-            <script src="{{ asset('js/popper.min.js')}}"></script>
+            <script src="{{ asset('public/js/jquery-3.2.1.min.js')}}"></script>
+            <script src="{{ asset('puclic/js/bootstrap.min.js')}}"></script>
         {% endblock %}
     </body>
 </html>

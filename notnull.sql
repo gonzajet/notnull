@@ -48,7 +48,8 @@ CREATE TABLE `Establecimiento` (
   `Precio_hora` int(11) DEFAULT NULL,
   `Precio_estadia` int(11) DEFAULT NULL,
   `Abierto_desde` time DEFAULT NULL,
-  `Abierto_hasta` time DEFAULT NULL
+  `Abierto_hasta` time DEFAULT NULL,
+  `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -85,14 +86,21 @@ CREATE TABLE `Reserva` (
 
 CREATE TABLE `Usuario` (
   `id` int(11) NOT NULL,
-  `nombreUsuario` varchar(255) NOT NULL,
-  `Contraseña` varchar(255) NOT NULL,
+  `Usuario` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
   `Apellido` varchar(255) NOT NULL,
   `eMail` varchar(255) NOT NULL,
   `Telefono` varchar(255) DEFAULT NULL,
-  `id_establecimiento` int(11) DEFAULT NULL
+  `id_rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `Roles` (
+  `id` int(11) NOT NULL,
+  `rol` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 --
 -- Índices para tablas volcadas
@@ -106,6 +114,11 @@ ALTER TABLE `Auto`
   ADD UNIQUE KEY `Patente` (`Patente`),
   ADD KEY `Usuario` (`id_Usuario`);
 
+  
+ALTER TABLE `Roles`
+  ADD PRIMARY KEY (`id`);
+  
+ 
 --
 -- Indices de la tabla `Establecimiento`
 --
@@ -132,9 +145,9 @@ ALTER TABLE `Reserva`
 --
 ALTER TABLE `Usuario`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nombreUsuario` (`nombreUsuario`),
-  ADD KEY `id_establecimiento` (`id_establecimiento`);
+  ADD KEY `id_rol` (`id_rol`);
 
+--
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -144,16 +157,23 @@ ALTER TABLE `Usuario`
 --
 ALTER TABLE `Auto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
 -- AUTO_INCREMENT de la tabla `Establecimiento`
 --
 ALTER TABLE `Establecimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
+  ADD KEY `id_usuario` (`id_usuario`);
 --
 -- AUTO_INCREMENT de la tabla `Lugar`
 --
 ALTER TABLE `Lugar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  
+--
+-- AUTO_INCREMENT de la tabla `Lugar`
+--
+ALTER TABLE `Roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  
 --
 -- AUTO_INCREMENT de la tabla `Reserva`
 --
@@ -187,12 +207,18 @@ ALTER TABLE `Reserva`
   ADD CONSTRAINT `Reserva_ibfk_1` FOREIGN KEY (`id_auto`) REFERENCES `Auto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Reserva_ibfk_2` FOREIGN KEY (`id_lugar`) REFERENCES `Lugar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+  
 --
--- Filtros para la tabla `Usuario`
+-- Filtros para la tabla `Establecimiento`
 --
-ALTER TABLE `Usuario`
-  ADD CONSTRAINT `Usuario_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `Establecimiento` (`id`);
+ALTER TABLE `Establecimiento`
+  ADD CONSTRAINT `Usuario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id`);
 
+  
+ALTER TABLE `Usuario`
+  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `Roles` (`id`);
+  
+ 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

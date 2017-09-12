@@ -108,16 +108,69 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // proyecto_homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'proyecto_homepage');
-            }
+        elseif (0 === strpos($pathinfo, '/usuario')) {
+            // usuario_index
+            if ('/usuario' === $trimmedPathinfo) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_usuario_index;
+                }
 
-            return array (  '_controller' => 'ProyectoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'proyecto_homepage',);
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'usuario_index');
+                }
+
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\usuarioController::indexAction',  '_route' => 'usuario_index',);
+            }
+            not_usuario_index:
+
+            // usuario_new
+            if ('/usuario/new' === $pathinfo) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_usuario_new;
+                }
+
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\usuarioController::newAction',  '_route' => 'usuario_new',);
+            }
+            not_usuario_new:
+
+            // usuario_show
+            if (preg_match('#^/usuario/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_usuario_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuario_show')), array (  '_controller' => 'ProyectoBundle\\Controller\\usuarioController::showAction',));
+            }
+            not_usuario_show:
+
+            // usuario_edit
+            if (preg_match('#^/usuario/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_usuario_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuario_edit')), array (  '_controller' => 'ProyectoBundle\\Controller\\usuarioController::editAction',));
+            }
+            not_usuario_edit:
+
+            // usuario_delete
+            if (preg_match('#^/usuario/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('DELETE' !== $canonicalMethod) {
+                    $allow[] = 'DELETE';
+                    goto not_usuario_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuario_delete')), array (  '_controller' => 'ProyectoBundle\\Controller\\usuarioController::deleteAction',));
+            }
+            not_usuario_delete:
+
         }
 
-        if (0 === strpos($pathinfo, '/user')) {
+        elseif (0 === strpos($pathinfo, '/user')) {
             // proyecto_index
             if ('/user/index' === $pathinfo) {
                 return array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::indexAction',  '_route' => 'proyecto_index',);
@@ -145,66 +198,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/usuario')) {
-            // usuario_index
-            if ('/usuario' === $trimmedPathinfo) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_usuario_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'usuario_index');
-                }
-
-                return array (  '_controller' => 'AppBundle\\Controller\\usuarioController::indexAction',  '_route' => 'usuario_index',);
+        // proyecto_homepage
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'proyecto_homepage');
             }
-            not_usuario_index:
 
-            // usuario_new
-            if ('/usuario/new' === $pathinfo) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_usuario_new;
-                }
-
-                return array (  '_controller' => 'AppBundle\\Controller\\usuarioController::newAction',  '_route' => 'usuario_new',);
-            }
-            not_usuario_new:
-
-            // usuario_show
-            if (preg_match('#^/usuario/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_usuario_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuario_show')), array (  '_controller' => 'AppBundle\\Controller\\usuarioController::showAction',));
-            }
-            not_usuario_show:
-
-            // usuario_edit
-            if (preg_match('#^/usuario/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_usuario_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuario_edit')), array (  '_controller' => 'AppBundle\\Controller\\usuarioController::editAction',));
-            }
-            not_usuario_edit:
-
-            // usuario_delete
-            if (preg_match('#^/usuario/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ('DELETE' !== $canonicalMethod) {
-                    $allow[] = 'DELETE';
-                    goto not_usuario_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuario_delete')), array (  '_controller' => 'AppBundle\\Controller\\usuarioController::deleteAction',));
-            }
-            not_usuario_delete:
-
+            return array (  '_controller' => 'ProyectoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'proyecto_homepage',);
         }
 
         // homepage

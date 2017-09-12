@@ -1,38 +1,30 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
+{#    <link href="{{asset('css/bootstrap.min.css') }}" rel="stylesheet">
+   <link rel="stylesheet" type="text.css" href="{{ asset('public/css/style.css')}}">#}
 <form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4" class="col-form-label">usuario</label>
-      <input type="text" class="form-control" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4" class="col-form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-  </div>
+  <div class="row">
+      <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+   </div>
   <div class="form-group">
-    <label for="inputAddress" class="col-form-label">Email</label>
-    <input type="Email" class="form-control" id="inputAddress" >
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
   </div>
-  <div class="form-group">
-    <label for="inputAddress2" class="col-form-label">Nombre</label>
-    <input type="text" class="form-control" id="inputAddress2" >
+     
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity" class="col-form-label">Apellido</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState" class="col-form-label">Rol</label>
-      <select id="inputState" class="form-control">Choose</select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip" class="col-form-label">Telefono</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Registrar</button>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 {% endblock %}

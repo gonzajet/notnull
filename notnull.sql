@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `auto` (
   `id` int(11) NOT NULL,
-  `Patente` varchar(255) NOT NULL,
-  `Marca` varchar(255) DEFAULT NULL,
-  `Modelo` varchar(255) DEFAULT NULL,
+  `patente` varchar(255) NOT NULL,
+  `marca` varchar(255) DEFAULT NULL,
+  `modelo` varchar(255) DEFAULT NULL,
   `id_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,13 +44,13 @@ CREATE TABLE `auto` (
 
 CREATE TABLE `establecimiento` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Direccion` varchar(255) NOT NULL,
-  `Telefono` int(12) NOT NULL,
-  `Precio_hora` int(11) DEFAULT NULL,
-  `Precio_estadia` int(11) DEFAULT NULL,
-  `Abierto_desde` time DEFAULT NULL,
-  `Abierto_hasta` time DEFAULT NULL
+  `nombre` varchar(255) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `telefono` int(12) NOT NULL,
+  `precio_hora` int(11) DEFAULT NULL,
+  `precio_estadia` int(11) DEFAULT NULL,
+  `abierto_desde` time DEFAULT NULL,
+  `abierto_hasta` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -62,7 +62,7 @@ CREATE TABLE `establecimiento` (
 CREATE TABLE `lugar` (
   `id` int(11) NOT NULL,
   `id_establecimiento` int(11) NOT NULL,
-  `Estado` tinyint(1) NOT NULL DEFAULT '1'
+  `estado` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -98,12 +98,12 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `Usuario` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Apellido` varchar(255) NOT NULL,
+  `usuario` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
   `eMail` varchar(255) NOT NULL,
-  `Telefono` varchar(255) DEFAULT NULL,
+  `telefono` varchar(255) DEFAULT NULL,
   `id_rol` int(11) NOT NULL,
   `id_establecimiento` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

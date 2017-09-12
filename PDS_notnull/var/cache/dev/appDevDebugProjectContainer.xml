@@ -99,8 +99,8 @@
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">3306</parameter>
-    <parameter key="database_name">notnull</parameter>
+    <parameter key="database_port">3307</parameter>
+    <parameter key="database_name">estacionar</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -607,7 +607,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>AoyvJ4EWxZRcfc8h+58k1p</argument>
+      <argument>aar+C9o-pAYXn4nrdNwAb9</argument>
       <argument>C:\xampp\htdocs\notnull\PDS_notnull\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -617,7 +617,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>AoyvJ4EWxZRcfc8h+58k1p</argument>
+      <argument>aar+C9o-pAYXn4nrdNwAb9</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1374,6 +1374,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -2159,12 +2167,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59b715b0eaf850.91711090</argument>
+      <argument>59b830c29ce898.16781674</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59b715b0eaf850.91711090</argument>
+      <argument>59b830c29ce898.16781674</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2776,8 +2784,8 @@
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
-        <argument key="port">3306</argument>
-        <argument key="dbname">notnull</argument>
+        <argument key="port">3307</argument>
+        <argument key="dbname">estacionar</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
@@ -2828,7 +2836,6 @@
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration" public="false">
       <call method="setEntityNamespaces">
         <argument type="collection">
-          <argument key="AppBundle">AppBundle\Entity</argument>
           <argument key="ProyectoBundle">ProyectoBundle\Entity</argument>
         </argument>
       </call>
@@ -2869,20 +2876,17 @@
         <argument type="service" id="doctrine.orm.default_entity_listener_resolver"/>
       </call>
     </service>
-    <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
-      <argument type="service" id="annotations.cached_reader"/>
+    <service id="doctrine.orm.default_xml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
       <argument type="collection">
-        <argument>C:\xampp\htdocs\notnull\PDS_notnull\src\AppBundle\Entity</argument>
-        <argument>C:\xampp\htdocs\notnull\PDS_notnull\src\ProyectoBundle\Entity</argument>
+        <argument key="C:\xampp\htdocs\notnull\PDS_notnull\src\ProyectoBundle\Resources\config\doctrine">ProyectoBundle\Entity</argument>
       </argument>
+      <call method="setGlobalBasename">
+        <argument>mapping</argument>
+      </call>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
       <call method="addDriver">
-        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
-        <argument>AppBundle\Entity</argument>
-      </call>
-      <call method="addDriver">
-        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
         <argument>ProyectoBundle\Entity</argument>
       </call>
     </service>
@@ -3384,7 +3388,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ZC90nd7xYk</argument>
       <argument>0</argument>
-      <argument>AoyvJ4EWxZRcfc8h+58k1p</argument>
+      <argument>aar+C9o-pAYXn4nrdNwAb9</argument>
       <argument>C:\xampp\htdocs\notnull\PDS_notnull\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3392,7 +3396,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>KUlM6oMh-6</argument>
       <argument>0</argument>
-      <argument>AoyvJ4EWxZRcfc8h+58k1p</argument>
+      <argument>aar+C9o-pAYXn4nrdNwAb9</argument>
       <argument>C:\xampp\htdocs\notnull\PDS_notnull\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3400,7 +3404,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>yLQMiuLHFZ</argument>
       <argument>0</argument>
-      <argument>AoyvJ4EWxZRcfc8h+58k1p</argument>
+      <argument>aar+C9o-pAYXn4nrdNwAb9</argument>
       <argument>C:\xampp\htdocs\notnull\PDS_notnull\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3408,7 +3412,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>IeH1dF9JZA</argument>
       <argument>0</argument>
-      <argument>AoyvJ4EWxZRcfc8h+58k1p</argument>
+      <argument>aar+C9o-pAYXn4nrdNwAb9</argument>
       <argument>C:\xampp\htdocs\notnull\PDS_notnull\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

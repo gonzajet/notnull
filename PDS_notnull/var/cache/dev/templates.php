@@ -120,4 +120,8 @@
   'WebProfilerBundle:Router:panel.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
   ':default:index.html.twig' => __DIR__.'/../../../app/Resources/views/default/index.html.twig',
+  ':usuario:edit.html.twig' => __DIR__.'/../../../app/Resources/views/usuario/edit.html.twig',
+  ':usuario:index.html.twig' => __DIR__.'/../../../app/Resources/views/usuario/index.html.twig',
+  ':usuario:new.html.twig' => __DIR__.'/../../../app/Resources/views/usuario/new.html.twig',
+  ':usuario:show.html.twig' => __DIR__.'/../../../app/Resources/views/usuario/show.html.twig',
 );

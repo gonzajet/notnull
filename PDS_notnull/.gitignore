@@ -18,6 +18,7 @@ web/uploads/*
 !var/cache/.gitkeep
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
+/var/cache/dev
  
 # -- Composer -----------------------------------------
 composer.phar

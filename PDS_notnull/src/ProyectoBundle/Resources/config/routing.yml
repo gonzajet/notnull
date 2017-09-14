@@ -3,21 +3,25 @@ proyecto_homepage:
     defaults: { _controller: ProyectoBundle:Default:index } 
 
 proyecto_index:
-    path:   /user/index
-    defaults: { _controller: ProyectoBundle:User:index }
+    path:   /admin/index
+    defaults: { _controller: ProyectoBundle:Admin:index }
     
 proyecto_add:
-    path:   /user/add
-    defaults: { _controller: ProyectoBundle:User:add } 
+    path:   /admin/add
+    defaults: { _controller: ProyectoBundle:Admin:add } 
     
 proyecto_edit:
-    path:   /user/edit/{id}
-    defaults: { _controller: ProyectoBundle:User:edit, id: 1 } 
+    path:   /admin/edit/{id}
+    defaults: { _controller: ProyectoBundle:Admin:edit, id: 1 } 
 
 proyecto_view:
-    path:   /user/view{id}
-    defaults: { _controller: ProyectoBundle:User:view } 
+    path:   /admin/view{id}
+    defaults: { _controller: ProyectoBundle:Admin:view } 
+
+proyecto_contacto:
+    path:   /admin/contacto
+    defaults: { _controller: ProyectoBundle:Admin:contacto} 
     
-proyecto_delete:
-    path:   /user/delete{id}
-    defaults: { _controller: ProyectoBundle:User:delete } 
+#proyecto_delete:
+ #   path:   /user/delete{id}
+  #  defaults: { _controller: ProyectoBundle:User:delete } 

@@ -170,34 +170,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/user')) {
-            // proyecto_index
-            if ('/user/index' === $pathinfo) {
-                return array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::indexAction',  '_route' => 'proyecto_index',);
-            }
-
-            // proyecto_add
-            if ('/user/add' === $pathinfo) {
-                return array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::addAction',  '_route' => 'proyecto_add',);
-            }
-
-            // proyecto_edit
-            if (0 === strpos($pathinfo, '/user/edit') && preg_match('#^/user/edit(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_edit')), array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::editAction',  'id' => 1,));
-            }
-
-            // proyecto_view
-            if (0 === strpos($pathinfo, '/user/view') && preg_match('#^/user/view(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_view')), array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::viewAction',));
-            }
-
-            // proyecto_delete
-            if (0 === strpos($pathinfo, '/user/delete') && preg_match('#^/user/delete(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_delete')), array (  '_controller' => 'ProyectoBundle\\Controller\\UserController::deleteAction',));
-            }
-
-        }
-
         // proyecto_homepage
         if ('' === $trimmedPathinfo) {
             if (substr($pathinfo, -1) !== '/') {
@@ -205,6 +177,34 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             return array (  '_controller' => 'ProyectoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'proyecto_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // proyecto_index
+            if ('/admin/index' === $pathinfo) {
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\AdminController::indexAction',  '_route' => 'proyecto_index',);
+            }
+
+            // proyecto_add
+            if ('/admin/add' === $pathinfo) {
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\AdminController::addAction',  '_route' => 'proyecto_add',);
+            }
+
+            // proyecto_edit
+            if (0 === strpos($pathinfo, '/admin/edit') && preg_match('#^/admin/edit(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_edit')), array (  '_controller' => 'ProyectoBundle\\Controller\\AdminController::editAction',  'id' => 1,));
+            }
+
+            // proyecto_view
+            if (0 === strpos($pathinfo, '/admin/view') && preg_match('#^/admin/view(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'proyecto_view')), array (  '_controller' => 'ProyectoBundle\\Controller\\AdminController::viewAction',));
+            }
+
+            // proyecto_contacto
+            if ('/admin/contacto' === $pathinfo) {
+                return array (  '_controller' => 'ProyectoBundle\\Controller\\AdminController::contactoAction',  '_route' => 'proyecto_contacto',);
+            }
+
         }
 
         // homepage

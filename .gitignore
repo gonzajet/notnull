@@ -10,8 +10,12 @@ PDS_notnull/var/cache/*
 !PDS_notnull/var/logs/.gitkeep
 !PDS_notnull/var/seccions/.gitkeep
 PDS_notnull/var/cache/dev/
-notnull/PDS_notnull/var/cache/*
-notnull/PDS_notnull/var/cache/dev/*
+PDS_notnull/var/cache/dev/appDevDebugProjectContainer.php
+PDS_notnull/var/cache/dev/appDevDebugProjectContainer.php.meta
+PDS_notnull/var/cache/dev/appDevDebugProjectContainer.xml
+PDS_notnull/var/cache/dev/appDevDebugProjectContainer.xml
+
+
 
 
 # -- Composer -----------------------------------------

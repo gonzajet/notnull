@@ -10,6 +10,11 @@
 PDS_notnull/var/cache/*
 PDS_notnull/var/cache/dev*
 PDS_notnull/var/cache/dev
+var/cache/dev/appDevDebugProjectContainer.php
+var/cache/dev/appDevDebugProjectContainer.xml
+var/logs/dev.log
+
+
 
 # -- Composer -----------------------------------------
 composer.phar

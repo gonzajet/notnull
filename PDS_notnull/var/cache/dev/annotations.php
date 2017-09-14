@@ -5,55 +5,55 @@
 return array(
 
 'DoctrineNamespaceCacheKey%5B%5D' => 'N;',
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23has%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23has%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23get%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23get%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getParameter%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getParameter%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23setContainer%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23setContainer%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23generateUrl%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23generateUrl%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23forward%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23forward%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23redirect%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23redirect%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23redirectToRoute%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23redirectToRoute%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23json%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23json%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23file%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23file%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23addFlash%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23addFlash%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23isGranted%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23isGranted%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23denyAccessUnlessGranted%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23denyAccessUnlessGranted%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23renderView%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23renderView%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23render%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23render%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23stream%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23stream%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createNotFoundException%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createNotFoundException%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createAccessDeniedException%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createAccessDeniedException%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createForm%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createForm%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createFormBuilder%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23createFormBuilder%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getDoctrine%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getDoctrine%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getUser%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getUser%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23isCsrfTokenValid%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23isCsrfTokenValid%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%24container%40%5BAnnot%5D%5D%5B1%5D' => array (
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%24container%5D%5B1%5D' => array (
 ),
 
 );

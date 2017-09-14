@@ -84,6 +84,8 @@
   'DoctrineBundle:Collector:db.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'AppBundle:Auto:index.html.twig' => __DIR__.'/../../../src/AppBundle/Resources/views/Auto/index.html.twig',
   'ProyectoBundle:Default:index.html.twig' => __DIR__.'/../../../src/ProyectoBundle/Resources/views/Default/index.html.twig',
+  'ProyectoBundle:admin:index.html.twig' => __DIR__.'/../../../src/ProyectoBundle/Resources/views/admin/index.html.twig',
+  'ProyectoBundle:admin:contacto.html.twig' => __DIR__.'/../../../src/ProyectoBundle/Resources/views/admin/contacto.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
   'WebProfilerBundle:Collector:events.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig',

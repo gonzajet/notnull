@@ -1,13 +1,13 @@
 
 # Symfony 3
-/var/cache/*
-/var/logs/*
-/var/logs/dev.log
-/var/session/*
-/var/cache/dev
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/seccions/.gitkeep
+PDS_notnull/var/cache/*
+PDS_notnull/var/logs/*
+PDS_notnull/var/logs/dev.log
+PDS_notnull/var/session/*
+PDS_notnull/var/cache/dev
+!PDS_notnull/var/cache/.gitkeep
+!PDS_notnull/var/logs/.gitkeep
+!PDS_notnull/var/seccions/.gitkeep
 
 # -- Composer -----------------------------------------
 composer.phar

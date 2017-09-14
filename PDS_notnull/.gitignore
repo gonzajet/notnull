@@ -10,8 +10,6 @@ web/bundles/*
 web/css/*
 web/js/*
 web/uploads/*
-
-# Cache, session files and logs (Symfony3)
 /var/cache/*
 /var/logs/*
 /var/sessions/*

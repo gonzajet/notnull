@@ -19,11 +19,11 @@ class usuarioType extends AbstractType
                 ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'second_options' => array('label' => 'Repetir Password'),
             ))
                 ->add('nombre')
                 ->add('apellido')
-                ->add('eMail', EmailType::class)
+                ->add('email', EmailType::class)
                 ->add('telefono');
     }
     

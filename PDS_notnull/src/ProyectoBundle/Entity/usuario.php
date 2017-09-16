@@ -71,11 +71,11 @@ class usuario implements UserInterface
     private $telefono;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id_rol", type="integer")
+     * @ORM\Column(name="id_rol", type="json_array")
      */
-    private $idRol;
+    private $idRol = array();
      /**
      * @var int
      *
@@ -277,11 +277,11 @@ class usuario implements UserInterface
     /**
      * Set idRol
      *
-     * @param integer $idRol
+     * @param string $idRol
      *
      * @return usuario
      */
-    public function setIdRol($idRol)
+    public function setIdRol(array $idRol)
     {
         $this->idRol = $idRol;
 

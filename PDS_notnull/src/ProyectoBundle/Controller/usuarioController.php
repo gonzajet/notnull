@@ -49,7 +49,8 @@ class usuarioController extends Controller
             //            encriptacion de la contraseña
             $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
             $usuario->setPassword($password);
-            
+            // asigno rol de usuario por defecto
+            $rol=["ROLE_USER"];
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();

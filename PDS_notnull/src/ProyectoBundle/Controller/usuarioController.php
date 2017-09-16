@@ -6,6 +6,7 @@ use ProyectoBundle\Entity\usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Usuario controller.
@@ -39,11 +40,16 @@ class usuarioController extends Controller
      */
     public function newAction(Request $request)
     {
+        $passwordEncoder=$this->get('security.password_encoder'); 
         $usuario = new Usuario();
         $form = $this->createForm('ProyectoBundle\Form\usuarioType', $usuario);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //            encriptacion de la contraseña
+            $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
+            $usuario->setPassword($password);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
@@ -56,33 +62,33 @@ class usuarioController extends Controller
             'form' => $form->createView(),
         ));
     }
-        /**
-     * Creates a new usuario entity.
-     *
-     * @Route("/new", name="usuario_new")
-     * @Method({"GET", "POST"})
-     */
-    public function nuevoRegistro(Request $request)
-    {
-//        creo el usuario y el formulario
-        $usuario= new usuario();
-        $formulario = $this->createForm(UserType::class, $usuario);
-        $formulario->handleRequest($request);
-        if ($formulario->isSubmitted() && $formulario->isValid()){
+//        /**
+//     * Creates a new usuario entity.
+//     *
+//     * @Route("/new", name="usuario_new")
+//     * @Method({"GET", "POST"})
+//     */
+//    public function nuevoRegistro(Request $request)
+//    {
+////        creo el usuario y el formulario
+//        $usuario= new usuario();
+//        $formulario = $this->createForm(UserType::class, $usuario);
+//        $formulario->handleRequest($request);
+//        if ($formulario->isSubmitted() && $formulario->isValid()){
 //            encriptacion de la contraseña
 //            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
 //            $user->setPassword($password);
-//            guardo a usuario
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
-            return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
-        }
-        return $this->render('usuario/new.html.twig', array(
-            'usuario' => $usuario,
-            'form' => $form->createView(),
-        ));
-    }
+////            guardo a usuario
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($user);
+//            $em->flush();
+//            return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
+//        }
+//        return $this->render('usuario/new.html.twig', array(
+//            'usuario' => $usuario,
+//            'form' => $form->createView(),
+//        ));
+//    }
     
 
     /**

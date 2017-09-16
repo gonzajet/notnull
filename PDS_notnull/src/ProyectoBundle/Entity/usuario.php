@@ -3,6 +3,9 @@
 namespace ProyectoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * usuario
@@ -10,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="usuario")
  * @ORM\Entity(repositoryClass="ProyectoBundle\Repository\usuarioRepository")
  */
-class usuario
+class usuario implements UserInterface
 {
     /**
      * @var int
@@ -34,7 +37,11 @@ class usuario
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
-
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
     /**
      * @var string
      *
@@ -54,7 +61,7 @@ class usuario
      *
      * @ORM\Column(name="eMail", type="string", length=255)
      */
-    private $eMail;
+    private $email;
 
     /**
      * @var string
@@ -134,7 +141,15 @@ class usuario
     {
         return $this->password;
     }
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
 
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
     /**
      * Set nombre
      *
@@ -192,7 +207,7 @@ class usuario
      */
     public function setEMail($eMail)
     {
-        $this->eMail = $eMail;
+        $this->email = $eMail;
 
         return $this;
     }
@@ -204,7 +219,7 @@ class usuario
      */
     public function getEMail()
     {
-        return $this->eMail;
+        return $this->email;
     }
 
     /**
@@ -277,6 +292,23 @@ class usuario
     public function getidEstablecimiento()
     {
         return $this->idEstablecimiento;
+    }
+        public function getSalt()
+    {
+        // The bcrypt algorithm doesn't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
+        return null;
+    }
+    public function getUsername()
+    {
+        return $this->usuario;
+    }
+    public function getRoles()
+    {
+        return null;
+    }
+    public function eraseCredentials(){
+        return null;
     }
 }
 

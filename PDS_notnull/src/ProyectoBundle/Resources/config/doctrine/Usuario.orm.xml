@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="ProyectoBundle\Entity\Usuario" table="usuario">
+  <entity name="ProyectoBundle\Entity\usuario" table="usuario">
     <indexes>
       <index name="id_rol" columns="id_rol"/>
       <index name="id_establecimiento" columns="id_establecimiento"/>

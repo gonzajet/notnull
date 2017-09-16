@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-09-2017 a las 16:10:36
+-- Tiempo de generación: 16-09-2017 a las 18:28:07
 -- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.22-2+ubuntu16.04.1+deb.sury.org+4
 
@@ -44,6 +44,8 @@ CREATE TABLE `establecimiento` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `direccion` varchar(255) NOT NULL,
+  `provincia` varchar(255) NOT NULL,
+  `localidad` varchar(255) NOT NULL,
   `telefono` int(12) NOT NULL,
   `precio_hora` int(11) DEFAULT NULL,
   `precio_estadia` int(11) DEFAULT NULL,
@@ -80,29 +82,18 @@ CREATE TABLE `reserva` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
---
-
-CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
-  `rol` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(255) NOT NULL,
+  `rol` longtext NOT NULL,
   `password` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
   `e_mail` varchar(255) NOT NULL,
-  `telefono` varchar(255) DEFAULT NULL,
-  `rol` int(11) NOT NULL
+  `telefono` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -150,17 +141,10 @@ ALTER TABLE `reserva`
   ADD KEY `id_lugar` (`id_lugar`);
 
 --
--- Indices de la tabla `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_rol` (`rol`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuario_establecimiento`
@@ -194,11 +178,6 @@ ALTER TABLE `lugar`
 ALTER TABLE `reserva`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -225,12 +204,6 @@ ALTER TABLE `lugar`
 ALTER TABLE `reserva`
   ADD CONSTRAINT `Reserva_ibfk_1` FOREIGN KEY (`id_auto`) REFERENCES `auto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Reserva_ibfk_2` FOREIGN KEY (`id_lugar`) REFERENCES `lugar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `roles` (`id`);
 
 --
 -- Filtros para la tabla `usuario_establecimiento`

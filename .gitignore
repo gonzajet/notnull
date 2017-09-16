@@ -34,3 +34,5 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
+#Otros
+.web-server-pid

@@ -83,6 +83,34 @@ class usuario implements UserInterface
      */
     private $idEstablecimiento;
 
+    
+    
+    /**
+     * Muchos usuarios tienen muchos establecimientos
+     * @ ---ManyToMany(targetEntity="Establecimiento", inversedBy="usuarios")
+     * @ ---JoinTable(name="usuario_establecimiento")
+     */
+    /*LO DEJO COMENTADO PARA NO ROMPER LAS FUNCIONALIDADES
+    private $establecimientos;
+
+    //Agregamos los establecimientos al constructor
+    /*
+    public function __construct(){
+        $this->establecimientos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getEstablecimientos(){
+        return $this->establecimientos;
+    }
+     * 
+     */
+
+
+    
+    
+    
+    
+    
 
     /**
      * Get id

@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2017 a las 18:54:56
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Servidor: localhost
+-- Tiempo de generación: 16-09-2017 a las 16:10:36
+-- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
+-- Versión de PHP: 7.0.22-2+ubuntu16.04.1+deb.sury.org+4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `estacionar`
+-- Base de datos: `notnull`
 --
 
 -- --------------------------------------------------------
@@ -102,10 +100,20 @@ CREATE TABLE `usuario` (
   `password` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
-  `eMail` varchar(255) NOT NULL,
+  `e_mail` varchar(255) NOT NULL,
   `telefono` varchar(255) DEFAULT NULL,
-  `id_rol` int(11) NOT NULL,
-  `id_establecimiento` int(11) DEFAULT NULL
+  `rol` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_establecimiento`
+--
+
+CREATE TABLE `usuario_establecimiento` (
+  `id_usuario` int(11) NOT NULL,
+  `id_establecimiento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -117,8 +125,8 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `auto`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `Patente` (`Patente`),
-  ADD KEY `Usuario` (`id_Usuario`);
+  ADD UNIQUE KEY `patente` (`patente`),
+  ADD KEY `usuario` (`id_Usuario`);
 
 --
 -- Indices de la tabla `establecimiento`
@@ -152,7 +160,13 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_rol` (`id_rol`),
+  ADD KEY `id_rol` (`rol`);
+
+--
+-- Indices de la tabla `usuario_establecimiento`
+--
+ALTER TABLE `usuario_establecimiento`
+  ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_establecimiento` (`id_establecimiento`);
 
 --
@@ -163,7 +177,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `establecimiento`
 --
@@ -188,7 +202,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Restricciones para tablas volcadas
 --
@@ -216,9 +230,14 @@ ALTER TABLE `reserva`
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `establecimiento_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`),
-  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id`);
-COMMIT;
+  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `roles` (`id`);
+
+--
+-- Filtros para la tabla `usuario_establecimiento`
+--
+ALTER TABLE `usuario_establecimiento`
+  ADD CONSTRAINT `usuario_establecimiento_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `usuario_establecimiento_ibfk_2` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

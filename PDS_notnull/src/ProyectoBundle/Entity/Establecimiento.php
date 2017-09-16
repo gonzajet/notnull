@@ -69,7 +69,38 @@ class Establecimiento
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+    
+    
+    /**
+     * Muchos establecimientos tienen muchos usuarios
+     * @ ---ManyToMany(targetEntity="usuario", mappedBy="establecimientos")
+     */
+    /* LO DEJO COMENTADO PARA NO ROMPER LAS FUNCIONALIDADES
+    private $usuarios;
 
+    //AGREGAMOS EL ARRAY DE USUARIOS AL CONSTRUCTOR
+    public function __construct() {
+        $this->usuarios = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getUsuarios()
+    {
+        return $this->usuarios;
+    }
+
+    public function addUsuario(Usuario $usuario)
+    {
+        $this->usuarios->add($usuario);
+    }
+
+	public function removeUsuario(Usuario $usuario)
+    {
+        $this->usuarios->removeElement($usuario) ;
+    }
+    
+     * 
+     */
+    
 
 }
 

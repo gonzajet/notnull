@@ -24,9 +24,7 @@ class usuarioType extends AbstractType
                 ->add('nombre')
                 ->add('apellido')
                 ->add('eMail', EmailType::class)
-                ->add('telefono')
-                ->add('idRol')
-                ->add('idEstablecimiento');
+                ->add('telefono');
     }
     
     /**

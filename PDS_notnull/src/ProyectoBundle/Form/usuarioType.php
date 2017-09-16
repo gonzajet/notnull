@@ -5,7 +5,10 @@ namespace ProyectoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 class usuarioType extends AbstractType
 {
     /**
@@ -13,7 +16,14 @@ class usuarioType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('usuario')->add('password')->add('nombre')->add('apellido')->add('eMail')->add('telefono')->add('idRol')->add('idEstablecimiento');
+        $builder->add('usuario')
+                ->add('password', PasswordType::class)
+                ->add('nombre')
+                ->add('apellido')
+                ->add('eMail', EmailType::class)
+                ->add('telefono')
+                ->add('idRol')
+                ->add('idEstablecimiento');
     }
     
     /**

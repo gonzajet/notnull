@@ -1,30 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{#    <link href="{{asset('css/bootstrap.min.css') }}" rel="stylesheet">
-   <link rel="stylesheet" type="text.css" href="{{ asset('public/css/style.css')}}">#}
+<div class="container" >    
 <form>
-  <div class="row">
-      <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <div class="form-group row">
+          <div class="col-xs-3">
+             <label for="usuario">Usuario</label>
+              <input type="text" class="form-control" id="usuario" placeholder="CortesOscar">
+          </div>  
+        <div class="col-xs-3">
+             <label for="password">Password</label>
+             <input type="password" class="form-control" id="password" placeholder="">
+         </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <div class="form-group row">
+        <div class="col-xs-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Oscar">
+      </div>
+        <div class="col-xs-3">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" placeholder="Cortes Bracho">
       </div>
    </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-     
+      <div class="form-group row">
+          <div class="col-xs-6">
+             <label for="eMail">Email</label>
+             <input type="email" class="form-control" id="eMail" placeholder="Oscar@unaj.com">
+          </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Ej: 11-1234-1234">
+        </div>
+    </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox"> Check me out
+      <input type="checkbox"> Acepto terminos y condiciones
     </label>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" value="Create" class="btn btn-default">Registrarse</button>
 </form>
+</div>
 {% endblock %}

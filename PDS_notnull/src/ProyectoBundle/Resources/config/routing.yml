@@ -22,6 +22,10 @@ proyecto_contacto:
     path:   /admin/contacto
     defaults: { _controller: ProyectoBundle:Admin:contacto} 
     
+proyecto_contacto2:
+    path:   /admin/contacto2
+    defaults: { _controller: ProyectoBundle:Admin:contacto2} 
+    
 #proyecto_delete:
  #   path:   /user/delete{id}
   #  defaults: { _controller: ProyectoBundle:User:delete } 

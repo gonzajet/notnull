@@ -28,6 +28,12 @@ class AdminController extends Controller
         
     }
     
+    #-----VER ESTA PROBLEMA---------------------
+    public function contacto2Action() {
+        return $this ->render ('ProyectoBundle:index_contacto.php');
+        
+    }
+    
     public function contactoAction () {
         return $this ->render ('ProyectoBundle:admin:contacto.html.twig');
     }

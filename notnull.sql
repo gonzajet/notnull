@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2017 a las 18:54:56
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Servidor: localhost
+-- Tiempo de generación: 16-09-2017 a las 16:10:36
+-- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
+-- Versión de PHP: 7.0.22-2+ubuntu16.04.1+deb.sury.org+4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `estacionar`
+-- Base de datos: `notnull`
 --
 
 -- --------------------------------------------------------
@@ -30,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `auto` (
   `id` int(11) NOT NULL,
-  `patente` varchar(255) NOT NULL,
-  `marca` varchar(255) DEFAULT NULL,
-  `modelo` varchar(255) DEFAULT NULL,
+  `Patente` varchar(255) NOT NULL,
+  `Marca` varchar(255) DEFAULT NULL,
+  `Modelo` varchar(255) DEFAULT NULL,
   `id_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,13 +42,13 @@ CREATE TABLE `auto` (
 
 CREATE TABLE `establecimiento` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `direccion` varchar(255) NOT NULL,
-  `telefono` int(12) NOT NULL,
-  `precio_hora` int(11) DEFAULT NULL,
-  `precio_estadia` int(11) DEFAULT NULL,
-  `abierto_desde` time DEFAULT NULL,
-  `abierto_hasta` time DEFAULT NULL
+  `Nombre` varchar(255) NOT NULL,
+  `Direccion` varchar(255) NOT NULL,
+  `Telefono` int(12) NOT NULL,
+  `Precio_hora` int(11) DEFAULT NULL,
+  `Precio_estadia` int(11) DEFAULT NULL,
+  `Abierto_desde` time DEFAULT NULL,
+  `Abierto_hasta` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -62,7 +60,7 @@ CREATE TABLE `establecimiento` (
 CREATE TABLE `lugar` (
   `id` int(11) NOT NULL,
   `id_establecimiento` int(11) NOT NULL,
-  `estado` tinyint(1) NOT NULL DEFAULT '1'
+  `Estado` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -98,14 +96,24 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `usuario` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `apellido` varchar(255) NOT NULL,
-  `eMail` varchar(255) NOT NULL,
-  `telefono` varchar(255) DEFAULT NULL,
-  `id_rol` int(11) NOT NULL,
-  `id_establecimiento` int(11) DEFAULT NULL
+  `Usuario` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Apellido` varchar(255) NOT NULL,
+  `e_mail` varchar(255) NOT NULL,
+  `Telefono` varchar(255) DEFAULT NULL,
+  `rol` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_establecimiento`
+--
+
+CREATE TABLE `usuario_establecimiento` (
+  `id_usuario` int(11) NOT NULL,
+  `id_establecimiento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -152,7 +160,13 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_rol` (`id_rol`),
+  ADD KEY `id_rol` (`rol`);
+
+--
+-- Indices de la tabla `usuario_establecimiento`
+--
+ALTER TABLE `usuario_establecimiento`
+  ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_establecimiento` (`id_establecimiento`);
 
 --
@@ -168,12 +182,12 @@ ALTER TABLE `auto`
 -- AUTO_INCREMENT de la tabla `establecimiento`
 --
 ALTER TABLE `establecimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `lugar`
 --
 ALTER TABLE `lugar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `reserva`
 --
@@ -183,12 +197,12 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
@@ -216,9 +230,14 @@ ALTER TABLE `reserva`
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `establecimiento_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`),
-  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id`);
-COMMIT;
+  ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `roles` (`id`);
+
+--
+-- Filtros para la tabla `usuario_establecimiento`
+--
+ALTER TABLE `usuario_establecimiento`
+  ADD CONSTRAINT `usuario_establecimiento_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `usuario_establecimiento_ibfk_2` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

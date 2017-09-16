@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-09-2017 a las 18:28:07
+-- Tiempo de generación: 16-09-2017 a las 19:51:11
 -- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.22-2+ubuntu16.04.1+deb.sury.org+4
 
@@ -150,6 +150,7 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `usuario_establecimiento`
 --
 ALTER TABLE `usuario_establecimiento`
+  ADD PRIMARY KEY (`id_usuario`,`id_establecimiento`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_establecimiento` (`id_establecimiento`);
 

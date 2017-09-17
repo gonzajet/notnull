@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="ProyectoBundle\Entity\Lugar" table="lugar">
+  <entity name="ProyectoBundle\Entity\UsuarioEstablecimiento" table="usuario_establecimiento">
     <indexes>
+      <index name="id_usuario" columns="id_usuario"/>
       <index name="id_establecimiento" columns="id_establecimiento"/>
     </indexes>
-    <id name="id" type="integer" column="id">
-      <generator strategy="IDENTITY"/>
-    </id>
-    <field name="idEstablecimiento" type="integer" column="id_establecimiento" nullable="false">
+    <id name="idUsuario" type="integer" column="id_usuario"/>
+    <id name="idEstablecimiento" type="integer" column="id_establecimiento"/>
+    <field name="id" type="integer" column="id" nullable="false">
       <options>
         <option name="unsigned"/>
-      </options>
-    </field>
-    <field name="estado" type="boolean" column="estado" nullable="false">
-      <options>
-        <option name="default">1</option>
       </options>
     </field>
   </entity>

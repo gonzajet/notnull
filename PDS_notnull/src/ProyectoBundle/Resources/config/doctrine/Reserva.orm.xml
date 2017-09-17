@@ -8,17 +8,17 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="idAuto" type="integer" column="id_auto" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="idLugar" type="integer" column="id_lugar" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
     <field name="fechaDesde" type="datetime" column="fecha_desde" nullable="false"/>
     <field name="fechaHasta" type="datetime" column="fecha_hasta" nullable="true"/>
-    <many-to-one field="idAuto" target-entity="Auto" fetch="LAZY">
-      <join-columns>
-        <join-column name="id_auto" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="idLugar" target-entity="Lugar" fetch="LAZY">
-      <join-columns>
-        <join-column name="id_lugar" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
   </entity>
 </doctrine-mapping>

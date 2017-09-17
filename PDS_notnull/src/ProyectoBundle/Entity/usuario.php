@@ -27,9 +27,16 @@ class usuario implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="usuario", type="string", length=255)
+     * @ORM\Column(name="usuario", type="string", length=255, unique=true)
      */
     private $usuario;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rol", type="json_array")
+     */
+    private $rol;
 
     /**
      * @var string
@@ -59,63 +66,22 @@ class usuario implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="eMail", type="string", length=255)
+     * @ORM\Column(name="e_mail", type="string", length=255)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono", type="string", length=255)
+     * @ORM\Column(name="telefono", type="string", length=255, nullable=true)
      */
     private $telefono;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="id_rol", type="json_array")
-     */
-    private $idRol = array();
-     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_establecimiento", type="integer")
-     */
-    private $idEstablecimiento;
-
-    
-    
-    /**
-     * Muchos usuarios tienen muchos establecimientos
-     * @ ---ManyToMany(targetEntity="Establecimiento", inversedBy="usuarios")
-     * @ ---JoinTable(name="usuario_establecimiento")
-     */
-    /*LO DEJO COMENTADO PARA NO ROMPER LAS FUNCIONALIDADES
-    private $establecimientos;
-
-    //Agregamos los establecimientos al constructor
-    /*
-    public function __construct(){
-        $this->establecimientos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    public function getEstablecimientos(){
-        return $this->establecimientos;
-    }
-     * 
-     */
-
-
-    
-    
-    
-    
-    
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -132,7 +98,7 @@ class usuario implements UserInterface
     public function setUsuario($usuario)
     {
         $this->usuario = $usuario;
-
+    
         return $this;
     }
 
@@ -147,6 +113,30 @@ class usuario implements UserInterface
     }
 
     /**
+     * Set rol
+     *
+     * @param string $rol
+     *
+     * @return usuario
+     */
+    public function setRol(string $rol)
+    {
+        $this->rol = $rol;
+    
+        return $this;
+    }
+
+    /**
+     * Get rol
+     *
+     * @return string
+     */
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    /**
      * Set password
      *
      * @param string $password
@@ -156,7 +146,7 @@ class usuario implements UserInterface
     public function setPassword($password)
     {
         $this->password = $password;
-
+    
         return $this;
     }
 
@@ -188,7 +178,7 @@ class usuario implements UserInterface
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
+    
         return $this;
     }
 
@@ -212,7 +202,7 @@ class usuario implements UserInterface
     public function setApellido($apellido)
     {
         $this->apellido = $apellido;
-
+    
         return $this;
     }
 
@@ -227,25 +217,25 @@ class usuario implements UserInterface
     }
 
     /**
-     * Set eMail
+     * Set email
      *
-     * @param string $eMail
+     * @param string $email
      *
      * @return usuario
      */
-    public function setEMail($eMail)
+    public function setEmail($email)
     {
-        $this->email = $eMail;
-
+        $this->email = $email;
+    
         return $this;
     }
 
     /**
-     * Get eMail
+     * Get email
      *
      * @return string
      */
-    public function getEMail()
+    public function getEmail()
     {
         return $this->email;
     }
@@ -260,7 +250,7 @@ class usuario implements UserInterface
     public function setTelefono($telefono)
     {
         $this->telefono = $telefono;
-
+    
         return $this;
     }
 
@@ -272,70 +262,21 @@ class usuario implements UserInterface
     public function getTelefono()
     {
         return $this->telefono;
-    }
-
-    /**
-     * Set idRol
-     *
-     * @param string $idRol
-     *
-     * @return usuario
-     */
-    public function setIdRol(array $idRol)
-    {
-        $this->idRol = $idRol;
-
-        return $this;
-    }
-
-    /**
-     * Get idRol
-     *
-     * @return int
-     */
-    public function getIdRol()
-    {
-        return $this->idRol;
-    }
-    
-    /**
-     * Set idEstablecimiento
-     *
-     * @param integer $idEstablecimiento
-     *
-     * @return usuario
-     */
-    public function setidEstablecimiento($idEstablecimiento)
-    {
-        $this->idEstablecimiento = $idEstablecimiento;
-
-        return $this;
-    }
-
-    /**
-     * Get idEstablecimiento
-     *
-     * @return int
-     */
-    public function getidEstablecimiento()
-    {
-        return $this->idEstablecimiento;
-    }
-        public function getSalt()
-    {
-        // The bcrypt algorithm doesn't require a separate salt.
-        // You *may* need a real salt if you choose a different encoder.
-        return null;
-    }
-    public function getUsername()
+    }    public function getUsername()
     {
         return $this->usuario;
     }
     public function getRoles()
     {
-        return null;
+        return $this->rol;
     }
     public function eraseCredentials(){
+        return null;
+    }
+        public function getSalt()
+    {
+        // The bcrypt algorithm doesn't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
         return null;
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="ProyectoBundle\Entity\usuario" table="usuario">
+  <entity name="AppBundle\Entity\Usuario" table="usuario">
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
@@ -29,7 +29,7 @@
         <option name="fixed"/>
       </options>
     </field>
-    <field name="email" type="string" column="e_mail" length="255" nullable="false">
+    <field name="eMail" type="string" column="e_mail" length="255" nullable="false">
       <options>
         <option name="fixed"/>
       </options>

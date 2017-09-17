@@ -46,11 +46,14 @@ class usuarioController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //            encriptacion de la contraseña
+            // encriptacion de la contraseña
             $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
             $usuario->setPassword($password);
             // asigno rol de usuario por defecto
-            $rol=["ROLE_USER"];
+            $rol='ROLE_USER';
+            $usuario->setRol($rol);
+            // cargo en la base
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
@@ -63,35 +66,6 @@ class usuarioController extends Controller
             'form' => $form->createView(),
         ));
     }
-//        /**
-//     * Creates a new usuario entity.
-//     *
-//     * @Route("/new", name="usuario_new")
-//     * @Method({"GET", "POST"})
-//     */
-//    public function nuevoRegistro(Request $request)
-//    {
-////        creo el usuario y el formulario
-//        $usuario= new usuario();
-//        $formulario = $this->createForm(UserType::class, $usuario);
-//        $formulario->handleRequest($request);
-//        if ($formulario->isSubmitted() && $formulario->isValid()){
-//            encriptacion de la contraseña
-//            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
-//            $user->setPassword($password);
-////            guardo a usuario
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($user);
-//            $em->flush();
-//            return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
-//        }
-//        return $this->render('usuario/new.html.twig', array(
-//            'usuario' => $usuario,
-//            'form' => $form->createView(),
-//        ));
-//    }
-    
-
     /**
      * Finds and displays a usuario entity.
      *
@@ -106,6 +80,18 @@ class usuarioController extends Controller
             'usuario' => $usuario,
             'delete_form' => $deleteForm->createView(),
         ));
+    }
+   /**
+     * Finds and displays a usuario entity.
+     *
+     * @Route("/{id}", name="usuario_login")
+     * @Method({"GET", "POST"})
+     */
+    public function loginAction(request $request)
+    {
+        
+
+        return $this->render('usuario/login.html.twig');
     }
 
     /**
@@ -169,3 +155,4 @@ class usuarioController extends Controller
         ;
     }
 }
+

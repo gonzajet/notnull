@@ -1,10 +1,10 @@
 proyecto_usuario:
-    resource: "@ProyectoBundle/Controller/usuarioController.php"
+    resource: "@ProyectoBundle/Controller/UsuarioController.php"
     type:     annotation
 
 #<<<<<<< HEAD
 app_usuario:
-    resource: "@ProyectoBundle/Controller/usuarioController.php"
+    resource: "@ProyectoBundle/Controller/UsuarioController.php"
     type:     annotation
 
 #=======
@@ -17,3 +17,6 @@ proyecto:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+usuario_login:
+    path:   /usuario/ligin
+    defaults: { _controller: ProyectoBundle:usuario:login} 

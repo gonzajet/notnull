@@ -28,4 +28,9 @@ proyecto_contacto2:
     
 #proyecto_delete:
  #   path:   /user/delete{id}
-  #  defaults: { _controller: ProyectoBundle:User:delete } 
+  #  defaults: { _controller: ProyectoBundle:User:delete }
+  
+  
+lugar_index:
+    path:   /Lugar/index
+    defaults: { _controller: ProyectoBundle:Lugar:index }  

@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-sep-2017, 20:32:50
+    Author     : feder
+*/
+
+
+.top-buffer { margin-top:20px; }
+
+.center-block 
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab-pane{
+  height:300px;
+  overflow-y:scroll;
+  width:100%;
+}
+
+.row {
+  > .col,
+  > [class^="col-"] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+  }
+}
+
+

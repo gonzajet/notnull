@@ -27,6 +27,20 @@ class Establecimiento
     private $direccion;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="provincia", type="string", length=255, nullable=false)
+     */
+    private $provincia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="localidad", type="string", length=255, nullable=false)
+     */
+    private $localidad;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="telefono", type="integer", nullable=false)
@@ -69,38 +83,21 @@ class Establecimiento
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-    
-    
+
     /**
-     * Muchos establecimientos tienen muchos usuarios
-     * @ ---ManyToMany(targetEntity="usuario", mappedBy="establecimientos")
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="ProyectoBundle\Entity\Usuario", mappedBy="idEstablecimiento")
      */
-    /* LO DEJO COMENTADO PARA NO ROMPER LAS FUNCIONALIDADES
-    private $usuarios;
+    private $idUsuario;
 
-    //AGREGAMOS EL ARRAY DE USUARIOS AL CONSTRUCTOR
-    public function __construct() {
-        $this->usuarios = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    public function getUsuarios()
-    {
-        return $this->usuarios;
-    }
-
-    public function addUsuario(Usuario $usuario)
-    {
-        $this->usuarios->add($usuario);
-    }
-
-	public function removeUsuario(Usuario $usuario)
-    {
-        $this->usuarios->removeElement($usuario) ;
-    }
-    
-     * 
+    /**
+     * Constructor
      */
-    
+    public function __construct()
+    {
+        $this->idUsuario = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 }
 

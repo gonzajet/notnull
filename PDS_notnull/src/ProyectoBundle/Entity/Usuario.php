@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace ProyectoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -70,6 +70,28 @@ class Usuario
      */
     private $id;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="ProyectoBundle\Entity\Establecimiento", inversedBy="idUsuario")
+     * @ORM\JoinTable(name="usuario_establecimiento",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_establecimiento", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $idEstablecimiento;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idEstablecimiento = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 }
 

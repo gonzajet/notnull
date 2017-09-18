@@ -12,4 +12,10 @@ class LugarController extends Controller
     {
         return $this->render('ProyectoBundle:Lugar:index.html.twig');
     }
+    
+    public function newAction()
+    {
+        return $this->render('ProyectoBundle:Lugar:new.html.twig');
+    }
+    
 }

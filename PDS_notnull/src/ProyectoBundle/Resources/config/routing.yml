@@ -33,8 +33,13 @@ proyecto_contacto2:
   
 lugar_index:
     path:   /Lugar/index
-    defaults: { _controller: ProyectoBundle:Lugar:index }  
+    defaults: { _controller: ProyectoBundle:Lugar:index }
     
+lugar_new:
+    path:   /Lugar/new
+    defaults: { _controller: ProyectoBundle:Lugar:new }   
+
+
 proyecto_usuario:
     resource: "@ProyectoBundle/Controller/UsuarioController.php"
     type:     annotation

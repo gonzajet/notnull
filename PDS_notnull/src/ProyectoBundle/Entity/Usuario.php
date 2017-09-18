@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="usuario")
  * @ORM\Entity
  */
-class Usuario
+class Usuario implements UserInterface
 {
     /**
      * @var string

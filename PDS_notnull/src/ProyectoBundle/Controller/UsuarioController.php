@@ -54,14 +54,13 @@ class UsuarioController extends Controller
             $rol='ROLE_USER';
             $usuario->setRol($rol);
             // cargo en la base
-            
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
 
             return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
         }
-
+        // renderizo si esta mal cargado.
         return $this->render('usuario/new.html.twig', array(
             'usuario' => $usuario,
             'form' => $form->createView(),

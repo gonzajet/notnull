@@ -1,0 +1,90 @@
+{% extends "::base.html.twig" %}
+ 
+{% block body %}  
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link href="{{asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="{{asset('public/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  
+  <!-- Ionicons -->
+  <link href="{{asset('public/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+  
+  <!-- Theme style -->
+  <link href="{{asset('public/estilos_varios/css/Lugar.css') }}" rel="stylesheet">
+  
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link href="{{asset('public/estilos_varios/skins/skin-blue.min.css') }}" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+</head>
+<style>
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+
+
+</style>
+
+
+<div class="container top-buffer">
+<ol class="breadcrumb">
+    <li><a href="#"><h3>Lugares</h3></a></li>
+    <li><a href="#">Nuevo</a></li>
+</ol>
+</div>
+
+<div class="container top-buffer">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab">
+            <h4 class="panel-title">Datos Iniciales</h4>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-8">
+                            <input id="fname" name='codigo' type="text" placeholder="Codigo" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-4">
+                             <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  Seccion
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <li><a href="#">Seccion1</a></li>
+                                  <li><a href="#">Seccion2</a></li>
+                                  <li><a href="#">Seccion3</a></li>
+                                </ul> 
+                            </div>
+                        </div>
+                    </div>
+                    <br/>        
+                    <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-4">
+                            <a class="btn btn-default" href='#'>Cancelar</a>
+                            <input type="button" value="Guardar" class="btn btn-primary"  />
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

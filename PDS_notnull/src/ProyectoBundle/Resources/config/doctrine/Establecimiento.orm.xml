@@ -41,5 +41,6 @@
     </field>
     <field name="abiertoDesde" type="time" column="abierto_desde" nullable="true"/>
     <field name="abiertoHasta" type="time" column="abierto_hasta" nullable="true"/>
+    <many-to-many field="idUsuario" target-entity="Usuario" mapped-by="idEstablecimiento" fetch="LAZY"/>
   </entity>
 </doctrine-mapping>

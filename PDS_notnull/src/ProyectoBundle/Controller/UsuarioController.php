@@ -2,10 +2,11 @@
 
 namespace ProyectoBundle\Controller;
 
-use ProyectoBundle\Entity\usuario;
+use ProyectoBundle\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
@@ -13,7 +14,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  *
  * @Route("usuario")
  */
-class usuarioController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Lists all usuario entities.
@@ -25,7 +26,7 @@ class usuarioController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $usuarios = $em->getRepository('ProyectoBundle:usuario')->findAll();
+        $usuarios = $em->getRepository('ProyectoBundle:Usuario')->findAll();
 
         return $this->render('usuario/index.html.twig', array(
             'usuarios' => $usuarios,
@@ -72,7 +73,7 @@ class usuarioController extends Controller
      * @Route("/{id}", name="usuario_show")
      * @Method("GET")
      */
-    public function showAction(usuario $usuario)
+    public function showAction(Usuario $usuario)
     {
         $deleteForm = $this->createDeleteForm($usuario);
 
@@ -100,7 +101,7 @@ class usuarioController extends Controller
      * @Route("/{id}/edit", name="usuario_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, usuario $usuario)
+    public function editAction(Request $request, Usuario $usuario)
     {
         $deleteForm = $this->createDeleteForm($usuario);
         $editForm = $this->createForm('ProyectoBundle\Form\usuarioType', $usuario);
@@ -125,7 +126,7 @@ class usuarioController extends Controller
      * @Route("/{id}", name="usuario_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, usuario $usuario)
+    public function deleteAction(Request $request, Usuario $usuario)
     {
         $form = $this->createDeleteForm($usuario);
         $form->handleRequest($request);
@@ -142,11 +143,11 @@ class usuarioController extends Controller
     /**
      * Creates a form to delete a usuario entity.
      *
-     * @param usuario $usuario The usuario entity
+     * @param Usuario $usuario The usuario entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(usuario $usuario)
+    private function createDeleteForm(Usuario $usuario)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('usuario_delete', array('id' => $usuario->getId())))

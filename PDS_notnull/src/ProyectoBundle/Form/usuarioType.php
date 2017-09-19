@@ -32,7 +32,7 @@ class usuarioType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ProyectoBundle\Entity\usuario'
+            'data_class' => 'ProyectoBundle\Entity\Usuario'
         ));
     }
 

@@ -3,12 +3,13 @@ proyecto_usuario:
     type:     annotation
 
 #<<<<<<< HEAD
-app_usuario:
-    resource: "@ProyectoBundle/Controller/UsuarioController.php"
-    type:     annotation
-
+#app_usuario:
+#    resource: "@ProyectoBundle/Controller/UsuarioController.php"
+#    type:     annotation
+#
 #=======
 #>>>>>>> 34fed2241fd36f77efcfe7ed1b36ca8615bde610
+
 proyecto:
         resource: "@ProyectoBundle/Resources/config/routing.yml"
         prefix:   /
@@ -19,4 +20,4 @@ app:
     type: annotation
 usuario_login:
     path:   /usuario/ligin
-    defaults: { _controller: ProyectoBundle:usuario:login} 
+    defaults: { _controller: ProyectoBundle:Usuario:login} 

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Auto
  *
- * @ORM\Table(name="auto", uniqueConstraints={@ORM\UniqueConstraint(name="Patente", columns={"patente"})}, indexes={@ORM\Index(name="Usuario", columns={"id_Usuario"})})
+ * @ORM\Table(name="auto", uniqueConstraints={@ORM\UniqueConstraint(name="patente", columns={"patente"})}, indexes={@ORM\Index(name="usuario", columns={"id_Usuario"})})
  * @ORM\Entity
  */
 class Auto

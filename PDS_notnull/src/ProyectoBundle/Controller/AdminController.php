@@ -5,6 +5,7 @@ namespace ProyectoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use ProyectoBundle\Entity\Contacto;
+use Symfony\Component\HttpFoundation\Request;
 use ProyectoBundle\Form\ContactoType;
 
 class AdminController extends Controller
@@ -22,14 +23,18 @@ class AdminController extends Controller
    
     
     #VER ESTA PORONGA..................................----
-    public function contactoAction () {
+    public function contactoAction (Request $request) {
+        $contacto= new Contacto();
+        $formulario = $this->createForm('ProyectoBundle\Form\ContactoType', $contacto);
+        $formulario->handleRequest($request);
+        if ($formulario->isSubmitted() && $formulario->isValid()) {
         $em = $this->getDoctrine()->getManager();
-        
+        $em->persist($contacto);
+        $em->flush();
         $contacto = $em->getRepository('ProyectoBundle:Contacto')->findAll();
-        
         $form = $this->createForm( ContactoType::class, new Contacto ());
         return $this->render ('ProyectoBundle:admin:contacto.html.twig', array('form' => $form->createView()));
-        
+        }
         
       #  return $this ->render ('ProyectoBundle:admin:contacto.html.twig');
     }

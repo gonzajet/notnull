@@ -21,20 +21,24 @@ class AdminController extends Controller
         return $this->render ('ProyectoBundle:admin:contacto.html.twig', array('form' => $form->createView()));
     }
    
-    
+   
     #VER ESTA PORONGA..................................----
     public function contactoAction (Request $request) {
         $contacto= new Contacto();
-        $formulario = $this->createForm('ProyectoBundle\Form\ContactoType', $contacto);
-        $formulario->handleRequest($request);
-        if ($formulario->isSubmitted() && $formulario->isValid()) {
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($contacto);
-        $em->flush();
-        $contacto = $em->getRepository('ProyectoBundle:Contacto')->findAll();
-        $form = $this->createForm( ContactoType::class, new Contacto ());
-        return $this->render ('ProyectoBundle:admin:contacto.html.twig', array('form' => $form->createView()));
+        $form = $this->createForm('ProyectoBundle\Form\ContactoType', $contacto);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($contacto);
+            $em->flush();
+            
+            
         }
+         return $this->render('ProyectoBundle:admin:contacto.html.twig', array(
+            'contacto' => $contacto,
+            'form' => $form->createView(),
+        ));
         
       #  return $this ->render ('ProyectoBundle:admin:contacto.html.twig');
     }

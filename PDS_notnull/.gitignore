@@ -13,7 +13,7 @@ PDS_notnull/var/cache/dev*
 PDS_notnull/var/cache/dev
 PDS_notnull/var/session/*
 PDS_notnull/vendor/*
-
+PDS_notnull/app/config/parameters.yml
 
 # -- Composer -----------------------------------------
 composer.phar

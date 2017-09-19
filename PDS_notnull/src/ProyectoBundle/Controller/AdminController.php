@@ -4,6 +4,8 @@ namespace ProyectoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use ProyectoBundle\Entity\Contacto;
+use ProyectoBundle\Form\ContactoType;
 
 class AdminController extends Controller
 {
@@ -11,31 +13,25 @@ class AdminController extends Controller
     {
         return $this->render('ProyectoBundle:admin:index.html.twig');
     }
-        
-    /*    $em = $this->getDoctrine()->getManager();
-
-        $autos = $em->getRepository('ProyectoBundle:Auto')->findAll();
-
-        return $this->render('ProyectoBundle:Auto:index.html.twig', array(
-            'autos' => $autos,
-        ));
-    }
-    */ 
     
     
     public function addAction() {
-        return new Response ('Agregar usuario');
-        
+        $form = $this->createForm( ContactoType::class, new Contacto ());
+        return $this->render ('ProyectoBundle:admin:contacto.html.twig', array('form' => $form->createView()));
     }
+   
     
-    #-----VER ESTA PROBLEMA---------------------
-    public function contacto2Action() {
-        return $this ->render ('ProyectoBundle:index_contacto.php');
-        
-    }
-    
+    #VER ESTA PORONGA..................................----
     public function contactoAction () {
-        return $this ->render ('ProyectoBundle:admin:contacto.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        
+        $contacto = $em->getRepository('ProyectoBundle:Contacto')->findAll();
+        
+        $form = $this->createForm( ContactoType::class, new Contacto ());
+        return $this->render ('ProyectoBundle:admin:contacto.html.twig', array('form' => $form->createView()));
+        
+        
+      #  return $this ->render ('ProyectoBundle:admin:contacto.html.twig');
     }
     public function editAction($id){
         return new Response ('editar usario '. $id );

@@ -8,7 +8,73 @@
                 <form class="form-horizontal" method="post">
                     <fieldset>
                         <legend class="text-center header">Contacto EstacionAr</legend>
+                        
+                        {{form_start(form)}}
+                        
+                       <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.nombre)}}
+                                {{form_widget(form.nombre, {'attr' : {'class': 'form-control', 'placeholder': 'Nombre'}})}}
+                            </div>
+                        </div>
+                        
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.apellido)}}
+                                {{form_widget(form.apellido, {'attr' : {'class': 'form-control', 'placeholder': 'Apellido'}})}}
+                            </div>
+                        </div>
+                        
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.email)}}
+                                {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'email'}})}}
+                                
+                            </div>
+                        </div>
+                                
+                                
+                                
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.telefono)}}
+                                {{form_widget(form.telefono, {'attr' : {'class': 'form-control', 'placeholder' : 'Telefono'}})}}
+                                <span class="text-danger"> {{ form_errors(form.telefono)}} </span>
+                            
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.mensaje)}}
+                                {{form_widget(form.mensaje, {'attr' : {'class': 'form-control', 'placeholder': 'Ingrese su mensaje'}})}}
+                            </div>
+                        </div>
+                        
+                     
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" name='submit' class="btn btn-primary btn-lg">Aceptar</button>
+                            </div>
+                        </div>
+                       
+                        
+                        
+                        {{form_end (form) }}
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                    
+
+<!--
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
@@ -55,5 +121,5 @@
         </div>
     </div>
 </div>
-
+-->
 {% endblock %}

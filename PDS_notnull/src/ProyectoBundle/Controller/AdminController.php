@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 use ProyectoBundle\Form\ContactoType;
 
 class AdminController extends Controller
-{
+{   
+   
     public function indexAction()
     {
         return $this->render('ProyectoBundle:admin:index.html.twig');
@@ -22,7 +23,7 @@ class AdminController extends Controller
     }
    
    
-    #VER ESTA PORONGA..................................----
+    #VER ESTA..................................----
     public function contactoAction (Request $request) {
         $contacto= new Contacto();
         $form = $this->createForm('ProyectoBundle\Form\ContactoType', $contacto);
@@ -32,16 +33,21 @@ class AdminController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($contacto);
             $em->flush();
-            
+            echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
+            return $this->render('ProyectoBundle:Default:index.html.twig');#Ruta para mandar luego de poner aceptar
+           
             
         }
+        #sino lo envio de nuevo. al contacto
          return $this->render('ProyectoBundle:admin:contacto.html.twig', array(
-            'contacto' => $contacto,
             'form' => $form->createView(),
         ));
         
-      #  return $this ->render ('ProyectoBundle:admin:contacto.html.twig');
+    
+    
     }
+    
+  
     public function editAction($id){
         return new Response ('editar usario '. $id );
         

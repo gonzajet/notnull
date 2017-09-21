@@ -5,14 +5,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" name="fvalida" method="post">
+                <form class="form-horizontal" name="fvalida" action="{{ path ('proyecto_sendmail')}}" method="POST">
                     <fieldset>
                         <legend class="text-center header">Contacto EstacionAr</legend>
                         
                         {{form_start(form)}}
-                        
+                       
                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <span name= "nombre" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.nombre)}}
                                 {{form_widget(form.nombre, {'attr' : {'class': 'form-control', 'placeholder': 'Nombre'}})}}
@@ -29,7 +29,7 @@
                         </div>
                         
                          <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <span name="email" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.email)}}
                                 {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'email'}})}}
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <span name="mensaje" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.mensaje)}}
                                 {{form_widget(form.mensaje, {'attr' : {'class': 'form-control', 'placeholder': 'Ingrese su mensaje'}})}}
@@ -76,8 +76,6 @@
                            
                   
                        
-                   
-                        
                         {{form_end (form) }}
                     </fieldset>
                 </form>

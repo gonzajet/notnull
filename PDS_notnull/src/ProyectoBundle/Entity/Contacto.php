@@ -37,12 +37,6 @@ class Contacto
      */
     private $email;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="telefono", type="integer", nullable=false)
-     */
-    private $telefono;
 
     /**
      * @var \DateTime
@@ -66,6 +60,14 @@ class Contacto
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+    
+    /**
+    * @var string
+    *
+    * @ORM\Column(name="subject", type="string", length=255)
+    */
+ 
+   private $subject;
     
     
     /**
@@ -222,9 +224,31 @@ class Contacto
         return $this->createdAt;
     }
     
-    
-    
-
+     /**
+    * Set subject
+    *
+    * @param string $subject
+    *
+    * @return Contact
+    */
+    public function setSubject($subject)
+   {
+       $this->subject = $subject;
+       return $this;
+   }
+ 
+   /**
+    * Get subject
+    *
+    * @return string
+    */
+ 
+   public function getSubject()
+   {
+       return $this->subject;
+   }
+ 
+  
     
 }
 

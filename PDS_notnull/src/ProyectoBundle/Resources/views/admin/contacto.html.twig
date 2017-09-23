@@ -5,18 +5,19 @@
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post">
+                <form class="form-horizontal" name="fvalida"  method="POST">
                     <fieldset>
                         <legend class="text-center header">Contacto EstacionAr</legend>
                         
                         {{form_start(form)}}
-                        
+                       
                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <span name= "nombre" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.nombre)}}
                                 {{form_widget(form.nombre, {'attr' : {'class': 'form-control', 'placeholder': 'Nombre'}})}}
                             </div>
+                            <span class="text-danger">{{form_errors(form.nombre)}} </span>
                         </div>
                         
                          <div class="form-group">
@@ -26,45 +27,55 @@
                                 {{form_widget(form.apellido, {'attr' : {'class': 'form-control', 'placeholder': 'Apellido'}})}}
                             </div>
                         </div>
-                        
+                            
                          <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope"></i></span>
                             <div class="col-md-8">
-                                {{form_label(form.email)}}
-                                {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'email'}})}}
-                                
-                            </div>
-                        </div>
-                                
-                                
-                                
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                {{form_label(form.telefono)}}
-                                {{form_widget(form.telefono, {'attr' : {'class': 'form-control', 'placeholder' : 'Telefono'}})}}
-                                <span class="text-danger"> {{ form_errors(form.telefono)}} </span>
+                                {{form_label(form.subject)}}
+                                {{form_widget(form.subject, {'attr' : {'class': 'form-control', 'placeholder' : 'Asunto'}})}}
+                                <span class="text-danger"> {{ form_errors(form.subject)}} </span>
                             
                             </div>
                         </div>
+                                
+                        
+                         <div class="form-group">
+                            <span name="email" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.email)}}
+                                {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'Email'}})}}
+                                
+                            </div>
+                        </div>
+                          
 
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <span name="mensaje" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.mensaje)}}
                                 {{form_widget(form.mensaje, {'attr' : {'class': 'form-control', 'placeholder': 'Ingrese su mensaje'}})}}
                             </div>
                         </div>
                         
-                     
                         <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" name='submit' class="btn btn-primary btn-lg">Aceptar</button>
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-8">
+                                {{form_widget(form.createdAt, { 'attr': {'style': 'display:none'} }) }}
                             </div>
                         </div>
+                         
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-8">
+                                 <p>
+                                {{form_widget(form.save, {'label' : 'Aceptar y enviar mensaje', 'attr': {'class': 'btn btn-success'}} ) }}
+                                 </p>
+                                 
+                            </div>
+                        </div>
+                           
+                  
                        
-                        
-                        
                         {{form_end (form) }}
                     </fieldset>
                 </form>
@@ -74,52 +85,5 @@
 </div>
                     
 
-<!--
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="fname" name='nombre' type="text" placeholder="Nombre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="lname" name='apellido' type="text" placeholder="Apellido" class="form-control">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="email" name='email' type="text" placeholder="Email" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="phone" name='telefono' type="text" placeholder="Telefono" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Por favor ingrese su mensaje, responderemos lo antes posible." rows="7"></textarea>
-                            </div>
-                        </div>
-                        
-                     
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" name='submit' class="btn btn-primary btn-lg">Aceptar</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
--->
 {% endblock %}

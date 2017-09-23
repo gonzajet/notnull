@@ -11,11 +11,27 @@
         {% endblock %}
        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" 
     </head>
+  
     <body>
+     <div class="alert alert-success">
+        {% set flashbag_notices = app.session.flashbag.get('notice') %}
+        {% if flashbag_notices is not empty %}
+ 
+        <div class="flash-notice">
+            {% for notice in flashbag_notices %}
+            {{notice}}
+            {% endfor %}
+        </div>
+ 
+        {% endif %}
+        
+   
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('public/js/jquery-3.2.1.min.js')}}"></script>
             <script src="{{ asset('public/js/bootstrap.min.js')}}"></script>
         {% endblock %}
+         </div>
     </body>
+
 </html>

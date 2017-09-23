@@ -6,8 +6,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 class ContactoType extends AbstractType
 {
@@ -16,12 +19,14 @@ class ContactoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')
-                ->add('apellido')
-                ->add('email', EmailType::class )
-                ->add('telefono')
+        $builder->add('nombre', TextType::class, array('label'=> 'nombre', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('apellido', TextType::class)
+                ->add('email', TextType::class, array('label'=> 'email','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
                 ->add('createdAt')
-                ->add('mensaje' );
+                ->add('subject', TextType::class, array('label'=> 'subject','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('mensaje', TextareaType::class, array('label'=> 'mensaje','attr' => array('class' => 'form-control')))
+                ->add('save',SubmitType::class, array('label' => 'Enviar mensaje'))
+                ;
     }
     
     /**

@@ -18,6 +18,3 @@ proyecto:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
-usuario_login:
-    path:   /usuario/ligin
-    defaults: { _controller: ProyectoBundle:Usuario:login} 

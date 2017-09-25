@@ -53,6 +53,9 @@ class UsuarioController extends Controller
             // asigno rol de usuario por defecto
             $rol='ROLE_USER';
             $usuario->setRol($rol);
+            // usuario activo
+            $active=true;
+            $usuario->setActive($active);
             // cargo en la base
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);

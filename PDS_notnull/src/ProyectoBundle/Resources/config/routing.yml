@@ -44,6 +44,14 @@ proyecto_usuario:
 app_usuario:
     resource: "@ProyectoBundle/Controller/UsuarioController.php"
     type:     annotation
+#para la autenticacion
 usuario_login:
-    path:   /usuario/login
-    defaults: { _controller: ProyectoBundle:Usuario:login} 
+    path:     /login
+    defaults: { _controller: ProyectoBundle:Security:login }
+
+usuario_login_check:
+    path:     /login_check
+    defaults: { _controller: ProyectoBundle:Security:loginCheck }
+
+usuario_logout:
+    path:     /logout

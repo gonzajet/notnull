@@ -6,8 +6,8 @@ security:
     providers:
         our_db_provider:
             entity:
-                class: ProyectoBundle:usuario
-                Property: usuario
+                class: ProyectoBundle:Usuario
+               
         in_memory:
             memory: 
                 users:
@@ -26,7 +26,7 @@ security:
                 check_path: /login_check
                 
                 username_parameter: _usuario
-                password_paramater: _password
+                password_parameter: _password
             logout:
                 path: /logout
                 target: /login
@@ -37,6 +37,7 @@ security:
 
         main:
             anonymous: ~
+#            providers: our_db_provider
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate

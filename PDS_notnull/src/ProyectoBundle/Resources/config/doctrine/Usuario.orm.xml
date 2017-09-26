@@ -29,12 +29,18 @@
         <option name="fixed"/>
       </options>
     </field>
-    <field name="eMail" type="string" column="e_mail" length="255" nullable="false">
+    <field name="email" type="string" column="e_mail" length="255" nullable="false">
       <options>
         <option name="fixed"/>
       </options>
     </field>
     <field name="telefono" type="string" column="telefono" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    
+    <field name="isActive" type="boolean" column="activo" nullable="true">
       <options>
         <option name="fixed"/>
       </options>

@@ -4,6 +4,10 @@ security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        our_db_provider:
+            entity:
+                class: ProyectoBundle:Usuario
+               
         in_memory:
             memory: 
                 users:
@@ -14,6 +18,18 @@ security:
                         password: notnull
                         roles: 'ROLE_ADMIN'
     firewalls:
+        default:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                
+                username_parameter: _usuario
+                password_parameter: _password
+            logout:
+                path: /logout
+                target: /login
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -21,13 +37,15 @@ security:
 
         main:
             anonymous: ~
+#            providers: our_db_provider
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
             #http_basic: ~
 
             # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~  
+            #form_login: ~ 
+
     encoders:
           Symfony\Component\Security\Core\User\User: plaintext
           ProyectoBundle\Entity\Usuario: bcrypt

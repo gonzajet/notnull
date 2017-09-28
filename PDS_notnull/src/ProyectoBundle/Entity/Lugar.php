@@ -31,12 +31,17 @@ class Lugar
     /**
      * @var \ProyectoBundle\Entity\Establecimiento
      *
-     * @ORM\ManyToOne(targetEntity="ProyectoBundle\Entity\Establecimiento")
+     * @ORM\ManyToOne(targetEntity="ProyectoBundle\Entity\Establecimiento", inversedBy="lugares")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_establecimiento", referencedColumnName="id")
      * })
      */
     private $idEstablecimiento;
+    
+    
+    public function getEstado(){
+        return $this->estado;
+    }
 
 
 }

@@ -48,3 +48,8 @@ app_usuario:
 usuario_login:
     path:   /usuario/login
     defaults: { _controller: ProyectoBundle:Usuario:login} 
+
+
+establecimientos:
+    path: /establecimientos/{localidad}
+    defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}

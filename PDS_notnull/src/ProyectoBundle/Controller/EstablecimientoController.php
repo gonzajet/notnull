@@ -17,8 +17,8 @@ class EstablecimientoController extends Controller{
                     ,array('establecimientos' => $establecimientos));
         }else{
             $establecimientos = $this->getDoctrine()
-                ->getRepository('ProyectoBundle:Establecimiento')
-                ->findEstablecimientosBarrio($localidad);
+                    ->getRepository('ProyectoBundle:Establecimiento')
+                    ->findEstablecimientosBarrio($localidad);
             return $this->render('ProyectoBundle:Establecimiento:index.html.twig'
                     ,array('establecimientos' => $establecimientos));
         }

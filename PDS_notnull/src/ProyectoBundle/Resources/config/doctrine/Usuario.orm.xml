@@ -39,12 +39,6 @@
         <option name="fixed"/>
       </options>
     </field>
-    
-    <field name="isActive" type="boolean" column="activo" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
     <many-to-many field="idEstablecimiento" target-entity="Establecimiento" inversed-by="idUsuario" fetch="LAZY">
       <join-table name="usuario_establecimiento">
         <join-columns>

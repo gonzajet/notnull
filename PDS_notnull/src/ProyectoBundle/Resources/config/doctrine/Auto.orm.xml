@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ProyectoBundle\Entity\Auto" table="auto">
+    <indexes>
+      <index name="usuario" columns="id_Usuario"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="patente" columns="patente"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="patente" type="string" column="patente" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field> 
+    <field name="marca" type="string" column="marca" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="modelo" type="string" column="modelo" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idUsuario" target-entity="Usuario" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_Usuario" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

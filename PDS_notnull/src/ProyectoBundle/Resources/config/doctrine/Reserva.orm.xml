@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ProyectoBundle\Entity\Reserva" table="reserva">
+    <indexes>
+      <index name="fk_id_auto" columns="id_auto"/>
+      <index name="id_lugar" columns="id_lugar"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fechaDesde" type="datetime" column="fecha_desde" nullable="false"/>
+    <field name="fechaHasta" type="datetime" column="fecha_hasta" nullable="true"/>
+    <many-to-one field="idLugar" target-entity="Lugar" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_lugar" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one> 
+    <many-to-one field="idAuto" target-entity="Auto" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_auto" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

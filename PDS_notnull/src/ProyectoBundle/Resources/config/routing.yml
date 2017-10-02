@@ -22,6 +22,10 @@ proyecto_contacto:
     path:   /admin/contacto
     defaults: { _controller: ProyectoBundle:Admin:contacto} 
     
+proyecto_header:
+    path:   /admin/header
+    defaults: { _controller: ProyectoBundle:Admin:header} 
+    
  #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
 proyecto_sendmail:
     path:   /admin/sendmail

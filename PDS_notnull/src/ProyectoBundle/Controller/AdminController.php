@@ -27,7 +27,11 @@ class AdminController extends Controller
         
     
     }
+    public function headerAction() {
+       return $this->render('ProyectoBundle:head_footer:head.html.twig');
+        
     
+    }
    
     
     #VER ESTA..................................----

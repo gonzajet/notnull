@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use Symfony\Component\Validator\Constraints\Email as EmailConstraint;
 
 /**
  * Contacto
@@ -18,22 +18,29 @@ class Contacto
 {
     /**
      * @var string
-     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank(message="El campo nombre no puede estar vacío")
      * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     * @Assert\Regex("/^[a-zA-Z]+$/", message= "El campo nombre no puede contener numeros")
+    
      */
     private $nombre;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank(message="El campo apellido no puede estar vacío")
      * @ORM\Column(name="apellido", type="string", length=100, nullable=false)
+     * @Assert\Regex("/^[a-zA-Z]+$/", message= "El campo apellido no puede contener numeros")
      */
     private $apellido;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="El campo email no puede estar vacío")
      * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     * @Assert\Email(
+     *     message = "El mail no es valido.")
      */
     private $email;
 
@@ -47,8 +54,10 @@ class Contacto
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="El campo mensaje no puede estar vacío")
      * @ORM\Column(name="mensaje", type="text", length=65535, nullable=false)
+     * @Assert\Type("string")
+   
      */
     private $mensaje;
 
@@ -59,15 +68,18 @@ class Contacto
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    
     private $id;
     
     /**
     * @var string
-    *
+    * @Assert\NotBlank(message="El campo subject no puede estar vacío")
     * @ORM\Column(name="subject", type="string", length=255)
+    * @Assert\Type("string")
+    * @Assert\Regex("/^[a-zA-Z]+$/", message="El campo subject no puede contener numeros")
     */
  
-   private $subject;
+    private $subject;
     
     
     /**

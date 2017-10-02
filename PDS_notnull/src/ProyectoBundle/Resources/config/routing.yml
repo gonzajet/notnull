@@ -50,6 +50,7 @@ app_usuario:
     type:     annotation
 #para la autenticacion
 usuario_login:
+
     path:     /login
     defaults: { _controller: ProyectoBundle:Security:login }
 
@@ -59,3 +60,12 @@ usuario_login_check:
 
 usuario_logout:
     path:     /logout
+
+    path:   /usuario/login
+    defaults: { _controller: ProyectoBundle:Usuario:login} 
+
+
+establecimientos:
+    path: /establecimientos/{localidad}
+    defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}
+

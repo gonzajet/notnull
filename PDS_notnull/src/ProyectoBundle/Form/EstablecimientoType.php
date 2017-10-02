@@ -1,0 +1,55 @@
+<?php
+
+namespace ProyectoBundle\Form;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
+class EstablecimientoType extends AbstractType
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('nombre', TextType::class)
+                ->add('direccion', TextType::class)
+                ->add('provincia', TextType::class)
+                ->add('localidad', TextType::class)
+                ->add('telefono')
+                ->add('precioHora')
+                ->add('precioEstadia')
+                ->add('abiertoDesde')
+                ->add('abiertoHasta')
+                ->add('idUsuario');
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'ProyectoBundle\Entity\Establecimiento'
+        ));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return 'proyectobundle_establecimiento';
+    }
+
+
+}

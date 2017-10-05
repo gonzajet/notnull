@@ -43,12 +43,16 @@ lugar_new:
 
 
 proyecto_usuario:
-    resource: "@ProyectoBundle/Controller/UsuarioController.php"
-    type:     annotation
+    path: /usuario/index
+    defaults: { _controller: ProyectoBundle:Usuario:index }
+    
 app_usuario:
     resource: "@ProyectoBundle/Controller/UsuarioController.php"
     type:     annotation
+
 #para la autenticacion
+
+
 usuario_login:
 
     path:     /login

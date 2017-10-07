@@ -6,19 +6,15 @@
         {% block stylesheets %}
             <link href="{{ asset('public/css/style.css')}}" rel="stylesheet" >
             <link href="{{asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
-            <link href="{{asset('public/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
            
         {% endblock %}
        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" 
     </head>
-  
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('public/js/jquery-3.2.1.min.js')}}"></script>
             <script src="{{ asset('public/js/bootstrap.min.js')}}"></script>
         {% endblock %}
-         </div>
     </body>
-
 </html>

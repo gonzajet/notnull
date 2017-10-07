@@ -1,6 +1,6 @@
-proyecto_usuario:
-    resource: "@ProyectoBundle/Controller/UsuarioController.php"
-    type:     annotation
+#proyecto_usuario:
+#    resource: "@ProyectoBundle/Controller/UsuarioController.php"
+#    type:     annotation
 
 #<<<<<<< HEAD
 #app_usuario:

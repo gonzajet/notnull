@@ -22,6 +22,10 @@ proyecto_contacto:
     path:   /admin/contacto
     defaults: { _controller: ProyectoBundle:Admin:contacto} 
     
+proyecto_header:
+    path:   /admin/header
+    defaults: { _controller: ProyectoBundle:Admin:header} 
+    
  #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
 proyecto_sendmail:
     path:   /admin/sendmail
@@ -37,13 +41,6 @@ lugar_new:
     path:   /Lugar/new
     defaults: { _controller: ProyectoBundle:Lugar:new }   
 
-
-#proyecto_usuario:
-#    resource: "@ProyectoBundle/Controller/UsuarioController.php"
-#    type:     annotation
-#app_usuario:
-#    resource: "@ProyectoBundle/Controller/UsuarioController.php"
-#    type:     annotation
 #--------------para usuario-----------------------------------
 usuario_index:
     path:     /usuario/index
@@ -52,13 +49,29 @@ usuario_new:
     path:     /usuario/new
     defaults: { _controller: ProyectoBundle:Usuario:new }
 #-----------------para la autenticacion---------------------
+app_usuario:
+    resource: "@ProyectoBundle/Controller/UsuarioController.php"
+    type:     annotation
+
+#para la autenticacion
 usuario_login:
     path:     /login
     defaults: { _controller: ProyectoBundle:Security:login }
 
-usuario_login_check:
+login_check:
     path:     /login_check
     defaults: { _controller: ProyectoBundle:Security:loginCheck }
 
-usuario_logout:
+logout:
     path:     /logout
+#    defaults: { _controller: ProyectoBundle:Security:login} 
+
+#login_check:
+#    path: /login_check
+#logout:
+#    path: /logout
+
+establecimientos:
+    path: /establecimientos/{localidad}
+    defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}
+

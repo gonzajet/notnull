@@ -12,7 +12,7 @@
     <field name="rol" type="text" column="rol" nullable="false">
       <options>
         <option name="fixed"/>
-      </options>
+      </options> 
     </field>
     <field name="password" type="string" column="password" length="255" nullable="false">
       <options>

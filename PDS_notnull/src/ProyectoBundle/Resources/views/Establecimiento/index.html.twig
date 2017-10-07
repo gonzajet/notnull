@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    
+
+    
+    
+    
+<head>
+  <title>EstionAR | Establecimientos </title>    
+
+</head>    
+    
+
+                                        
+                        
+                        
+                        
+<h1>Establecimientos</h1>
+<table class="table table-hover">
+    <tr>
+    <th>Nombre</th>
+    <th>Lugares libres</th>
+    </tr>
+    {% for item in establecimientos %}
+        <tr>
+            <td>{{ item.nombre }}</td>
+            <td>{{item.getLugaresLibres|length}} / {{item.lugares|length}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}    

@@ -57,15 +57,15 @@
                         <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                         <a href="#" class="btn btn-G"><i class="fa fa-google"></i> Google</a>
                         </div>
-                        o
-                        <form class="form-signin" role="form" method="post" action="{{ path('usuario_login_check') }}" accept-charset="UTF-8" id="login-nav">
+                        o    
+                        <form class="form-signin" role="form" method="post" action="{{ path('login_check') }}" accept-charset="UTF-8" id="login-nav">
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputEmail2">Correo electronico</label>
-                                <input type="text" class="form-control" id="usuario" name="_usuario" placeholder="Correo electronico" required >
+                                <input type="text" class="form-control" id="usuario" name="_usuario" placeholder="Correo electronico" required  >
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required>
                                 <div class="help-block text-right"><a href="">Olvidaste tu contraseña?</a></div>
                             </div>
                             <div class="form-group">

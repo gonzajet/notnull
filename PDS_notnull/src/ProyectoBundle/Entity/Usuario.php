@@ -304,7 +304,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
     }   
     public function getUsername()
     {
-        return $this->usuario;
+        return $this->email;
     }
     public function getRoles()
     {

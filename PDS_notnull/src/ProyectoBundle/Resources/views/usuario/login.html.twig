@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <div class="container">
-<li>          
+       <h1></h1>
+    <br><br> 
+
                         <div class="row">
                         <div class="col-md-4">
-                            Ingresar con
+                        <p class="text-success lead">Ingresar con</p>
                         <div class="social-buttons">
-                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                        <a href="#" class="btn btn-G"><i class="fa fa-google"></i> Google</a>
+                        <a href="#" class="btn btn-fb btn-primary"><i class="fa fa-facebook "></i> Facebook</a>
+                        <a href="#" class="btn btn-G btn-danger"><i class="fa fa-google "></i> Google</a>
                         </div>
-                        o
+                        <br><br>
                         {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
  
                         {{ProyectoBundle.Usuario.usuario}} {{ProyectoBundle.Usuario.email}}  {{ProyectoBundle.Usuario.role }}     
@@ -40,6 +42,6 @@
                         </div>  
                 </div>
             </div>
-</li>
+
             </div>  
 {% endblock %}

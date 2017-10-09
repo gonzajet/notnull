@@ -16,6 +16,7 @@ PDS_notnull/var/cache/dev/appDevDebugProjectContainer.xml
 PDS_notnull/var/cache/dev/appDevDebugProjectContainer.xml
 PDS_notnull/app/config/parameters.yml
 PDS_notnull/app/config/*
+PDS_notnull/var\logs/prod.log.
 
 
 # -- Composer -----------------------------------------

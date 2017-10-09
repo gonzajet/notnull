@@ -51,27 +51,20 @@
             <h4 class="panel-title">Datos Iniciales</h4>
         </div>
         <div class="panel-body">
+            {{form_start(form)}}
             <form class="form-horizontal" method="post">
                     <div class="form-group">
                         <span class="col-md-1 col-md-offset-2 text-center"></span>
                         <div class="col-md-8">
-                            <input id="fname" name='codigo' type="text" placeholder="Codigo" class="form-control">
+                           {{form_label(form.codigo)}}
+                           {{form_widget(form.codigo, {'attr' : {'class': 'form-control', 'placeholder': 'codigo'}})}}
                         </div>
                     </div>
                     <div class="form-group">
                         <span class="col-md-1 col-md-offset-2 text-center"></span>
                         <div class="col-md-4">
-                             <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                  Seccion
-                                  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                  <li><a href="#">Seccion1</a></li>
-                                  <li><a href="#">Seccion2</a></li>
-                                  <li><a href="#">Seccion3</a></li>
-                                </ul> 
-                            </div>
+                             {{ form_errors(form)}}
+                             {{ form_row(form.seccionlugar) }}
                         </div>
                     </div>
                     <br/>        
@@ -82,6 +75,7 @@
                             <input type="button" value="Guardar" class="btn btn-primary"  />
                         </div>
                     </div>
+                  {{form_end (form) }}
                 </form>
         </div>
     </div>

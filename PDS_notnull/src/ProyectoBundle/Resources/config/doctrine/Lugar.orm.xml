@@ -3,18 +3,29 @@
   <entity name="ProyectoBundle\Entity\Lugar" table="lugar">
     <indexes>
       <index name="id_establecimiento" columns="id_establecimiento"/>
+      <index name="id_seccion" columns="id_seccion"/>
     </indexes>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="idEstablecimiento" type="integer" column="id_establecimiento" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
     <field name="estado" type="boolean" column="estado" nullable="false">
       <options>
         <option name="default">1</option>
       </options>
     </field>
-    <many-to-one field="idEstablecimiento" target-entity="Establecimiento" fetch="LAZY">
+    <field name="codigo" type="string" column="codigo" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idSeccion" target-entity="SeccionLugar" fetch="LAZY">
       <join-columns>
-        <join-column name="id_establecimiento" referenced-column-name="id"/>
+        <join-column name="id_seccion" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

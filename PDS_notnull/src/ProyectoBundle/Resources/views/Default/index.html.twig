@@ -10,10 +10,10 @@
 {#    <link rel="icon" href="../../favicon.ico">
 #}    
     <title>EstacionAR</title>
-
+    
     <!-- Bootstrap core CSS -->
     <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
-
+    <link href="{{asset('public/estilos_varios/css/bootstrap-social.css')}}" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{asset('public/css/ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
 
@@ -31,18 +31,12 @@
     <![endif]-->
   </head>
 
-  <body>
+  
      
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-          {#  <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>#}
-          </button>
           <a class="navbar-brand" href="/">EstacionAR</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -50,8 +44,48 @@
             <li class="active"><a href="/">Inicio</a></li>
             <li><a href="#about">Acerca de EstacionAR</a></li>
             <li><a href="../admin/contacto">Contacto</a></li>
-            <li><a href="#login">Ingresar al sitio</a></li>
-          </ul>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Ingresar</b> <span class="caret"></span></a>
+	    		
+                <ul id="login-dp" class="dropdown-menu">
+                                    
+                    <li>
+                        <div class="row">
+                        <div class="col-md-12">
+                            Ingresar con
+                        <div class="social-buttons">
+                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                        <a href="#" class="btn btn-G"><i class="fa fa-google"></i> Google</a>
+                        </div>
+                        o    
+                        <form class="form-signin" role="form" method="post" action="{{ path('login_check') }}" accept-charset="UTF-8" id="login-nav">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Correo electronico</label>
+                                <input type="text" class="form-control" id="usuario" name="_usuario" placeholder="Correo electronico" required  >
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required>
+                                <div class="help-block text-right"><a href="">Olvidaste tu contraseña?</a></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox"> Mantenerme conectado
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                        <div class="bottom text-center">
+                            No estas registrado? <a href="#"><b>Registrate</b></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -73,10 +107,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+{#   {# <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>#}
     <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{asset('public/js/ie10-viewport-bug-workaround.js')}}"></script>
-  </body>
+  
 </html>
 

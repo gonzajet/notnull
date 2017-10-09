@@ -5,7 +5,7 @@ namespace ProyectoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * Usuario
@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="usuario")
  * @ORM\Entity
  */
-class Usuario implements UserInterface
+class Usuario implements AdvancedUserInterface, \Serializable
 {
     /**
      * @var string
@@ -91,6 +91,10 @@ class Usuario implements UserInterface
      * )
      */
     private $idEstablecimiento;
+    /**
+     * @ORM\Column(name="activo", type="boolean")
+     */
+    private $isActive;
 
     /**
      * Constructor
@@ -98,6 +102,7 @@ class Usuario implements UserInterface
     public function __construct()
     {
         $this->idEstablecimiento = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->isActive = true;
     }
         /**
      * Get id
@@ -268,6 +273,7 @@ class Usuario implements UserInterface
      *
      * @return usuario
      */
+     
     public function setTelefono($telefono)
     {
         $this->telefono = $telefono;
@@ -283,9 +289,22 @@ class Usuario implements UserInterface
     public function getTelefono()
     {
         return $this->telefono;
-    }    public function getUsername()
+    }
+        /**
+     * Set isActive
+     *
+     * @param bolean $active
+     *
+     * @return usuario
+     */
+    public function setActive($active)
     {
-        return $this->usuario;
+        $this->isActive=$active;
+        return $this;
+    }   
+    public function getUsername()
+    {
+        return $this->email;
     }
     public function getRoles()
     {
@@ -300,6 +319,48 @@ class Usuario implements UserInterface
         // You *may* need a real salt if you choose a different encoder.
         return null;
     }
+    
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
+    }
+
+    // serialize and unserialize must be updated - see below
+    public function serialize(): string
+    {
+        return serialize(array(
+            $this->id,
+            $this->usuario,
+            $this->password,
+            $this->isActive
+        ));
+    }
+    public function unserialize($serialized) 
+    {
+    list (
+            $this->id,
+            $this->usuario,
+            $this->password,
+            $this->isActive
+        ) = unserialize($serialized);
+    
+    }
+
 
 }
 

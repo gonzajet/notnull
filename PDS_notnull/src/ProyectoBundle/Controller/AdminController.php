@@ -27,7 +27,11 @@ class AdminController extends Controller
         
     
     }
+    public function headerAction() {
+       return $this->render('ProyectoBundle:head_footer:head.html.twig');
+        
     
+    }
    
     
     #VER ESTA..................................----
@@ -42,6 +46,8 @@ class AdminController extends Controller
             $email = $form['email']->getData();
             $subject = $form['subject']->getData();
             $message = $form['mensaje']->getData();
+            $message2 = $form['mensaje']->getData(); #obtengo para el admin pero no lo seteo
+            
             
          #realizo los set de la data   
             $contacto->setNombre($name);
@@ -64,13 +70,25 @@ class AdminController extends Controller
  
             $this->get('mailer')->send($message);
             
+            #MAIL PARA EL ADMIN
+            $message2 = \Swift_Message::newInstance()
+ 
+               ->setSubject('Nuevo correo de usuario')
+               ->setFrom($email)
+               ->setTo('pds.estacionar@gmail.com')
+               ->setBody($this->renderView('ProyectoBundle:admin:mailadmin.html.twig',
+                       array('mensaje' => $message2 ,'email' => $email, 'nombre' => $name)), 'text/html');
+ 
+            $this->get('mailer')->send($message2);
+            
         #Si todo esta bien, reenvio a la pagina de inicio
             echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
-            return $this->render('ProyectoBundle:Default:index.html.twig');
+            
+            return $this->redirectToRoute('proyecto_homepage');
             
            
             
-        }
+        } 
         #sino lo envio de nuevo. al contacto
          return $this->render('ProyectoBundle:admin:contacto.html.twig', array(
             'form' => $form->createView(),

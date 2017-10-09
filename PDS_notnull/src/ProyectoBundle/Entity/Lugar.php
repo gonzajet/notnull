@@ -46,10 +46,7 @@ class Lugar
      * @var \SeccionLugar
      *
      * @ORM\ManyToOne(targetEntity="SeccionLugar")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_seccion", referencedColumnName="id")
-     * })
-     */
+    */
     private $idSeccion;
     
     
@@ -160,7 +157,6 @@ class Lugar
         return $this;
     }
     
-
 
 }
 

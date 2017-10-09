@@ -14,7 +14,7 @@
       <options>
         <option name="fixed"/>
       </options>
-    </field>
+    </field> 
     <field name="marca" type="string" column="marca" length="255" nullable="true">
       <options>
         <option name="fixed"/>

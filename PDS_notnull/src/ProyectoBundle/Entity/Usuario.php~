@@ -362,43 +362,5 @@ class Usuario implements AdvancedUserInterface, \Serializable
     }
 
 
-    /**
-     * @var string
-     */
-    private $eMail;
-
-
-    /**
-     * Add idEstablecimiento
-     *
-     * @param \ProyectoBundle\Entity\Establecimiento $idEstablecimiento
-     *
-     * @return Usuario
-     */
-    public function addIdEstablecimiento(\ProyectoBundle\Entity\Establecimiento $idEstablecimiento)
-    {
-        $this->idEstablecimiento[] = $idEstablecimiento;
-
-        return $this;
-    }
-
-    /**
-     * Remove idEstablecimiento
-     *
-     * @param \ProyectoBundle\Entity\Establecimiento $idEstablecimiento
-     */
-    public function removeIdEstablecimiento(\ProyectoBundle\Entity\Establecimiento $idEstablecimiento)
-    {
-        $this->idEstablecimiento->removeElement($idEstablecimiento);
-    }
-
-    /**
-     * Get idEstablecimiento
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdEstablecimiento()
-    {
-        return $this->idEstablecimiento;
-    }
 }
+

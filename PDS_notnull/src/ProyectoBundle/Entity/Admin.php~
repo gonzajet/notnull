@@ -1,0 +1,159 @@
+<?php
+
+namespace ProyectoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Admin
+ *
+ * @ORM\Table(name="admin")
+ * @ORM\Entity(repositoryClass="ProyectoBundle\Repository\AdminRepository")
+ */
+class Admin
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id_admin", type="integer")
+     */
+    private $idAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=255)
+     */
+    private $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="integer")
+     */
+    private $telefono;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Admin
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set idAdmin
+     *
+     * @param integer $idAdmin
+     *
+     * @return Admin
+     */
+    public function setIdAdmin($idAdmin)
+    {
+        $this->idAdmin = $idAdmin;
+
+        return $this;
+    }
+
+    /**
+     * Get idAdmin
+     *
+     * @return int
+     */
+    public function getIdAdmin()
+    {
+        return $this->idAdmin;
+    }
+
+    /**
+     * Set apellido
+     *
+     * @param string $apellido
+     *
+     * @return Admin
+     */
+    public function setApellido($apellido)
+    {
+        $this->apellido = $apellido;
+
+        return $this;
+    }
+
+    /**
+     * Get apellido
+     *
+     * @return string
+     */
+    public function getApellido()
+    {
+        return $this->apellido;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     *
+     * @return Admin
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+}
+

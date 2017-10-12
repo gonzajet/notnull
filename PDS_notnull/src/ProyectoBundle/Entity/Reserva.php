@@ -56,5 +56,110 @@ class Reserva
     private $idLugar;
 
 
-}
 
+    /**
+     * Set fechaDesde
+     *
+     * @param \DateTime $fechaDesde
+     *
+     * @return Reserva
+     */
+    public function setFechaDesde($fechaDesde)
+    {
+        $this->fechaDesde = $fechaDesde;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaDesde
+     *
+     * @return \DateTime
+     */
+    public function getFechaDesde()
+    {
+        return $this->fechaDesde;
+    }
+
+    /**
+     * Set fechaHasta
+     *
+     * @param \DateTime $fechaHasta
+     *
+     * @return Reserva
+     */
+    public function setFechaHasta($fechaHasta)
+    {
+        $this->fechaHasta = $fechaHasta;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaHasta
+     *
+     * @return \DateTime
+     */
+    public function getFechaHasta()
+    {
+        return $this->fechaHasta;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idLugar
+     *
+     * @param \ProyectoBundle\Entity\Lugar $idLugar
+     *
+     * @return Reserva
+     */
+    public function setIdLugar(\ProyectoBundle\Entity\Lugar $idLugar = null)
+    {
+        $this->idLugar = $idLugar;
+
+        return $this;
+    }
+
+    /**
+     * Get idLugar
+     *
+     * @return \ProyectoBundle\Entity\Lugar
+     */
+    public function getIdLugar()
+    {
+        return $this->idLugar;
+    }
+
+    /**
+     * Set idAuto
+     *
+     * @param \ProyectoBundle\Entity\Auto $idAuto
+     *
+     * @return Reserva
+     */
+    public function setIdAuto(\ProyectoBundle\Entity\Auto $idAuto = null)
+    {
+        $this->idAuto = $idAuto;
+
+        return $this;
+    }
+
+    /**
+     * Get idAuto
+     *
+     * @return \ProyectoBundle\Entity\Auto
+     */
+    public function getIdAuto()
+    {
+        return $this->idAuto;
+    }
+}

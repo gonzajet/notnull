@@ -19,12 +19,12 @@ class ContactoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre', TextType::class, array('label'=> 'nombre', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-                ->add('apellido', TextType::class, array('label' =>'apellido','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-                ->add('email', TextType::class, array('label'=> 'email','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+        $builder->add('nombre', TextType::class, array('label'=> 'Nombre', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('apellido', TextType::class, array('label' =>'Apellido','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('email', TextType::class, array('label'=> 'EmaIl','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
                 ->add('createdAt')
-                ->add('subject', TextType::class, array('label'=> 'subject','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-                ->add('mensaje', TextareaType::class, array('label'=> 'mensaje','attr' => array('class' => 'form-control')))
+                ->add('subject', TextType::class, array('label'=> 'Subject','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('mensaje', TextareaType::class, array('label'=> 'Mensaje','attr' => array('class' => 'form-control')))
                 ->add('save',SubmitType::class, array('label' => ' Confirmar y enviar mensaje'))
                 ;
     }

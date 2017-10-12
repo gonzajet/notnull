@@ -14,7 +14,7 @@
       <join-columns>
         <join-column name="id_lugar" referenced-column-name="id"/>
       </join-columns>
-    </many-to-one> 
+    </many-to-one>
     <many-to-one field="idAuto" target-entity="Auto" fetch="LAZY">
       <join-columns>
         <join-column name="id_auto" referenced-column-name="id"/>

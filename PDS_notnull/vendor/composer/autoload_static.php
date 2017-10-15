@@ -8,7 +8,12 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
 {
     public static $files = array (
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'ddc0a4d7e61c0286f0f8593b1903e894' => __DIR__ . '/..' . '/clue/stream-filter/src/functions.php',
+        '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
@@ -48,6 +53,7 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Link\\' => 9,
+            'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
             'ProyectoBundle\\' => 15,
@@ -58,7 +64,29 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
         ),
         'I' => 
         array (
+            'Ivory\\Serializer\\' => 17,
+            'Ivory\\SerializerBundle\\' => 23,
+            'Ivory\\JsonBuilder\\' => 18,
+            'Ivory\\GoogleMap\\' => 16,
+            'Ivory\\GoogleMapBundle\\' => 22,
             'Incenteev\\ParameterHandler\\' => 27,
+        ),
+        'H' => 
+        array (
+            'Http\\Promise\\' => 13,
+            'Http\\Message\\' => 13,
+            'Http\\HttplugBundle\\' => 19,
+            'Http\\Discovery\\' => 15,
+            'Http\\Client\\Common\\Plugin\\' => 26,
+            'Http\\Client\\Common\\' => 19,
+            'Http\\Client\\' => 12,
+            'Http\\Adapter\\Guzzle6\\' => 21,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
         ),
         'F' => 
         array (
@@ -77,6 +105,7 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
         'C' => 
         array (
             'Composer\\CaBundle\\' => 18,
+            'Clue\\StreamFilter\\' => 18,
         ),
         'A' => 
         array (
@@ -169,6 +198,10 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
         array (
             0 => __DIR__ . '/..' . '/psr/link/src',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -185,9 +218,76 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Ivory\\Serializer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/serializer/src',
+        ),
+        'Ivory\\SerializerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/serializer-bundle',
+        ),
+        'Ivory\\JsonBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/json-builder/src',
+        ),
+        'Ivory\\GoogleMap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/google-map/src',
+        ),
+        'Ivory\\GoogleMapBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/google-map-bundle',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
+        ),
+        'Http\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/promise/src',
+        ),
+        'Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+            1 => __DIR__ . '/..' . '/php-http/message/src',
+        ),
+        'Http\\HttplugBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/httplug-bundle',
+        ),
+        'Http\\Discovery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/discovery/src',
+        ),
+        'Http\\Client\\Common\\Plugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/stopwatch-plugin/src',
+            1 => __DIR__ . '/..' . '/php-http/logger-plugin/src',
+            2 => __DIR__ . '/..' . '/php-http/cache-plugin/src',
+        ),
+        'Http\\Client\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/client-common/src',
+        ),
+        'Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/httplug/src',
+        ),
+        'Http\\Adapter\\Guzzle6\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/guzzle6-adapter/src',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'Fig\\Link\\' => 
         array (
@@ -224,6 +324,10 @@ class ComposerStaticInitcf15381481edbfb371f3ba47b12d8d92
         'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
+        'Clue\\StreamFilter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clue/stream-filter/src',
         ),
         'AppBundle\\' => 
         array (

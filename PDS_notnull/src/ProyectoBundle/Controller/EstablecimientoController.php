@@ -24,4 +24,7 @@ class EstablecimientoController extends Controller{
         }
     
     }
+    public function mapsAction(){
+        return $this->render('ProyectoBundle:Establecimiento:googleMaps.html.twig');
+    }
 }

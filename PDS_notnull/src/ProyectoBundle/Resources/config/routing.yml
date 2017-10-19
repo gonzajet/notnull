@@ -75,3 +75,6 @@ establecimientos:
     path: /establecimientos/{localidad}
     defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}
 
+maps:
+    path: /maps
+    defaults: { _controller: ProyectoBundle:Establecimiento:maps}

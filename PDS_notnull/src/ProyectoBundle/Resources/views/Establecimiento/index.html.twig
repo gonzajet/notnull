@@ -1,33 +1,54 @@
 {% extends "::base.html.twig" %}
 {% block body %}
     
-
-    
-    
-    
 <head>
-  <title>EstionAR | Establecimientos </title>    
+    <title>EstionAR | Establecimientos </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var a;
+                if (window.location.pathname === "/app_dev.php/establecimientos"
+                    || window.location.pathname === "/app.php/establecimientos"){
+                    a = "establecimientos/"+$("input:text").val();}
+                else{
+                    a = $("input:text").val();}
 
-</head>    
-    
+                window.location.replace(a);
+            });
+        });
+    </script>
 
-                                        
-                        
-                        
-                        
+
+</head>
+<body>
+
+<h2>asd</h2>
+
+<p>Name: <input type="text" name="user"></p>
+
+<button>Ok!</button>
+
 <h1>Establecimientos</h1>
-<table class="table table-hover">
-    <tr>
-    <th>Nombre</th>
-    <th>Lugares libres</th>
-    </tr>
-    {% for item in establecimientos %}
+{% if((establecimientos|length)>0) %}
+    <table class="table table-hover">
         <tr>
-            <td>{{ item.nombre }}</td>
-            <td>{{item.getLugaresLibres|length}} / {{item.lugares|length}}</td>
+        <th>Nombre</th>
+        <th>Lugares libres</th>
+        <th>Localidad</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for item in establecimientos %}
+            <tr>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.getLugaresLibres|length }} / {{ item.lugares|length }}</td>
+                <td>{{ item.localidad }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    No encontramos establecimientos para esa ciudad...
+{% endif %}
 
+</body>
 
 {% endblock %}    

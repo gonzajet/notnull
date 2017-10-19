@@ -11,6 +11,9 @@
             <div class="well well-sm">
                 <form class="form-horizontal" name="fvalida"  method="POST">
                     <fieldset>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                         <legend class="text-center header">Contacto EstacionAr</legend>
                         
                         <br />
@@ -79,12 +82,10 @@
                                 {{form_widget(form.save, { 'attr': {'class': 'btn btn-success'}} ) }}
                                  </p>
                                  
+                                </div>
                             </div>
                         </div>
-                           
-                  
-                       
-                        
+                            
                     </fieldset>
                 {{ form_rest(form) }}
                 </form>

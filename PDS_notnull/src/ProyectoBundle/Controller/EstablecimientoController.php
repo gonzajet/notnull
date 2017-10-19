@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class EstablecimientoController extends Controller{
     
     public function indexAction($localidad){
-         
+        
         if ($localidad == 'todas'){
             $establecimientos = $this->getDoctrine()
                     ->getRepository('ProyectoBundle:Establecimiento')

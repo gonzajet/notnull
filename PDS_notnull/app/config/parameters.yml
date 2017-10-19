@@ -4,7 +4,7 @@ parameters:
     database_port: null
     database_name: notnull
     database_user: root
-    database_password: null
+    database_password:
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
     mailer_user: pds.estacionar@gmail.com

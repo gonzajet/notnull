@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
 class ContactoType extends AbstractType
@@ -18,19 +19,20 @@ class ContactoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre', TextType::class)
-                ->add('apellido', TextType::class)
-                ->add('email', EmailType::class )
-                ->add('telefono')
+        $builder->add('nombre', TextType::class, array('label'=> 'Nombre', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('apellido', TextType::class, array('label' =>'Apellido','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('email', TextType::class, array('label'=> 'EmaIl','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
                 ->add('createdAt')
-                ->add('mensaje', TextType::class )
-                ->add('save',SubmitType::class, array('label' => 'Enviar mensaje'))
+                ->add('subject', TextType::class, array('label'=> 'Subject','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+                ->add('mensaje', TextareaType::class, array('label'=> 'Mensaje','attr' => array('class' => 'form-control')))
+                ->add('save',SubmitType::class, array('label' => ' Confirmar y enviar mensaje'))
                 ;
     }
     
     /**
      * {@inheritdoc}
      */
+    #de donde vienen los datos ----
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

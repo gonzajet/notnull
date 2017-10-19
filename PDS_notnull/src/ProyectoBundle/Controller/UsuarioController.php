@@ -28,7 +28,7 @@ class UsuarioController extends Controller
 
         $usuarios = $em->getRepository('ProyectoBundle:Usuario')->findAll();
 
-        return $this->render('usuario/index.html.twig', array(
+        return $this->render('ProyectoBundle:Usuario:index.html.twig', array(
             'usuarios' => $usuarios,
         ));
     }
@@ -53,6 +53,9 @@ class UsuarioController extends Controller
             // asigno rol de usuario por defecto
             $rol='ROLE_USER';
             $usuario->setRol($rol);
+            // usuario activo
+            $active=true;
+            $usuario->setActive($active);
             // cargo en la base
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
@@ -61,7 +64,7 @@ class UsuarioController extends Controller
             return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
         }
         // renderizo si esta mal cargado.
-        return $this->render('usuario/new.html.twig', array(
+        return $this->render('ProyectoBundle:Usuario:new.html.twig', array(
             'usuario' => $usuario,
             'form' => $form->createView(),
         ));

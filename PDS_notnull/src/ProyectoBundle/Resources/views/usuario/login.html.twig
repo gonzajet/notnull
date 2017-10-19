@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+       <h1></h1>
+    <br><br> 
+
+                        <div class="row">
+                        <div class="col-md-4">
+                        <p class="text-success lead">Ingresar con</p>
+                        <div class="social-buttons">
+                        <a href="#" class="btn btn-fb btn-primary"><i class="fa fa-facebook "></i> Facebook</a>
+                        <a href="#" class="btn btn-G btn-danger"><i class="fa fa-google "></i> Google</a>
+                        </div>
+                        <br><br>
+                        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+ 
+                        {{ProyectoBundle.Usuario.usuario}} {{ProyectoBundle.Usuario.email}}  {{ProyectoBundle.Usuario.role }}     
+ 
+                        {%endif%}
+                        <form class="form-signin" role="form" method="post" action="{{ path('login_check') }}" accept-charset="UTF-8" id="login-nav">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Correo electronico</label>
+                                <input type="text" class="form-control" id="usuario" name="_usuario" placeholder="Correo electronico" required  value="{{ last_username }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required>
+                                <div class="help-block text-right"><a href="">Olvidaste tu contraseña?</a></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox"> Mantenerme conectado
+                                </label>
+                            </div>
+                        </form>
+                    
+                        <div class="bottom text-center">
+                            No estas registrado? <a href="#"><b>Registrate</b></a>
+                        </div>  
+                </div>
+            </div>
+
+            </div>  
+{% endblock %}

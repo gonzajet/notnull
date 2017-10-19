@@ -1,23 +1,31 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block body %}
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" name="fvalida" action="{{ path ('proyecto_sendmail')}}" method="POST">
+                <form class="form-horizontal" name="fvalida"  method="POST">
                     <fieldset>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                         <legend class="text-center header">Contacto EstacionAr</legend>
                         
-                        {{form_start(form)}}
-                       
+                        <br />
+                         
                        <div class="form-group">
                             <span name= "nombre" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.nombre)}}
                                 {{form_widget(form.nombre, {'attr' : {'class': 'form-control', 'placeholder': 'Nombre'}})}}
+                                 <span class="text-danger">{{form_errors(form.nombre)}} </span> 
                             </div>
-                            <span class="text-danger">{{form_errors(form.nombre)}} </span>
+                           
                         </div>
                         
                          <div class="form-group">
@@ -25,35 +33,37 @@
                             <div class="col-md-8">
                                 {{form_label(form.apellido)}}
                                 {{form_widget(form.apellido, {'attr' : {'class': 'form-control', 'placeholder': 'Apellido'}})}}
+                                <span class="text-danger"> {{ form_errors(form.apellido)}} </span>
                             </div>
                         </div>
+                            
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope"></i></span>
+                            <div class="col-md-8">
+                                {{form_label(form.subject)}}
+                                {{form_widget(form.subject, {'attr' : {'class': 'form-control', 'placeholder' : 'Asunto'}})}}
+                                <span class="text-danger"> {{ form_errors(form.subject)}} </span>
+                            
+                            </div>
+                        </div>
+                                
                         
                          <div class="form-group">
                             <span name="email" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.email)}}
-                                {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'email'}})}}
-                                
+                                {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'Email'}})}}
+                                <span class="text-danger"> {{ form_errors(form.email)}} </span>
                             </div>
                         </div>
-                                
-                                
-                                
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                {{form_label(form.telefono)}}
-                                {{form_widget(form.telefono, {'attr' : {'class': 'form-control', 'placeholder' : 'Telefono'}})}}
-                                <span class="text-danger"> {{ form_errors(form.telefono)}} </span>
-                            
-                            </div>
-                        </div>
+                          
 
                         <div class="form-group">
                             <span name="mensaje" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.mensaje)}}
                                 {{form_widget(form.mensaje, {'attr' : {'class': 'form-control', 'placeholder': 'Ingrese su mensaje'}})}}
+                                <span class="text-danger"> {{ form_errors(form.mensaje)}} </span>
                             </div>
                         </div>
                         
@@ -68,22 +78,22 @@
                             <span class="col-md-1 col-md-offset-2 text-center"></span>
                             <div class="col-md-8">
                                  <p>
-                                {{form_widget(form.save, {'label' : 'Aceptar y enviar mensaje', 'attr': {'class': 'btn btn-success'}} ) }}
+                                {{form_label(form.save)}}
+                                {{form_widget(form.save, { 'attr': {'class': 'btn btn-success'}} ) }}
                                  </p>
                                  
+                                </div>
                             </div>
                         </div>
-                           
-                  
-                       
-                        {{form_end (form) }}
+                            
                     </fieldset>
+                {{ form_rest(form) }}
                 </form>
             </div>
         </div>
     </div>
 </div>
                     
-
+{{form_end (form) }}
 
 {% endblock %}

@@ -56,9 +56,9 @@
                      <span class="caret"></span>
                    </button>
                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                     <li><a href="#">Seccion1</a></li>
-                     <li><a href="#">Seccion2</a></li>
-                     <li><a href="#">Seccion3</a></li>
+                     {% for seccion in secciones %}
+                        <li><a href="#">{{ seccion.nombre }}</a></li>
+                     {% endfor%}
                    </ul> 
                </div>
             </div>

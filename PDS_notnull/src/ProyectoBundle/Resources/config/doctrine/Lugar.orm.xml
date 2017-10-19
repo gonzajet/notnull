@@ -12,7 +12,7 @@
         <option name="default">1</option>
       </options>
     </field>
-    <many-to-one field="idEstablecimiento" target-entity="Establecimiento" fetch="LAZY">
+    <many-to-one field="idEstablecimiento" target-entity="Establecimiento" inversed-by="lugares" fetch="LAZY">
       <join-columns>
         <join-column name="id_establecimiento" referenced-column-name="id"/>
       </join-columns>

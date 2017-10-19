@@ -82,7 +82,9 @@ class AdminController extends Controller
             $this->get('mailer')->send($message2);
             
         #Si todo esta bien, reenvio a la pagina de inicio
-            echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
+           echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
+            
+           
             
             return $this->redirectToRoute('proyecto_homepage');
             
@@ -135,8 +137,8 @@ class AdminController extends Controller
     
     
     
-    public function editAction($id){
-        return new Response ('editar usario '. $id );
+    public function aboutAction(){
+        return $this->render('ProyectoBundle:admin:about.html.twig');
         
     }
 }

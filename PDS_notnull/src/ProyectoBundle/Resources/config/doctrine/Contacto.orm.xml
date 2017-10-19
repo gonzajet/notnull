@@ -8,7 +8,7 @@
       <options>
         <option name="fixed"/>
       </options>
-    </field> 
+    </field>
     <field name="apellido" type="string" column="apellido" length="100" nullable="false">
       <options>
         <option name="fixed"/>
@@ -21,7 +21,7 @@
     </field>
     <field name="subject" type="string" column="subject" length="255" nullable="false">
       <options>
-        <option name="unsigned"/>
+        <option name="fixed"/>
       </options>
     </field>
     <field name="createdAt" type="datetime" column="created_at" nullable="false"/>

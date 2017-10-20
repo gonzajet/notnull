@@ -15,7 +15,7 @@ class usuarioRepository extends \Doctrine\ORM\EntityRepository implements UserLo
         $user = $this->createQueryBuilder('u')
             ->where('u.username = :username OR u.email = :email')
             ->setParameter('username', $username)
-            ->setParameter('email', $username)
+            ->setParameter('email', $email)
             ->getQuery()
             ->getOneOrNullResult();
         

@@ -1,45 +1,45 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<html lang="en">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">EstacionAR</a>
+    <html lang="en">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">EstacionAR</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Inicio</a></li>
+                        <li><a href="#about">Acerca de EstacionAR</a></li>
+                        <li><a href="/app_dev.php/admin/contacto">Contacto</a></li>
+                        <li><a href="/app_dev.php/establecimientos">Establecimientos</a></li>
+                        <li><a href="{{path ('usuario_login')}}"><b>Ingresar</b></a></li>
+                        <li><a href="{{path ('usuario_new')}}"><b>Registrarse</b></a></li>
+                        <li><a href="{{path ('maps')}}"><b>Mapa</b></a></li>
+    
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container, text-center">
+            <div class="starter-template">
+                <h1><br></h1>
+                <h1>Bienvenido al sitio de estacionamiento.</h1>
+                <img src="https://www.nuevopudahuel.cl/sites/all/themes/vinci_airport/images/lbx-estacionamientos/salida.jpg" title="Imagen estacionamiento" width=600 height=300>
+                <p class="lead">Gestione su establecimiento, dese de alta como usuario<br> y encuentre lugares disponibles.</p>
+
+            </div>
+
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Inicio</a></li>
-            <li><a href="{{path ('proyecto_about')}}">Acerca de EstacionAR</a></li>
-            <li><a href="../admin/contacto">Contacto</a></li>
-            <li>
-                <a href="{{path ('usuario_login')}}"><b>Ingresar</b></a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container, text-center">
-      <div class="starter-template">
-        <h1><br></h1>
-        <h1>Bienvenido al sitio de estacionamiento.</h1>
-        <img src="https://www.nuevopudahuel.cl/sites/all/themes/vinci_airport/images/lbx-estacionamientos/salida.jpg" title="Imagen estacionamiento" width=600 height=300>
-        <p class="lead">Gestione su establecimiento, dese de alta como usuario<br> y encuentre lugares disponibles.</p>
-       
-      </div>
-
-    </div>
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-{#   {# <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>#}
-    <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{asset('public/js/ie10-viewport-bug-workaround.js')}}"></script>
-  
-</html>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        {#   {# <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>#}
+        <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{asset('public/js/ie10-viewport-bug-workaround.js')}}"></script>
+
+    </html>
 
 {% endblock %}

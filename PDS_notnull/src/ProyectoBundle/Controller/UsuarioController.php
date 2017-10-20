@@ -60,10 +60,9 @@ class UsuarioController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
-
-            return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
-        }
-        // renderizo si esta mal cargado.
+            return $this->render('ProyectoBundle:Default:Index.html.twig');
+                }        
+// renderizo si esta mal cargado.
         return $this->render('ProyectoBundle:Usuario:new.html.twig', array(
             'usuario' => $usuario,
             'form' => $form->createView(),

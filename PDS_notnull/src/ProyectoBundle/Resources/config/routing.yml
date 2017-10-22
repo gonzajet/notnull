@@ -38,7 +38,7 @@ lugar_index:
     defaults: { _controller: ProyectoBundle:Lugar:index }
     
 lugar_new:
-    path:   /Lugar/new
+    path:   /lugar/new
     defaults: { _controller: ProyectoBundle:Lugar:new }   
 
 #--------------para usuario-----------------------------------

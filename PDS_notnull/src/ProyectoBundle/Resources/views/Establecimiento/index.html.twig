@@ -1,6 +1,9 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-    
+
+ <!-- Font Awesome -->
+ <link href="{{asset('public/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  
 <head>
     <title>EstionAR | Establecimientos </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,12 +39,14 @@
         <th>Nombre</th>
         <th>Lugares libres</th>
         <th>Localidad</th>
+        <th></th>
         </tr>
         {% for item in establecimientos %}
             <tr>
                 <td>{{ item.nombre }}</td>
                 <td>{{ item.getLugaresLibres|length }} / {{ item.lugares|length }}</td>
                 <td>{{ item.localidad }}</td>
+                <td><a type="button" href="../lugar/index"><i class="fa fa-eye" aria-hidden="true" style="color:#5bc0de;" ></i></a></td>
             </tr>
         {% endfor %}
     </table>

@@ -24,7 +24,6 @@ use Doctrine\ORM\Proxy\Autoloader;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\IntrospectableContainerInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\DoctrineValidationPass;
 use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterEventListenersAndSubscribersPass;
@@ -140,18 +139,5 @@ class DoctrineBundle extends Bundle
      */
     public function registerCommands(Application $application)
     {
-        // Use the default logic when the ORM is available.
-        // This avoids listing all ORM commands by hand.
-        if (class_exists('Doctrine\\ORM\\Version')) {
-            parent::registerCommands($application);
-
-            return;
-        }
-
-        // Register only the DBAL commands if the ORM is not available.
-        $application->add(new CreateDatabaseDoctrineCommand());
-        $application->add(new DropDatabaseDoctrineCommand());
-        $application->add(new RunSqlDoctrineCommand());
-        $application->add(new ImportDoctrineCommand());
     }
 }

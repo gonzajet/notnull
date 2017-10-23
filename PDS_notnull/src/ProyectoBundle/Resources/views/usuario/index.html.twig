@@ -1,36 +1,20 @@
-<html lang="en">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">EstacionAR</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Inicio</a></li>
-                        <li><a href="/app_dev.php/establecimientos">Establecimientos</a></li>
-                        <li><a href="{{path ('maps')}}"><b>Mapa</b></a></li>
-    
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
-     <div id="fullscreen_bg" class="fullscreen_bg"/>
- <br/><br/><div class="container"> <br/><br/>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+<div class="container">
     <div class="row">
         <div class="col-lg-5 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
               <ul class="list-group">
                 <a href="#" class="list-group-item active">
-                  <br/><br/><i class="glyphicon glyphicon-home"></i> Perfil<br/><br/>
+                  <br/><br/><i class="glyphicon glyphicon-home"></i> Home<br/><br/>
                   </a>
                 <a href="#" class="list-group-item ">
-                  <br/><br/><i class="glyphicon glyphicon-tasks"></i>Mi estacionamiento<br/><br/>
+                  <br/><br/><i class="glyphicon glyphicon-tasks"></i> Schedule<br/><br/>
                 </a>  
                 <a href="#" class="list-group-item ">
-                  <br/><br/><i class="glyphicon glyphicon-transfer"></i> Mis reservas<br/><br/>
+                  <br/><br/><i class="glyphicon glyphicon-transfer"></i> My trips<br/><br/>
                 </a>
                 <a href="#" class="list-group-item">
-                  <br/><br/><h4 class="glyphicon glyphicon-wrench"></h4> Editar mi informacion<br/><br/>
+                  <br/><br/><h4 class="glyphicon glyphicon-wrench"></h4> Edit My Information<br/><br/>
                 </a>
               </ul>
             </div>
@@ -39,8 +23,8 @@
                 <div class="bhoechie-tab-content active">
                     <center>
                       <h1 class="glyphicon glyphicon-user" style="font-size:14em;color:#00001a"></h1>
-                      <h2 style="margin-top: 0;color:#00001a">Bienvenido</h2>
-                      <h3 style="margin-top: 0;color:#00001a">Pagina de Usuario</h3>
+                      <h2 style="margin-top: 0;color:#00001a">Welcome</h2>
+                      <h3 style="margin-top: 0;color:#00001a">User HomePage</h3>
                     </center>
                 </div>
               
@@ -48,8 +32,8 @@
                 <div class="bhoechie-tab-content">
                     <center>
                       <h1 class="glyphicon glyphicon-tasks" style="font-size:12em;color:#00001a"></h1>
-                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Estacionamientos</a></h2>
-                      <h3 style="margin-top: 0;color:#00001a">Mi estacionamiento</h3>
+                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Schedule</a></h2>
+                      <h3 style="margin-top: 0;color:#00001a">My Schedule</h3>
                     </center>
                 </div>
     
@@ -57,26 +41,19 @@
                 <div class="bhoechie-tab-content">
                     <center>
                       <h1 class="glyphicon glyphicon-transfer" style="font-size:12em;color:#00001a"></h1>
-                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Reservas</a></h2>
-                      <h3 style="margin-top: 0;color:#00001a">Mis reservas </h3>
+                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Trips</a></h2>
+                      <h3 style="margin-top: 0;color:#00001a">MY Trips </h3>
                     </center>
                 </div>
                 
                 <div class="bhoechie-tab-content">
                     <center>
                       <h1 class="glyphicon glyphicon-edit" style="font-size:12em;color:#00001a"></h1>
-                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Editar</a></h2>
-                      <h3 style="margin-top: 0;color:#00001a">Editar mi informacion</h3>
+                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Edit</a></h2>
+                      <h3 style="margin-top: 0;color:#00001a">information Settings</h3>
                     </center>
                 </div>
             </div>
         </div>
   </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-            <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
-            <link href="{{asset('public/estilos_varios/css/bootstrap-social.css')}}" rel="stylesheet">
-            <script src="{{asset('public/estilos_varios/js/user.js')}}"></script>
-    
-        
-</html>
+</div>

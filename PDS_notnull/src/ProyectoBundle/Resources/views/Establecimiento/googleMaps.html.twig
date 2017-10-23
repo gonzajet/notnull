@@ -27,22 +27,21 @@
         <script>
             var map;
             function initMap() {
-                var centro = {lat: -34.6036844, lng: -58.381559100000004};
+                var centro = {lat: -34.7751535, lng: -58.26789550000001};
 
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: centro,
-                    zoom: 7
+                    zoom: 12
                 });
 
-                /* MARCADOR ORIGINAL
+                
                 var marker = new google.maps.Marker({
                     position: centro,
                     map: map
-                }); */
+                }); 
 
 
                 {% for est in establecimientos %}
-
                     lat = {{ est.lat|number_format }};
                     lng = {{ est.lng|number_format }};
 
@@ -51,7 +50,6 @@
                         position: position,
                         map: map
                     });
-
                 {% endfor %}
 
 

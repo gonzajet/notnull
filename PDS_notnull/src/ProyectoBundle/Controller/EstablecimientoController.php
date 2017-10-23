@@ -25,6 +25,10 @@ class EstablecimientoController extends Controller{
     
     }
     public function mapsAction(){
-        return $this->render('ProyectoBundle:Establecimiento:googleMaps.html.twig');
+        $establecimientos = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Establecimiento')
+            ->findEstablecimientosTodos();
+        return $this->render('ProyectoBundle:Establecimiento:googleMaps.html.twig'
+            ,array('establecimientos' => $establecimientos));
     }
 }

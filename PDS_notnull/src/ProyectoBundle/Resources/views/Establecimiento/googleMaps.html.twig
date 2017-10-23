@@ -21,25 +21,46 @@
         </style>
     </head>
     <body>
+        <h1>Establecimientos: {{ establecimientos|length}}</h1>
+
         <div id="map"></div>
         <script>
             var map;
             function initMap() {
                 var centro = {lat: -34.6036844, lng: -58.381559100000004};
+
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: centro,
-                    zoom: 15
+                    zoom: 7
                 });
+
+                /* MARCADOR ORIGINAL
                 var marker = new google.maps.Marker({
                     position: centro,
                     map: map
+                }); */
 
-                });
+
+                {% for est in establecimientos %}
+
+                    lat = {{ est.lat|number_format }};
+                    lng = {{ est.lng|number_format }};
+
+                    position = new google.maps.LatLng(lat,lng);
+                    markerd = new google.maps.Marker({
+                        position: position,
+                        map: map
+                    });
+
+                {% endfor %}
+
 
             }
         </script>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70uQg1AN-QrsX7Q8SYiAUuG3D5CgpttU&callback=initMap"
         async defer></script>
+
+
     </body>
 </html>

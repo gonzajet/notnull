@@ -41,6 +41,8 @@
     </field>
     <field name="abiertoDesde" type="time" column="abierto_desde" nullable="true"/>
     <field name="abiertoHasta" type="time" column="abierto_hasta" nullable="true"/>
+    <field name="lat" type="string" column="lat" nullable="true"/>
+    <field name="lng" type="string" column="lng" nullable="true"/>
     <many-to-many field="idUsuario" target-entity="Usuario" mapped-by="idEstablecimiento" fetch="LAZY"/>
     <one-to-many field="lugares" target-entity="Lugar" mapped-by="idEstablecimiento" fetch="LAZY"/>
   </entity>

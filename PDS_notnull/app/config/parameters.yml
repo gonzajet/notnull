@@ -1,10 +1,10 @@
 # This file is auto-generated during the composer install
 parameters:
     database_host: localhost
-    database_port: 3307
+    database_port: 3306
     database_name: notnull
     database_user: root
-    database_password: 
+    database_password: null
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
     mailer_user: pds.estacionar@gmail.com

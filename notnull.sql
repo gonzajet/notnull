@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 22-10-2017 a las 22:47:54
--- Versión del servidor: 5.7.19-0ubuntu0.16.04.1
--- Versión de PHP: 7.0.24-1+ubuntu16.04.1+deb.sury.org+1
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 23-10-2017 a las 21:38:21
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -71,6 +73,15 @@ CREATE TABLE `establecimiento` (
   `lng` varchar(255) DEFAULT NULL,
   `coordenadas` point DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `establecimiento`
+--
+
+INSERT INTO `establecimiento` (`id`, `nombre`, `direccion`, `provincia`, `localidad`, `telefono`, `precio_hora`, `precio_estadia`, `abierto_desde`, `abierto_hasta`, `lat`, `lng`, `coordenadas`) VALUES
+(1, 'Unaj', 'AV Calchaqui 6000', 'Bs As', 'Fcio Varela', 2000, 0, 0, '08:00:00', '22:00:00', '-34.7751535', '-58.26789550000001', NULL),
+(2, 'Hospital el Cruce', 'AV Calchaqui 5800', 'Bs As', 'Fcio Varela', 2000, 0, 0, '00:00:00', '00:00:00', '-34.7710021', '-58.26978959999997', NULL),
+(3, 'Estacionamiento quilmes', 'AV alsina 300 ', 'Bs As', 'Quilmes', 2000, 0, 0, '00:00:00', '00:00:00', '-34.720494976897434', '-58.2565176486969', NULL);
 
 -- --------------------------------------------------------
 
@@ -219,7 +230,7 @@ ALTER TABLE `contacto`
 -- AUTO_INCREMENT de la tabla `establecimiento`
 --
 ALTER TABLE `establecimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `lugar`
 --
@@ -269,6 +280,7 @@ ALTER TABLE `reserva`
 ALTER TABLE `usuario_establecimiento`
   ADD CONSTRAINT `usuario_establecimiento_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `usuario_establecimiento_ibfk_2` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

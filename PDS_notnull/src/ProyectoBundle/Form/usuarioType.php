@@ -22,7 +22,7 @@ class usuarioType extends AbstractType
             ))
                 ->add('nombre')
                 ->add('apellido')
-                ->add('email', EmailType::class)
+                ->add('e_mail', EmailType::class)
                 ->add('telefono');
     }
     

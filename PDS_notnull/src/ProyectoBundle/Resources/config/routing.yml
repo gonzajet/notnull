@@ -54,16 +54,12 @@ app_usuario:
     type:     annotation
 
 #para la autenticacion
-usuario_login:
+login:
     path:     /login
     defaults: { _controller: ProyectoBundle:Security:login }
 
-login_check:
-    path:     /login_check
-    defaults: { _controller: ProyectoBundle:Security:loginCheck }
-
 logout:
-    path:     /logout
+    path:   /logout
 #    defaults: { _controller: ProyectoBundle:Security:login} 
 
 #login_check:

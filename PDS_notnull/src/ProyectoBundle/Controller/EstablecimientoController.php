@@ -28,6 +28,8 @@ class EstablecimientoController extends Controller{
         $establecimientos = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Establecimiento')
             ->findEstablecimientosTodos();
+           // var_dump($establecimientos[0]);
+           // die();
         return $this->render('ProyectoBundle:Establecimiento:googleMaps.html.twig'
             ,array('establecimientos' => $establecimientos));
     }

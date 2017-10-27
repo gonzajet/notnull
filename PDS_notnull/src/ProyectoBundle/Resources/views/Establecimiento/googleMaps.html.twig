@@ -42,8 +42,8 @@
 
 
                 {% for est in establecimientos %}
-                    lat = {{ est.lat|number_format }};
-                    lng = {{ est.lng|number_format }};
+                    lat = {{ est.lat}};
+                    lng = {{ est.lng}};
 
                     position = new google.maps.LatLng(lat,lng);
                     markerd = new google.maps.Marker({

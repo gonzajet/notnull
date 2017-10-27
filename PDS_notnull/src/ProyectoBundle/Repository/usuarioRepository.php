@@ -13,9 +13,9 @@ class usuarioRepository extends \Doctrine\ORM\EntityRepository implements UserLo
      public function loadUserByUsername($username)
     {
         $user = $this->createQueryBuilder('u')
-            ->where('u.username = :username OR u.email = :email')
+            ->where('u.username = :username OR u.e_mail = :e_mail')
             ->setParameter('username', $username)
-            ->setParameter('email', $email)
+            ->setParameter('e_mail', $e_mail)
             ->getQuery()
             ->getOneOrNullResult();
         

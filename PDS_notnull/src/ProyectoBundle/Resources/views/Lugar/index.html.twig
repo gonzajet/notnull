@@ -38,6 +38,7 @@
 
 
 </style>
+
 <div class="container top-buffer">
 <ol class="breadcrumb">
     <li><a href="#"><h3>Lugares</h3></a></li>
@@ -46,21 +47,20 @@
 <div class="container top-buffer">
     <div class="row">
          <div class="col-md-12">
-             <div class="col-md-3">
+              <div class="col-md-3">
                 <input id="codigo" name='codigo' type="text" placeholder="codigo" class="form-control">
-            </div>
-             <div class="col-md-1">
-                <div class="dropdown">
-                   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                     Seccion
-                     <span class="caret"></span>
-                   </button>
-                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                     {% for seccion in secciones %}
-                        <li><a href="#">{{ seccion.nombre }}</a></li>
-                     {% endfor%}
-                   </ul> 
-               </div>
+              </div>
+             <div class="col-md-3">
+                <div class="dropdown btn btn-default btn-select btn-select-light"> 
+                    <input type="hidden" class="btn-select-input" id="" name="" value="" />
+                     <span class="btn-select-value">Seccion</span>
+                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                     <ul>
+                        {% for seccion in secciones %}
+                            <li data-id="{{seccion.getId()}}">{{ seccion.nombre }}</a></li>
+                        {% endfor%}
+                    </ul> 
+              </div>
             </div>
              <div class="col-md-1" style="margin-left: 20px">
                 <div class="checkbox">
@@ -69,7 +69,7 @@
             </div>     
            <div class="col-md-2">
                 <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
-                <button type="button" class="btn btn-primary">New</button>
+                <a href="../lugar/new" class="btn btn-primary" role="button">new</a>
             </div> 
          </div>
         </div> 
@@ -144,5 +144,7 @@
 <script src="{{asset('public/estilos_varios/js/demo.js') }}"></script>
 
 <script src="{{asset('public/estilos_varios/css/demo.js') }}"></script>
+
+<script src="{{asset('public/estilos_varios/js/selectchoice.js') }}"></script>
 
 {% endblock %}    

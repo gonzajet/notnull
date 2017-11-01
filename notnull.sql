@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2017 a las 01:05:50
+-- Tiempo de generación: 23-10-2017 a las 21:38:21
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -52,13 +52,6 @@ CREATE TABLE `contacto` (
   `mensaje` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `contacto`
---
-
-INSERT INTO `contacto` (`id`, `nombre`, `apellido`, `email`, `subject`, `created_at`, `mensaje`) VALUES
-(0, 'luks', 'olivera', 'luks@gmail', '1234', '2017-09-19 20:58:17', 'hola');
-
 -- --------------------------------------------------------
 
 --
@@ -75,8 +68,20 @@ CREATE TABLE `establecimiento` (
   `precio_hora` int(11) DEFAULT NULL,
   `precio_estadia` int(11) DEFAULT NULL,
   `abierto_desde` time DEFAULT NULL,
-  `abierto_hasta` time DEFAULT NULL
+  `abierto_hasta` time DEFAULT NULL,
+  `lat` varchar(255) NOT NULL,
+  `lng` varchar(255) DEFAULT NULL,
+  `coordenadas` point DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `establecimiento`
+--
+
+INSERT INTO `establecimiento` (`id`, `nombre`, `direccion`, `provincia`, `localidad`, `telefono`, `precio_hora`, `precio_estadia`, `abierto_desde`, `abierto_hasta`, `lat`, `lng`, `coordenadas`) VALUES
+(1, 'Unaj', 'AV Calchaqui 6000', 'Bs As', 'Fcio Varela', 2000, 0, 0, '08:00:00', '22:00:00', '-34.7751535', '-58.26789550000001', NULL),
+(2, 'Hospital el Cruce', 'AV Calchaqui 5800', 'Bs As', 'Fcio Varela', 2000, 0, 0, '00:00:00', '00:00:00', '-34.7710021', '-58.26978959999997', NULL),
+(3, 'Estacionamiento quilmes', 'AV alsina 300 ', 'Bs As', 'Quilmes', 2000, 0, 0, '00:00:00', '00:00:00', '-34.720494976897434', '-58.2565176486969', NULL);
 
 -- --------------------------------------------------------
 
@@ -117,6 +122,7 @@ CREATE TABLE `seccion_lugar` (
   `nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `usuario`
@@ -133,17 +139,6 @@ CREATE TABLE `usuario` (
   `telefono` varchar(255) DEFAULT NULL,
   `activo` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id`, `usuario`, `rol`, `password`, `nombre`, `apellido`, `e_mail`, `telefono`, `activo`) VALUES
-(1, 'starkluks', 'ROLE_USER', '$2y$13$Ad8AOa3YaGgaim4R803HauL4ZpTc4JaFdlRD78aZWRukAiYQcxrny', 'lucas', 'olivera', 'luksolivera@gmail.com', '1134032295', NULL),
-(3, 'lalsdk', 'ROLE_USER', '$2y$13$kbzrjsfutFCM/BAl8m9IjO/RHqVv9KHavgC.u1qW876PR5VGUyS8q', 'asdhjk', 'adjka12', 'alskdak@lask', '123', NULL),
-(4, 'gonza', 'ROLE_USER', '$2y$13$CezB1nzA3UO3K6Z4LzOONusI.c.EXnnZAk/YJcWUtht/bQuwyphRC', 'gonza', 'gonza', 'gonza@gos', '1123', NULL),
-(5, 'admin', 'ROLE_USER', '$2y$13$g/NGrCt/M6ZvwA2LTl30K.znk4ZcoeEZr0/cMxc17nTDwE98E0na6', 'admin', 'admin', 'admin@gmail.com', '23646', NULL),
-(7, 'user', 'ROLE_USER', '$2y$13$513dg4jDWWOqPQGq5oihb.A0xI3oB7sroh2meXNwC2vcC7HYc.SIi', 'user', 'user', 'user@as', '56789', 1);
 
 -- --------------------------------------------------------
 
@@ -230,12 +225,12 @@ ALTER TABLE `auto`
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `establecimiento`
 --
 ALTER TABLE `establecimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `lugar`
 --
@@ -250,12 +245,15 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `seccion_lugar`
 --
 ALTER TABLE `seccion_lugar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Restricciones para tablas volcadas
+--
 
 --
 -- Filtros para la tabla `auto`

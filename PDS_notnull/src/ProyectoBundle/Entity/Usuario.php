@@ -59,7 +59,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
      *
      * @ORM\Column(name="e_mail", type="string", length=255, nullable=false)
      */
-    private $email;
+    private $e_mail;
 
     /**
      * @var string
@@ -243,27 +243,27 @@ class Usuario implements AdvancedUserInterface, \Serializable
     }
 
     /**
-     * Set email
+     * Set e_mail
      *
-     * @param string $email
+     * @param string $e_mail
      *
      * @return usuario
      */
-    public function setEmail($email)
+    public function setEmail($e_mail)
     {
-        $this->email = $email;
+        $this->e_mail = $e_mail;
     
         return $this;
     }
 
     /**
-     * Get email
+     * Get e_mail
      *
      * @return string
      */
     public function getEmail()
     {
-        return $this->email;
+        return $this->e_mail;
     }
 
     /**
@@ -304,7 +304,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
     }   
     public function getUsername()
     {
-        return $this->email;
+        return $this->e_mail;
     }
     public function getRoles()
     {
@@ -360,13 +360,6 @@ class Usuario implements AdvancedUserInterface, \Serializable
         ) = unserialize($serialized);
     
     }
-
-
-    /**
-     * @var string
-     */
-    private $eMail;
-
 
     /**
      * Add idEstablecimiento

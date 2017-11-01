@@ -114,8 +114,8 @@ div.bhoechie-tab-menu ul.list-group>a.active,
 div.bhoechie-tab-menu ul.list-group>a.active .glyphicon,
 div.bhoechie-tab-menu ul.list-group>a.active .fa{
   background-color: #004c99;
-  background-image: #5A55A3;
-  color: #ffffff;
+  background-image: #555A3;
+  color: #fffff0;
 }
 div.bhoechie-tab-menu ul.list-group>a.active:after{
   content: '';

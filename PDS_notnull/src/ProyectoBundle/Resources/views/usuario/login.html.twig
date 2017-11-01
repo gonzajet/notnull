@@ -1,47 +1,72 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<div class="container">
-       <h1></h1>
-    <br><br> 
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div class="container">
+        <h1></h1>
+        <br><br> 
+        
+        <!--SDK para JS -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10&appId=485077215218768';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        
+        <!-- API GOOGLE -->
+        <head>
+        <script src=”https://apis.google.com/js/client:plusone.js”></script >
+        <script src=http://code.jquery.com/jquery-1.10.1.min.js></script>
+         <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        </head>
+        
+  
 
-                        <div class="row">
-                        <div class="col-md-4">
-                        <p class="text-success lead">Ingresar con</p>
-                        <div class="social-buttons">
-                        <a href="#" class="btn btn-fb btn-primary"><i class="fa fa-facebook "></i> Facebook</a>
-                        <a href="#" class="btn btn-G btn-danger"><i class="fa fa-google "></i> Google</a>
-                        </div>
-                        <br><br>
-                        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
  
-                        {{ProyectoBundle.Usuario.usuario}} {{ProyectoBundle.Usuario.email}}  {{ProyectoBundle.Usuario.role }}     
- 
-                        {%endif%}
-                        <form class="form-signin" role="form" method="post" action="{{ path('login_check') }}" accept-charset="UTF-8" id="login-nav">
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail2">Correo electronico</label>
-                                <input type="text" class="form-control" id="usuario" name="_usuario" placeholder="Correo electronico" required  value="{{ last_username }}">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required>
-                                <div class="help-block text-right"><a href="">Olvidaste tu contraseña?</a></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox"> Mantenerme conectado
-                                </label>
-                            </div>
-                        </form>
-                    
-                        <div class="bottom text-center">
-                            No estas registrado? <a href="#"><b>Registrate</b></a>
-                        </div>  
+
+        
+        <div class="row">
+            <div class="col-md-4">
+                <p class="text-success lead">Ingresar con</p>
+                <div class="social-buttons">
+                    <!--boton fb-->
+                    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+                    <!--boton google-->
+                    <div id="signin-button">
+                    <div class="g-signin" data-callback="GoogleLogin" data-approvalprompt="force"  data-clientid="370025250365-u1gjjhdara7094cadauc1ljb43uesd4a.apps.googleusercontent.com" data-scope="https://www.googleapis.com/auth/plus.login" data-cookiepolicy="single_host_origin"></div>
+                    </div>
                 </div>
-            </div>
+                
+                <br><br>
+                <form class="form-signin" role="form" method="post" action="{{ path('login') }}" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Correo electronico</label>
+                        <input type="text" class="form-control" id="usuario" name="_usuario" placeholder="Correo electronico" required  value="{{ last_username }}">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required>
+                        <div class="help-block text-right"><a href="">Olvidaste tu contraseña?</a></div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Mantenerme conectado
+                        </label>
+                    </div>
+                </form>
 
-            </div>  
+                <div class="bottom text-center">
+                    No estas registrado? <a href="{{path('usuario_new')}}"><b>Registrate</b></a>
+                </div>  
+            </div>
+        </div>
+
+    </div>  
 {% endblock %}

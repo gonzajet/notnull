@@ -45,7 +45,7 @@ class UsuarioController extends Controller
         $usuario = new Usuario();
         $form = $this->createForm('ProyectoBundle\Form\usuarioType', $usuario);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             // encriptacion de la contraseña
             $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
@@ -54,16 +54,16 @@ class UsuarioController extends Controller
             $rol='ROLE_USER';
             $usuario->setRol($rol);
             // usuario activo
+            
             $active=true;
             $usuario->setActive($active);
             // cargo en la base
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
-
-            return $this->redirectToRoute('usuario_show', array('id' => $usuario->getId()));
-        }
-        // renderizo si esta mal cargado.
+            return $this->render('ProyectoBundle:Default:Index.html.twig');
+                }        
+// renderizo si esta mal cargado.
         return $this->render('ProyectoBundle:Usuario:new.html.twig', array(
             'usuario' => $usuario,
             'form' => $form->createView(),

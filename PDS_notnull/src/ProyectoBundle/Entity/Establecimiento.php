@@ -98,6 +98,20 @@ class Establecimiento
      * @ORM\OneToMany(targetEntity="Lugar", mappedBy="idEstablecimiento")
      */
     private $lugares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lat", type="string", length=255, nullable=true)
+     */
+    private $lat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lng", type="string", length=255, nullable=true)
+     */
+    private $lng;
     
 
     /**
@@ -389,5 +403,15 @@ class Establecimiento
     public function getIdUsuario()
     {
         return $this->idUsuario;
+    }
+
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    public function getLng()
+    {
+        return $this->lng;
     }
 }

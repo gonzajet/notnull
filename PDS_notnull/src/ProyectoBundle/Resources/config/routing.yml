@@ -38,7 +38,7 @@ lugar_index:
     defaults: { _controller: ProyectoBundle:Lugar:index }
     
 lugar_new:
-    path:   /Lugar/new
+    path:   /lugar/new
     defaults: { _controller: ProyectoBundle:Lugar:new }   
 
 #--------------para usuario-----------------------------------
@@ -46,7 +46,7 @@ usuario_index:
     path:     /usuario/index
     defaults: { _controller: ProyectoBundle:Usuario:index }
 usuario_new:
-    path:     /usuario/new
+    path:     /new
     defaults: { _controller: ProyectoBundle:Usuario:new }
 #-----------------para la autenticacion---------------------
 app_usuario:
@@ -54,16 +54,12 @@ app_usuario:
     type:     annotation
 
 #para la autenticacion
-usuario_login:
+login:
     path:     /login
     defaults: { _controller: ProyectoBundle:Security:login }
 
-login_check:
-    path:     /login_check
-    defaults: { _controller: ProyectoBundle:Security:loginCheck }
-
 logout:
-    path:     /logout
+    path:   /logout
 #    defaults: { _controller: ProyectoBundle:Security:login} 
 
 #login_check:
@@ -75,3 +71,6 @@ establecimientos:
     path: /establecimientos/{localidad}
     defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}
 
+maps:
+    path: /maps
+    defaults: { _controller: ProyectoBundle:Establecimiento:maps}

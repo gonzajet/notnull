@@ -83,9 +83,6 @@ class AdminController extends Controller
             
         #Si todo esta bien, reenvio a la pagina de inicio
            echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
-            
-           
-            
             return $this->redirectToRoute('proyecto_homepage');
             
            

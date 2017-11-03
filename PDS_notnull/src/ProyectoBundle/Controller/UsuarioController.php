@@ -51,8 +51,8 @@ class UsuarioController extends Controller
             $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
             $usuario->setPassword($password);
             // asigno rol de usuario por defecto
-            $rol='ROLE_USER';
-            $usuario->setRol($rol);
+            $roles='ROLE_USER';
+            $usuario->setRoles($roles);
             // usuario activo
             
             $active=true;
@@ -61,10 +61,10 @@ class UsuarioController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
-            return $this->render('ProyectoBundle:Default:Index.html.twig');
+            return $this->render('ProyectoBundle:Default:index.html.twig');
                 }        
 // renderizo si esta mal cargado.
-        return $this->render('ProyectoBundle:Usuario:new.html.twig', array(
+        return $this->render('ProyectoBundle:usuario:new.html.twig', array(
             'usuario' => $usuario,
             'form' => $form->createView(),
         ));

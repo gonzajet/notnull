@@ -16,9 +16,10 @@
                     </ul>
                     <a href="../../../../../app/Resources/views/base.html.twig"></a>
                     <ul class="nav navbar-nav navbar-right">
-                        {% if app.user %}
-                            <li><a href="{{ path('cuenta') }}"><span class="glyphicon glyphicon-user"></span> {{ app.user }}</a></li>
-                            <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        <!--cambiar esto!!!!!!!!!!!!!!!!!!!!!-->
+                          {% if app.user %}
+                            <li><a href='#'><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>
+                            <li><a href={{ path('logout') }}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                             {% else %}
                             <li><a href="{{ path('usuario_new') }}"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
                             <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

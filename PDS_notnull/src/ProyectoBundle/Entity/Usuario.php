@@ -79,6 +79,11 @@ class Usuario implements AdvancedUserInterface, \Serializable
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="Auto", mappedBy="idUsuario")
+     */
+    private $autos;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="ProyectoBundle\Entity\Establecimiento", inversedBy="idUsuario")
@@ -103,6 +108,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
     public function __construct()
     {
         $this->idEstablecimiento = new \Doctrine\Common\Collections\ArrayCollection();
+    //    $this->autos = new ArrayCollection();
         $this->isActive = true;
     }
         /**
@@ -175,6 +181,10 @@ class Usuario implements AdvancedUserInterface, \Serializable
         $this->password = $password;
     
         return $this;
+    }
+
+    public function getAutos(){
+        return $this->autos;
     }
 
     /**

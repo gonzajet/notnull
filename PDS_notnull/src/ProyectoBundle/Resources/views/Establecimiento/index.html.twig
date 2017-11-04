@@ -43,7 +43,7 @@
         </tr>
         {% for item in establecimientos %}
             <tr>
-                <td>{{ item.nombre }}</td>
+                <td><a href="establecimiento/{{ item.id }}">{{ item.nombre }}</a></td>
                 <td>{{ item.getLugaresLibres|length }} / {{ item.lugares|length }}</td>
                 <td>{{ item.localidad }}</td>
                 <td><a type="button" href="../lugar/index"><i class="fa fa-eye" aria-hidden="true" style="color:#5bc0de;" ></i></a></td>

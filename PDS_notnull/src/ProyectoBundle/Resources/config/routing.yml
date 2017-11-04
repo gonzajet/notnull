@@ -71,6 +71,14 @@ establecimientos:
     path: /establecimientos/{localidad}
     defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}
 
+establecimiento_puntual:
+    path: /establecimiento/{id}
+    defaults: { _controller: ProyectoBundle:Establecimiento:puntual}
+
+reservar:
+    path: /reservar/{id}
+    defaults: { _controller: ProyectoBundle:Establecimiento:reservar}
+
 maps:
     path: /maps
     defaults: { _controller: ProyectoBundle:Establecimiento:maps}

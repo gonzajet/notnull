@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Establecimiento puntual</title>
+</head>
+<body>
+<h1>{{ establecimiento.nombre }}</h1>
+lugares disponibles: {{establecimiento.getLugaresLibres|length}}/{{ establecimiento.lugares | length }}
+
+<h2>
+    <!--SEPARADOR-->
+</h2>
+{% if((establecimiento.getLugaresLibres|length)>0) %}
+    Realizar reserva
+{% else %}
+    No hay lugares libres!
+{% endif %}
+
+<h1></h1>
+
+<a href="../reservar/1">Reservar</a>
+
+</body>
+</html>

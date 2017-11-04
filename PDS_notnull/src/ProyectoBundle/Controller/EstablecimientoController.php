@@ -24,6 +24,7 @@ class EstablecimientoController extends Controller{
         }
     
     }
+
     public function mapsAction(){
         $establecimientos = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Establecimiento')
@@ -33,4 +34,23 @@ class EstablecimientoController extends Controller{
         return $this->render('ProyectoBundle:Establecimiento:googleMaps.html.twig'
             ,array('establecimientos' => $establecimientos));
     }
+
+    public function puntualAction($id){
+        $establecimiento = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Establecimiento')
+            ->find($id);
+
+        return $this->render('ProyectoBundle:Establecimiento:puntual.html.twig'
+            ,array('establecimiento' => $establecimiento));
+    }
+
+    public function reservarAction($id){
+        $lugar = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Lugar')
+            ->find($id);
+
+        return $this->render('ProyectoBundle:Establecimiento:reserva.html.twig'
+            ,array('lugar'=> $lugar));
+    }
+
 }

@@ -54,5 +54,6 @@
         </inverse-join-columns>
       </join-table>
     </many-to-many>
+    <one-to-many field="autos" target-entity="Auto" mapped-by="idUsuario" fetch="LAZY"/>
   </entity>
 </doctrine-mapping>

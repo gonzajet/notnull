@@ -1,8 +1,16 @@
 <h1>Reservar el lugar </h1>
 {%  if lugar %}
-    {{ lugar.id }}
 
-    reservar usando el auto: {{ app.user.autos[0].patente }}
+
+
+    Reservar el lugar {{ lugar.id }}
+    usando el auto: {{ app.user.autos[0].patente }}
+
+
+    {{form_start(form)}}
+    {{form_end(form)}}
+
+
 {% else %}
     El lugar seleccionado no existe
 {%   endif %}

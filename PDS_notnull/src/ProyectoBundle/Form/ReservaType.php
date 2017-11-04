@@ -1,15 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fede
- * Date: 04/11/17
- * Time: 16:31
- */
 
 namespace ProyectoBundle\Form;
 
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class ReservaType
+class ReservaType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -17,17 +15,18 @@ class ReservaType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id_auto')
-            ->add('id_lugar')
-            ->add('fecha_desde')
-            ->add('fecha_hasta')
+            ->add('fechaDesde')
+            ->add('fechaHasta')
+            //->add('idLugar',LugarType::class)     //ERROR PORQUE ESTO ES UN OBJETO
+            //->add('idAuto',null)     //ERROR PORQUE ESTO ES UN OBJETO
+            ->add('save',SubmitType::class, array('label' => 'Confirmar'))
+
         ;
     }
-
+    
     /**
      * {@inheritdoc}
      */
-    #de donde vienen los datos ----
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
@@ -40,6 +39,8 @@ class ReservaType
      */
     public function getBlockPrefix()
     {
-        return 'reserva';
+        return 'proyectobundle_reserva';
     }
+
+
 }

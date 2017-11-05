@@ -2,24 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Establecimiento puntual</title>
+    <title>{{ establecimiento.nombre }}</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            width: 50%;
+            height: 300px;
+            background-color: grey;}
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 50%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<h1>{{ establecimiento.nombre }}</h1>
-lugares disponibles: {{establecimiento.getLugaresLibres|length}}/{{ establecimiento.lugares | length }}
+    <h1>{{ establecimiento.nombre }}</h1>
+    lugares disponibles: {{establecimiento.getLugaresLibres|length}}/{{ establecimiento.lugares | length }}
 
-<h2>
-    <!--SEPARADOR-->
-</h2>
-{% if((establecimiento.getLugaresLibres|length)>0) %}
-    <a href="../reservar/1">Reservar</a>
-{% else %}
-    No hay lugares libres!
-{% endif %}
+    <h2>
+        <!--SEPARADOR-->
+    </h2>
+    <!-- Si hay lugares libres, se redirecciona a la página de reserva de uno cualquiera.
+         Sino, muestra mensaje de que no hay lugares disponibles -->
+    {% if((establecimiento.getLugaresLibres|length)>0) %}
+        <a href="../reservar/{{ random(establecimiento.getLugaresLibres).id }}">Reservar</a>
+    {% else %}
+        No hay lugares libres!
+    {% endif %}
 
-<h1></h1>
+    <h1></h1>
 
+    <!-- MAPA PARA MOSTRAR A ESTE ESTABLECIMIENTO PUNTUAL -->
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            <!-- Tomamos la posicion del establecimiento -->
+            var position = {lat: {{ establecimiento.lat }}, lng: {{ establecimiento.lng }}};
+            <!-- Generamos el mapa -->
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: position,
+                zoom: 12
+            });
+            <!-- Agregamos la marca -->
+            var marker = new google.maps.Marker({
+                position: position,
+                map: map
+            });
 
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70uQg1AN-QrsX7Q8SYiAUuG3D5CgpttU&callback=initMap"
+        async defer></script>
 
 </body>
 </html>

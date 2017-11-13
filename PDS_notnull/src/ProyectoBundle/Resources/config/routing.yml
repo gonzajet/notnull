@@ -51,6 +51,10 @@ usuario_index:
 usuario_new:
     path:     /new
     defaults: { _controller: ProyectoBundle:Usuario:new }
+
+usuario:
+    path: /cuenta
+    defaults: {_controller: ProyectoBundle:Usuario:cuenta}
 #-----------------para la autenticacion---------------------
 app_usuario:
     resource: "@ProyectoBundle/Controller/UsuarioController.php"

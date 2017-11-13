@@ -29,9 +29,12 @@ proyecto_about:
  #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
 proyecto_sendmail:
     path:   /admin/sendmail
-    defaults: { _controller: ProyectoBundle:Admin:sendmail} 
+    defaults: { _controller: ProyectoBundle:Admin:sendmail}
 
-  
+#-----------Redes login-------------
+
+
+#------------------------------------------------------
   
 lugar_index:
     path:   /lugar/index

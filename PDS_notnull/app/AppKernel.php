@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new ProyectoBundle\ProyectoBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new Ivory\SerializerBundle\IvorySerializerBundle(),
-            new Http\HttplugBundle\HttplugBundle(),
+
             
         ];
 

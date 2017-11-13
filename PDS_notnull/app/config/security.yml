@@ -74,5 +74,7 @@ security:
          # require ROLE_ADMIN for /admin*
          - { path: ^/admin, role: ROLE_USER }
          - { path: ^/Default, role: ROLE_USER }
+         - { path: ^/usuario, role: ROLE_USER }
+         
 
     

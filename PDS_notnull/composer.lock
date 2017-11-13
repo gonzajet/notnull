@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29c56f500381678fb9683473412c4c94",
-    "content-hash": "83a1b5da8c128e28f5b14dd5012b9115",
+    "hash": "91f96e9e531ce345012eb098090c53b9",
+    "content-hash": "e2d607e4e4a26317df0ea22fd81f66a4",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -3095,7 +3095,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2017-11-06 16:02:17"
+            "time": "2017-09-26 03:17:02"
         },
         {
             "name": "symfony/polyfill-apcu",

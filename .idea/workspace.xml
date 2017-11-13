@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55646afe-af64-4e01-8e2f-94eb06c0b477" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_t34lm71oevlgumbvddrgc2k2ph" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_0mlk7rouiusftd7ds6cv6b7057" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_0mlk7rouiusftd7ds6cv6b7057" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_r0h5sodo1g9qgtkijuejj57vc0" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_r0h5sodo1g9qgtkijuejj57vc0" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/composer.lock" afterPath="$PROJECT_DIR$/PDS_notnull/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/bootstrap.php.cache" afterPath="$PROJECT_DIR$/PDS_notnull/var/bootstrap.php.cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_0dub201gaul082butbo10vqhb5" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_0dub201gaul082butbo10vqhb5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_1dtnn02jq0gom9o74o3or6crs7" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_1dtnn02jq0gom9o74o3or6crs7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_i8pvmk5v447pulchv9h7mqgs2n" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_i8pvmk5v447pulchv9h7mqgs2n" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/web/config.php" afterPath="$PROJECT_DIR$/PDS_notnull/web/config.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,31 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="416">
+              <caret line="74" column="59" lean-forward="false" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composer.lock" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/composer.lock">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="108">
+              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -69,11 +47,11 @@
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/services.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/composer.lock" />
+        <option value="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
       </list>
     </option>
   </component>
@@ -246,12 +224,12 @@
       <option name="presentableId" value="Default" />
       <updated>1508094635091</updated>
       <workItem from="1508094637755" duration="683000" />
-      <workItem from="1510610574935" duration="655000" />
+      <workItem from="1510610574935" duration="1892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9134000" />
+    <option name="totallyTimeSpent" value="10371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="3" width="1303" height="780" extended-state="6" />
@@ -470,26 +448,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="416">
+          <caret line="74" column="59" lean-forward="false" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding />
         </state>
       </provider>

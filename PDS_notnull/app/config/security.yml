@@ -72,7 +72,7 @@ security:
          - { path: ^/admin, role: ROLE_USER }
          - { path: ^/Default, role: ROLE_USER }
          - { path: ^/usuario, role: ROLE_USER }
-         - { path: /, role: ROLE_USER }
+        # - { path: /, role: ROLE_USER }, NO TE DEJA ENTRAR
 
 
 

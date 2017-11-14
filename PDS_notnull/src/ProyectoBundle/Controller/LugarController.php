@@ -64,5 +64,12 @@ class LugarController extends Controller
        */
          
     }
+
+    public function buscarXHorarioAction(Request $request){
+        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
+        $secciones = $repository->findLibresXHorario();
+
+        return $secciones;
+    }
     
 }    

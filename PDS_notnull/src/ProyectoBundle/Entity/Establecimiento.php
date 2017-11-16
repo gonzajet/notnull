@@ -453,7 +453,7 @@ class Establecimiento
      *
      * @return Establecimiento
      */
-    public function addLugare(\ProyectoBundle\Entity\Lugar $lugare)
+    public function addLugares(\ProyectoBundle\Entity\Lugar $lugare)
     {
         $this->lugares[] = $lugare;
 
@@ -461,11 +461,11 @@ class Establecimiento
     }
 
     /**
-     * Remove lugare
+     * Remove lugares
      *
      * @param \ProyectoBundle\Entity\Lugar $lugare
      */
-    public function removeLugare(\ProyectoBundle\Entity\Lugar $lugare)
+    public function removeLugares(\ProyectoBundle\Entity\Lugar $lugare)
     {
         $this->lugares->removeElement($lugare);
     }

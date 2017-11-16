@@ -15,9 +15,10 @@ class LugarController extends Controller
     public function indexAction($id)
     {     
        
-        $query = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
-        $lugares = $query->findLugaresTodos();
-
+        $em = $this->getDoctrine();
+        $query = $em->getRepository('ProyectoBundle:Lugar');
+        $establecimiento = $em->getRepository('ProyectoBundle:Establecimiento')->find($id);
+        $lugares = $establecimiento->getLugares();
          return $this->render('ProyectoBundle:Lugar:index.html.twig'
                  ,array('establecimiento' => $id,
                        'lugares' => $lugares));
@@ -37,7 +38,12 @@ class LugarController extends Controller
             $lugar->setEstado(false);
             $lugar->setCodigo($codigo);
             
-            // cargo en la base
+           
+            $estableci = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+            //$category = $em->getRepository('AkoStoreBundle:Category')->find($category_id);
+            $estableci->addLugares($lugar);
+            
+             // cargo en la base
             $em->persist($lugar);
             $em->flush();
             $lugares = $em->getRepository('ProyectoBundle:Lugar')->findAll();

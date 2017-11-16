@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
-
-
-
 {% block body %}
-<br>
-<br>
-<br>
+
+<br/>
+<br/>
+<br/>
+
+
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 <div class="container">
     <div class="row">
@@ -16,12 +16,14 @@
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
                         <legend class="text-center header">Contacto EstacionAr</legend>
                         
                         <br />
                          
-                       <div class="form-group">
-                            <span name= "nombre" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+
+                          <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-user"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.nombre)}}
                                 {{form_widget(form.nombre, {'attr' : {'class': 'form-control', 'placeholder': 'Nombre'}})}}
@@ -31,7 +33,7 @@
                         </div>
                         
                          <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-user"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.apellido)}}
                                 {{form_widget(form.apellido, {'attr' : {'class': 'form-control', 'placeholder': 'Apellido'}})}}
@@ -40,7 +42,7 @@
                         </div>
                             
                          <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope"></i></span>
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-envelope"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.subject)}}
                                 {{form_widget(form.subject, {'attr' : {'class': 'form-control', 'placeholder' : 'Asunto'}})}}
@@ -51,7 +53,7 @@
                                 
                         
                          <div class="form-group">
-                            <span name="email" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <span name="email" class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-envelope"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.email)}}
                                 {{form_widget(form.email, {'attr' : {'class': 'form-control', 'placeholder': 'Email'}})}}
@@ -61,7 +63,7 @@
                           
 
                         <div class="form-group">
-                            <span name="mensaje" class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <span name="mensaje" class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-text-color"></i></span>
                             <div class="col-md-8">
                                 {{form_label(form.mensaje)}}
                                 {{form_widget(form.mensaje, {'attr' : {'class': 'form-control', 'placeholder': 'Ingrese su mensaje'}})}}
@@ -86,8 +88,10 @@
                                  
                                 </div>
                             </div>
+                                               
                         </div>
-                            
+                                 
+                  
                     </fieldset>
                 {{ form_rest(form) }}
                 </form>

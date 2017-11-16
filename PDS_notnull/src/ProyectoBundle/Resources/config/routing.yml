@@ -29,9 +29,12 @@ proyecto_about:
  #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
 proyecto_sendmail:
     path:   /admin/sendmail
-    defaults: { _controller: ProyectoBundle:Admin:sendmail} 
+    defaults: { _controller: ProyectoBundle:Admin:sendmail}
 
-  
+#-----------Redes login-------------
+
+
+#------------------------------------------------------
   
 lugar_index:
     path:   /lugar/index/{id}
@@ -48,6 +51,10 @@ usuario_index:
 usuario_new:
     path:     /new
     defaults: { _controller: ProyectoBundle:Usuario:new }
+
+usuario:
+    path: /cuenta
+    defaults: {_controller: ProyectoBundle:Usuario:cuenta}
 #-----------------para la autenticacion---------------------
 app_usuario:
     resource: "@ProyectoBundle/Controller/UsuarioController.php"
@@ -70,6 +77,14 @@ logout:
 establecimientos:
     path: /establecimientos/{localidad}
     defaults: { _controller: ProyectoBundle:Establecimiento:index, localidad:todas}
+
+establecimiento_puntual:
+    path: /establecimiento/{id}
+    defaults: { _controller: ProyectoBundle:Establecimiento:puntual}
+
+reservar:
+    path: /reservar/{id}
+    defaults: { _controller: ProyectoBundle:Establecimiento:reservar}
 
 maps:
     path: /maps

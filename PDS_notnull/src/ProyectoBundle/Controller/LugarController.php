@@ -49,6 +49,13 @@ class LugarController extends Controller
                                                                         'establecimiento'=>$establecimiento,
                                                                         'form' => $form->createView()));      
     }
+
+    public function buscarXHorarioAction(Request $request){
+        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
+        $secciones = $repository->findLibresXHorario();
+
+        return $secciones;
+    }
     
     
     

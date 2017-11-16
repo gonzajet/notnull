@@ -3,7 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@ProyectoBundle/Resources/config/services.yml" }
-#    - { resource: "@TestBundle/Resources/config/services.yml" }
+
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -73,4 +73,38 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+
+#Bundle para login
+
+#fos_user:
+#    db_driver: orm
+#    firewall_name: main
+#    user_class: ProyectoBundle\Entity\Usuario
+#    registration:
+#        form:
+#            type: ProyectoBundle\Form\RegistrationType
+
+
+#hwi_oauth:
+#    connect:
+#        comfirmation: true
+#        registration_form: fos_user.registration.form.factory
+#        account_connector: my_user_provider
+#    firewall_names: [main]
+#    fosub:
+#        username_iterations: 30
+#        properties:
+#            facebook: facebook_id
+#            google: google_id
+#    resource_owners:
+#        facebook:
+#            type:                facebook
+#            client_id:           485077215218768
+#            client_secret:       6fe3d63abb99488e60f3e3abdd8ec4f1
+#            scope:               "email"
+#        google:
+#            type:                google
+#            client_id:           370025250365-u1gjjhdara7094cadauc1ljb43uesd4a.apps.googleusercontent.com
+#            client_secret:       YhAIKrODQlAbHlVp4EhnnSLv
+#            scope:               "email"
 

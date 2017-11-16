@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2017 a las 21:38:21
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Servidor: localhost:3306
+-- Tiempo de generación: 02-11-2017 a las 22:01:47
+-- Versión del servidor: 5.7.20-0ubuntu0.17.04.1
+-- Versión de PHP: 7.0.22-0ubuntu0.17.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -74,15 +72,6 @@ CREATE TABLE `establecimiento` (
   `coordenadas` point DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `establecimiento`
---
-
-INSERT INTO `establecimiento` (`id`, `nombre`, `direccion`, `provincia`, `localidad`, `telefono`, `precio_hora`, `precio_estadia`, `abierto_desde`, `abierto_hasta`, `lat`, `lng`, `coordenadas`) VALUES
-(1, 'Unaj', 'AV Calchaqui 6000', 'Bs As', 'Fcio Varela', 2000, 0, 0, '08:00:00', '22:00:00', '-34.7751535', '-58.26789550000001', NULL),
-(2, 'Hospital el Cruce', 'AV Calchaqui 5800', 'Bs As', 'Fcio Varela', 2000, 0, 0, '00:00:00', '00:00:00', '-34.7710021', '-58.26978959999997', NULL),
-(3, 'Estacionamiento quilmes', 'AV alsina 300 ', 'Bs As', 'Quilmes', 2000, 0, 0, '00:00:00', '00:00:00', '-34.720494976897434', '-58.2565176486969', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -131,13 +120,13 @@ CREATE TABLE `lugar_establecimiento` (
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(255) NOT NULL,
-  `rol` longtext NOT NULL,
+  `roles` longtext NOT NULL,
   `password` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
   `e_mail` varchar(255) NOT NULL,
   `telefono` varchar(255) DEFAULT NULL,
-  `activo` tinyint(1) DEFAULT NULL
+  `is_active` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -252,7 +241,7 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --

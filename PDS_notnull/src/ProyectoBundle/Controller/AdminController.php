@@ -83,9 +83,6 @@ class AdminController extends Controller
             
         #Si todo esta bien, reenvio a la pagina de inicio
            echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
-            
-           
-            
             return $this->redirectToRoute('proyecto_homepage');
             
            
@@ -101,38 +98,7 @@ class AdminController extends Controller
     }
  
     
- /* NO SIRVE MAS
-    public function sendmailAction(Request $request){
-        
-        if ($request->getMethod() === "POST"){
-            
-            $email= $request->get("email");
-            $mensaje = $request->get("mensaje");
-            $nombre= $request->get("nombre");
-            $asunto= $request->get("asunto");
-            
-            $mailer= $this->container->get('mailer');
-            
-            $mensaje = (new \Swift_Message('Nuevo correo de la pagina!'))
-                    
-                    ->setFrom($email)
-                    ->setTo('pds.estacionar@gmail.com')
-                    ->setSubject($asunto)
-                    
-                    ->setBody($mensaje);
-            $this->get('mailer')->send($mensaje);
-            
-            echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
-            return $this->render('ProyectoBundle:Default:index.html.twig');
-        }
-        
-        
-  
-        return $this->render('ProyectoBundle:admin:new.html.twig');
-        
-            
-    }
-    */
+
     
     
     

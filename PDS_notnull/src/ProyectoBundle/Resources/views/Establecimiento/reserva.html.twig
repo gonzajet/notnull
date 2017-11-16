@@ -1,0 +1,90 @@
+<h1 xmlns:type="http://www.w3.org/1999/xhtml" xmlns:id="http://www.w3.org/1999/xhtml">Reservar el lugar </h1>
+{%  if lugar %}
+
+    Reservar el lugar {{ lugar.id }}
+    usando el auto: {{ app.user.autos[0].patente }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        /* Implementar js acá
+         * Tenemos que usar:
+         *      ajax
+         *      jQuery
+         */
+        function fun($str){
+            alert("asd");
+        };
+
+        function sampleGet() {
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/posts/1',
+                method: 'GET',
+                dataType: 'json'
+            }).then(function(data) {
+                console.log(data);
+                $("#nombre").text(data.body);
+                $("#id").text(data.id);
+                var a;
+                return data.body;
+            });
+        }
+        $(document).ready(function(){
+            $("#showtable").click(function () {
+                $("#table").show();
+                var a = sampleGet();
+                $("#nombre").text(a.val());
+
+
+            });
+            $("#geturl").click(function(){
+                var ab = sampleGet();
+                console.log(ab);
+                alert(ab);
+            });
+        });
+
+    </script>
+
+    <button id="geturl">Get External Content</button>
+    <button id="showtable">Show Table</button>
+
+
+    <h1>confirma</h1>
+
+<br>
+    <div>
+        <table id="table" style="display: none;">
+            <tr >
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td id="nombre"></td>
+                <td id="id"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+<br>
+
+    <!--
+    Codigo para lanzar el form
+    {{form_start(form)}}
+    {{form_end(form)}}
+    -->
+
+    <form name="proyectobundle_reserva" method="post">
+        <div><label class="required">Fecha desde</label><div id="proyectobundle_reserva_fechaDesde"><div id="proyectobundle_reserva_fechaDesde_date"><select id="proyectobundle_reserva_fechaDesde_date_year" name="proyectobundle_reserva[fechaDesde][date][year]"><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option></select><select id="proyectobundle_reserva_fechaDesde_date_month" name="proyectobundle_reserva[fechaDesde][date][month]"><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select id="proyectobundle_reserva_fechaDesde_date_day" name="proyectobundle_reserva[fechaDesde][date][day]"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></div><div id="proyectobundle_reserva_fechaDesde_time">
+                    <select id="proyectobundle_reserva_fechaDesde_time_hour" name="proyectobundle_reserva[fechaDesde][time][hour]"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>:<select id="proyectobundle_reserva_fechaDesde_time_minute" name="proyectobundle_reserva[fechaDesde][time][minute]"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>        </div></div></div><div><label>Fecha hasta</label><div id="proyectobundle_reserva_fechaHasta"><div id="proyectobundle_reserva_fechaHasta_date"><select id="proyectobundle_reserva_fechaHasta_date_year" name="proyectobundle_reserva[fechaHasta][date][year]"><option value=""></option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option></select><select id="proyectobundle_reserva_fechaHasta_date_month" name="proyectobundle_reserva[fechaHasta][date][month]"><option value=""></option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select id="proyectobundle_reserva_fechaHasta_date_day" name="proyectobundle_reserva[fechaHasta][date][day]"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></div><div id="proyectobundle_reserva_fechaHasta_time">
+                    <select id="proyectobundle_reserva_fechaHasta_time_hour" name="proyectobundle_reserva[fechaHasta][time][hour]"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>:<select id="proyectobundle_reserva_fechaHasta_time_minute" name="proyectobundle_reserva[fechaHasta][time][minute]"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>        </div></div></div><div><button type="submit" id="proyectobundle_reserva_save" name="proyectobundle_reserva[save]">Confirmar</button></div><input type="hidden" id="proyectobundle_reserva__token" name="proyectobundle_reserva[_token]" value="AnMT-moM6whtjDLgKtxDr0D7GmN9AgLo6g7EDTiPmx0" />
+    </form>
+
+
+{% else %}
+    El lugar seleccionado no existe
+{% endif %}
+
+
+
+

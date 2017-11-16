@@ -12,6 +12,7 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
  *
  * @ORM\Table(name="usuario")
  * @ORM\Entity
+
  */
 class Usuario implements AdvancedUserInterface, \Serializable
 {
@@ -25,9 +26,9 @@ class Usuario implements AdvancedUserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="rol", type="text", nullable=false)
+     * @ORM\Column(name="roles", type="text", nullable=false)
      */
-    private $rol;
+    private $roles;
 
     /**
      * @var string
@@ -78,6 +79,11 @@ class Usuario implements AdvancedUserInterface, \Serializable
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="Auto", mappedBy="idUsuario")
+     */
+    private $autos;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="ProyectoBundle\Entity\Establecimiento", inversedBy="idUsuario")
@@ -92,9 +98,9 @@ class Usuario implements AdvancedUserInterface, \Serializable
      */
     private $idEstablecimiento;
     /**
-     * @ORM\Column(name="activo", type="boolean")
+     * @ORM\Column(name="is_active", type="boolean")
      */
-    private $isActive;
+    private $is_active;
 
     /**
      * Constructor
@@ -102,6 +108,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
     public function __construct()
     {
         $this->idEstablecimiento = new \Doctrine\Common\Collections\ArrayCollection();
+    //    $this->autos = new ArrayCollection();
         $this->isActive = true;
     }
         /**
@@ -141,25 +148,25 @@ class Usuario implements AdvancedUserInterface, \Serializable
     /**
      * Set rol
      *
-     * @param string $rol
+     * @param string $roles
      *
      * @return usuario
      */
-    public function setRol(string $rol)
+    public function setRoles(string $roles)
     {
-        $this->rol = $rol;
+        $this->roles = $roles;
     
         return $this;
     }
 
     /**
-     * Get rol
+     * Get roles
      *
      * @return string
      */
-    public function getRol()
+    public function getRoles()
     {
-        return $this->rol;
+        return array('ROLE_USER');
     }
 
     /**
@@ -174,6 +181,10 @@ class Usuario implements AdvancedUserInterface, \Serializable
         $this->password = $password;
     
         return $this;
+    }
+
+    public function getAutos(){
+        return $this->autos;
     }
 
     /**
@@ -291,7 +302,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
         return $this->telefono;
     }
         /**
-     * Set isActive
+     * Set is_active
      *
      * @param bolean $active
      *
@@ -299,17 +310,14 @@ class Usuario implements AdvancedUserInterface, \Serializable
      */
     public function setActive($active)
     {
-        $this->isActive=$active;
+        $this->is_active=$active;
         return $this;
     }   
     public function getUsername()
     {
         return $this->e_mail;
     }
-    public function getRoles()
-    {
-        return $this->rol;
-    }
+
     public function eraseCredentials(){
         return null;
     }
@@ -337,17 +345,17 @@ class Usuario implements AdvancedUserInterface, \Serializable
 
     public function isEnabled()
     {
-        return $this->isActive;
+        return $this->is_active;
     }
 
     // serialize and unserialize must be updated - see below
-    public function serialize(): string
+    public function serialize()
     {
         return serialize(array(
             $this->id,
             $this->usuario,
             $this->password,
-            $this->isActive
+            $this->is_active
         ));
     }
     public function unserialize($serialized) 
@@ -356,7 +364,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
             $this->id,
             $this->usuario,
             $this->password,
-            $this->isActive
+            $this->is_active
         ) = unserialize($serialized);
     
     }
@@ -394,4 +402,9 @@ class Usuario implements AdvancedUserInterface, \Serializable
     {
         return $this->idEstablecimiento;
     }
+
+   
+
+  
+
 }

@@ -22,15 +22,12 @@ class UsuarioController extends Controller
      * @Route("/", name="usuario_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function cuentaAction()
     {
-        $em = $this->getDoctrine()->getManager();
 
-        $usuarios = $em->getRepository('ProyectoBundle:Usuario')->findAll();
 
-        return $this->render('ProyectoBundle:Usuario:index.html.twig', array(
-            'usuarios' => $usuarios,
-        ));
+        return $this->render('ProyectoBundle:usuario:index.html.twig'
+        );
     }
 
     /**
@@ -41,34 +38,35 @@ class UsuarioController extends Controller
      */
     public function newAction(Request $request)
     {
-        $passwordEncoder=$this->get('security.password_encoder'); 
+        $passwordEncoder = $this->get('security.password_encoder');
         $usuario = new Usuario();
         $form = $this->createForm('ProyectoBundle\Form\usuarioType', $usuario);
         $form->handleRequest($request);
-        
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encriptacion de la contraseña
             $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
             $usuario->setPassword($password);
             // asigno rol de usuario por defecto
-            $rol='ROLE_USER';
-            $usuario->setRol($rol);
+            $roles = 'ROLE_USER';
+            $usuario->setRoles($roles);
             // usuario activo
-            
-            $active=true;
+
+            $active = true;
             $usuario->setActive($active);
             // cargo en la base
             $em = $this->getDoctrine()->getManager();
             $em->persist($usuario);
             $em->flush();
-            return $this->render('ProyectoBundle:Default:Index.html.twig');
-                }        
+            return $this->render('ProyectoBundle:Default:index.html.twig');
+        }
 // renderizo si esta mal cargado.
-        return $this->render('ProyectoBundle:Usuario:new.html.twig', array(
+        return $this->render('ProyectoBundle:usuario:new.html.twig', array(
             'usuario' => $usuario,
             'form' => $form->createView(),
         ));
     }
+
     /**
      * Finds and displays a usuario entity.
      *
@@ -84,7 +82,8 @@ class UsuarioController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-   /**
+
+    /**
      * Finds and displays a usuario entity.
      *
      * @Route("/{id}", name="usuario_login")
@@ -92,7 +91,7 @@ class UsuarioController extends Controller
      */
     public function loginAction(request $request)
     {
-        
+
 
         return $this->render('usuario/login.html.twig');
     }
@@ -154,8 +153,9 @@ class UsuarioController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('usuario_delete', array('id' => $usuario->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
+
+
 }
 

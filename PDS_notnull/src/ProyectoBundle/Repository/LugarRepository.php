@@ -1,9 +1,19 @@
 <?php
+
+/**
+ * Created by PhpStorm.
+ * User: fede
+ * Date: 05/11/17
+ * Time: 10:59
+ */
+
+
 namespace ProyectoBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
 class LugarRepository extends EntityRepository{
+
     
     public function findLugar($id){
         $em = $this->getEntityManager();
@@ -15,42 +25,8 @@ class LugarRepository extends EntityRepository{
         $consulta->setParameter('param', $id);
         return $lugares = $consulta->getResult();
     }
-    
-    
-    public function findOneByIdJoinedToSeccion($lugarId)
-    {
-        $query = $this->getEntityManager()
-            ->createQuery('SELECT l, s FROM ProyectoBundle:Lugar l
-                           JOIN l.seccion_lugar s
-                           WHERE l.id = :id'
-        )->setParameter('id', $lugarId);
-        try 
-        {
-            return $query->getSingleResult();
-        } 
-        catch (\Doctrine\ORM\NoResultException $e) 
-        {
-            return null;
-        }
-   }
+     
    
-   public function findAllJoinedToSeccion()
-    {
-        $query = $this->getEntityManager()
-            ->createQuery('SELECT l, s FROM ProyectoBundle:Lugar l
-                           JOIN l.seccion_lugar s'
-                         );
-        try 
-        {
-            return $query->getSingleResult();
-        } 
-        catch (\Doctrine\ORM\NoResultException $e) 
-        {
-            return null;
-        }
-   }
-   
-    
     public function findLugaresTodos(){
         $em = $this->getEntityManager();
         
@@ -60,15 +36,34 @@ class LugarRepository extends EntityRepository{
         return $lugares = $consulta->getResult();
     }
     
-    public function findSeccion($id){
+    /* Esta función nos permite encontrar los lugares
+     * libres de un establecimiento dentro de una franja horaria
+     * dependiendo lo que haya en la tabla de reservas
+     */
+
+    /**
+     * @param $idEst
+     * @param $fechaDesde
+     * @param $fechaHasta
+     * @return array
+     */
+    public function findLibresXHorario($idEst, $fechaDesde, $fechaHasta){
         $em = $this->getEntityManager();
-        
-        $query = 'SELECT e FROM ProyectoBundle:SeccionLugar e '
-                . 'WHERE e.id = :param';
-        
+
+        $query =
+            'SELECT l FROM ProyectoBundle:Lugar l JOIN ProyectoBundle:Reserva r
+              WHERE l.idEstablecimiento = :est
+                AND r.fechaDesde < :fHasta
+                AND r.fechaHasta > :fDesde';
+
         $consulta = $em->createQuery($query);
-        $consulta->setParameter('param', $id);
-        return $consulta->getResult();
+        $consulta->setParameters(array(
+            'est' => $idEst,
+            'fHasta' => $fechaHasta,
+            'fDesde' => $fechaDesde,
+        ));
+
+        return $lugares = $consulta->getResult();
     }
-    
+
 }

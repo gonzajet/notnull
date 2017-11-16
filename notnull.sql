@@ -91,10 +91,8 @@ INSERT INTO `establecimiento` (`id`, `nombre`, `direccion`, `provincia`, `locali
 
 CREATE TABLE `lugar` (
   `id` int(11) NOT NULL,
-  `id_establecimiento` int(11) NOT NULL,
   `estado` tinyint(1) NOT NULL DEFAULT '1',
-  `codigo` varchar(255) NOT NULL,
-  `id_seccion` int(11) NOT NULL
+  `codigo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -112,17 +110,19 @@ CREATE TABLE `reserva` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `seccion_lugar`
+-- Estructura de tabla para la tabla `lugar_establecimiento`
 --
 
-CREATE TABLE `seccion_lugar` (
+CREATE TABLE `lugar_establecimiento` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL
+  `id_establecimiento` int(11) NOT NULL,
+  `id_lugar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
+
+
 
 --
 -- Estructura de tabla para la tabla `usuario`
@@ -180,9 +180,16 @@ ALTER TABLE `establecimiento`
 -- Indices de la tabla `lugar`
 --
 ALTER TABLE `lugar`
+  ADD PRIMARY KEY (`id`);
+
+
+--
+-- Indices de la tabla `lugar`
+--
+ALTER TABLE `lugar_establecimiento`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_establecimiento` (`id_establecimiento`),
-  ADD KEY `id_seccion` (`id_seccion`);
+  ADD KEY `id_lugar` (`id_lugar`);
 
 --
 -- Indices de la tabla `reserva`
@@ -191,12 +198,6 @@ ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_id_auto` (`id_auto`),
   ADD KEY `id_lugar` (`id_lugar`);
-
---
--- Indices de la tabla `seccion_lugar`
---
-ALTER TABLE `seccion_lugar`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuario`
@@ -237,15 +238,16 @@ ALTER TABLE `establecimiento`
 ALTER TABLE `lugar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `lugar_establecimiento`
+--
+ALTER TABLE `lugar_establecimiento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `seccion_lugar`
---
-ALTER TABLE `seccion_lugar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
@@ -262,12 +264,6 @@ ALTER TABLE `auto`
   ADD CONSTRAINT `FK_66BA25FA334520B1` FOREIGN KEY (`id_Usuario`) REFERENCES `usuario` (`id`);
 
 --
--- Filtros para la tabla `lugar`
---
-ALTER TABLE `lugar`
-  ADD CONSTRAINT `Lugar_ibfk_2` FOREIGN KEY (`id_seccion`) REFERENCES `seccion_lugar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
@@ -280,6 +276,14 @@ ALTER TABLE `reserva`
 ALTER TABLE `usuario_establecimiento`
   ADD CONSTRAINT `usuario_establecimiento_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `usuario_establecimiento_ibfk_2` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`);
+
+--
+-- Filtros para la tabla `usuario_establecimiento`
+--
+ALTER TABLE `lugar_establecimiento`
+  ADD CONSTRAINT `lugar_establecimiento_ibfk_1` FOREIGN KEY (`id_establecimiento`) REFERENCES `establecimiento` (`id`),
+  ADD CONSTRAINT `lugar_establecimiento_ibfk_2` FOREIGN KEY (`id_lugar`) REFERENCES `lugar` (`id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

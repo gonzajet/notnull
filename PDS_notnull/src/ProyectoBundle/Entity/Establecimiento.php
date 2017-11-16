@@ -92,10 +92,13 @@ class Establecimiento
     private $idUsuario;
     
     
-    // ...
-
     /**
-     * @ORM\OneToMany(targetEntity="Lugar", mappedBy="idEstablecimiento")
+     * Many Establecimientos have Many lugares.
+     * @ManyToMany(targetEntity="Lugar")
+     * @JoinTable(name="lugar_establecimiento",
+     *      joinColumns={@JoinColumn(name="id_establecimiento", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="id_lugar", referencedColumnName="id")}
+     *      )
      */
     private $lugares;
 
@@ -413,5 +416,57 @@ class Establecimiento
     public function getLng()
     {
         return $this->lng;
+    }
+
+    /**
+     * Set lat
+     *
+     * @param string $lat
+     *
+     * @return Establecimiento
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    /**
+     * Set lng
+     *
+     * @param string $lng
+     *
+     * @return Establecimiento
+     */
+    public function setLng($lng)
+    {
+        $this->lng = $lng;
+
+        return $this;
+    }
+
+    /**
+     * Add lugare
+     *
+     * @param \ProyectoBundle\Entity\Lugar $lugare
+     *
+     * @return Establecimiento
+     */
+    public function addLugare(\ProyectoBundle\Entity\Lugar $lugare)
+    {
+        $this->lugares[] = $lugare;
+
+        return $this;
+    }
+
+    /**
+     * Remove lugare
+     *
+     * @param \ProyectoBundle\Entity\Lugar $lugare
+     */
+    public function removeLugare(\ProyectoBundle\Entity\Lugar $lugare)
+    {
+        $this->lugares->removeElement($lugare);
     }
 }

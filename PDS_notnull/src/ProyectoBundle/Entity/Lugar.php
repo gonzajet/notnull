@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Lugar
  *
- * @ORM\Table(name="lugar", indexes={@ORM\Index(name="id_establecimiento", columns={"id_establecimiento"}), @ORM\Index(name="id_seccion", columns={"id_seccion"})})
- * @ORM\Entity
+ * @ORM\Table(name="lugar")
+ * @ORM\Entity(repositoryClass="ProyectoBundle\Repository\LugarRepository")
  */
 class Lugar
 {
@@ -22,34 +22,19 @@ class Lugar
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_establecimiento", type="integer", nullable=false)
-     */
-    private $idEstablecimiento;
-
-    /**
      * @var boolean
      *
      * @ORM\Column(name="estado", type="boolean", nullable=false)
      */
-    private $estado = '1';
+    private $estado = '0';
 
+    
     /**
      * @var string
      *
      * @ORM\Column(name="codigo", type="string", length=255, nullable=false)
      */
     private $codigo;
-
-    /**
-     * @var \SeccionLugar
-     *
-     * @ORM\ManyToOne(targetEntity="SeccionLugar")
-    */
-    private $idSeccion;
-    
-    
     /**
      * Get id
      *
@@ -131,31 +116,6 @@ class Lugar
     
         return $this;
     }
-    
-    
-    /**
-     * Get idSeccion
-     
-     * @return integer
-     */
-    public function getIdSeccion()
-    {
-        return $this->idSeccion;
-    }
-    
-    /**
-     * Set idSeccion
-     *
-     * @param string $idSeccion
-     *
-     * @return idSeccion
-     */
-    public function setIdSeccion($idSeccion)
-    {
-        $this->idSeccion = $idSeccion;
-    
-        return $this;
-    }
-    
-
+ 
 }
+

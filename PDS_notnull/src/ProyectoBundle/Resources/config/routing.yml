@@ -82,3 +82,6 @@ reservar:
 maps:
     path: /maps
     defaults: { _controller: ProyectoBundle:Establecimiento:maps}
+auto_new:
+    path:     auto/new
+    defaults: { _controller: ProyectoBundle:Auto:new }

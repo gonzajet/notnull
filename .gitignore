@@ -18,6 +18,7 @@ PDS_notnull/app/config/parameters.yml
 PDS_notnull/app/config/*
 PDS_notnull/var\logs/prod.log.
 PDS_notnull/bin/symfony_requirements
+PDS_notnull/src/ProyectoBundle/Resources/views/Usuario/index.html.twig
 
 
 

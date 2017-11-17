@@ -29,16 +29,19 @@ proyecto_about:
  #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
 proyecto_sendmail:
     path:   /admin/sendmail
-    defaults: { _controller: ProyectoBundle:Admin:sendmail} 
+    defaults: { _controller: ProyectoBundle:Admin:sendmail}
 
-  
+#-----------Redes login-------------
+
+
+#------------------------------------------------------
   
 lugar_index:
-    path:   /lugar/index
+    path:   /lugar/index/{id}
     defaults: { _controller: ProyectoBundle:Lugar:index }
     
 lugar_new:
-    path:   /lugar/new
+    path:   /lugar/new/{establecimiento}
     defaults: { _controller: ProyectoBundle:Lugar:new }   
 
 #--------------para usuario-----------------------------------
@@ -48,6 +51,10 @@ usuario_index:
 usuario_new:
     path:     /new
     defaults: { _controller: ProyectoBundle:Usuario:new }
+
+usuario:
+    path: /cuenta
+    defaults: {_controller: ProyectoBundle:Usuario:cuenta}
 #-----------------para la autenticacion---------------------
 app_usuario:
     resource: "@ProyectoBundle/Controller/UsuarioController.php"

@@ -76,7 +76,7 @@ class Contacto
     * @Assert\NotBlank(message="El campo subject no puede estar vacío")
     * @ORM\Column(name="subject", type="string", length=255)
     * @Assert\Type("string")
-    * @Assert\Regex("/^[a-zA-Z]+$/", message="El campo subject no puede contener numeros")
+    
     */
  
     private $subject;
@@ -263,7 +263,3 @@ class Contacto
   
     
 }
-
-
-
-

@@ -26,6 +26,7 @@
         "doctrine/orm": "^2.5",
         "egeloen/google-map-bundle": "^3.0",
         "egeloen/serializer-bundle": "^1.0",
+        "hwi/oauth-bundle": "^0.5.3",
         "incenteev/composer-parameter-handler": "^2.0",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/httplug-bundle": "^1.7",

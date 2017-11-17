@@ -7,62 +7,63 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use ProyectoBundle\Entity\Lugar;
 use ProyectoBundle\Entity\SeccionLugar;
+use ProyectoBundle\Entity\Establecimiento;
 use Symfony\Component\HttpFoundation\Request;
 
 class LugarController extends Controller
 {
-    public function indexAction()
+    public function indexAction($id)
     {     
-        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:SeccionLugar');
-        $secciones = $repository->findAll();
-        return $this->render('ProyectoBundle:Lugar:index.html.twig',array("secciones"=>$secciones) );
+       
+        $em = $this->getDoctrine();
+        $query = $em->getRepository('ProyectoBundle:Lugar');
+        $establecimiento = $em->getRepository('ProyectoBundle:Establecimiento')->find($id);
+        $lugares = $establecimiento->getLugares();
+         return $this->render('ProyectoBundle:Lugar:index.html.twig'
+                 ,array('establecimiento' => $id,
+                       'lugares' => $lugares));
     }
     
-    public function newAction(Request $request)
+    public function newAction(Request $request, $establecimiento)
     {   
         $lugar = new Lugar();
         $form = $this->createForm('ProyectoBundle\Form\LugarType', $lugar);
-        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:SeccionLugar');
-        $secciones = $repository->findAll();
-       
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            $codigo = $form['codigo']->getData();
             
-            /*
-            // encriptacion de la contraseña
-            $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
-            $usuario->setPassword($password);
-            // asigno rol de usuario por defecto
-            $rol='ROLE_USER';
-            $usuario->setRol($rol);
-            // usuario activo
-            $active=true;
-            $usuario->setActive($active);
-            */
-            
-            $lugar->setEstado(true);
-            // cargo en la base
             $em = $this->getDoctrine()->getManager();
+            $lugar->setEstado(false);
+            $lugar->setCodigo($codigo);
+            
+           
+            $estableci = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+            //$category = $em->getRepository('AkoStoreBundle:Category')->find($category_id);
+            $estableci->addLugares($lugar);
+            
+             // cargo en la base
             $em->persist($lugar);
             $em->flush();
-            
-            return $this->redirectToRoute('ProyectoBundle:Lugar:index.html.twig',array("secciones"=>$secciones) );
+            $lugares = $em->getRepository('ProyectoBundle:Lugar')->findAll();
+            return $this->render('ProyectoBundle:Lugar:index.html.twig',array('establecimiento' => $establecimiento,
+                                                                              'lugares' => $lugares ));
         }
  
-        return $this->render('ProyectoBundle:Lugar:new.html.twig',array("secciones"=>$secciones,
-                                                                        'lugar' => $lugar,
-                                                                        'form' => $form->createView()));
-        
-        /*
-        $lugar = new Lugar();
-        //$seccionlugar = new SeccionLugar();
-        $form = $this->createForm('ProyectoBundle\Form\LugarType', $lugar);
-        
-        return $this->render('ProyectoBundle:Lugar:new.html.twig', array(
-            'lugar' => $lugar,
-            'form' => $form->createView()));
-       */
-         
+        return $this->render('ProyectoBundle:Lugar:new.html.twig',array('lugar' => $lugar,
+                                                                        'establecimiento'=>$establecimiento,
+                                                                        'form' => $form->createView()));      
     }
+
+    public function buscarXHorarioAction(Request $request){
+        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
+        $secciones = $repository->findLibresXHorario();
+
+        return $secciones;
+    }
+    
+    
+    
     
 }    

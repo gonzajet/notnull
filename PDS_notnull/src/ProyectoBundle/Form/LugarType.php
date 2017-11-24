@@ -14,7 +14,8 @@ class LugarType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {   
-       $builder ->add('codigo');
+       $builder->add('Cant', null, array('label'=> 'Cantidad Lugares', 'mapped' => false));
+       
     }
     
     /**

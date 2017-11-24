@@ -2,48 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55646afe-af64-4e01-8e2f-94eb06c0b477" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_88fir9qheogn52mn3qs3ukq6b0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ipl50b8vjjomsc8ha0deb22vh6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_0dub201gaul082butbo10vqhb5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_0mlk7rouiusftd7ds6cv6b7057" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_1dtnn02jq0gom9o74o3or6crs7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_1f4trcdbl72vcg1vhfqbd33bh3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_243ifvmk5kd50bkarj0ekdr685" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_4iscuqouvt7ud9mmq2sla94nu0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_7mqakous4k3pt6qadif2r775f6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_8tqoqf9ivr9deqbou775ik4781" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_9oqskmctesmppkfebvr8a7stt7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ae73lif1ggj9oovcaf0ekvuqr5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_am840klputtvtlbd7jc4lsi1e4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_bdl8lqo1kf73moqi8hi16r71m4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_bf57a0phibdijfd3j7nn036715" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_csk3fh522ajcvmarbec3c6j4q5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_cvvppm7th6fsp5er3khuau7p27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_f564jm9jqtj9nnvmbnbf9bkei2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ft15c3tp6hm0h7i3mlo1jjejn3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_hl0c12o1t58iu1dhp18c7dc9c0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_i8pvmk5v447pulchv9h7mqgs2n" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_omn943koa9vh61h4aaf4sv0nd1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_p1mschflahtodqvb2mjks0lms1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_p4o6mlenl6juvmtejijk2tll96" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_pjduuh1hhse5eh1d0hus7lqg32" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_r0h5sodo1g9qgtkijuejj57vc0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_r4cdg33m7cfueqhb49fla86ci2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_rvs5mejbkqpcnh1ugvqcrtnj34" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_smje2sje5f904hsp1dodvo9bb4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_t34lm71oevlgumbvddrgc2k2ph" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_u6eq2jttg0hhrolpu34r3aolg5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ucug110tvb9knq41jqcjbd5la4" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_cmscog7g1r3h4q5d8u0qs2c5ff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/Fondo.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/alarma.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/festivales_01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/la-rebelion-de-las-redes.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/autoType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/autoRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Auto/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Usuario/editar.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Tests/Controller/AutoControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_70bqq8goio9m3ic6t1609q7qge" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_8dk6ge9ghd539up3lj4us7a20i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_9sh0dk8au8b37bnn41c3usgqes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_d274dtofka18bhhk1v22vu7jpu" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_el9l88bhdt1o0scssfldgjbpkl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_tr3j53jm74c605ujrbfci1cqth" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_vig1um6esbnmhi6mvm0s6dr3eh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_ovgt164jadmdgfqlh4a201oqre" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/docs.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/ie-emulation-modes-warning.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/ie10-viewport-bug-workaround.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/css/carousel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/application.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/collapse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/anchor.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/clipboard.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/holder.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/jquery-slim.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/popper.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/SeccionLugar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/web/bundles/httplug/script/httplug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/web/bundles/httplug/style/httplug.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/SeccionLugar.orm.xml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Lugar.orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_88fir9qheogn52mn3qs3ukq6b0" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_88fir9qheogn52mn3qs3ukq6b0" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/composer.lock" afterPath="$PROJECT_DIR$/PDS_notnull/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Establecimiento.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Establecimiento.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Lugar.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Lugar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/usuarioRepository.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/usuarioRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Usuario.orm.xml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Usuario.orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/LugarType.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/LugarType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/LugarRepository.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/LugarRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Establecimiento.orm.xml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Establecimiento.orm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/public/libresXHora.js" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/public/libresXHora.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/googleMaps.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/googleMaps.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/new.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/edit.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/bootstrap.php.cache" afterPath="$PROJECT_DIR$/PDS_notnull/var/bootstrap.php.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ipl50b8vjjomsc8ha0deb22vh6" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ipl50b8vjjomsc8ha0deb22vh6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_9sh0dk8au8b37bnn41c3usgqes" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_9sh0dk8au8b37bnn41c3usgqes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_eq3tfasobbcf4eaq4bg6iktkb6" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_eq3tfasobbcf4eaq4bg6iktkb6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_smje2sje5f904hsp1dodvo9bb4" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_smje2sje5f904hsp1dodvo9bb4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var\logs/prod.log" afterPath="$PROJECT_DIR$/PDS_notnull/var\logs/prod.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/web/bundles/proyecto/libresXHora.js" afterPath="$PROJECT_DIR$/PDS_notnull/web/bundles/proyecto/libresXHora.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/web/js/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/jquery-3.2.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notnull.sql" afterPath="$PROJECT_DIR$/notnull.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,28 +115,38 @@
       <file leaf-file-name="usuarios.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="776">
               <caret line="326" column="49" lean-forward="false" selection-start-line="326" selection-start-column="49" selection-end-line="326" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
+      <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="-126">
+              <caret line="167" column="6" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state relative-caret-position="108">
+              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -122,7 +168,6 @@
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/login.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Usuario.orm.xml" />
@@ -130,8 +175,9 @@
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" />
-        <option value="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
       </list>
     </option>
   </component>
@@ -402,12 +448,12 @@
       <workItem from="1510610574935" duration="7742000" />
       <workItem from="1510866960981" duration="7644000" />
       <workItem from="1511469356149" duration="13000000" />
-      <workItem from="1511530189359" duration="2526000" />
+      <workItem from="1511530189359" duration="3132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39391000" />
+    <option name="totallyTimeSpent" value="39997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="3" width="1303" height="780" extended-state="6" />
@@ -443,22 +489,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -626,13 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="972">
@@ -773,14 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -799,26 +814,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/autoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="776">
           <caret line="326" column="49" lean-forward="false" selection-start-line="326" selection-start-column="49" selection-end-line="326" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/UserInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="167" column="6" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding>
+            <element signature="e#6145#6152#0#HTML" expanded="true" />
+            <element signature="e#6707#6714#0#HTML" expanded="true" />
+            <element signature="e#7264#7271#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="542">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding />
         </state>
       </provider>

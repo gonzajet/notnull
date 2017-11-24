@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <h1></h1>
+    <br><br>
+<div class="container">
+        <div class="row centered-form">
+        <div class="well well-sm">
+            
+    {{form_start(form)}}
+          <div class="form-group row">
+              <div class="col-xs-3">
+              {{form_label(form.marca)}}
+              {{form_widget(form.marca, {'attr' : {'class': 'form-control', 'placeholder' : ''}})}}
+              <span class="text-danger"> {{ form_errors(form.marca)}} </span>
+          </div>
+            <div class="col-xs-3">
+              {{form_label(form.modelo)}}
+              {{form_widget(form.modelo, {'attr' : {'class': 'form-control', 'placeholder' : ''}})}}
+              <span class="text-danger"> {{ form_errors(form.modelo)}} </span>
+          </div>
+          </div>
+       <div class="form-group row">
+          <div class="col-xs-3">
+              {{form_label(form.patente)}}
+              {{form_widget(form.patente, {'attr' : {'class': 'form-control', 'placeholder' : 'Oscar'}})}}
+              <span class="text-danger"> {{ form_errors(form.patente)}} </span>
+          </div>
+          </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Acepto terminos y condiciones
+    </label>
+  </div>
+  <button type="submit" value="Create" class="btn btn-default">Registrarse</button>
+{{form_end(form)}}
+</div>
+</div>
+</div>
+{% endblock %}

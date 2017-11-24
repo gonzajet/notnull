@@ -37,10 +37,9 @@
 
 </style>
 
-
 <div class="container top-buffer">
 <ol class="breadcrumb">
-    <li><a href="../lugar/index"><h3>Lugares</h3></a></li>
+    <li><a href="{{ path('lugar_index', { 'id': establecimiento}) }}"><h3>Lugares</h3></a></li>
     <li><a href="#">Nuevo</a></li>
 </ol>
 </div>
@@ -55,30 +54,12 @@
                     <div class="form-group row">
                         <span class="col-md-1 col-md-offset-2 text-center"></span>
                         <div class="col-md-1">
-                           {{form_label(form.codigo)}}
+                           {{form_label(form.Cant)}}
                         </div>
                         <div class="col-md-3">
-                           {{form_widget(form.codigo, {'attr' : {'class': 'form-control', 'placeholder' : 'Codigo'}})}}
+                           {{form_widget(form.Cant, {'attr' : {'class': 'form-control'}})}}
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <span class="col-md-1 col-md-offset-2 text-center"></span>
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-3">
-                           <div class="dropdown btn btn-default btn-select btn-select-light"> 
-                                <input type="hidden" class="btn-select-input" id="" name="" value="" />
-                                 <span class="btn-select-value">Seccion</span>
-                                 <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
-                                 <ul>
-                                    {% for seccion in secciones %}
-                                        <li data-id="{{seccion.getId()}}">{{ seccion.nombre }}</a></li>
-                                    {% endfor%}
-                                </ul> 
-                           </div>
-                        </div>                         
-                    </div>
-                    <br/>        
+                    </div>       
                     <div class="form-group">
                         <span class="col-md-1 col-md-offset-2 text-center"></span>
                         <div class="col-md-1">
@@ -97,4 +78,6 @@
 
 <script src="{{asset('public/estilos_varios/js/selectchoice.js') }}"></script>
 
+
 {% endblock %}
+

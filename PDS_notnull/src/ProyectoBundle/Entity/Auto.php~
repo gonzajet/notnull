@@ -53,5 +53,110 @@ class Auto
     private $idUsuario;
 
 
-}
 
+    /**
+     * Set patente
+     *
+     * @param string $patente
+     *
+     * @return Auto
+     */
+    public function setPatente($patente)
+    {
+        $this->patente = $patente;
+
+        return $this;
+    }
+
+    /**
+     * Get patente
+     *
+     * @return string
+     */
+    public function getPatente()
+    {
+        return $this->patente;
+    }
+
+    /**
+     * Set marca
+     *
+     * @param string $marca
+     *
+     * @return Auto
+     */
+    public function setMarca($marca)
+    {
+        $this->marca = $marca;
+
+        return $this;
+    }
+
+    /**
+     * Get marca
+     *
+     * @return string
+     */
+    public function getMarca()
+    {
+        return $this->marca;
+    }
+
+    /**
+     * Set modelo
+     *
+     * @param string $modelo
+     *
+     * @return Auto
+     */
+    public function setModelo($modelo)
+    {
+        $this->modelo = $modelo;
+
+        return $this;
+    }
+
+    /**
+     * Get modelo
+     *
+     * @return string
+     */
+    public function getModelo()
+    {
+        return $this->modelo;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idUsuario
+     *
+     * @param \ProyectoBundle\Entity\Usuario $idUsuario
+     *
+     * @return Auto
+     */
+    public function setIdUsuario(\ProyectoBundle\Entity\Usuario $idUsuario = null)
+    {
+        $this->idUsuario = $idUsuario;
+
+        return $this;
+    }
+
+    /**
+     * Get idUsuario
+     *
+     * @return \ProyectoBundle\Entity\Usuario
+     */
+    public function getIdUsuario()
+    {
+        return $this->idUsuario;
+    }
+}

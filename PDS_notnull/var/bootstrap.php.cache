@@ -155,7 +155,7 @@ $this->headers[$key] = $values;
 $this->headers[$key] = array_merge($this->headers[$key], $values);
 }
 if ('cache-control'=== $key) {
-$this->cacheControl = $this->parseCacheControl($values[0]);
+$this->cacheControl = $this->parseCacheControl(implode(', ', $this->headers[$key]));
 }
 }
 public function has($key)
@@ -281,7 +281,10 @@ $file = null;
 $file = new UploadedFile($file['tmp_name'], $file['name'], $file['type'], $file['size'], $file['error']);
 }
 } else {
-$file = array_filter(array_map(array($this,'convertFileInformation'), $file));
+$file = array_map(array($this,'convertFileInformation'), $file);
+if (array_keys($keys) === $keys) {
+$file = array_filter($file);
+}
 }
 }
 return $file;
@@ -421,7 +424,6 @@ protected $defaultLocale ='en';
 protected static $formats;
 protected static $requestFactory;
 private $isHostValid = true;
-private $isClientIpsValid = true;
 private $isForwardedValid = true;
 private static $trustedHeaderSet = -1;
 private static $trustedHeaderNames = array(
@@ -1225,6 +1227,9 @@ $baseUrl ='/'.$seg.$baseUrl;
 } while ($last > $index && (false !== $pos = strpos($path, $baseUrl)) && 0 != $pos);
 }
 $requestUri = $this->getRequestUri();
+if ($requestUri !==''&& $requestUri[0] !=='/') {
+$requestUri ='/'.$requestUri;
+}
 if ($baseUrl && false !== $prefix = $this->getUrlencodedPrefix($requestUri, $baseUrl)) {
 return $prefix;
 }
@@ -1267,8 +1272,11 @@ $baseUrl = $this->getBaseUrl();
 if (null === ($requestUri = $this->getRequestUri())) {
 return'/';
 }
-if ($pos = strpos($requestUri,'?')) {
+if (false !== $pos = strpos($requestUri,'?')) {
 $requestUri = substr($requestUri, 0, $pos);
+}
+if ($requestUri !==''&& $requestUri[0] !=='/') {
+$requestUri ='/'.$requestUri;
 }
 $pathInfo = substr($requestUri, strlen($baseUrl));
 if (null !== $baseUrl && (false === $pathInfo ||''=== $pathInfo)) {

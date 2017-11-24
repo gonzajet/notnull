@@ -41,12 +41,20 @@ proyecto_sendmail:
 #------------------------------------------------------
   
 lugar_index:
-    path:   /lugar/index
+    path:   /lugar/index/{id}
     defaults: { _controller: ProyectoBundle:Lugar:index }
     
 lugar_new:
-    path:   /lugar/new
-    defaults: { _controller: ProyectoBundle:Lugar:new }   
+    path:   /lugar/new/{establecimiento}
+    defaults: { _controller: ProyectoBundle:Lugar:new }
+
+lugar_delete:
+    path:   /lugar/delete/{id}/{establecimiento}
+    defaults: { _controller: ProyectoBundle:Lugar:delete }   
+
+lugar_buscar:
+    path:   /lugar/buscar/{establecimiento}/{check_value}
+    defaults: { _controller: ProyectoBundle:Lugar:buscar }
 
 #--------------para usuario-----------------------------------
 usuario_index:
@@ -55,6 +63,9 @@ usuario_index:
 usuario_new:
     path:     /new
     defaults: { _controller: ProyectoBundle:Usuario:new }
+usuario_edit:
+    path:     /usuario/edit
+    defaults: { _controller: ProyectoBundle:Usuario:edit }
 
 usuario:
     path: /cuenta
@@ -93,3 +104,6 @@ reservar:
 maps:
     path: /maps
     defaults: { _controller: ProyectoBundle:Establecimiento:maps}
+auto_new:
+    path:     auto/new
+    defaults: { _controller: ProyectoBundle:Auto:new }

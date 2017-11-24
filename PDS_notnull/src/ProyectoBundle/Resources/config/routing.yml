@@ -51,6 +51,9 @@ usuario_index:
 usuario_new:
     path:     /new
     defaults: { _controller: ProyectoBundle:Usuario:new }
+usuario_edit:
+    path:     /usuario/edit
+    defaults: { _controller: ProyectoBundle:Usuario:edit }
 
 usuario:
     path: /cuenta

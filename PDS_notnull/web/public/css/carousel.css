@@ -14,15 +14,20 @@ body {
 
 /* Carousel base class */
 .carousel {
+    
   margin-bottom: 4rem;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
-  bottom: 3rem;
+    height: 32px;  
+    z-index: 10;
+    bottom: 3rem;
 }
 
 /* Declare heights because of positioning of img element */
+.carousel-inner { 
+    text-align: center; 
+}
 .carousel-item {
   height: 32rem;
   background-color: #777;
@@ -31,7 +36,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
+  display: inline-block;
+  min-width: 75%;
   height: 32rem;
 }
 

@@ -104,21 +104,23 @@ class UsuarioController extends Controller
      */
     public function editAction(Request $request, Usuario $usuario)
     {
-        $deleteForm = $this->createDeleteForm($usuario);
-        $editForm = $this->createForm('ProyectoBundle\Form\usuarioType', $usuario);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('usuario_edit', array('id' => $usuario->getId()));
-        }
-
-        return $this->render('usuario/edit.html.twig', array(
-            'usuario' => $usuario,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+//        $deleteForm = $this->createDeleteForm($usuario);
+//        $editForm = $this->createForm('ProyectoBundle\Form\usuarioType', $usuario);
+//        $editForm->handleRequest($request);
+//
+//        if ($editForm->isSubmitted() && $editForm->isValid()) {
+//            $this->getDoctrine()->getManager()->flush();
+//
+//            return $this->redirectToRoute('usuario_edit', array('id' => $usuario->getId()));
+//        }
+//
+//        return $this->render('usuario/edit.html.twig', array(
+//            'usuario' => $usuario,
+//            'edit_form' => $editForm->createView(),
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+        return $this->render('ProyectoBundle:usuario:edit.html.twig');
+    
     }
 
     /**

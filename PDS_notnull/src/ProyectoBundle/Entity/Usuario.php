@@ -120,7 +120,19 @@ class Usuario implements AdvancedUserInterface, \Serializable
     {
         return $this->id;
     }
-
+    /**
+     * Set usuario
+     *
+     * @param integer $id
+     *
+     * @return usuario
+     */
+    public function setId($id)
+    {
+        $this->id= $id;
+    
+        return $this;
+    }
     /**
      * Set usuario
      *

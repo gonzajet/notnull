@@ -1,58 +1,145 @@
-{% extends 'base.html.twig' %}
-{% block body %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">  
+        <title>EstacionAR</title>
+        <link href="{{ asset('public/css/style.css')}}" rel="stylesheet" >
+        <link href="{{asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{asset('public/css/bootstrap.min.css.map') }}" rel="stylesheet">
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                width: 50%;
+                height: 600px;
+                background-color: grey;}
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                background-image: url('../../../../web/img/Fondo.jpg') ;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" 
     <html lang="en">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/app_dev.php/">EstacionAR</a>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/app_dev.php/">EstacionAR</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/app_dev.php/">Inicio</a></li>
+                        <li><a href="#about">Acerca de EstacionAR</a></li>
+                        <li><a href="/app_dev.php/admin/contacto">Contacto</a></li>
+                        <li><a href="/app_dev.php/establecimientos">Establecimientos</a></li>
+                    </ul>
+                    <a href="../../../../../app/Resources/views/base.html.twig"></a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--cambiar esto!!!!!!!!!!!!!!!!!!!!!-->
+                        {% if app.user %}
+                            <li><a href='#'><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>
+                            <li><a href={{ path('logout') }}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            {% else %}
+                            <li><a href="{{ path('usuario_new') }}"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+                            <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            {% endif %}
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/app_dev.php/">Inicio</a></li>
-                    <li><a href="#about">Acerca de EstacionAR</a></li>
-                    <li><a href="/app_dev.php/admin/contacto">Contacto</a></li>
-                    <li><a href="/app_dev.php/establecimientos">Establecimientos</a></li>
-                    <li><a href="{{ path ('maps') }}"><b>Mapa</b></a></li>
-                </ul>
-                <a href="../../../../../app/Resources/views/base.html.twig"></a>
-                <ul class="nav navbar-nav navbar-right">
-                    <!--cambiar esto!!!!!!!!!!!!!!!!!!!!!-->
-                    {% if app.user %}
-                        <li><a href='cuenta'><span class="glyphicon glyphicon-user"></span> {{ app.user.usuario }} </a>
-                        </li>
-                        <li><a href={{ path('logout') }}><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                        </li>
-                    {% else %}
-                        <li><a href="{{ path('usuario_new') }}"><span class="glyphicon glyphicon-user"></span> Registro</a>
-                        </li>
-                        <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
+        </nav>
+                    <br>
+                    <br>
+                    <br>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
 
-    <div class="container, text-center">
-        <div class="starter-template">
-            <h1><br></h1>
-            <h1>Bienvenido al sitio de estacionamiento.</h1>
-            <img src="https://www.nuevopudahuel.cl/sites/all/themes/vinci_airport/images/lbx-estacionamientos/salida.jpg"
-                 title="Imagen estacionamiento" width=600 height=300>
-            <p class="lead">Gestione su establecimiento, dese de alta como usuario<br> y encuentre lugares disponibles.
-            </p>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner text-center">
+                    <div class="item active">
+                        <img src="{{asset('img/la-rebelion-de-las-redes.jpg')}}" alt="Estacionamientos" width="1000">
+                        <div class="carousel-caption">
+                            <h3>Los Angeles</h3>
+                            <p>LA is always so much fun!</p>
+                        </div>
+                    </div>
 
-        </div>
+                    <div class="item ">
+                        <img src="{{asset('img/festivales_01.jpg')}}" alt="Eventos Especiales" width="1000">
+                        <div class="carousel-caption">
+                            <h3>Eventos Especiales</h3>
+                            <p></p>
+                        </div>
+                    </div>
 
-    </div>
+                    <div class="item ">
+                        <img src="{{asset('img/alarma.jpg')}}" alt="Reservas" width="1000">
+                        <div class="carousel-caption">
+                            <h3>New York</h3>
+                            <p>We love the Big Apple!</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </nav>
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="rounded" src="https://www.ecestaticos.com/imagestatic/clipping/a99/44b/a9944bda13638884ea4338042f778636/la-rebelion-de-las-redes.jpg?mtime=1480956916" alt="Generic placeholder image" width="400" height="140">
+                <h2>Estacionamientos</h2>
+                <p>Obtener una lista de todos los estacionamientos disponibles de la Provincia de Buenos Aires</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="rounded" src="http://dyrservicios.com/sitio/wp-content/uploads/2014/10/confeti-papelitos.jpg" alt="Generic placeholder image" width="400" height="140">
+                <h2>Eventos Especiales</h2>
+                <p>Podras ver las calles reservadas o establecimientos disponibles para Recitales, Partidos de Futbol, Actos politicos, eventos culturales, etc.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="border border-danger rounded-circle" src="http://www.fanisa.com.pe/wp-content/uploads/2017/09/alarma.jpg" alt="Generic placeholder image" width="400" height="140">
+                <h2>Reservas</h2>
+                <p>Elegi un establecimiento disponible chequea si hay lugar disponible y reserva tu lugar para que puedas llegar a tiempo a tus destinos.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    {#   {# <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>#}
-    <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ asset('public/js/ie10-viewport-bug-workaround.js') }}"></script>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="{{asset('public/js/vendor/jquery.min.js')}}"><\/script>')</script>
+        <script src="{{ asset('public/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{ asset('public/js/bootstrap.min.js')}}"></script>
 
-    </html>
-
-{% endblock %}
+        <script src="{{asset('public/js/vendor/popper.min.js')}}"></script>
+        <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+        <script src="{{asset('public/js/vendor/holder.min.js')}}"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{asset('public/js/ie10-viewport-bug-workaround.js')}}"></script>
+    </body>
+</html>

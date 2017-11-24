@@ -143,7 +143,7 @@ class Auto
      *
      * @return Auto
      */
-    public function setIdUsuario(\ProyectoBundle\Entity\Usuario $idUsuario = null)
+    public function setIdUsuario(\ProyectoBundle\Entity\Usuario $idUsuario)
     {
         $this->idUsuario = $idUsuario;
 

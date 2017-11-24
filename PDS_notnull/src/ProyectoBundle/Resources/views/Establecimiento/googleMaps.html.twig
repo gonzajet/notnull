@@ -20,45 +20,71 @@
             }
         </style>
     </head>
-    <body>
-        <h1>Establecimientos: {{ establecimientos|length}}</h1>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{asset('public/js/ie10-viewport-bug-workaround.js')}}"></script>
 
+    </html>
+    <center>
         <div id="map"></div>
         <script>
             var map;
             function initMap() {
                 var centro = {lat: -34.7751535, lng: -58.26789550000001};
-
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: centro,
                     zoom: 12
                 });
-
-                
-            //    var marker = new google.maps.Marker({
-            //        position: centro,
-            //        map: map
-            //    });
+                //    var marker = new google.maps.Marker({
+                //        position: centro,
+                //        map: map
+                //    });
 
 
-                {% for est in establecimientos %}
-                    lat = {{ est.lat}};
-                    lng = {{ est.lng}};
+            {% for est in establecimientos %}
+                    var nom = "{{est.nombre}}";
+                            var lat = {{ est.lat}};
+                            var lng = {{ est.lng}};
 
-                    position = new google.maps.LatLng(lat,lng);
+                    var infowindow = new google.maps.InfoWindow({
+                        content: nom});
+                    position = new google.maps.LatLng(lat, lng);
                     markerd = new google.maps.Marker({
                         position: position,
+                        title: nom,
                         map: map
                     });
-                {% endfor %}
 
+            {% endfor %}
+                    markerd.addListener('click', function () {
+{#                        
+                       
+            {% for est in establecimientos %}
+                     var latitud = markerd.position.lat();
+                        var longuitud = markerd.position.lng();
+                        var nom = "{{est.nombre}}";
+                                var lat = {{ est.lat}};
+                                var lng = {{ est.lng}};
+                {%if  latitud == lat and longuitud==lng %}
+                            var infowindow = new google.maps.InfoWindow({
+                                content: nom});
+                            marker = new google.maps.Marker({
+                                position: position,
+                                title: nom,
+                                map: map
+                            });
+                {% endif %}
+            {% endfor %}#}
+                        infowindow.open(map, markerd);
+                    });
+                }
 
-            }
         </script>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70uQg1AN-QrsX7Q8SYiAUuG3D5CgpttU&callback=initMap"
         async defer></script>
 
-
-    </body>
+    </center>
 </html>

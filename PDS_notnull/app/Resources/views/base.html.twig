@@ -15,6 +15,21 @@
             
            
         {% endblock %}
+                <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                width: 50%;
+                height: 600px;
+                background-color: grey;}
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                background-image: url(http://www.anawalls.com/images/abstract/background-spot-light.jpg) ;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" 
     </head>
     <body>

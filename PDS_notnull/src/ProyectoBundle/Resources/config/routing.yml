@@ -42,7 +42,15 @@ lugar_index:
     
 lugar_new:
     path:   /lugar/new/{establecimiento}
-    defaults: { _controller: ProyectoBundle:Lugar:new }   
+    defaults: { _controller: ProyectoBundle:Lugar:new }
+
+lugar_delete:
+    path:   /lugar/delete/{id}/{establecimiento}
+    defaults: { _controller: ProyectoBundle:Lugar:delete }   
+
+lugar_buscar:
+    path:   /lugar/buscar/{establecimiento}/{check_value}
+    defaults: { _controller: ProyectoBundle:Lugar:buscar }
 
 #--------------para usuario-----------------------------------
 usuario_index:

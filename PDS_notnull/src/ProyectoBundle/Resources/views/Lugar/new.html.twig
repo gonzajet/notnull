@@ -39,7 +39,7 @@
 
 <div class="container top-buffer">
 <ol class="breadcrumb">
-    <li><a href="../lugar/index"><h3>Lugares</h3></a></li>
+    <li><a href="{{ path('lugar_index', { 'id': establecimiento}) }}"><h3>Lugares</h3></a></li>
     <li><a href="#">Nuevo</a></li>
 </ol>
 </div>
@@ -54,10 +54,10 @@
                     <div class="form-group row">
                         <span class="col-md-1 col-md-offset-2 text-center"></span>
                         <div class="col-md-1">
-                           {{form_label(form.codigo)}}
+                           {{form_label(form.Cant)}}
                         </div>
                         <div class="col-md-3">
-                           {{form_widget(form.codigo, {'attr' : {'class': 'form-control', 'placeholder' : 'Codigo'}})}}
+                           {{form_widget(form.Cant, {'attr' : {'class': 'form-control'}})}}
                         </div>
                     </div>       
                     <div class="form-group">

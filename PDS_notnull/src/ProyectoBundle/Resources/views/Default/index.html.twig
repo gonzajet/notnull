@@ -18,7 +18,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!--cambiar esto!!!!!!!!!!!!!!!!!!!!!-->
                     {% if app.user %}
-                        <li><a href='cuenta'><span class="glyphicon glyphicon-user"></span> {{ app.user.usuario }} </a>
+                        <li><a href='cuenta'><span class="glyphicon glyphicon-user"></span> {{ app.user.usuario}} </a>
                         </li>
                         <li><a href={{ path('logout') }}><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                         </li>

@@ -13,20 +13,42 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use ProyectoBundle\Entity\Contacto;
+use ProyectoBundle\Entity\Usuario;
 
 class AdminController extends Controller
 {   
    
     public function indexAction()
     {
-        return $this->render('ProyectoBundle:admin:index.html.twig');
+        $mensaje = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Contacto')
+            ->findAll();
+        return $this->render('ProyectoBundle:admin:index.html.twig', array('mensaje' =>$mensaje));
     }
    
-    
-    public function addAction(Request $request) {
-        
-    
+
+    public function usuariosAction() {
+
+        $usuarios = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Usuario')
+            ->findAll();
+        $mensaje = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Contacto')
+            ->findAll();
+
+
+        return $this->render('ProyectoBundle:admin:usuarios.html.twig', array('usuarios' => $usuarios,'mensaje' =>$mensaje ));
+
     }
+
+
+
+
+
+
+
+        
+
     public function headerAction() {
        return $this->render('ProyectoBundle:head_footer:head.html.twig');
         
@@ -81,7 +103,7 @@ class AdminController extends Controller
  
             $this->get('mailer')->send($message2);
             
-        #Si todo esta bien, reenvio a la pagina de inicio
+        /*#Si todo esta bien, reenvio a la pagina de inicio*/
            echo "<script type=\"text/javascript\">alert(\"Mensaje enviado correctamente\");</script>"; 
             return $this->redirectToRoute('proyecto_homepage');
             

@@ -12,8 +12,14 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
  *
  * @ORM\Table(name="usuario")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ProyectoBundle\Repository\usuarioRepository")
 
  */
+
+
+
+
+
 class Usuario implements AdvancedUserInterface, \Serializable
 {
     /**

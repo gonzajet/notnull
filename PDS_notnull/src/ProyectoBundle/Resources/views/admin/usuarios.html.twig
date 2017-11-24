@@ -1,0 +1,342 @@
+{% block body %}
+
+
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>EstionAR | General </title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.7 -->
+        <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="{{ asset('public/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+        <!-- Ionicons -->
+        <link href="{{ asset('public/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+
+        <!-- Theme style -->
+        <link href="{{ asset('public/estilos_varios/css/AdminLTE.min.css') }}" rel="stylesheet">
+
+        <!-- the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link href="{{ asset('public/estilos_varios/css/skins/skin-blue.min.css') }}" rel="stylesheet">
+
+        <script src="{{ asset('public/js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
+
+        <!-- Google Font -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <style>
+            .color-palette {
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+            }
+
+            .color-palette-set {
+                margin-bottom: 15px;
+            }
+
+            .color-palette span {
+                display: none;
+                font-size: 12px;
+            }
+
+            .color-palette:hover span {
+                display: block;
+            }
+
+            .color-palette-box h4 {
+                position: absolute;
+                top: 100%;
+                left: 25px;
+                margin-top: -40px;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 12px;
+                display: block;
+                z-index: 7;
+            }
+        </style>
+    </head>
+
+    <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+
+
+                <span id="estacionar" class="logo-lg"><b> EstacionAR</span>
+            </a>
+
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </a>
+
+
+                <!-- Mensajes de la barra de nevegacion arriba-------------- -->
+
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">{{ mensaje|length }}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header"> Mensajes</li>
+
+
+                                <!-- inner menu: contains the actual data -->
+
+                                {% for msj in mensaje %}
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                Nombre: {{ msj.nombre }}
+                                            </li>
+
+                                            <li>{{ msj.mensaje }}</li>
+
+
+                                        </ul>
+                                    </li>
+                                {% endfor %}
+                                <!-- end message -->
+
+                            </ul>
+                        </li>
+
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="{{ asset('public/estilos_varios/img/photo1.png') }}" class="user-image"
+                                     alt="User Image">
+                                <span class="hidden-xs"> Administrador </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="{{ asset('public/estilos_varios/img/photo1.png') }}" class="img-circle"
+                                         alt="User Image">
+
+                                    <p>
+                                        {{ app.user.nombre }} - administrador
+                                        <small>Admin de el establecimiento:</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">
+
+                                        <div class="col-ls-6 text-center">
+                                            <a href="#"> Reservas </a>
+                                        </div>
+
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+
+
+                                <!-- Menu Footer ( abajo de la foto --------->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href={{ asset('usuario') }} class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href={{ asset('logout') }} class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+
+                <!-- Sidebar user panel, PANEL LADO IZQUIERDO -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="{{ asset('public/estilos_varios/img/photo1.png') }}" class="img-circle"
+                             alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Admin</p>
+                        <small><i class="fa fa-circle text-success"></i> Online</small>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+
+              <span class="input-group-btn">
+
+              </span>
+                    </div>
+                </form>
+
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">Menu de navegacion.</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> <span>Usuarios</span>
+                            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a id="autos" href="#">
+                            <i class="fa fa-car"></i> <span> Autos </span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-right pull-right"></i>
+                             </span>
+                        </a>
+                    </li>
+                    <li class="header">Recordatorios</li>
+                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Importantes</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Asuntos pendientes</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+
+        </aside>
+
+
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Vista general
+
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href= {{ path('proyecto_homepage') }}><i class="fa fa-arrow-left"></i> Home</a></li>
+                    <li class="active">General</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+
+                <!-- START ALERTS AND CALLOUTS -->
+                <h2 class="page-header">Usuarios</h2>
+
+                <div class="row">
+                    <div class="col-md-14">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa fa-user"></i>
+
+                                <h3 class="box-title">Lista de usuarios registrados</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="col-sm-8 text-left">
+                                    {% if((usuarios|length)>0) %}
+
+
+
+                                        <div class="container">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>UserName</th>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido</th>
+                                                    <th>Email</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for user in usuarios %}
+
+                                                    <tr>
+                                                        <td>{{ user.usuario }}</td>
+                                                        <td>{{ user.nombre }}</td>
+                                                        <td>{{ user.apellido }}</td>
+                                                        <td>{{ user.email }}</td>
+
+                                                    </tr>
+
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+                                    {% endif %}
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="{{ asset('public/js/jquery-3.2.1.min.js') }}"
+    "></script>
+    <!-- Bootstrap 3.3.7 -->
+    <
+    script
+    src = "{{ asset('public/css/bootstrap.min.css') }}" ></script>
+    <!-- FastClick -->
+    <script src="{{ asset('public/fastclick/lib/fastclick.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('public/estilos_varios/js/adminlte.min.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('public/estilos_varios/js/demo.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $("#estacionar").click(function () {
+                //alert("Alert");
+                /* var a = window.location.toString();
+                 alert(a.split("/"));*/
+                location.href = "http://127.0.0.1:8000/admin/index";
+            });
+        });
+    </script>
+
+    </body>
+    </html>
+
+{% endblock %}

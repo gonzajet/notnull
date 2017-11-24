@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+
 {% block body %}
 
 <head>
@@ -23,7 +23,8 @@
        folder instead of downloading all of them to reduce the load. -->
   <link href="{{asset('public/estilos_varios/css/skins/skin-blue.min.css') }}" rel="stylesheet">
 
-  
+  <script src="{{ asset('public/js/jquery-3.2.1.min.js')}}"></script>
+  <script src="{{ asset('public/js/bootstrap.min.js')}}"></script>
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -68,10 +69,10 @@
     <!-- Logo -->
     <a href="#" class="logo">
    
-      <!-- logo for regular state and mobile devices 
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+
+      <span class="logo-lg"><b> EstacionAR</span>
     </a>
-    -->
+
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
@@ -82,135 +83,51 @@
         <span class="icon-bar"></span>
         
       </a>
-      
-      <!-- Mensajes de la barra de nevegacion arriba-------------- -->
-      
-      
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">Tenes 4 mensajes</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                          
-                        <img src="{{asset('public/estilos_varios/img/avatar.png') }}" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Nombre del tipo
-                        <small><i class="fa fa-clock-o"></i> Minutos</small>
-                      </h4>
-                      <p>Aca iria el mensaje</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="{{asset('public/estilos_varios/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Usuario Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Mensaje prueba2</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="{{asset('public/estilos_varios/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Hoy</small>
-                      </h4>
-                      <p>Mensaje prueba3</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="{{asset('public/estilos_varios/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Ayer</small>
-                      </h4>
-                      <p>Mensaje 4</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="{{asset('public/estilos_varios/img/photo1.png') }}" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Persona x
-                        <small><i class="fa fa-clock-o"></i> 2 dias</small>
-                      </h4>
-                      <p>Mensaje prueba 5</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">Ver todos los mensajes</a></li>
-            </ul>
-          </li>
-          
-          <!-- Notificacion arriba a la derecha------------- -->
-          
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">5</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">Tenes 5 notificaciones.</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 nuevos usuarios se registraron
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
 
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">Ver todo</a></li>
-            </ul>
-          </li>
+
+      <!-- Mensajes de la barra de nevegacion arriba-------------- -->
+
+
+      <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- Messages: style can be found in dropdown.less-->
+        <li class="dropdown messages-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-envelope-o"></i>
+            <span class="label label-success">{{  mensaje|length }}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="header"> Mensajes</li>
+
+
+
+            <!-- inner menu: contains the actual data -->
+
+              {% for msj in mensaje %}
+            <div class="row">
+              <div class="col-md-12">
+
+                  <ul class="list-group">
+
+                    <li class="list-group-item"> Nombre: {{ msj.nombre }}</li>
+
+                    <li class="list-group-item">{{ msj.mensaje }}</li>
+
+
+                  </ul>
+
+
+              </div>
+            </div>
+              {% endfor %}
+            <!-- end message -->
+
+          </ul>
+        </li>
+
+
+
+
           
           
           
@@ -220,31 +137,27 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset('public/estilos_varios/img/gonza.jpg') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Admin</span>
+              <img src="{{asset('public/estilos_varios/img/photo1.png') }}" class="user-image" alt="User Image">
+              <span class="hidden-xs"> Administrador </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{asset('public/estilos_varios/img/gonza.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{asset('public/estilos_varios/img/photo1.png') }}" class="img-circle" alt="User Image">
 
                 <p>
-                 Rodriguez gonzalo - Web Developer
-                  <small>Member since Nov. 2017</small>
+                 {{ app.user.nombre }} - administrador
+                  <small>Admin de el establecimiento:</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Seguidores</a>
+
+                  <div class="col-ls-6 text-center">
+                    <a href="#"> Reservas </a>
                   </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Reservas</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Amigos</a>
-                  </div>
+
                 </div>
                 <!-- /.row -->
               </li>
@@ -254,10 +167,10 @@
               <!-- Menu Footer ( abajo de la foto --------->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                  <a href={{ asset('usuario')}} class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href={{ asset('logout')}} class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -270,78 +183,74 @@
       </div>
     </nav>
   </header>
+
+
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         
         
-      <!-- Sidebar user panel -->
+      <!-- Sidebar user panel, PANEL LADO IZQUIERDO -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{asset('public/estilos_varios/img/gonza.jpg') }}" class="img-circle" alt="User Image">
+          <img src="{{asset('public/estilos_varios/img/photo1.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Admin</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <small><i class="fa fa-circle text-success"></i> Online</small>
         </div>
       </div>
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Busqueda...">
+
               <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
+
               </span>
         </div>
       </form>
+
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu de navegacion.</li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <a id="usuarios" href="href={{ asset('proyecto_usuarios')}}">
+            <span class="glyphicon glyphicon-user"></span> <span>Usuarios</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
+          <script>
+              $( document ).ready(function() {
+                  $("#usuarios").click(function() {
+                      //alert("Alert");
+                      /*var a = window.location.toString();
+                      alert(a.split("/"));*/
+                      location.href ="http://127.0.0.1:8000/admin/usuarios";
+                  });
+              });
+          </script>
         </li>
  
         
         
         
         <li>
-          <a href="{{asset('public/calendar.html') }}">
-            <i class="fa fa-calendar"></i> <span>Calendario</span>
+          <a id="autos" href="#">
+            <i class="fa fa-car" ></i> <span> Autos </span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
+              <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-envelope"></i> <span>Imbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">2</small>
-              <small class="label pull-right bg-green">3</small>
-              <small class="label pull-right bg-red">4</small>
-            </span>
-          </a>
-        </li>
-        
-        
-        <li><a href="#"><i class="fa fa-book"></i> <span>Documentacion</span></a></li>
-        <li class="header">Etiquetas</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Importante</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Informacion</span></a></li>
+
+
+        <li class="header">Recordatorios</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Importantes</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Asuntos pendientes</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -356,11 +265,9 @@
     <section class="content-header">
       <h1>
         Vista general
-        <small>Elementos EstacionAR</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">UI</a></li>
+        <li><a href= {{ path('proyecto_homepage') }} ><i class="fa fa-arrow-left"></i> Home</a></li>
         <li class="active">General</li>
       </ol>
     </section>
@@ -417,6 +324,7 @@
         <div class="col-md-6">
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
+
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab_1" data-toggle="tab"> Pestaña 1</a></li>
               <li><a href="#tab_2" data-toggle="tab">Pestaña 2</a></li>
@@ -470,109 +378,7 @@
         </div>
         <!-- /.col -->
 
-        
-        
-        
-      
-        <div class="col-md-6">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Progreso segun horarios.</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body text-center">
-              <p>Usos del estacionamiento</p>
 
-              <div class="progress vertical">
-                <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="height: 40%">
-                  <span class="sr-only">40%</span>
-                </div>
-              </div>
-              <div class="progress vertical">
-                <div class="progress-bar progress-bar-aqua" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="height: 20%">
-                  <span class="sr-only">20%</span>
-                </div>
-              </div>
-              <div class="progress vertical">
-                <div class="progress-bar progress-bar-yellow" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 60%">
-                  <span class="sr-only">60%</span>
-                </div>
-              </div>
-              <div class="progress vertical">
-                <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 80%">
-                  <span class="sr-only">80%</span>
-                </div>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col (right) -->
-      </div>
-      <!-- /.row -->
-      <!-- END PROGRESS BARS -->
-
-      
-      
-      
-      <!-- START   CAROUSEL-->
-      
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Carrusel</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="http://placehold.it/900x500/39CCCC/ffffff&text=Texto 1" alt="First slide">
-
-                    <div class="carousel-caption">
-                      Primera Slide
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=texto 2" alt="Second slide">
-
-                    <div class="carousel-caption">
-                      Segundo Slide
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/f39c12/ffffff&text=I love EstacionAR" alt="Third slide">
-
-                    <div class="carousel-caption">
-                      Tercer slide
-                    </div>
-                  </div>
-                </div>
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                  <span class="fa fa-angle-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                  <span class="fa fa-angle-right"></span>
-                </a>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <!-- END & CAROUSEL-->
-
-      
       
       
       
@@ -620,7 +426,7 @@
               </div>
             </a>
           </li>
-          
+
           <li>
             <a href="javascript:void(0)">
               <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
@@ -700,5 +506,16 @@
 <script src="{{asset('public/estilos_varios/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('public/estilos_varios/js/demo.js') }}"></script>
+
+<script>
+    $( document ).ready(function() {
+        $("#autos").click(function() {
+            //alert("Alert");
+            var a = window.location.toString();
+            alert(a.split("/"));
+            location.href ="http://127.0.0.1:8000/usuario/";
+        });
+    });
+</script>
 
 {% endblock body %}

@@ -20,8 +20,12 @@ proyecto_view:
 
 proyecto_contacto:
     path:   /admin/contacto
-    defaults: { _controller: ProyectoBundle:Admin:contacto} 
-    
+    defaults: { _controller: ProyectoBundle:Admin:contacto}
+
+proyecto_usuarios:
+    path:   /admin/usuarios
+    defaults: { _controller: ProyectoBundle:Admin:usuarios}
+
 proyecto_about:
     path:   /admin/about
     defaults: { _controller: ProyectoBundle:Admin:about} 

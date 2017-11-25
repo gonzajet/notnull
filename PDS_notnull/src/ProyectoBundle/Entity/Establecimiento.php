@@ -145,8 +145,8 @@ class Establecimiento
         }
         return $libres;
     }
-
-
+    
+    
 
     /**
      * Set nombre
@@ -465,8 +465,8 @@ class Establecimiento
      *
      * @param \ProyectoBundle\Entity\Lugar $lugare
      */
-    public function removeLugares(\ProyectoBundle\Entity\Lugar $lugare)
+    public function removeLugares(\ProyectoBundle\Entity\Lugar $lugares)
     {
-        $this->lugares->removeElement($lugare);
+        $this->lugares->removeElement($lugares);
     }
 }

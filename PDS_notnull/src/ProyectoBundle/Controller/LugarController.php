@@ -25,27 +25,33 @@ class LugarController extends Controller
     }
     
     public function newAction(Request $request, $establecimiento)
-    {   
+    {      
         $lugar = new Lugar();
         $form = $this->createForm('ProyectoBundle\Form\LugarType', $lugar);
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) 
         {
-            $codigo = $form['codigo']->getData();
+            $cantLugares = $form['Cant']->getData();
             
-            $em = $this->getDoctrine()->getManager();
-            $lugar->setEstado(false);
-            $lugar->setCodigo($codigo);
+            for ($i = 1; $i <= $cantLugares; $i++) {
+                
+                $lugar = new Lugar();
+                
+                $em = $this->getDoctrine()->getManager();
+                $lugar->setEstado(false);
+                $lugar->setCodigo("cod" .  uniqid());
+
+
+                $estableci = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+                $estableci->addLugares($lugar);
+
+                 // cargo en la base
+                $em->persist($lugar);
+                $em->flush();
             
-           
-            $estableci = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
-            //$category = $em->getRepository('AkoStoreBundle:Category')->find($category_id);
-            $estableci->addLugares($lugar);
+            }
             
-             // cargo en la base
-            $em->persist($lugar);
-            $em->flush();
             $lugares = $em->getRepository('ProyectoBundle:Lugar')->findAll();
             return $this->render('ProyectoBundle:Lugar:index.html.twig',array('establecimiento' => $establecimiento,
                                                                               'lugares' => $lugares ));
@@ -55,15 +61,45 @@ class LugarController extends Controller
                                                                         'establecimiento'=>$establecimiento,
                                                                         'form' => $form->createView()));      
     }
+    
+    
+    public function deleteAction($id,$establecimiento)
+    {      
+       $em = $this->getDoctrine()->getManager();
+       $lugar = $em->getRepository('ProyectoBundle:Lugar')->find($id);
+       $establecimiento_aux = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+       $establecimiento_aux->removeLugares($lugar);
+       $em->remove($lugar);
+       $em->flush();
+       return $this->redirectToRoute('lugar_index', array('id' => $establecimiento));      
+    }
+    
+    
+    public function buscarAction($establecimiento ,$check_value )
+    {      
+       $check_value = $check_value == 'false' ? false : true;
+       $em = $this->getDoctrine()->getManager();
+       $aux_establecimiento = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+       if ($check_value)
+            $lugares = $aux_establecimiento->getLugaresLibres();
+       else
+            $lugares = $aux_establecimiento->getLugares();
+       
+        return $this->render('ProyectoBundle:Lugar:index.html.twig', array('establecimiento' => $establecimiento,
+                                                           'lugares' => $lugares));
 
-    public function buscarXHorarioAction(Request $request){
-        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
-        $secciones = $repository->findLibresXHorario();
-
-        return $secciones;
     }
     
     
     
     
+
+    public function buscarXHorarioAction(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
+        $secciones = $repository->findLibresXHorario();
+
+        return $secciones;
+    }
+   
 }    

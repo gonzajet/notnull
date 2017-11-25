@@ -36,6 +36,7 @@ class LugarRepository extends EntityRepository{
         return $lugares = $consulta->getResult();
     }
     
+    
     /* Esta función nos permite encontrar los lugares
      * libres de un establecimiento dentro de una franja horaria
      * dependiendo lo que haya en la tabla de reservas

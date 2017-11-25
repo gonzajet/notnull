@@ -20,8 +20,12 @@ proyecto_view:
 
 proyecto_contacto:
     path:   /admin/contacto
-    defaults: { _controller: ProyectoBundle:Admin:contacto} 
-    
+    defaults: { _controller: ProyectoBundle:Admin:contacto}
+
+proyecto_usuarios:
+    path:   /admin/usuarios
+    defaults: { _controller: ProyectoBundle:Admin:usuarios}
+
 proyecto_about:
     path:   /admin/about
     defaults: { _controller: ProyectoBundle:Admin:about} 
@@ -42,7 +46,15 @@ lugar_index:
     
 lugar_new:
     path:   /lugar/new/{establecimiento}
-    defaults: { _controller: ProyectoBundle:Lugar:new }   
+    defaults: { _controller: ProyectoBundle:Lugar:new }
+
+lugar_delete:
+    path:   /lugar/delete/{id}/{establecimiento}
+    defaults: { _controller: ProyectoBundle:Lugar:delete }   
+
+lugar_buscar:
+    path:   /lugar/buscar/{establecimiento}/{check_value}
+    defaults: { _controller: ProyectoBundle:Lugar:buscar }
 
 #--------------para usuario-----------------------------------
 usuario_index:

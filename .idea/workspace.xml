@@ -2,7 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55646afe-af64-4e01-8e2f-94eb06c0b477" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_luq3ijv3vh23iuckb1o2k6a1v6" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_cmscog7g1r3h4q5d8u0qs2c5ff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/Fondo.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/alarma.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/festivales_01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/la-rebelion-de-las-redes.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/autoType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/autoRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Auto/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Usuario/editar.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Tests/Controller/AutoControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_70bqq8goio9m3ic6t1609q7qge" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_8dk6ge9ghd539up3lj4us7a20i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_9sh0dk8au8b37bnn41c3usgqes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_d274dtofka18bhhk1v22vu7jpu" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_el9l88bhdt1o0scssfldgjbpkl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_tr3j53jm74c605ujrbfci1cqth" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_vig1um6esbnmhi6mvm0s6dr3eh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_ovgt164jadmdgfqlh4a201oqre" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/docs.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/ie-emulation-modes-warning.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/ie10-viewport-bug-workaround.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/css/carousel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/application.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/collapse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/src/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/anchor.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/clipboard.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/holder.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/jquery-slim.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/public/js/vendor/popper.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/SeccionLugar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/web/bundles/httplug/script/httplug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/web/bundles/httplug/style/httplug.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/SeccionLugar.orm.xml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Lugar.orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_88fir9qheogn52mn3qs3ukq6b0" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_88fir9qheogn52mn3qs3ukq6b0" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/composer.lock" afterPath="$PROJECT_DIR$/PDS_notnull/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Establecimiento.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Establecimiento.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Lugar.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Lugar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/LugarType.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/LugarType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/LugarRepository.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/LugarRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Establecimiento.orm.xml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Establecimiento.orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/public/libresXHora.js" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/public/libresXHora.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/googleMaps.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/googleMaps.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/new.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/edit.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/bootstrap.php.cache" afterPath="$PROJECT_DIR$/PDS_notnull/var/bootstrap.php.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ipl50b8vjjomsc8ha0deb22vh6" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_ipl50b8vjjomsc8ha0deb22vh6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_9sh0dk8au8b37bnn41c3usgqes" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_9sh0dk8au8b37bnn41c3usgqes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_eq3tfasobbcf4eaq4bg6iktkb6" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_eq3tfasobbcf4eaq4bg6iktkb6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_smje2sje5f904hsp1dodvo9bb4" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_smje2sje5f904hsp1dodvo9bb4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var\logs/prod.log" afterPath="$PROJECT_DIR$/PDS_notnull/var\logs/prod.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/web/bundles/proyecto/libresXHora.js" afterPath="$PROJECT_DIR$/PDS_notnull/web/bundles/proyecto/libresXHora.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/web/js/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/PDS_notnull/web/js/jquery-3.2.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notnull.sql" afterPath="$PROJECT_DIR$/notnull.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +90,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+            <state relative-caret-position="486">
+              <caret line="39" column="123" lean-forward="false" selection-start-line="39" selection-start-column="123" selection-end-line="39" selection-end-column="123" />
+              <folding>
+                <element signature="e#45#104#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="245" column="19" lean-forward="false" selection-start-line="245" selection-start-column="19" selection-end-line="245" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usuarios.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="776">
+              <caret line="326" column="49" lean-forward="false" selection-start-line="326" selection-start-column="49" selection-end-line="326" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-126">
+              <caret line="167" column="6" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -33,26 +152,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -63,15 +162,20 @@
       <list>
         <option value="$PROJECT_DIR$/PDS_notnull/composer.json" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/config.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/composer.lock" />
-        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/login.html.twig" />
-        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" />
+        <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Usuario.orm.xml" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/usuarioRepository.php" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
       </list>
@@ -90,6 +194,9 @@
     <option name="width" value="1301" />
     <option name="height" value="696" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -105,7 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,38 +264,6 @@
               <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ProyectoBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -214,6 +289,14 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ProyectoBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ProyectoBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
@@ -269,6 +352,16 @@
               <item name="ProyectoBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Establecimiento" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ProyectoBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Lugar" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -281,11 +374,41 @@
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="usuario" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="estilos_varios" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="notnull" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PDS_notnull" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="estilos_varios" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,6 +418,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin" />
       <recent name="$PROJECT_DIR$/PDS_notnull/app/config" />
     </key>
   </component>
@@ -321,12 +445,15 @@
       <option name="presentableId" value="Default" />
       <updated>1508094635091</updated>
       <workItem from="1508094637755" duration="683000" />
-      <workItem from="1510610574935" duration="6723000" />
+      <workItem from="1510610574935" duration="7742000" />
+      <workItem from="1510866960981" duration="7644000" />
+      <workItem from="1511469356149" duration="13000000" />
+      <workItem from="1511530189359" duration="3132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15202000" />
+    <option name="totallyTimeSpent" value="39997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="3" width="1303" height="780" extended-state="6" />
@@ -362,75 +489,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#45#79#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#79#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#79#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#79#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -462,14 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json" />
     <entry file="file://$PROJECT_DIR$/composer.lock" />
     <entry file="file://$PROJECT_DIR$/PDS_notnull/composer.json">
@@ -483,23 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/usuarioType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,27 +549,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="60" column="8" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/SeccionLugar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -539,50 +560,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Usuario/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/contacto.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Contacto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="90" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="171" column="7" lean-forward="false" selection-start-line="171" selection-start-column="7" selection-end-line="171" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Usuario/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -595,39 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="98" column="22" lean-forward="true" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,22 +583,285 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="69" column="32" lean-forward="true" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        <state relative-caret-position="474">
+          <caret line="79" column="19" lean-forward="false" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Contacto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#41#73#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="96" column="12" lean-forward="false" selection-start-line="96" selection-start-column="12" selection-end-line="97" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/ContactoType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/contacto.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="59" column="25" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="59" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+        <state relative-caret-position="438">
+          <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2646">
+          <caret line="147" column="38" lean-forward="false" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/SeccionLugar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Lugar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Reserva.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Establecimiento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Establecimiento.orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="150" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/EstablecimientoType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/EstablecimientoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <marker date="1506986984461" expanded="true" signature="262:356" ph="SELECT e FRO... ProyectoBundle" />
+            <marker date="1506986984461" expanded="true" signature="651:697" ph="SELECT e FRO... ProyectoBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/EstablecimientoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="69" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="20" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/about.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/usuarioRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#44#78#0#PHP" expanded="false" />
+            <marker date="1511475410831" expanded="true" signature="427:465" ph="SELECT u FRO... ProyectoBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Form/usuarioType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Usuario.orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="106" lean-forward="false" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="39" column="123" lean-forward="false" selection-start-line="39" selection-start-column="123" selection-end-line="39" selection-end-column="123" />
+          <folding>
+            <element signature="e#45#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="245" column="19" lean-forward="false" selection-start-line="245" selection-start-column="19" selection-end-line="245" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/autoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="326" column="49" lean-forward="false" selection-start-line="326" selection-start-column="49" selection-end-line="326" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/UserInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="167" column="6" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding>
+            <element signature="e#6145#6152#0#HTML" expanded="true" />
+            <element signature="e#6707#6714#0#HTML" expanded="true" />
+            <element signature="e#7264#7271#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding />
         </state>
       </provider>

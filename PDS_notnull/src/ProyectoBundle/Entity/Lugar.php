@@ -35,6 +35,8 @@ class Lugar
      * @ORM\Column(name="codigo", type="string", length=255, nullable=false)
      */
     private $codigo;
+    
+    
     /**
      * Get id
      *
@@ -116,6 +118,6 @@ class Lugar
     
         return $this;
     }
- 
+    
 }
 

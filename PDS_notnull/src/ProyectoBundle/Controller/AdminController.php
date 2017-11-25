@@ -92,7 +92,7 @@ class AdminController extends Controller
         
         foreach($establecimientos as $value){
             $nombre_establecimiento = $value->getNombre();
-            $cant_lugares = $value->getLugares();
+            $cant_lugares = $value->getLugaresLibres();
             $item = new  LugaresDisponibles($nombre_establecimiento, count($cant_lugares));
             array_push($arrayLugares, $item);
         }

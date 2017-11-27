@@ -32,6 +32,9 @@
     float: none;
     margin: 0 auto;
 }
+ .navbar-inverse{
+           position: relative;
+        }
 
 
 
@@ -65,7 +68,7 @@
                         <div class="col-md-1">
                         </div>
                         <div class="col-md-4">
-                            <a class="btn btn-default" href='#'>Cancelar</a>
+                            <a class="btn btn-default" href="{{ path('lugar_index', { 'id': establecimiento}) }}">Cancelar</a>
                             <input type="submit" value="Guardar" class="btn btn-primary"  />
                         </div>
                     </div>

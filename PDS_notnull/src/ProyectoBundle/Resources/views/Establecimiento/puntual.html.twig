@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "::base.html.twig" %}
+{% block body %} 
+    
 <head>
     <meta charset="UTF-8">
     <title>{{ establecimiento.nombre }}</title>
@@ -9,20 +10,138 @@
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-            width: 50%;
+            width: 100%;
             height: 300px;
-            background-color: grey;}
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 50%;
-            margin: 0;
-            padding: 0;
+            background-color: grey;
         }
+
+        
+        
+        .rounded {
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+        
+        }
+        
+        html, body {
+            color: #fff;
+            height: 120%;
+        }
+        
+        .styled-select {
+            background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+            height: 29px;
+            overflow: hidden;
+            width: 240px;
+        }
+        
+        .black   { background-color: #000; }
+        .blue    { background-color: #3b8ec2; }
+        .blue select    { color: #fff; }
+        .black select   { color: #fff; }
+         select {
+            border: 0;
+            color: #EEE;
+            background: transparent;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 2px 10px;
+            width: 378px;
+            *width: 350px;
+            *background: #58B14C;
+            -webkit-appearance: none;
+        }
+        
+        .navbar-inverse{
+           position: relative;
+        }
+        
+        .styled-select.slate {
+            background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+            height: 34px;
+            width: 240px;
+        }
+        
     </style>
+
+
 </head>
 <body>
+<script>
+    /* Implementar js acá
+     * Tenemos que usar:
+     *      ajax
+     *      jQuery
+     */
+    function fun() {
+        var añoDesde= document.getElementById("añoDesde").value;
+        var mesDesde= document.getElementById("mesDesde").value;
+        var diaDesde= document.getElementById("diaDesde").value;
+        var horaDesde= document.getElementById("horaDesde").value;
+        var minutoDesde= document.getElementById("minutoDesde").value;
+        var fechaDesde = añoDesde+mesDesde+diaDesde+horaDesde+minutoDesde+"00";
+
+        var añoHasta= document.getElementById("añoHasta").value;
+        var mesHasta= document.getElementById("mesHasta").value;
+        var diaHasta= document.getElementById("diaHasta").value;
+        var horaHasta= document.getElementById("horaHasta").value;
+        var minutoHasta= document.getElementById("minutoHasta").value;
+        var fechaHasta = añoHasta+mesHasta+diaHasta+horaHasta+minutoHasta+"00";
+
+        console.log("Desde: "+fechaDesde+" - "+
+              "Hasta: "+fechaHasta);
+
+        var url = "{{ path('buscar_lugares_est',
+           {'establecimiento': establecimiento.id ,
+            'fechaDesde' : 'fechaDesde' ,
+            'fechaHasta' : 'fechaHasta'})}}";
+
+        /*url = url.replace('establecimiento', establecimiento.id);*/
+        url = url.replace('fechaDesde', fechaDesde);
+        url = url.replace('fechaHasta', fechaHasta);
+        window.location = url;
+
+    };
+
+    function search() {
+        /*var valuecheck = document.getElementById("checkbox1").checked;*/
+
+    }
+
+    {#function sampleGet() {
+        $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/posts/1',
+            method: 'GET',
+            dataType: 'json'
+        }).then(function(data) {
+            console.log(data);
+            $("#nombre").text(data.body);
+            $("#id").text(data.id);
+            var a;
+            return data.body;
+        });
+    }
+    $(document).ready(function(){
+        $("#boton").click(fun("asd")
+        /*{
+            $("#table").show();
+            var a = sampleGet();
+            $("#nombre").text(a.val());
+
+
+        })*/;
+        $("#geturl").click(function(){
+            var ab = sampleGet();
+            console.log(ab);
+            alert(ab);
+        });
+    });#}
+</script>
+
+<div class="container">
     <h1>{{ establecimiento.nombre }}</h1>
-    lugares disponibles: {{establecimiento.getLugaresLibres|length}}/{{ establecimiento.lugares | length }}
+    lugares disponibles ahora: {{ establecimiento.getLugaresLibres|length }}/{{ establecimiento.lugares | length }}
 
     <h2>
         <!--SEPARADOR-->
@@ -30,7 +149,7 @@
     <!-- Si hay lugares libres, se redirecciona a la página de reserva de uno cualquiera.
          Sino, muestra mensaje de que no hay lugares disponibles -->
     {% if((establecimiento.getLugaresLibres|length)>0) %}
-        <a href="../reservar/{{ random(establecimiento.getLugaresLibres).id }}">Reservar</a>
+        <span class="label label-warning"> <a href="../reservar/{{ random(establecimiento.getLugaresLibres).id }}">Reservar</a></span>
     {% else %}
         No hay lugares libres!
     {% endif %}
@@ -38,9 +157,10 @@
     <h1></h1>
 
     <!-- MAPA PARA MOSTRAR A ESTE ESTABLECIMIENTO PUNTUAL -->
-    <div id="map"></div>
+    <div id="map" ></div>
     <script>
         var map;
+
         function initMap() {
             <!-- Tomamos la posicion del establecimiento -->
             var position = {lat: {{ establecimiento.lat }}, lng: {{ establecimiento.lng }}};
@@ -58,7 +178,257 @@
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70uQg1AN-QrsX7Q8SYiAUuG3D5CgpttU&callback=initMap"
-        async defer></script>
+            async defer></script>
 
+
+    {#Formulario de fecha hora#}
+    <br/>
+    <form name="proyectobundle_reserva" method="post">
+        <div>
+            <label class="required">Fecha desde</label>
+            <div id="proyectobundle_reserva_fechaDesde">
+                <div id="proyectobundle_reserva_fechaDesde_date">
+                    <select id="añoDesde" class="styled-select black rounded" name="proyectobundle_reserva[fechaDesde][date][year]">
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                    <select id="mesDesde" class="styled-select black rounded"
+                            name="proyectobundle_reserva[fechaDesde][date][month]">
+                        <option value="01">Jan</option>
+                        <option value="02">Feb</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Apr</option>
+                        <option value="05">May</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Aug</option>
+                        <option value="09">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+                    <select id="diaDesde" class="styled-select black rounded"
+                                     name="proyectobundle_reserva[fechaDesde][date][day]">
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                <br/>
+                <div id="proyectobundle_reserva_fechaDesde_time">
+                    <select id="horaDesde" class="styled-select black rounded"
+                            name="proyectobundle_reserva[fechaDesde][time][hour]">
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>
+                    <select id="minutoDesde" class="styled-select black rounded"
+                                      name="proyectobundle_reserva[fechaDesde][time][minute]">
+                        <option value="00">00</option>
+                        <option value="05">05</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                    </select>
+                </div>
+                <br/>
+            </div>
+        </div>
+        <div><label>Fecha hasta</label>
+            <div id="proyectobundle_reserva_fechaHasta">
+                <div id="proyectobundle_reserva_fechaHasta">
+                    <select id="añoHasta" class="styled-select black rounded"
+                            name="proyectobundle_reserva[fechaHasta][date][year]">
+                        <option value="">------</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select><select id="mesHasta" class="styled-select black rounded"
+                                     name="proyectobundle_reserva[fechaHasta][date][month]">
+                        <option value="">------</option>
+                        <option value="01">Jan</option>
+                        <option value="02">Feb</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Apr</option>
+                        <option value="05">May</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Aug</option>
+                        <option value="09">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select><select id="diaHasta" class="styled-select black rounded"
+                                     name="proyectobundle_reserva[fechaHasta][date][day]">
+                        <option value="">------</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                <br/>
+                <div id="proyectobundle_reserva_fechaHasta_time">
+                    <select id="horaHasta" class="styled-select black rounded"
+                            name="proyectobundle_reserva[fechaHasta][time][hour]">
+                        <option value="">------</option>
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>
+                    <select id="minutoHasta" class="styled-select black rounded" name="proyectobundle_reserva[fechaHasta][time][minute]">
+                        <option value="">------</option>
+                        <option value="00">00</option>
+                        <option value="05">05</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="proyectobundle_reserva__token" name="proyectobundle_reserva[_token]"
+               value="AnMT-moM6whtjDLgKtxDr0D7GmN9AgLo6g7EDTiPmx0"/>
+    </form>
+
+    {#FIN DEL FORMULARIO#}
+
+    <button type="submit" onclick="fun()" name="boton" class="btn btn-success">Buscar</button>
+
+    {%  if lugares %}
+    <div>
+        <table>
+        <tr>
+            <th>cod</th>
+            <th>id</th>
+            <th>estado</th>
+            <th>reservar</th>
+        </tr>
+        {% for item in lugares %}
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.estado }}</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+</div>
 </body>
-</html>
+{% endblock %}

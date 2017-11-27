@@ -15,17 +15,74 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use ProyectoBundle\Entity\Contacto;
 use ProyectoBundle\Entity\Usuario;
 
-class AdminController extends Controller
-{   
-   
-    public function indexAction()
+
+class LugaresDisponibles
+{
+  private $nombre_establecimiento;
+  private $cantidad_lugares_disponibles;
+  
+  
+  public function __construct ( $nombre_establecimiento, $cantidad_lugares_disponibles ) {
+    $this->nombre_establecimiento = $nombre_establecimiento;
+    $this->cantidad_lugares_disponibles = $cantidad_lugares_disponibles;
+    
+  }
+  
+    public function setNombre_establecimiento($nombre_establecimiento)
     {
+        $this->nombre_establecimiento = $nombre_establecimiento;
+
+        return $this;
+    }
+   
+    public function getNombre_establecimiento()
+    {
+        return $this->nombre_establecimiento;
+    }
+    
+      public function setCantidad_lugares_disponibles($cantidad_lugares_disponibles)
+    {
+        $this->cantidad_lugares_disponibles = $cantidad_lugares_disponibles;
+
+        return $this;
+    }
+   
+    public function getCantidad_lugares_disponibles()
+    {
+        return $this->cantidad_lugares_disponibles;
+    }
+  
+}
+
+
+class AdminController extends Controller
+{
+
+
+    public function indexAction() {
+
+        $em = $this->getDoctrine();
+        $query = $em->getRepository('ProyectoBundle:Lugar');
+        $establecimientos = $em->getRepository('ProyectoBundle:Establecimiento')->findAll();
+
+        $arrayLugares = array();
         $mensaje = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Contacto')
             ->findAll();
-        return $this->render('ProyectoBundle:admin:index.html.twig', array('mensaje' =>$mensaje));
+
+        foreach($establecimientos as $value){
+            $nombre_establecimiento = $value->getNombre();
+            $cant_lugares = $value->getLugaresLibres();
+            $item = new  LugaresDisponibles($nombre_establecimiento, count($cant_lugares));
+            array_push($arrayLugares, $item);
+        }
+        return $this->render('ProyectoBundle:admin:index.html.twig'
+            ,array('lugares' => $arrayLugares, 'mensaje' => $mensaje));
     }
-   
+
+
+
+
 
     public function usuariosAction() {
 
@@ -41,13 +98,20 @@ class AdminController extends Controller
 
     }
 
+    public function autoAction() {
+
+        $auto = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Auto')
+            ->findAll();
+        $mensaje = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Contacto')
+            ->findAll();
+
+        return $this->render('ProyectoBundle:admin:auto.html.twig', array('auto' => $auto, 'mensaje' => $mensaje ));
+
+    }
 
 
-
-
-
-
-        
 
     public function headerAction() {
        return $this->render('ProyectoBundle:head_footer:head.html.twig');

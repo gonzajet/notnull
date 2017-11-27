@@ -26,14 +26,22 @@ proyecto_usuarios:
     path:   /admin/usuarios
     defaults: { _controller: ProyectoBundle:Admin:usuarios}
 
+proyecto_auto:
+    path:   /admin/auto
+    defaults: { _controller: ProyectoBundle:Admin:auto}
+
+    
+proyecto_lugares:
+    path:   /admin/lugares
+    defaults: { _controller: ProyectoBundle:Admin:lugares}
+
+
+
 proyecto_about:
     path:   /admin/about
     defaults: { _controller: ProyectoBundle:Admin:about} 
     
- #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
-proyecto_sendmail:
-    path:   /admin/sendmail
-    defaults: { _controller: ProyectoBundle:Admin:sendmail}
+
 
 #-----------Redes login-------------
 
@@ -98,7 +106,7 @@ establecimiento_puntual:
     defaults: { _controller: ProyectoBundle:Establecimiento:puntual}
 
 reservar:
-    path: /reservar/{id}
+    path: /reservar/{lugar}/{desde}/{hasta}/{auto}
     defaults: { _controller: ProyectoBundle:Establecimiento:reservar}
 
 maps:
@@ -107,3 +115,7 @@ maps:
 auto_new:
     path:     auto/new
     defaults: { _controller: ProyectoBundle:Auto:new }
+
+buscar_lugares_est:
+    path: /establecimientos/buscar/{establecimiento}/{fechaDesde}/{fechaHasta}
+    defaults: { _controller: ProyectoBundle:Lugar:buscarXHorario }

@@ -32,7 +32,7 @@ class AutoController extends Controller {
             return $this->render('ProyectoBundle:Usuario:index.html.twig');
         }
 // renderizo si esta mal cargado.
-        return $this->render('ProyectoBundle:auto:new.html.twig', array(
+        return $this->render('ProyectoBundle:Auto:new.html.twig', array(
                     'auto' => $auto,
                     'form' => $form->createView(),
         ));

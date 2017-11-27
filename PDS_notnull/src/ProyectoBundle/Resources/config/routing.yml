@@ -25,6 +25,10 @@ proyecto_contacto:
 proyecto_usuarios:
     path:   /admin/usuarios
     defaults: { _controller: ProyectoBundle:Admin:usuarios}
+    
+proyecto_lugares:
+    path:   /admin/lugares
+    defaults: { _controller: ProyectoBundle:Admin:lugares}
 
 proyecto_about:
     path:   /admin/about

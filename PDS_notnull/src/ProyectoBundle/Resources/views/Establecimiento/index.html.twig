@@ -34,11 +34,14 @@
 </head>
 <body>
 
-<h2>asd</h2>
+<div class="row">
+  <div class="col-md-12">
+     <label>Nombre: </label>
+     <input type="text" style="color: black;" name="user">    
+     <button type="button" class="btn btn-success">Buscar</button>
+   </div>
+ </div>
 
-<p>Name: <input type="text" name="user"></p>
-
-<button>Ok!</button>
 
 <h1>Establecimientos</h1>
 {% if((establecimientos|length)>0) %}

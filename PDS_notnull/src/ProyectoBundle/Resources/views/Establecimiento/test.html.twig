@@ -1,5 +1,6 @@
 <h1>test</h1>
 {{ establecimiento.nombre }}
+Reservar con: {{ app.user.autos[0].patente }}
 {%  if lugares %}
     <div>
         <table>
@@ -14,6 +15,7 @@
                     <td>{{ item.codigo }}</td>
                     <td>{{ item.id }}</td>
                     <td>{{ item.estado }}</td>
+                    <td><a href="/app_dev.php/reservar/{{ item.id }}/{{ Desde }}/{{ Hasta }}/{{ app.user.autos[0].id }}">reservar</a></td>
                 </tr>
             {% endfor %}
         </table>
@@ -29,9 +31,10 @@
             </tr>
             {% for item in reservas %}
                 <tr>
-                    <td>{{ item.fechaDesde|date('Y-m-d') }}</td>
-                    <td>{{ item.fechaHasta|date('Y-m-d') }}</td>
+                    <td>{{ item.fechaDesde }}</td>
+                    <td>{{ item.fechaHasta}}</td>
                     <td>{{ item.idLugar.id }}</td>
+
                 </tr>
             {% endfor %}
         </table>

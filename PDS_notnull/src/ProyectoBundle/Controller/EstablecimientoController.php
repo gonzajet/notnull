@@ -48,50 +48,29 @@ class EstablecimientoController extends Controller{
             ,array('establecimiento' => $establecimiento, 'lugares' => null));
     }
 
-    public function reservarAction($id, Request $request){
+    public function reservarAction($lugar, $desde, $hasta, $auto){
         $reserva = new Reserva();
-        $form = $this->createForm('ProyectoBundle\Form\ReservaType', $reserva);
-
+        /*$form = $this->createForm('ProyectoBundle\Form\ReservaType', $reserva);*/
 
         $lugar = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Lugar')
-            ->find($id);
+            ->find($lugar);
+
+        $auto = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Auto')
+            ->find($auto);
+
+        $reserva->setIdLugar($lugar);
+        $reserva->setIdAuto($auto);
+        $reserva->setFechaDesde(intval($desde));
+        $reserva->setFechaHasta(intval($hasta));
+
+        $em = $this->getDoctrine()->getManager();
+        $em -> persist($reserva);
+        $em -> flush();
 
 
-        //$lugares = $this->getDoctrine()
-        //    ->getRepository('ProyectoBundle:Lugar')
-        //    ->findAll();
-        //$autos = $this->getDoctrine()
-        //    ->getRepository('ProyectoBundle:Auto')
-        //    ->findAll();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted()){
-            $fDesde = $form['fechaDesde']->getData();
-            $fHasta = $form['fechaHasta']->getData();
-            $autos = $this->getUser()->getAutos();
-            $auto = $autos[0];
-            //$lugarid = $lugar.id;
-
-            $reserva->setFechaDesde($fDesde);
-            $reserva->setFechaHasta($fHasta);
-            $reserva->setIdLugar($lugar);
-            $reserva->setIdAuto($auto);
-
-            $em = $this->getDoctrine()->getManager();
-            $em -> persist($reserva);
-            $em -> flush();
-            // return $this->render('ProyectoBundle:Establecimiento:reserva.html.twig'
-           // ,array('lugar'=> $lugar,'form' => $form->createView()));
-        }
-
-
-
-
-        return $this->render('ProyectoBundle:Establecimiento:reserva.html.twig'
-            ,array('lugar'=> $lugar,'form' => $form->createView())
-        );
+        return $this->render('ProyectoBundle:Default:index.html.twig');
     }
 
 

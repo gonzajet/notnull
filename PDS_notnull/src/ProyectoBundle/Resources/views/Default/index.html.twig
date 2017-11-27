@@ -43,12 +43,20 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!--cambiar esto!!!!!!!!!!!!!!!!!!!!!-->
                         {% if app.user %}
-                            <li><a href='#'><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>
+                            {% if app.user.roles == "ROLE_ADMIN"%}
+                                <li><a href={{path('proyecto_index')}}><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>
+                                {% else %}
+
+                                <li><a href={{path('usuario_index')}}><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>
+
+                            {% endif %}
+
                             <li><a href={{ path('logout') }}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                             {% else %}
                             <li><a href="{{ path('usuario_new') }}"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
                             <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                            {% endif %}
+
+                        {% endif %}
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -114,19 +122,19 @@
                         <img class="rounded" src="{{asset('img/la-rebelion-de-las-redes.jpg')}}" alt="Generic placeholder image" width="300" height="140">
                         <h2 style="color:#FFffff">Estacionamientos</h2>
                         <p style="color:#FFffff"> Obtener una lista de todos los estacionamientos disponibles de la Provincia de Buenos Aires</p>
-{#                        <p style="color:#FFffff" ><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
+                        {#                        <p style="color:#FFffff" ><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <img class="rounded" src="{{asset('img/festivales_01.jpg')}}" alt="Generic placeholder image" width="300" height="140">
                         <h2 style="color:#FFffff">Eventos Especiales</h2>
                         <p style="color:#FFffff">Podrás ver las calles reservadas o establecimientos disponibles para Recitales, Partidos de Futbol, Actos políticos, eventos culturales, etc.</p>
-{#                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
+                        {#                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <img class="border border-danger rounded-circle" src="{{asset('img/alarma1.jpg')}}" alt="Generic placeholder image" width="300" height="140">
                         <h2 style="color:#FFffff">Reservas</h2>
                         <p style="color:#FFffff">Elegí un establecimiento disponible chequea si hay lugar disponible y reserva tu lugar para que puedas llegar a tiempo a tus destinos.</p>
-{#                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
+                        {#                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
                     </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->
             </div><!-- /.row -->

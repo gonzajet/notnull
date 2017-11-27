@@ -10,75 +10,75 @@
         <!--SDK para JS -->
     <div id="fb-root"></div>
     <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id))
+        var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
                 return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10&appId=485077215218768';
-            fjs.parentNode.insertBefore(js, fjs);
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10&appId=485077215218768';
+                fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- API GOOGLE -->
-        <script src=”https://apis.google.com/js/client:plusone.js”></script >
-            <script src=http://code.jquery.com/jquery-1.10.1.min.js></scri        pt>
-            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src=”https://apis.google.com/js/client:plusone.js”></script >
+            <script src=http://code.jquery.com/jquery-1.10.1.min.js> < /scri        pt>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
      
-        </head>
- <div class="container">
-  <div class="row">
-     <div class="main">
-         <h3 style="color:#FFffff">Iniciar sesion o <a href="{{path('usuario_new')}}">Registrarse</a></h3>
-        <!--Login basico        -->
-             <div class="row">
-                 <div class="col-xs-6 col-sm-6 col-md-6">
-                        <!--NO ESTA TOMANDO TOMAÑOS, GOOGLE LO TIENE DEFINIDO!!!!-->
-                            <!--boton fb-->
-                            <div class="fb-login-button" data-size="medium" data-max-rows="1"  data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
-                            <!--boton google-->
-    
-                            <div class="g-signin"   data-callback="GoogleLogin" data-approvalprompt="force"  data-clientid="370025250365-u1gjjhdara7094cadauc1ljb43uesd4a.apps.googleusercontent.com" data-scope="https://www.googleapis.com/auth/plus.login" data-cookiepolicy="single_host_origin">
-                            
+    </head>
+    <div class="container">
+        <div class="row">
+            <div class="main">
+                <h3 style="color:#FFffff">Iniciar sesion o <a href="{{path('usuario_new')}}">Registrarse</a></h3>
+                        <!--Login basico        -->
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <!--NO ESTA TOMANDO TOMAÑOS, GOOGLE LO TIENE DEFINIDO!!!!-->
+                                <!--boton fb-->
+                                <div class="fb-login-button" data-size="medium" data-max-rows="1"  data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+                                <!--boton google-->
+
+                                <div class="g-signin"   data-callback="GoogleLogin" data-approvalprompt="force"  data-clientid="370025250365-u1gjjhdara7094cadauc1ljb43uesd4a.apps.googleusercontent.com" data-scope="https://www.googleapis.com/auth/plus.login" data-cookiepolicy="single_host_origin">
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-        <BR/>
-              <div class="login-or">
-                 <hr class="hr-or">
-               
-      </div>
+                        <BR/>
+                        <div class="login-or">
+                            <hr class="hr-or">
 
-    <form class="form-sigin col-xs-6 col-sm-6 col-md-6 " role="form" action="{{ path('login') }}" method="post" id="login-nav" accept-charset="UTF-8">
-                    <div class="from group">
-                        <label for="username" style="color:#FFffff">Usuario</label>
-                        <input class="form-control" type="text" id="username" name="_username" placeholder="Nombre de Usuario" value="{{ last_username }}" />
-                    </div>
-                    <div class="from-group">
-                        <div class="">
-                            <label  for="password" style="color:#FFffff"> Contraseña </label>
-                            <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required />
-                            <div class="help-block text-right"><a href=""> Olvidaste tu contraseña? </a></div>
                         </div>
+
+                        <form class="form-sigin col-xs-6 col-sm-6 col-md-6 " role="form" action="{{ path('login') }}" method="post" id="login-nav" accept-charset="UTF-8">
+                            <div class="from group">
+                                <label for="username" style="color:#FFffff">Usuario</label>
+                                <input class="form-control" type="text" id="username" name="_username" placeholder="Nombre de Usuario" value="{{ last_username }}" />
+                            </div>
+                            <div class="from-group">
+                                <div class="">
+                                    <label  for="password" style="color:#FFffff"> Contraseña </label>
+                                    <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña" required />
+                                    <div class="help-block text-right"><a href=""> Olvidaste tu contraseña? </a></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" type="submit"> Ingresar </button>
+                            </div>
+
+                            {% if error %}
+
+                                <div class="text-danger" style="color:#FFffff">
+                                    Credenciales invalidas!.
+                                </div>
+                            {% endif %}
+
+                            <div class="checkbox">
+                                <label style="color:#FFffff">
+                                    <input type="checkbox"> Mantenerme conectado
+                                </label>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block" type="submit"> Ingresar </button>
-                    </div>
-
-                    {% if error %}
-
-                        <div class="text-danger" style="color:#FFffff">
-                            Credenciales invalidas!.
-                        </div>
-                    {% endif %}
-
-                    <div class="checkbox">
-                        <label style="color:#FFffff">
-                            <input type="checkbox"> Mantenerme conectado
-                        </label>
-                    </div>
-                </form>
                 </div>
-                </div>
-    {% endblock %}
+            {% endblock %}
 

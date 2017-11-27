@@ -25,9 +25,14 @@ class UsuarioController extends Controller
     public function cuentaAction()
     {
 
-
+        $establecimientos = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Establecimiento')
+            ->findEstablecimientosTodos();
+           // var_dump($establecimientos[0]);
+           // die();
         return $this->render('ProyectoBundle:usuario:index.html.twig'
-        );
+            ,array('establecimientos' => $establecimientos));
+    
     }
 
     /**

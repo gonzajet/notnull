@@ -12,15 +12,18 @@
             <link href="{{ asset('public/css/style.css')}}" rel="stylesheet" >
             <link href="{{asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="{{asset('public/css/bootstrap.min.css.map') }}" rel="stylesheet">
-            
-           
+
+
         {% endblock %}
-                <style>
+        <style>
             /* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
             #map {
-                width: 50%;
-                height: 600px;
+                position: absolute;
+                top: 150px;
+                right:50px;
+                width: 45%;
+                height: 350px;
                 background-color: grey;}
             /* Optional: Makes the sample page fill the window. */
             html, body {
@@ -30,85 +33,91 @@
                 padding: 0;
             }
         </style>
-       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" 
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" 
     </head>
     <body>
-     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container" id="header">
-        <div class="navbar-header" >
-          <a class="navbar-brand" href="/app_dev.php/">EstacionAR</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/app_dev.php/">Inicio</a></li>
-           </ul>
-        </div>
-      </div>
-       </nav>
-         
-        
-         <!--footer-------------->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container" id="header">
+                <div class="navbar-header" >
+                    <a class="navbar-brand" href="/app_dev.php/">EstacionAR</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/app_dev.php/">Inicio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!--footer-------------->
         <div class="container">
-            
-        <div class="footer">Página de EstacionAR <strong> Copyright 2017 - All Rights Reserved </strong>.</div>
-                
-                    <style>
-                    
-                    html {
-                      height: 100%;
-                      box-sizing: border-box;
-                    }
-                    
-                    *,
-                    *:before,
-                    *:after {
-                      box-sizing: inherit;
-                    }
-                    
-                    body {
-                      position: relative;
-                      margin: 0;
-                      padding-bottom: 6rem;
-                      min-height: 100%;
-                      font-family: "Helvetica Neue", Arial, sans-serif;
-                    }
-                    
-                    .demo {
-                      margin: 0 auto;
-                      padding-top: 64px;
-                      max-width: 640px;
-                      width: 94%;
-                    }
 
-                    .demo h1 {
-                        margin-top: 0;
-                    }   
+            <div class="footer">Página de EstacionAR <strong> Copyright 2017 - All Rights Reserved </strong>.</div>
 
-                    /**
-                     * Footer Styles
-                     */
-                    
-                    .footer {
-                      position:absolute;
-                      right:0;
-                      bottom:0;
-                      left:0;
-                      padding:1rem;
-                      background-color:#020201;
-                      text-align:center;
-                    }
-                        
-                        </style>
+            <style>
+
+                html {
+                    height: 100%;
+                    box-sizing: border-box;
+                }
+
+                *,
+                *:before,
+                *:after {
+                    box-sizing: inherit;
+                }
+
+                body {
+                    position: relative;
+                    margin: 0;
+                    padding-bottom: 6rem;
+                    min-height: 100%;
+                    font-family: "Helvetica Neue", Arial, sans-serif;
+                }
+
+                .demo {
+                    margin: 0 auto;
+                    padding-top: 64px;
+                    max-width: 640px;
+                    width: 94%;
+                }
+
+                .demo h1 {
+                    margin-top: 0;
+                }   
+
+                /**
+                 * Footer Styles
+                 */
+
+                .footer {
+                    position:absolute;
+                    right:0;
+                    bottom:0;
+                    left:0;
+                    padding:1rem;
+                    background-color:#020201;
+                    text-align:center;
+                }
+
+            </style>
         </div>
-       
-         <!--end footer-------------->
-      
-      
-    
+
+        <!--end footer-------------->
+
+
+
         {% block body %}               
 
         {% endblock %}
         {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+            <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="{{asset('public/js/ie10-viewport-bug-workaround.js')}}"></script>
+
             <script src="{{ asset('public/js/jquery-3.2.1.min.js')}}"></script>
             <script src="{{ asset('public/js/bootstrap.min.js')}}"></script>
         {% endblock %}

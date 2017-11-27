@@ -69,8 +69,8 @@ security:
     access_control: 
         
          # require ROLE_ADMIN for /admin*
-         - { path: ^/admin, role: ROLE_USER } #Cambiar vistas de ADMIN
-         - { path: ^/Default, role: ROLE_USER }
+         - { path: ^/admin, role: ROLE_ADMIN } #Cambiar vistas de ADMIN
+         - { path: ^/Default, role: IS_AUTHENTICATED_ANONYMOUSLY }
          #- { path: ^/admin/users, roles: ROLE_SUPER_ADMIN }
          - { path: /usuario/new, role: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: /admin/about, role: IS_AUTHENTICATED_ANONYMOUSLY }

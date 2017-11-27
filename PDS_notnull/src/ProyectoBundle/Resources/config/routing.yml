@@ -26,6 +26,8 @@ proyecto_usuarios:
     path:   /admin/usuarios
     defaults: { _controller: ProyectoBundle:Admin:usuarios}
 
+
+
 proyecto_about:
     path:   /admin/about
     defaults: { _controller: ProyectoBundle:Admin:about} 

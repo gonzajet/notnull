@@ -23,6 +23,8 @@ class AdminController extends Controller
         $mensaje = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Contacto')
             ->findAll();
+
+
         return $this->render('ProyectoBundle:admin:index.html.twig', array('mensaje' =>$mensaje));
     }
    

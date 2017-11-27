@@ -76,6 +76,7 @@ security:
          - { path: /admin/about, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
          - { path: ^/usuario, role: ROLE_USER }
+         - { path: ^/establecimiento, role: ROLE_USER }
 
         # - { path: /, role: ROLE_USER }, NO TE DEJA ENTRAR a ningun lado si no sos usuario.
 

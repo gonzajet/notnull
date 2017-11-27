@@ -219,7 +219,8 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu de navegacion.</li>
         <li class="treeview">
-          <a id="usuarios" href="href={{ asset('proyecto_usuarios')}}">
+
+          <a id="usuarios" href="{{ path ('proyecto_usuarios') }}">
             <span class="glyphicon glyphicon-user"></span> <span>Usuarios</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
@@ -231,7 +232,7 @@
                       //alert("Alert");
                       /*var a = window.location.toString();
                       alert(a.split("/"));*/
-                      location.href ="http://127.0.0.1:8000/admin/usuarios";
+                      location.href ="usuarios";
                   });
               });
           </script>
@@ -241,13 +242,13 @@
 
 
         <li>
-          <a id="autos" href="#">
+          <a id="autos" href={{ path ('proyecto_auto') }}>
             <i class="fa fa-car" ></i> <span> Autos </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
-          <script>
+          {#<script>
               $( document ).ready(function() {
                   $("#autos").click(function() {
                       //alert("Alert");
@@ -256,7 +257,7 @@
                       location.href ="http://127.0.0.1:8000/admin/auto";
                   });
               });
-          </script>
+          </script>#}
         </li>
 
 
@@ -306,8 +307,8 @@
 
                   <table class="table table-hover">
                     <tr>
-                      <th>establecimiento</th>
-                      <th>lugares disponibles</th>
+                      <th>Establecimiento</th>
+                      <th>Lugares Disponibles</th>
                     </tr>
                       {% for item in lugares %}
                         <tr>
@@ -319,8 +320,8 @@
                 {% else %}
                   <table class="table table-hover">
                     <tr>
-                      <th>establecimiento</th>
-                      <th>cantidad lugares</th>
+                      <th>Establecimiento</th>
+                      <th>Cantidad lugares</th>
                     </tr>
                     <tr>
                       <td colspan="2"  style="text-align: center;" >No encontramos establecimientos</td>
@@ -381,7 +382,7 @@
               <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
               <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Tu vieja cumple años</h4>
+                <h4 class="control-sidebar-subheading">##</h4>
 
                 <p>Es el 19 de octubre</p>
               </div>

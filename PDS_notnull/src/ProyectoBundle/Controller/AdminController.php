@@ -56,18 +56,33 @@ class LugaresDisponibles
 
 
 class AdminController extends Controller
-{   
-   
-    public function indexAction()
-    {
+{
+
+
+    public function indexAction() {
+
+        $em = $this->getDoctrine();
+        $query = $em->getRepository('ProyectoBundle:Lugar');
+        $establecimientos = $em->getRepository('ProyectoBundle:Establecimiento')->findAll();
+
+        $arrayLugares = array();
         $mensaje = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Contacto')
             ->findAll();
 
-
-        return $this->render('ProyectoBundle:admin:index.html.twig', array('mensaje' =>$mensaje));
+        foreach($establecimientos as $value){
+            $nombre_establecimiento = $value->getNombre();
+            $cant_lugares = $value->getLugaresLibres();
+            $item = new  LugaresDisponibles($nombre_establecimiento, count($cant_lugares));
+            array_push($arrayLugares, $item);
+        }
+        return $this->render('ProyectoBundle:admin:index.html.twig'
+            ,array('lugares' => $arrayLugares, 'mensaje' => $mensaje));
     }
-   
+
+
+
+
 
     public function usuariosAction() {
 
@@ -82,26 +97,22 @@ class AdminController extends Controller
         return $this->render('ProyectoBundle:admin:usuarios.html.twig', array('usuarios' => $usuarios,'mensaje' =>$mensaje ));
 
     }
-    
-    
-    public function lugaresAction() {
 
-        $em = $this->getDoctrine();
-        $query = $em->getRepository('ProyectoBundle:Lugar');
-        $establecimientos = $em->getRepository('ProyectoBundle:Establecimiento')->findAll();
-        
-        $arrayLugares = array();
-        
-        foreach($establecimientos as $value){
-            $nombre_establecimiento = $value->getNombre();
-            $cant_lugares = $value->getLugaresLibres();
-            $item = new  LugaresDisponibles($nombre_establecimiento, count($cant_lugares));
-            array_push($arrayLugares, $item);
-        }
-         return $this->render('ProyectoBundle:admin:lugares.html.twig'
-                 ,array('lugares' => $arrayLugares));
+    public function autoAction() {
+
+        $auto = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Auto')
+            ->findAll();
+        $mensaje = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Contacto')
+            ->findAll();
+
+        return $this->render('ProyectoBundle:admin:auto.html.twig', array('auto' => $auto, 'mensaje' => $mensaje ));
+
     }
-    
+
+
+
     public function headerAction() {
        return $this->render('ProyectoBundle:head_footer:head.html.twig');
         

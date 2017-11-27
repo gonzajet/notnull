@@ -58,6 +58,8 @@
       display: block;
       z-index: 7;
     }
+
+
   </style>
 </head>
 
@@ -89,41 +91,41 @@
 
 
       <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
-        <!-- Messages: style can be found in dropdown.less-->
-        <li class="dropdown messages-menu">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-envelope-o"></i>
-            <span class="label label-success">{{  mensaje|length }}</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="header"> Mensajes</li>
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">{{  mensaje|length }}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header"> Mensajes</li>
 
 
 
-            <!-- inner menu: contains the actual data -->
+              <!-- inner menu: contains the actual data -->
 
-              {% for msj in mensaje %}
-            <div class="row">
-              <div class="col-md-12">
+                {% for msj in mensaje %}
+                  <div class="row">
+                    <div class="col-md-12">
 
-                  <ul class="list-group">
+                      <ul class="list-group">
 
-                    <li class="list-group-item"> Nombre: {{ msj.nombre }}</li>
+                        <li class="list-group-item"> Nombre: {{ msj.nombre }}</li>
 
-                    <li class="list-group-item">{{ msj.mensaje }}</li>
-
-
-                  </ul>
+                        <li class="list-group-item">{{ msj.mensaje }}</li>
 
 
-              </div>
-            </div>
-              {% endfor %}
-            <!-- end message -->
+                      </ul>
 
-          </ul>
-        </li>
+
+                    </div>
+                  </div>
+                {% endfor %}
+              <!-- end message -->
+
+            </ul>
+          </li>
 
 
 
@@ -146,7 +148,7 @@
                 <img src="{{asset('public/estilos_varios/img/photo1.png') }}" class="img-circle" alt="User Image">
 
                 <p>
-                 {{ app.user.nombre }} - administrador
+                    {{ app.user.nombre }} - administrador
                   <small>Admin de el establecimiento:</small>
                 </p>
               </li>
@@ -245,6 +247,16 @@
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
+          <script>
+              $( document ).ready(function() {
+                  $("#autos").click(function() {
+                      //alert("Alert");
+                      /*var a = window.location.toString();
+                      alert(a.split("/"));*/
+                      location.href ="http://127.0.0.1:8000/admin/auto";
+                  });
+              });
+          </script>
         </li>
 
 
@@ -277,33 +289,46 @@
 
 
       <!-- START ALERTS AND CALLOUTS -->
-      <h2 class="page-header">Alertas</h2>
+      <h2 class="page-header">Lugares</h2>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-12">
           <div class="box box-default">
             <div class="box-header with-border">
-              <i class="fa fa-warning"></i>
 
-              <h3 class="box-title">Alertas</h3>
+              <h3 class="box-title">Lugares</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
-                Un usuario esta por llegar!
-              </div>
-              <div class="alert alert-info alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-info"></i> Alerta!</h4>
-                Informacion del usuario x.
-              </div>
-              <div class="alert alert-warning alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-warning"></i> Alerta!</h4>
-                Te quedan solo 5 lugares!
-              </div>
+
+
+                {% if((lugares|length)>0) %}
+
+                  <table class="table table-hover">
+                    <tr>
+                      <th>establecimiento</th>
+                      <th>lugares disponibles</th>
+                    </tr>
+                      {% for item in lugares %}
+                        <tr>
+                          <td>{{ item.getNombre_establecimiento() }}</td>
+                          <td>{{ item.getCantidad_lugares_disponibles()}}</td>
+                        </tr>
+                      {% endfor %}
+                  </table>
+                {% else %}
+                  <table class="table table-hover">
+                    <tr>
+                      <th>establecimiento</th>
+                      <th>cantidad lugares</th>
+                    </tr>
+                    <tr>
+                      <td colspan="2"  style="text-align: center;" >No encontramos establecimientos</td>
+                    </tr>
+                  </table>
+                {% endif %}
+
+
 
             </div>
             <!-- /.box-body -->
@@ -313,66 +338,6 @@
         <!-- /.col -->
 
 
-      <!-- START CUSTOM TABS -->
-      <h2 class="page-header">Alertas personalizadas.</h2>
-
-      <div class="row">
-        <div class="col-md-6">
-          <!-- Custom Tabs -->
-          <div class="nav-tabs-custom">
-
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab_1" data-toggle="tab"> Pestaña 1</a></li>
-              <li><a href="#tab_2" data-toggle="tab">Pestaña 2</a></li>
-              <li><a href="#tab_3" data-toggle="tab">Pestaña 3</a></li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  Opciones <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Accion</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Accion 2</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Algo</a></li>
-                  <li role="presentation" class="divider"></li>
-
-                </ul>
-              </li>
-              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab_1">
-                <b>Ejemplo de uso</b>
-
-                <p>Aca va un parrafo cualquiera.</p>
-                A wonderful serenity has taken possession of my entire soul,
-                like these sweet mornings of spring which I enjoy with my whole heart.
-                I am alone, and feel the charm of existence in this spot,
-                which was created for the bliss of souls like mine. I am so happy,
-                my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                that I neglect my talents. I should be incapable of drawing a single stroke
-                at the present moment; and yet I feel that I never was a greater artist than now.
-              </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_2">
-                Aca va un parrafo en la pestaña 2.
-              </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- nav-tabs-custom -->
-        </div>
-        <!-- /.col -->
 
 
 
@@ -388,8 +353,8 @@
       <b></b>
     </div>
     <div class ="text-center">
-    <strong>Copyright &copy; 2017 <a href="#"></a>.</strong> All rights
-    reserved.
+      <strong>Copyright &copy; 2017 <a href="#"></a>.</strong> All rights
+      reserved.
     </div>
   </footer>
 
@@ -450,39 +415,39 @@
 
 
 
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">Opciones generales</h3>
+        <!-- Settings tab content -->
+        <div class="tab-pane" id="control-sidebar-settings-tab">
+          <form method="post">
+            <h3 class="control-sidebar-heading">Opciones generales</h3>
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Usar panel no se cuanto
-              <input type="checkbox" class="pull-right" checked>
-            </label>
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Usar panel no se cuanto
+                <input type="checkbox" class="pull-right" checked>
+              </label>
 
-            <p>
-              Info sobre de eso
-            </p>
-          </div>
-          <!-- /.form-group -->
+              <p>
+                Info sobre de eso
+              </p>
+            </div>
+            <!-- /.form-group -->
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Permitir todos los mails
-              <input type="checkbox" class="pull-right" checked>
-            </label>
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Permitir todos los mails
+                <input type="checkbox" class="pull-right" checked>
+              </label>
 
-            <p>
-              Opciones sobre eso
-            </p>
-          </div>
-          <!-- /.form-group -->
+              <p>
+                Opciones sobre eso
+              </p>
+            </div>
+            <!-- /.form-group -->
 
-        </form>
+          </form>
+        </div>
+        <!-- /.tab-pane -->
       </div>
-      <!-- /.tab-pane -->
-    </div>
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
@@ -503,7 +468,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('public/estilos_varios/js/demo.js') }}"></script>
 
-<script>
+{#<script>
     $( document ).ready(function() {
         $("#autos").click(function() {
             //alert("Alert");
@@ -512,6 +477,7 @@
             location.href ="http://127.0.0.1:8000/usuario/";
         });
     });
-</script>
+</script>#}
 
 {% endblock body %}
+

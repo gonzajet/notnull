@@ -25,6 +25,11 @@ proyecto_contacto:
 proyecto_usuarios:
     path:   /admin/usuarios
     defaults: { _controller: ProyectoBundle:Admin:usuarios}
+
+proyecto_auto:
+    path:   /admin/auto
+    defaults: { _controller: ProyectoBundle:Admin:auto}
+
     
 proyecto_lugares:
     path:   /admin/lugares
@@ -36,10 +41,7 @@ proyecto_about:
     path:   /admin/about
     defaults: { _controller: ProyectoBundle:Admin:about} 
     
- #NO SIVE, SENDMAIL, SE DEJA PARA EJEMPLO.
-proyecto_sendmail:
-    path:   /admin/sendmail
-    defaults: { _controller: ProyectoBundle:Admin:sendmail}
+
 
 #-----------Redes login-------------
 

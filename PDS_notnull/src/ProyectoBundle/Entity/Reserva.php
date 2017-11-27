@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Reserva
  *
+ * @ORM\Entity(repositoryClass="ProyectoBundle\Repository\ReservaRepository")
  * @ORM\Table(name="reserva", indexes={@ORM\Index(name="fk_id_auto", columns={"id_auto"}), @ORM\Index(name="id_lugar", columns={"id_lugar"})})
  * @ORM\Entity
  */

@@ -45,7 +45,7 @@ class EstablecimientoController extends Controller{
             ->find($id);
 
         return $this->render('ProyectoBundle:Establecimiento:puntual.html.twig'
-            ,array('establecimiento' => $establecimiento));
+            ,array('establecimiento' => $establecimiento, 'lugares' => null));
     }
 
     public function reservarAction($id, Request $request){
@@ -93,5 +93,7 @@ class EstablecimientoController extends Controller{
             ,array('lugar'=> $lugar,'form' => $form->createView())
         );
     }
+
+
 
 }

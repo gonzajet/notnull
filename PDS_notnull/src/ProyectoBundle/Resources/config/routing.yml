@@ -107,3 +107,7 @@ maps:
 auto_new:
     path:     auto/new
     defaults: { _controller: ProyectoBundle:Auto:new }
+
+buscar_lugares_est:
+    path: /establecimientos/buscar/{establecimiento}/{fechaDesde}/{fechaHasta}
+    defaults: { _controller: ProyectoBundle:Lugar:buscarXHorario }

@@ -48,21 +48,15 @@ class LugarRepository extends EntityRepository{
      * @param $fechaHasta
      * @return array
      */
-    public function findLibresXHorario($idEst, $fechaDesde, $fechaHasta){
+    public function findLibresXHorario($est, $fechaDesde, $fechaHasta){
         $em = $this->getEntityManager();
 
         $query =
-            'SELECT l FROM ProyectoBundle:Lugar l JOIN ProyectoBundle:Reserva r
-              WHERE l.idEstablecimiento = :est
-                AND r.fechaDesde < :fHasta
-                AND r.fechaHasta > :fDesde';
+            'SELECT l FROM ProyectoBundle:Lugar l
+              WHERE l.idEstablecimiento = :est';
 
         $consulta = $em->createQuery($query);
-        $consulta->setParameters(array(
-            'est' => $idEst,
-            'fHasta' => $fechaHasta,
-            'fDesde' => $fechaDesde,
-        ));
+        $consulta->setParameter('est', $est);
 
         return $lugares = $consulta->getResult();
     }

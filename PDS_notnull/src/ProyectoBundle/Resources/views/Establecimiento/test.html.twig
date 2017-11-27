@@ -1,0 +1,40 @@
+<h1>test</h1>
+{{ establecimiento.nombre }}
+{%  if lugares %}
+    <div>
+        <table>
+            <tr>
+                <th>cod</th>
+                <th>id</th>
+                <th>estado</th>
+                <th>establecimiento</th>
+            </tr>
+            {% for item in lugares %}
+                <tr>
+                    <td>{{ item.codigo }}</td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.estado }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endif %}
+
+{%  if reservas %}
+    <div>
+        <table>
+            <tr>
+                <th>desde</th>
+                <th>hasta</th>
+            </tr>
+            {% for item in reservas %}
+                <tr>
+                    <td>{{ item.fechaDesde|date('Y-m-d') }}</td>
+                    <td>{{ item.fechaHasta|date('Y-m-d') }}</td>
+                    <td>{{ item.idLugar.id }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endif %}
+

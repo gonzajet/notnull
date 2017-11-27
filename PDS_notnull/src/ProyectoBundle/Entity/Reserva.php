@@ -14,16 +14,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Reserva
 {
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="fecha_desde", type="datetime", nullable=false)
+     * @ORM\Column(name="fecha_desde", type="integer", nullable=false)
      */
     private $fechaDesde;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="fecha_hasta", type="datetime", nullable=true)
+     * @ORM\Column(name="fecha_hasta", type="integer", nullable=true)
      */
     private $fechaHasta;
 

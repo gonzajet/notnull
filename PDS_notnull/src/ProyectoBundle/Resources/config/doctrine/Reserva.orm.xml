@@ -8,8 +8,8 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="fechaDesde" type="datetime" column="fecha_desde" nullable="false"/>
-    <field name="fechaHasta" type="datetime" column="fecha_hasta" nullable="true"/>
+    <field name="fechaDesde" type="integer" column="fecha_desde" nullable="false"/>
+    <field name="fechaHasta" type="integer" column="fecha_hasta" nullable="true"/>
     <many-to-one field="idLugar" target-entity="Lugar" fetch="LAZY">
       <join-columns>
         <join-column name="id_lugar" referenced-column-name="id"/>

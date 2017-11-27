@@ -15,11 +15,11 @@ class ReservaRepository extends EntityRepository{
         $em = $this->getEntityManager();
 
         $query = 'SELECT r FROM ProyectoBundle:Reserva r 
-               WHERE (r.fechaDesde > :param1 AND r.fechaDesde < :param2) 
-                  OR (r.fechaDesde > :param1 AND r.fechaHasta < :param2)
-                  OR (r.fechaHasta > :param1 AND r.fechaHasta < :param2)
-                  OR (r.fechaDesde < :param1 AND r.fechaHasta > :param2) 
-               AND r.idLugar IN (:param3)';
+               WHERE (r.fechaDesde >= :param1 AND r.fechaDesde <= :param2) 
+                  OR (r.fechaDesde >= :param1 AND r.fechaHasta <= :param2)
+                  OR (r.fechaHasta >= :param1 AND r.fechaHasta <= :param2)
+                  OR (r.fechaDesde <= :param1 AND r.fechaHasta >= :param2) 
+                 AND r.idLugar IN (:param3)';
 
         $consulta = $em->createQuery($query);
         $consulta->setParameters(array(
@@ -28,7 +28,7 @@ class ReservaRepository extends EntityRepository{
             'param3' => $lugares
         ));
 
-        return $establecimientos = $consulta->getResult();
+        return $consulta->getResult();
     }
 }
 

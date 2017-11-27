@@ -370,13 +370,14 @@ lugares disponibles ahora: {{ establecimiento.getLugaresLibres|length }}/{{ esta
         <th>cod</th>
         <th>id</th>
         <th>estado</th>
-        <th>establecimiento</th>
+        <th>reservar</th>
     </tr>
     {% for item in lugares %}
         <tr>
             <td>{{ item.codigo }}</td>
             <td>{{ item.id }}</td>
             <td>{{ item.estado }}</td>
+            <td></td>
         </tr>
     {% endfor %}
     </table>

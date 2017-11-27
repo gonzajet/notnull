@@ -103,33 +103,40 @@ class LugarController extends Controller
         $lugares = $establecimiento_o->getLugares();
 
         /*Obtengo los id de los lugares*/
-        $id_lugares = array();
+        /*$id_lugares = array();
         foreach ($lugares as $lugar) {
             array_push($id_lugares, $lugar->getId());
-        }
+        }*/
 
         /*Buscamos las reservas que haya en esa franja horaria para esos lugares*/
         $reservas = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Reserva')
-            ->findPorHorario($fechaDesde,$fechaHasta,$id_lugares);
+            ->findPorHorario($fechaDesde,$fechaHasta,$lugares);
 
-        /*Recorremos los lugares y nos fijamos si tienne una reserva*/
+        /*Recorremos los lugares y nos fijamos si no estan reservados*/
         $lugares_filtrados = array();
         $i=-1;
+        $s= true;
         if(sizeof($reservas) == 0){$lugares_filtrados = $lugares;}
         else {
             foreach ($lugares as $lugar) {
                 $i++;
                 foreach ($reservas as $reserva) {
-                    if ($lugar->getId() != $reserva->getIdLugar()->getId()) {
-                        array_push($lugares_filtrados, $lugar);
+                    if ($lugar->getId() == $reserva->getIdLugar()->getId()) {
+                        $s=false;
                     }
                 }
+                if ($s){array_push($lugares_filtrados, $lugar);}
+                $s=true;
             }
         }
+
         return $this->render('ProyectoBundle:Establecimiento:test.html.twig'
-            ,array('establecimiento' => $establecimiento_o, 'lugares' => $lugares_filtrados,
-                    'idlugares' => $id_lugares, 'reservas'=>$reservas));
+            ,array('establecimiento' => $establecimiento_o,
+                           'lugares' => $lugares_filtrados,
+                           'reservas'=> $reservas,
+                           'Desde'   => $fechaDesde,
+                           'Hasta'   => $fechaHasta));
     }
 
 }    

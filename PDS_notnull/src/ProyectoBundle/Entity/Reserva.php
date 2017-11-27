@@ -7,22 +7,23 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Reserva
  *
+ * @ORM\Entity(repositoryClass="ProyectoBundle\Repository\ReservaRepository")
  * @ORM\Table(name="reserva", indexes={@ORM\Index(name="fk_id_auto", columns={"id_auto"}), @ORM\Index(name="id_lugar", columns={"id_lugar"})})
  * @ORM\Entity
  */
 class Reserva
 {
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="fecha_desde", type="datetime", nullable=false)
+     * @ORM\Column(name="fecha_desde", type="integer", nullable=false)
      */
     private $fechaDesde;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="fecha_hasta", type="datetime", nullable=true)
+     * @ORM\Column(name="fecha_hasta", type="integer", nullable=true)
      */
     private $fechaHasta;
 

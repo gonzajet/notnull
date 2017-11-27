@@ -2,12 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55646afe-af64-4e01-8e2f-94eb06c0b477" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_88fir9qheogn52mn3qs3ukq6b0" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_61b0ee7bfbg4ah2vgcegp30df4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_6aqephs3dr5580i2r266v45kj5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_chvtjpgan0tm0t57met1a8613p" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_s5ii8vhbven8pfhqad6jvv54ao" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/alarma1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/ReservaRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/test.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/lugares.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/prod/sess_chvtjpgan0tm0t57met1a8613p" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_40asbv8abb9ol0l2vmq93tn195" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_40asbv8abb9ol0l2vmq93tn195" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_rb1n7363qvnmkqos7sqe35unf0" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_rb1n7363qvnmkqos7sqe35unf0" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/web/img/alarma.jpg" afterPath="$PROJECT_DIR$/PDS_notnull/web/img/alarma.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/EstablecimientoController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/EstablecimientoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/LugarController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Reserva.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Reserva.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/LugarRepository.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Repository/LugarRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Reserva.orm.xml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Reserva.orm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/puntual.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/puntual.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/reserva.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/reserva.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/new.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/login.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_rb8evcr5ac0c0no01oi3lgavr7" afterPath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_rb8evcr5ac0c0no01oi3lgavr7" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/var\logs/prod.log" afterPath="$PROJECT_DIR$/PDS_notnull/var\logs/prod.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notnull.sql" afterPath="$PROJECT_DIR$/notnull.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,14 +46,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="134" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding>
-                <element signature="e#45#104#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -35,7 +61,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-              <folding />
+              <folding>
+                <marker date="1511819311244" expanded="true" signature="955:1835" ph="{...}" />
+                <marker date="1511819311244" expanded="true" signature="1176:1835" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="492">
-              <caret line="517" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+              <caret line="517" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -53,18 +82,18 @@
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="72">
+              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -367,12 +396,12 @@
       <workItem from="1510866960981" duration="7644000" />
       <workItem from="1511469356149" duration="13000000" />
       <workItem from="1511530189359" duration="5469000" />
-      <workItem from="1511819145534" duration="122000" />
+      <workItem from="1511819145534" duration="294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42456000" />
+    <option name="totallyTimeSpent" value="42628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="3" width="1303" height="780" extended-state="6" />
@@ -450,6 +479,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -739,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="522">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -749,7 +779,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1511819311244" expanded="true" signature="955:1835" ph="{...}" />
+            <marker date="1511819311244" expanded="true" signature="1176:1835" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -764,25 +797,23 @@
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
-          <caret line="517" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+          <caret line="517" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="134" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#104#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="216">
+          <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
           <folding />
         </state>
       </provider>

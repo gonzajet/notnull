@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <head></head>
+    <style>
+        html, body {
+        color: #fff;
+       }
+       .navbar-inverse{
+           position: relative;
+        }
+    </style>
+    
+
+       {% if((lugares|length)>0) %}
+            
+            <table class="table table-hover">
+                <tr>
+                <th>establecimiento</th>
+                <th>lugares disponibles</th>
+                </tr>
+                {% for item in lugares %}
+                    <tr>
+                        <td>{{ item.getNombre_establecimiento() }}</td>
+                        <td>{{ item.getCantidad_lugares_disponibles()}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <table class="table table-hover">
+                <tr>
+                <th>establecimiento</th>
+                <th>cantidad lugares</th>
+                </tr>
+                <tr>
+                    <td colspan="2"  style="text-align: center;" >No encontramos establecimientos</td>
+                </tr>
+            </table>
+        {% endif %}
+        
+{% endblock %}    

@@ -25,6 +25,10 @@ proyecto_contacto:
 proyecto_usuarios:
     path:   /admin/usuarios
     defaults: { _controller: ProyectoBundle:Admin:usuarios}
+    
+proyecto_lugares:
+    path:   /admin/lugares
+    defaults: { _controller: ProyectoBundle:Admin:lugares}
 
 
 
@@ -100,7 +104,7 @@ establecimiento_puntual:
     defaults: { _controller: ProyectoBundle:Establecimiento:puntual}
 
 reservar:
-    path: /reservar/{id}
+    path: /reservar/{lugar}/{desde}/{hasta}/{auto}
     defaults: { _controller: ProyectoBundle:Establecimiento:reservar}
 
 maps:
@@ -109,3 +113,7 @@ maps:
 auto_new:
     path:     auto/new
     defaults: { _controller: ProyectoBundle:Auto:new }
+
+buscar_lugares_est:
+    path: /establecimientos/buscar/{establecimiento}/{fechaDesde}/{fechaHasta}
+    defaults: { _controller: ProyectoBundle:Lugar:buscarXHorario }

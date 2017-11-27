@@ -1,0 +1,43 @@
+<h1>test</h1>
+{{ establecimiento.nombre }}
+Reservar con: {{ app.user.autos[0].patente }}
+{%  if lugares %}
+    <div>
+        <table>
+            <tr>
+                <th>cod</th>
+                <th>id</th>
+                <th>estado</th>
+                <th>establecimiento</th>
+            </tr>
+            {% for item in lugares %}
+                <tr>
+                    <td>{{ item.codigo }}</td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.estado }}</td>
+                    <td><a href="/app_dev.php/reservar/{{ item.id }}/{{ Desde }}/{{ Hasta }}/{{ app.user.autos[0].id }}">reservar</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endif %}
+
+{%  if reservas %}
+    <div>
+        <table>
+            <tr>
+                <th>desde</th>
+                <th>hasta</th>
+            </tr>
+            {% for item in reservas %}
+                <tr>
+                    <td>{{ item.fechaDesde }}</td>
+                    <td>{{ item.fechaHasta}}</td>
+                    <td>{{ item.idLugar.id }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endif %}
+

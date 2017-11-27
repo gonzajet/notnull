@@ -51,10 +51,7 @@ class LugarController extends Controller
                 $em->flush();
             
             }
-            
-            $lugares = $em->getRepository('ProyectoBundle:Lugar')->findAll();
-            return $this->render('ProyectoBundle:Lugar:index.html.twig',array('establecimiento' => $establecimiento,
-                                                                              'lugares' => $lugares ));
+            return $this->redirectToRoute('lugar_index', array('id' => $establecimiento));
         }
  
         return $this->render('ProyectoBundle:Lugar:new.html.twig',array('lugar' => $lugar,
@@ -92,14 +89,51 @@ class LugarController extends Controller
     
     
     
-    
 
-    public function buscarXHorarioAction(Request $request)
+
+    public function buscarXHorarioAction($establecimiento, $fechaDesde, $fechaHasta)
     {
-        $repository = $this->getDoctrine()->getRepository('ProyectoBundle:Lugar');
-        $secciones = $repository->findLibresXHorario();
+        /*Recuperamos el establecimiento para buscar los lugares que tiene relacionados*/
+        $establecimiento_o = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Establecimiento')
+            ->find($establecimiento);
+        $lugares = $establecimiento_o->getLugares();
 
-        return $secciones;
+        /*Obtengo los id de los lugares*/
+        /*$id_lugares = array();
+        foreach ($lugares as $lugar) {
+            array_push($id_lugares, $lugar->getId());
+        }*/
+
+        /*Buscamos las reservas que haya en esa franja horaria para esos lugares*/
+        $reservas = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->findPorHorario($fechaDesde,$fechaHasta,$lugares);
+
+        /*Recorremos los lugares y nos fijamos si no estan reservados*/
+        $lugares_filtrados = array();
+        $i=-1;
+        $s= true;
+        if(sizeof($reservas) == 0){$lugares_filtrados = $lugares;}
+        else {
+            foreach ($lugares as $lugar) {
+                $i++;
+                foreach ($reservas as $reserva) {
+                    if ($lugar->getId() == $reserva->getIdLugar()->getId()) {
+                        $s=false;
+                    }
+                }
+                if ($s){array_push($lugares_filtrados, $lugar);}
+                $s=true;
+            }
+        }
+
+        return $this->render('ProyectoBundle:Establecimiento:test.html.twig'
+            ,array('establecimiento' => $establecimiento_o,
+                           'lugares' => $lugares_filtrados,
+                           'reservas'=> $reservas,
+                           'Desde'   => $fechaDesde,
+                           'Hasta'   => $fechaHasta));
     }
-   
+
 }    

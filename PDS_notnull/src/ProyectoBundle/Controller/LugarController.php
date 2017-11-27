@@ -51,10 +51,7 @@ class LugarController extends Controller
                 $em->flush();
             
             }
-            
-            $lugares = $em->getRepository('ProyectoBundle:Lugar')->findAll();
-            return $this->render('ProyectoBundle:Lugar:index.html.twig',array('establecimiento' => $establecimiento,
-                                                                              'lugares' => $lugares ));
+            return $this->redirectToRoute('lugar_index', array('id' => $establecimiento));
         }
  
         return $this->render('ProyectoBundle:Lugar:new.html.twig',array('lugar' => $lugar,

@@ -1,14 +1,23 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
+    <head></head>
+    <style>
+        html, body {
+        color: #fff;
+       }
+       .navbar-inverse{
+           position: relative;
+        }
+    </style>
     
+
        {% if((lugares|length)>0) %}
+            
             <table class="table table-hover">
                 <tr>
                 <th>establecimiento</th>
-                <th>cantidad lugares</th>
-                <th class="col-md-1"></th>
-                
+                <th>lugares disponibles</th>
                 </tr>
                 {% for item in lugares %}
                     <tr>
@@ -24,7 +33,7 @@
                 <th>cantidad lugares</th>
                 </tr>
                 <tr>
-                    <td colspan="2"  style="text-align: center;" >No encontramos lugares</td>
+                    <td colspan="2"  style="text-align: center;" >No encontramos establecimientos</td>
                 </tr>
             </table>
         {% endif %}

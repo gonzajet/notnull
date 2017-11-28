@@ -28,6 +28,8 @@ class EstablecimientoController extends Controller{
         }
     
     }
+    
+
 
     public function mapsAction(){
         $establecimientos = $this->getDoctrine()

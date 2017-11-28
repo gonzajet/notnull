@@ -24,7 +24,13 @@
 <h1>test</h1>
 
 Reservar en {{ establecimiento.nombre }} con: {{ app.user.autos[0].patente }}
-El precio será: ${{ (establecimiento.precioHora) * ((Hasta-Desde)/10000 )}}
+El precio será:
+{% if Hasta > 0%}
+    ${{ (establecimiento.precioHora) * ((Hasta-Desde)/10000 )}} ({{ ((Hasta-Desde)/10000 ) }} horas)
+{% else %}
+    ${{ (establecimiento.precioHora) }} por hora.
+{% endif %}
+
 
 <div>Seleccione el lugar y se efectuará la reserva:</div>
 

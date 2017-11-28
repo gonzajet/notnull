@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<html lang="en">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <html lang="en">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/">EstacionAR</a>
@@ -22,7 +22,6 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        
 
         
      <div id="fullscreen_bg" class="fullscreen_bg"/>
@@ -54,7 +53,7 @@
                     <center>
                       <h1 style="font-size:2em;color:#00001a">Bienvenido {{app.user.usuario}}</h1>
                       <h2 class="glyphicon glyphicon-user" style="font-size:9em;color:#00001a"></h2>
-                      <h3 style="margin-top: 0;color:#00001a"><a href="{#{{path ('auto/new')}}#}" class="btn btn-sm btn-primary btn-block" role="button">Dar de alta auto</a></h4>
+                      <h3 style="margin-top: 0;color:#00001a"><a href="{{path ('auto_new')}}" class="btn btn-sm btn-primary btn-block" role="button">Dar de alta auto</a></h4>
                       <h4 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Tutorial de busqueda y reservas de estacionamientos</a></h5>                 
                       <h5 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Editar mis datos</a></h5>   
                       
@@ -125,12 +124,70 @@
         </div>  
   </div>
             
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-            <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
-            <link href="{{asset('public/estilos_varios/css/bootstrap-social.css')}}" rel="stylesheet">
-            <script src="{{asset('public/estilos_varios/js/user.js')}}"></script>
-            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        
+        <div class="conteiner">
+
+            <div id="map"></div>
+
+        </div>
+        <script>
+            var map;
+            function initMap() {
+                var centro = {lat: -34.7751535, lng: -58.26789550000001};
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: centro,
+                    zoom: 12
+                });
+                //    var marker = new google.maps.Marker({
+                //        position: centro,
+                //        map: map
+                //    });
+                    var markers=[];
+                    //var arrest = [];
+                    var arrest = {{establecimientos|json_encode|raw}};
+                    
+{#                       var arrest= {{establecimientos}};#}
+                    alert(JSON.stringify(arrest));
+            for (var est in  arrest){
+                    console.log(JSON.stringify(est));
+                    alert(JSON.stringify(arrest));
+{#                    var nom = "{{est.nombre}}";
+                    var dire = "{{est.direccion}}";
+                    var loc = "{{est.localidad}}";
+                    var provi = "{{est.provincia}}";
+                            var lat = {{ est.lat}};
+                            var lng = {{ est.lng}};
+                    var cadena = '<h3 id="firstHeading" class="firstHeading">' + nom + '</h3>' +
+                            '<div id="bodyContent">' +
+                            ' <p><b>Dirección</b> ' + dire +
+                            ' <b>Localidad</b> ' + loc +
+                            ' <b>Provincia</b> ' + provi + '</p>';
+                    var position = new google.maps.LatLng(lat, lng);
+                    markers[con] = [cadena];#}
+
+                 
+                }
+            //  console.log(markers[2]);
+                    for (var i = 0; i < markers.length; i++) {
+                        
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: markers[i]["posicion"],
+                            info: markers[i]["informacion"]
+                        });
+                    }
+
+                }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70uQg1AN-QrsX7Q8SYiAUuG3D5CgpttU&callback=initMap"
+        async defer></script>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/estilos_varios/css/bootstrap-social.css')}}" rel="stylesheet">
+    <script src="{{asset('public/estilos_varios/js/user.js')}}"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </html>
 {% endblock %}

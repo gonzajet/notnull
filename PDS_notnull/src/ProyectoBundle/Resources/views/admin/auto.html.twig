@@ -218,7 +218,7 @@
                                     //alert("Alert");
                                     /*var a = window.location.toString();
                                     alert(a.split("/"));*/
-                                    location.href ="http://127.0.0.1:8000/admin/usuarios";
+                                    location.href ="usuarios";
                                 });
                             });
                         </script>
@@ -273,7 +273,7 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <div class="col-sm-8 text-left">
+                                <div class="col-sm-4">
                                     {% if((auto|length)>0) %}
 
 
@@ -282,6 +282,7 @@
                                             <table class="table table-striped">
                                                 <thead>
                                                 <tr>
+                                                    <th>Username</th>
                                                     <th>Patente</th>
                                                     <th>Marca</th>
                                                     <th>Modelo</th>
@@ -291,9 +292,11 @@
                                                 {% for a in auto %}
 
                                                     <tr>
+                                                        <td>{{ a.idUsuario.usuario }}</td>
                                                         <td>{{ a.patente }}</td>
                                                         <td>{{ a.marca }}</td>
                                                         <td>{{ a.modelo }}</td>
+
 
 
                                                     </tr>

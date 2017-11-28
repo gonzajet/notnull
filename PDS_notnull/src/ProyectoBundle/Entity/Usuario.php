@@ -184,6 +184,7 @@ class Usuario implements AdvancedUserInterface, \Serializable
      */
     public function getRoles()
     {
+//        return $this->roles;
         return array('ROLE_USER');
     }
 

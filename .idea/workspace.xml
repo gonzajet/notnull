@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55646afe-af64-4e01-8e2f-94eb06c0b477" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDS_notnull/var/sessions/dev/sess_m5mnao5uji4ssc3eoslvuh5or1" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" afterPath="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/lugares.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/lugares.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" afterPath="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +33,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="294" column="29" lean-forward="false" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
+            <state relative-caret-position="3954">
+              <caret line="477" column="55" lean-forward="false" selection-start-line="477" selection-start-column="31" selection-end-line="477" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
@@ -44,21 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="auto.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="269" column="51" lean-forward="false" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="51" />
+            <state relative-caret-position="78">
+              <caret line="275" column="52" lean-forward="false" selection-start-line="275" selection-start-column="52" selection-end-line="275" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -67,18 +55,8 @@
       <file leaf-file-name="usuarios.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="209" column="61" lean-forward="false" selection-start-line="209" selection-start-column="61" selection-end-line="209" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutoController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="402">
+              <caret line="313" column="0" lean-forward="false" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,7 +87,6 @@
         <option value="$PROJECT_DIR$/PDS_notnull/composer.lock" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/usuario/login.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/UsuarioController.php" />
-        <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Auto.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Usuario.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/doctrine/Usuario.orm.xml" />
@@ -117,11 +94,12 @@
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/lugares.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
+        <option value="$PROJECT_DIR$/PDS_notnull/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig" />
+        <option value="$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig" />
         <option value="$PROJECT_DIR$/PDS_notnull/app/config/parameters.yml" />
       </list>
     </option>
@@ -404,12 +382,12 @@
       <workItem from="1510866960981" duration="7644000" />
       <workItem from="1511469356149" duration="13000000" />
       <workItem from="1511530189359" duration="5469000" />
-      <workItem from="1511819145534" duration="3802000" />
+      <workItem from="1511819145534" duration="6221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46136000" />
+    <option name="totallyTimeSpent" value="48555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="3" width="1303" height="780" extended-state="6" />
@@ -576,14 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/SeccionLugar.php" />
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Entity/Lugar.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -606,13 +576,6 @@
         <state relative-caret-position="108">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="50" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -698,13 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Lugar/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -742,7 +698,7 @@
         <state relative-caret-position="-142">
           <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
-            <element signature="e#39#79#0#PHP" expanded="true" />
+            <element signature="e#39#79#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,22 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/lugares.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -804,24 +744,6 @@
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="294" column="29" lean-forward="false" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="269" column="51" lean-forward="false" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,11 +757,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="78" column="36" lean-forward="false" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Controller/AutoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/usuarios.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="209" column="61" lean-forward="false" selection-start-line="209" selection-start-column="61" selection-end-line="209" selection-end-column="61" />
+        <state relative-caret-position="402">
+          <caret line="313" column="0" lean-forward="false" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/auto.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="275" column="52" lean-forward="false" selection-start-line="275" selection-start-column="52" selection-end-line="275" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/Establecimiento/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDS_notnull/src/ProyectoBundle/Resources/views/admin/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3954">
+          <caret line="477" column="55" lean-forward="false" selection-start-line="477" selection-start-column="31" selection-end-line="477" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

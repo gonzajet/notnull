@@ -70,12 +70,13 @@ security:
         
          # require ROLE_ADMIN for /admin*
          - { path: ^/admin, role: ROLE_USER } #Cambiar vistas de ADMIN
-         - { path: ^/Default, role: ROLE_USER }
+         - { path: ^/Default, role: IS_AUTHENTICATED_ANONYMOUSLY }
          #- { path: ^/admin/users, roles: ROLE_SUPER_ADMIN }
          - { path: /usuario/new, role: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: /admin/about, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
          - { path: ^/usuario, role: ROLE_USER }
+         - { path: ^/establecimiento, role: ROLE_USER }
 
         # - { path: /, role: ROLE_USER }, NO TE DEJA ENTRAR a ningun lado si no sos usuario.
 

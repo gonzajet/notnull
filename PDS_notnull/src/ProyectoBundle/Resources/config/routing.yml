@@ -106,7 +106,7 @@ establecimiento_puntual:
     defaults: { _controller: ProyectoBundle:Establecimiento:puntual}
 
 reservar:
-    path: /reservar/{lugar}/{desde}/{hasta}/{auto}
+    path: /reservar
     defaults: { _controller: ProyectoBundle:Establecimiento:reservar}
 
 maps:

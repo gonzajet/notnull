@@ -48,7 +48,16 @@ class EstablecimientoController extends Controller{
             ,array('establecimiento' => $establecimiento, 'lugares' => null));
     }
 
-    public function reservarAction($lugar, $desde, $hasta, $auto){
+    /*
+     * @Method({"POST"})
+     */
+    public function reservarAction(Request $request){
+
+        $lugar = $request->request->get('lugar');
+        $desde = $request->request->get('desde');
+        $hasta = $request->request->get('hasta');
+        $auto = $request->request->get('auto');
+
         $reserva = new Reserva();
         /*$form = $this->createForm('ProyectoBundle\Form\ReservaType', $reserva);*/
 
@@ -69,8 +78,7 @@ class EstablecimientoController extends Controller{
         $em -> persist($reserva);
         $em -> flush();
 
-
-        return $this->render('ProyectoBundle:Default:index.html.twig');
+        die();
     }
 
 

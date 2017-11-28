@@ -1,6 +1,29 @@
 <h1>test</h1>
 {{ establecimiento.nombre }}
 Reservar con: {{ app.user.autos[0].patente }}
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
+<script>
+    function guardarReserva($lugar ,$desde,$hasta,$auto) {
+        alert($lugar + "-" + $desde + "-" + $hasta + "-" + $auto);
+        $.ajax({
+            url: "{{ path('reservar') }}",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "lugar": $lugar,
+                "desde": $desde,
+                "hasta": $hasta,
+                "auto": $auto
+            }
+        }).done(function () {
+            alert("Data Saved");
+            location.reload(true);
+        });
+    }
+
+</script>
+
 {%  if lugares %}
     <div>
         <table>
@@ -15,7 +38,7 @@ Reservar con: {{ app.user.autos[0].patente }}
                     <td>{{ item.codigo }}</td>
                     <td>{{ item.id }}</td>
                     <td>{{ item.estado }}</td>
-                    <td><a href="/app_dev.php/reservar/{{ item.id }}/{{ Desde }}/{{ Hasta }}/{{ app.user.autos[0].id }}">reservar</a></td>
+                    <td><button onclick="guardarReserva({{ item.id }},{{ Desde }},{{ Hasta }},{{ app.user.autos[0].id }})" >reservar</button></td>
                 </tr>
             {% endfor %}
         </table>

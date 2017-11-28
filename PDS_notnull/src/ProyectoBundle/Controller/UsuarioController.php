@@ -8,6 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+
+
 
 /**
  * Usuario controller.
@@ -24,14 +28,22 @@ class UsuarioController extends Controller
      */
     public function cuentaAction()
     {
-
+        $nada=["hla","asa","aoq"];
         $establecimientos = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Establecimiento')
             ->findEstablecimientosTodos();
            // var_dump($establecimientos[0]);
            // die();
+        
+        //$encoders = array(new JsonEncoder());
+       //$normalizers = array(new ObjectNormalizer());
+
+        //$serializer = new Serializer($establecimientos, $encoders);
+        
+        //$nada->
+    array_push($nada,$establecimientos[0]->getNombre());
         return $this->render('ProyectoBundle:usuario:index.html.twig'
-            ,array('establecimientos' => $establecimientos));
+            ,array('establecimientos' => $nada));
     
     }
 

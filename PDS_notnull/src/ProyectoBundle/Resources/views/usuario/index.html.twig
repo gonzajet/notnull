@@ -141,10 +141,16 @@
                 //        position: centro,
                 //        map: map
                 //    });
-                
-            {% for est in establecimientos %}
-                    var con=0;
-                    var nom = "{{est.nombre}}";
+                    var markers=[];
+                    //var arrest = [];
+                    var arrest = {{establecimientos|json_encode|raw}};
+                    
+{#                       var arrest= {{establecimientos}};#}
+                    alert(JSON.stringify(arrest));
+            for (var est in  arrest){
+                    console.log(JSON.stringify(est));
+                    alert(JSON.stringify(arrest));
+{#                    var nom = "{{est.nombre}}";
                     var dire = "{{est.direccion}}";
                     var loc = "{{est.localidad}}";
                     var provi = "{{est.provincia}}";
@@ -156,11 +162,11 @@
                             ' <b>Localidad</b> ' + loc +
                             ' <b>Provincia</b> ' + provi + '</p>';
                     var position = new google.maps.LatLng(lat, lng);
-                    var markers = [cadena];
+                    markers[con] = [cadena];#}
 
-                    con=con + 1 ;
-            {% endfor %}
-            console.log(markers[1]);
+                 
+                }
+            //  console.log(markers[2]);
                     for (var i = 0; i < markers.length; i++) {
                         
                         var marker = new google.maps.Marker({

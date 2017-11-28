@@ -131,7 +131,6 @@ class LugarController extends Controller
         return $this->render('ProyectoBundle:Establecimiento:test.html.twig'
             ,array('establecimiento' => $establecimiento_o,
                            'lugares' => $lugares_filtrados,
-                           'reservas'=> $reservas,
                            'Desde'   => $fechaDesde,
                            'Hasta'   => $fechaHasta));
     }

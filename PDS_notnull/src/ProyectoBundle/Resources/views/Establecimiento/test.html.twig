@@ -1,11 +1,7 @@
-<h1>test</h1>
-{{ establecimiento.nombre }}
-Reservar con: {{ app.user.autos[0].patente }}
-
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
 <script>
     function guardarReserva($lugar ,$desde,$hasta,$auto) {
-        alert($lugar + "-" + $desde + "-" + $hasta + "-" + $auto);
+        if (confirm("Esta seguro?")){
         $.ajax({
             url: "{{ path('reservar') }}",
             type: "POST",
@@ -17,12 +13,20 @@ Reservar con: {{ app.user.autos[0].patente }}
                 "auto": $auto
             }
         }).done(function () {
-            alert("Data Saved");
+            alert("Reserva confirmada");
             location.reload(true);
-        });
+        });}
+        else{alert("Reserva cancelada")}
     }
 
 </script>
+
+<h1>test</h1>
+
+Reservar en {{ establecimiento.nombre }} con: {{ app.user.autos[0].patente }}
+El precio será: ${{ (establecimiento.precioHora) * ((Hasta-Desde)/10000 )}}
+
+<div>Seleccione el lugar y se efectuará la reserva:</div>
 
 {%  if lugares %}
     <div>
@@ -45,22 +49,5 @@ Reservar con: {{ app.user.autos[0].patente }}
     </div>
 {% endif %}
 
-{%  if reservas %}
-    <div>
-        <table>
-            <tr>
-                <th>desde</th>
-                <th>hasta</th>
-            </tr>
-            {% for item in reservas %}
-                <tr>
-                    <td>{{ item.fechaDesde }}</td>
-                    <td>{{ item.fechaHasta}}</td>
-                    <td>{{ item.idLugar.id }}</td>
 
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-{% endif %}
 

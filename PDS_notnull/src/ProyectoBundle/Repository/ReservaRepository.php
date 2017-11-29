@@ -31,14 +31,14 @@ class ReservaRepository extends EntityRepository{
         return $consulta->getResult();
     }
 
-    public function findMisReservas($idAuto){
+    public function findMisReservas($idUsuario){
         $em = $this->getEntityManager();
 
         $query = 'SELECT r FROM ProyectoBundle:Reserva r
-                  WHERE r.idAuto = :param1';
+                  WHERE r.usuario = :param1';
 
         $consulta = $em->createQuery($query);
-        $consulta->setParameter( 'param1',$idAuto);
+        $consulta->setParameter( 'param1',$idUsuario);
 
         return $consulta->getResult();
     }

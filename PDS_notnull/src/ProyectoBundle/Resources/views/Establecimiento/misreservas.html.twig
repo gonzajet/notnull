@@ -28,7 +28,10 @@
             </tr>
             {% for item in reservas %}
                 <tr>
+
                     <td> {{ item.id }}</td>
+                    <td> {{ item.usuario.nombre }}</td>
+                    <td> {{ item.idAuto.patente }} </td>
                     <td><button onclick="borrarReserva({{ item.id }})" >borrar</button></td>
                 </tr>
             {% endfor %}

@@ -59,9 +59,9 @@ class EstablecimientoController extends Controller{
         $desde = $request->request->get('desde');
         $hasta = $request->request->get('hasta');
         $auto = $request->request->get('auto');
+        $usuario = $request->request->get('usuario');
 
         $reserva = new Reserva();
-        /*$form = $this->createForm('ProyectoBundle\Form\ReservaType', $reserva);*/
 
         $lugar = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Lugar')
@@ -71,10 +71,15 @@ class EstablecimientoController extends Controller{
             ->getRepository('ProyectoBundle:Auto')
             ->find($auto);
 
+        $usuario = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Usuario')
+            ->find($usuario);
+
         $reserva->setIdLugar($lugar);
         $reserva->setIdAuto($auto);
         $reserva->setFechaDesde(intval($desde));
         $reserva->setFechaHasta(intval($hasta));
+        $reserva->setUsuario($usuario);
 
         $em = $this->getDoctrine()->getManager();
         $em -> persist($reserva);
@@ -83,11 +88,11 @@ class EstablecimientoController extends Controller{
         die();
     }
 
-    public function misReservasAction($idAuto){
+    public function misReservasAction($idUsuario){
 
         $reservas = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Reserva')
-            ->findMisReservas($idAuto);
+            ->findMisReservas($idUsuario);
 
         return $this->render('ProyectoBundle:Establecimiento:misreservas.html.twig',
             array( 'reservas' => $reservas));

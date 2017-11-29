@@ -122,7 +122,7 @@ buscar_lugares_est:
     defaults: { _controller: ProyectoBundle:Lugar:buscarXHorario }
 
 mis_reservas:
-    path: /mis_reservas/{idAuto}
+    path: /mis_reservas/{idUsuario}
     defaults: { _controller: ProyectoBundle:Establecimiento:misReservas }
 
 borrar_reserva:

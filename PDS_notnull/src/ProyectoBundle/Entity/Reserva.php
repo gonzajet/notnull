@@ -47,6 +47,16 @@ class Reserva
     private $idAuto;
 
     /**
+     * @var \ProyectoBundle\Entity\Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="ProyectoBundle\Entity\Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     * })
+     */
+    private $usuario;
+
+    /**
      * @var \ProyectoBundle\Entity\Lugar
      *
      * @ORM\ManyToOne(targetEntity="ProyectoBundle\Entity\Lugar")
@@ -163,4 +173,18 @@ class Reserva
     {
         return $this->idAuto;
     }
+
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    public function setUsuario(\ProyectoBundle\Entity\Usuario $usuario = null)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+
 }

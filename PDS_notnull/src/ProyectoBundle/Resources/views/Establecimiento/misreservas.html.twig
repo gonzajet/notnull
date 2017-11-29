@@ -1,0 +1,36 @@
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
+<script>
+    function borrarReserva($idReserva) {
+        if (confirm("Esta seguro?"+ $idReserva )){
+            $.ajax({
+                url: "{{ path('borrar_reserva') }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "id": $idReserva
+                }
+            }).done(function () {
+                alert("Reserva eliminada");
+                location.reload(true);
+            });}
+        else{alert("Operación cancelada")}
+    }
+
+</script>
+
+<h1>asdasd</h1>
+
+    <div>
+        <table>
+            <tr>
+                <th>id</th>
+
+            </tr>
+            {% for item in reservas %}
+                <tr>
+                    <td> {{ item.id }}</td>
+                    <td><button onclick="borrarReserva({{ item.id }})" >borrar</button></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>

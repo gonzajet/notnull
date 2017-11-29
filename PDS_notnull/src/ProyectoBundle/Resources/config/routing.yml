@@ -112,6 +112,7 @@ reservar:
 maps:
     path: /maps
     defaults: { _controller: ProyectoBundle:Establecimiento:maps}
+
 auto_new:
     path:     auto/new
     defaults: { _controller: ProyectoBundle:Auto:new }
@@ -119,3 +120,11 @@ auto_new:
 buscar_lugares_est:
     path: /establecimientos/buscar/{establecimiento}/{fechaDesde}/{fechaHasta}
     defaults: { _controller: ProyectoBundle:Lugar:buscarXHorario }
+
+mis_reservas:
+    path: /mis_reservas/{idAuto}
+    defaults: { _controller: ProyectoBundle:Establecimiento:misReservas }
+
+borrar_reserva:
+    path: /borrar_reserva
+    defaults: { _controller: ProyectoBundle:Establecimiento:borrarReserva}

@@ -83,6 +83,31 @@ class EstablecimientoController extends Controller{
         die();
     }
 
+    public function misReservasAction($idAuto){
 
+        $reservas = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->findMisReservas($idAuto);
+
+        return $this->render('ProyectoBundle:Establecimiento:misreservas.html.twig',
+            array( 'reservas' => $reservas));
+    }
+
+    /*
+     * @Method({"POST"})
+     */
+    public function borrarReservaAction(Request $request){
+        $id = $request->request->get('id');
+
+        $reserva = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->find($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($reserva);
+        $em->flush();
+
+        die();
+    }
 
 }

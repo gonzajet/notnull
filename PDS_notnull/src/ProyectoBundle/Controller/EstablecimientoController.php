@@ -60,9 +60,10 @@ class EstablecimientoController extends Controller{
         $hasta = $request->request->get('hasta');
         $auto = $request->request->get('auto');
         $establecimiento = $request->request->get('establecimiento');
+        $usuario = $request->request->get('usuario');
+
 
         $reserva = new Reserva();
-        /*$form = $this->createForm('ProyectoBundle\Form\ReservaType', $reserva);*/
 
         $lugar = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Lugar')
@@ -71,12 +72,17 @@ class EstablecimientoController extends Controller{
         $auto = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Auto')
             ->find($auto);
-
+        
         $lugar->setEstado(true);
+        $usuario = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Usuario')
+            ->find($usuario);
+
         $reserva->setIdLugar($lugar);
         $reserva->setIdAuto($auto);
         $reserva->setFechaDesde(intval($desde));
         $reserva->setFechaHasta(intval($hasta));
+        $reserva->setUsuario($usuario);
 
         $em = $this->getDoctrine()->getManager();
         $em -> persist($lugar);
@@ -84,6 +90,31 @@ class EstablecimientoController extends Controller{
         $em -> flush();
     }
 
+    public function misReservasAction($idUsuario){
 
+        $reservas = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->findMisReservas($idUsuario);
+
+        return $this->render('ProyectoBundle:Establecimiento:misreservas.html.twig',
+            array( 'reservas' => $reservas));
+    }
+
+    /*
+     * @Method({"POST"})
+     */
+    public function borrarReservaAction(Request $request){
+        $id = $request->request->get('id');
+
+        $reserva = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->find($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($reserva);
+        $em->flush();
+
+        die();
+    }
 
 }

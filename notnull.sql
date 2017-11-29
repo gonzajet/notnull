@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-11-2017 a las 00:00:54
+-- Tiempo de generación: 28-11-2017 a las 23:48:39
 -- Versión del servidor: 5.7.20-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.25-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -84,12 +84,12 @@ CREATE TABLE `establecimiento` (
 --
 
 INSERT INTO `establecimiento` (`id`, `nombre`, `direccion`, `provincia`, `localidad`, `telefono`, `precio_hora`, `precio_estadia`, `abierto_desde`, `abierto_hasta`, `lat`, `lng`, `coordenadas`) VALUES
-(4, 'unaj', 'calchaqui 6200', 'Buenos Aires', 'Florencio Varela', 42312341, NULL, NULL, '08:00:00', '23:00:00', '-34.7751535', '-58.26789550000001', NULL),
-(5, 'Hospital el Cruce', 'calchaqui 5401', 'Buenos Aires', 'Florencio Varela', 42312341, NULL, NULL, '24:00:00', '00:00:00', '-34.7710021', '-58.26978959999997', NULL),
-(6, 'Estacionamiento Lavalle', ' Lavalle 677', 'Buenos Aires', 'Quilmes', 42312341, NULL, NULL, '24:00:00', '00:00:00', '-34.7234179', '-58.25645500000002', NULL),
-(7, 'Estacionamiento Privado el placer', 'Avenida La Plata 3402', 'Buenos Aires', 'Quilmes', 42312341, NULL, NULL, '24:00:00', '00:00:00', '-34.7497322', '-58.26868890000003', NULL),
-(8, 'Estacionamiento la 147', ' Calle 147 1341-1367', 'Buenos Aires', 'Berazategui', 42312341, NULL, NULL, '24:00:00', '00:00:00', '-34.7619259', '-58.211047699999995', NULL),
-(9, 'Canopus As', ' Pres. José Evaristo Uriburu 1054', 'Buenos Aires', 'Florencio Varela', 42312341, NULL, NULL, '24:00:00', '00:00:00', '-34.7882288', '-58.28484370000001', NULL);
+(4, 'unaj', 'calchaqui 6200', 'Buenos Aires', 'Florencio Varela', 42312341, 100, 1000, '08:00:00', '23:00:00', '-34.7751535', '-58.26789550000001', NULL),
+(5, 'Hospital el Cruce', 'calchaqui 5401', 'Buenos Aires', 'Florencio Varela', 42312341, 120, 1200, '24:00:00', '00:00:00', '-34.7710021', '-58.26978959999997', NULL),
+(6, 'Estacionamiento Lavalle', ' Lavalle 677', 'Buenos Aires', 'Quilmes', 42312341, 120, 1200, '24:00:00', '00:00:00', '-34.7234179', '-58.25645500000002', NULL),
+(7, 'Estacionamiento Privado el placer', 'Avenida La Plata 3402', 'Buenos Aires', 'Quilmes', 42312341, 50, 500, '24:00:00', '00:00:00', '-34.7497322', '-58.26868890000003', NULL),
+(8, 'Estacionamiento la 147', ' Calle 147 1341-1367', 'Buenos Aires', 'Berazategui', 42312341, 40, 400, '24:00:00', '00:00:00', '-34.7619259', '-58.211047699999995', NULL),
+(9, 'Canopus As', ' Pres. José Evaristo Uriburu 1054', 'Buenos Aires', 'Florencio Varela', 42312341, 70, 700, '24:00:00', '00:00:00', '-34.7882288', '-58.28484370000001', NULL);
 
 -- --------------------------------------------------------
 
@@ -573,6 +573,7 @@ INSERT INTO `lugar_establecimiento` (`id`, `id_establecimiento`, `id_lugar`) VAL
 
 CREATE TABLE `reserva` (
   `id` int(11) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
   `id_auto` int(11) NOT NULL,
   `id_lugar` int(11) NOT NULL,
   `fecha_desde` varchar(20) NOT NULL,
@@ -583,17 +584,16 @@ CREATE TABLE `reserva` (
 -- Volcado de datos para la tabla `reserva`
 --
 
-INSERT INTO `reserva` (`id`, `id_auto`, `id_lugar`, `fecha_desde`, `fecha_hasta`) VALUES
-(4, 1, 37, '20170101000000', '20191219185500'),
-(5, 1, 20, '20140101000000', '20201219185500'),
-(6, 1, 19, '20140101000000', '20201219185500'),
-(7, 1, 15, '20140101000000', '20201219185500'),
-(8, 1, 14, '20140101000000', '20201219185500'),
-(9, 1, 16, '20120101000000', '20301219185500'),
-(10, 1, 18, '20120101000000', '20301219185500'),
-(11, 1, 5, '20100101000000', '20321219185500'),
-(12, 1, 6, '20100101000000', '20321219185500'),
-(13, 1, 6, '20100101000000', '20321219185500');
+INSERT INTO `reserva` (`id`, `id_usuario`, `id_auto`, `id_lugar`, `fecha_desde`, `fecha_hasta`) VALUES
+(25, NULL, 1, 38, '20170101000000', '20170914135500'),
+(26, 7, 1, 32, '20170101000000', '20170914135500'),
+(27, NULL, 1, 30, '20170101000000', '20170914135500'),
+(28, 7, 1, 33, '20170101000000', '20170914135500'),
+(29, NULL, 1, 34, '20170101000000', '20170914135500'),
+(40, NULL, 1, 55, '20170101000000', '0'),
+(41, NULL, 1, 39, '20170101000000', '0'),
+(42, NULL, 1, 44, '20170101000000', '0'),
+(43, 7, 1, 29, '20170101000000', '0');
 
 -- --------------------------------------------------------
 
@@ -725,7 +725,7 @@ ALTER TABLE `lugar_establecimiento`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

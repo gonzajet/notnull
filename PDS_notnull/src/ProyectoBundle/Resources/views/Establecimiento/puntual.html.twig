@@ -146,19 +146,8 @@
     <h1>{{ establecimiento.nombre }}</h1>
     lugares disponibles ahora: {{ establecimiento.getLugaresLibres|length }}/{{ establecimiento.lugares | length }}
 
-    <h2>
-        <!--SEPARADOR-->
-    </h2>
-    <!-- Si hay lugares libres, se redirecciona a la página de reserva de uno cualquiera.
-         Sino, muestra mensaje de que no hay lugares disponibles -->
-    {% if((establecimiento.getLugaresLibres|length)>0) %}
-        <span class="label label-warning"> <a href="../reservar/{{ random(establecimiento.getLugaresLibres).id }}">Reservar</a></span>
-    {% else %}
-        No hay lugares libres!
-    {% endif %}
-
-    <h1></h1>
-
+    <br/>
+    <br/>
     <!-- MAPA PARA MOSTRAR A ESTE ESTABLECIMIENTO PUNTUAL -->
     <div id="map1" ></div>
     <script>

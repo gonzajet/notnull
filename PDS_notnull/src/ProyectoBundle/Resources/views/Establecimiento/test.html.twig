@@ -12,15 +12,15 @@
          .navbar-inverse{
            position: relative;
         }
+        
+        
 </style>
 <script>
-<<<<<<< HEAD
-    function guardarReserva($lugar ,$desde,$hasta,$auto,$establecimiento) {
-        if (confirm("Esta seguro?")){
-=======
-    function guardarReserva($lugar ,$desde,$hasta,$auto,$usuario) {
+    
+    $( ".footer" ).remove();
+    
+    function guardarReserva($lugar ,$desde,$hasta,$auto,$usuario,$establecimiento) {
         if (confirm("Esta seguro?"+$usuario)){
->>>>>>> 730104362f30198142b23753f3a6eb1ca0a07289
         $.ajax({
             url: "{{ path('reservar') }}",
             type: "POST",
@@ -30,8 +30,8 @@
                 "desde": $desde,
                 "hasta": $hasta,
                 "auto": $auto,
-<<<<<<< HEAD
-                "establecimiento": $establecimiento
+                "usuario": $usuario,
+                "establecimiento": $establecimiento,
             },
             success: function(data) {
 
@@ -46,11 +46,10 @@
              
              window.location = url;
 
-        }
-=======
-                "usuario": $usuario
+        
+          
             }
->>>>>>> 730104362f30198142b23753f3a6eb1ca0a07289
+
         }).done(function () {
             alert("Reserva confirmada");
             location.reload(true);
@@ -91,12 +90,13 @@
                        <td>ocupado</td>
                     {% endif %}
                     <td>{{establecimiento.getNombre()}}</td>
-                    <td><button  class="btn btn-success" onclick="guardarReserva({{ item.id }},{{ Desde }},{{ Hasta }},{{ app.user.autos[0].id }}, {{ establecimiento.id }})" >reservar</button></td>
+                    <td><button  class="btn btn-success" onclick="guardarReserva({{ item.id }},{{ Desde }},{{ Hasta }},{{ app.user.autos[0].id }},{{ app.user.id }}, {{ establecimiento.id }})" >reservar</button></td>
                 </tr>
             {% endfor %}
         </table>
     {% endif %}
 
 </div>
+    
 {% endblock %}
 

@@ -1,6 +1,20 @@
+{% extends "::base.html.twig" %}
+{% block body %} 
+
+
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
+
+<style>
+        html, body {
+            color: #fff;
+        }
+        
+         .navbar-inverse{
+           position: relative;
+        }
+</style>
 <script>
-    function guardarReserva($lugar ,$desde,$hasta,$auto) {
+    function guardarReserva($lugar ,$desde,$hasta,$auto,$establecimiento) {
         if (confirm("Esta seguro?")){
         $.ajax({
             url: "{{ path('reservar') }}",
@@ -10,8 +24,23 @@
                 "lugar": $lugar,
                 "desde": $desde,
                 "hasta": $hasta,
-                "auto": $auto
-            }
+                "auto": $auto,
+                "establecimiento": $establecimiento
+            },
+            success: function(data) {
+
+            var url = "{{ path('buscar_lugares_est',
+                {'establecimiento': 'establecimiento' ,
+                'fechaDesde' : 'fechaDesde' ,
+                'fechaHasta' : 'fechaHasta'})}}";
+             
+             url = url.replace('establecimiento', $establecimiento);
+             url = url.replace('fechaDesde', $desde);
+             url = url.replace('fechaHasta', $hasta);
+             
+             window.location = url;
+
+        }
         }).done(function () {
             alert("Reserva confirmada");
             location.reload(true);
@@ -21,33 +50,39 @@
 
 </script>
 
-<h1>test</h1>
+<div class="container">
+    <h1>Reservas</h1>
 
-Reservar en {{ establecimiento.nombre }} con: {{ app.user.autos[0].patente }}
-El precio será: ${{ (establecimiento.precioHora) * ((Hasta-Desde)/10000 )}}
+    Reservar en {{ establecimiento.nombre }} con: {{ app.user.autos[0].patente }}
+    El precio será: ${{ (establecimiento.precioHora) * ((Hasta-Desde)/10000 )}}
 
-<div>Seleccione el lugar y se efectuará la reserva:</div>
+    <div>Seleccione el lugar y se efectuará la reserva:</div>
+    <br/>
+    {%  if lugares %}
 
-{%  if lugares %}
-    <div>
-        <table>
+
+        <table class="table table-hover">
             <tr>
                 <th>cod</th>
-                <th>id</th>
                 <th>estado</th>
                 <th>establecimiento</th>
+                <th></th>
             </tr>
             {% for item in lugares %}
                 <tr>
                     <td>{{ item.codigo }}</td>
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.estado }}</td>
-                    <td><button onclick="guardarReserva({{ item.id }},{{ Desde }},{{ Hasta }},{{ app.user.autos[0].id }})" >reservar</button></td>
+                   {% if item.estado == false  %}
+                        <td>disponible</td>
+                   {% else %}
+                       <td>ocupado</td>
+                    {% endif %}
+                    <td>{{establecimiento.getNombre()}}</td>
+                    <td><button  class="btn btn-success" onclick="guardarReserva({{ item.id }},{{ Desde }},{{ Hasta }},{{ app.user.autos[0].id }}, {{ establecimiento.id }})" >reservar</button></td>
                 </tr>
             {% endfor %}
         </table>
-    </div>
-{% endif %}
+    {% endif %}
 
-
+</div>
+{% endblock %}
 

@@ -59,6 +59,7 @@ class EstablecimientoController extends Controller{
         $desde = $request->request->get('desde');
         $hasta = $request->request->get('hasta');
         $auto = $request->request->get('auto');
+        $establecimiento = $request->request->get('establecimiento');
 
         $reserva = new Reserva();
         /*$form = $this->createForm('ProyectoBundle\Form\ReservaType', $reserva);*/
@@ -71,16 +72,16 @@ class EstablecimientoController extends Controller{
             ->getRepository('ProyectoBundle:Auto')
             ->find($auto);
 
+        $lugar->setEstado(true);
         $reserva->setIdLugar($lugar);
         $reserva->setIdAuto($auto);
         $reserva->setFechaDesde(intval($desde));
         $reserva->setFechaHasta(intval($hasta));
 
         $em = $this->getDoctrine()->getManager();
+        $em -> persist($lugar);
         $em -> persist($reserva);
         $em -> flush();
-
-        die();
     }
 
 

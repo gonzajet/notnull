@@ -114,7 +114,11 @@ class LugarController extends Controller
         $lugares_filtrados = array();
         $i=-1;
         $s= true;
-        if(sizeof($reservas) == 0){$lugares_filtrados = $lugares;}
+        if(sizeof($reservas) == 0)
+        {
+           $lugares_filtrados = $lugares;
+           
+        }
         else {
             foreach ($lugares as $lugar) {
                 $i++;
@@ -123,7 +127,11 @@ class LugarController extends Controller
                         $s=false;
                     }
                 }
-                if ($s){array_push($lugares_filtrados, $lugar);}
+                if ($s)
+                {
+                   
+                    array_push($lugares_filtrados, $lugar);
+                }
                 $s=true;
             }
         }

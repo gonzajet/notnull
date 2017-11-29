@@ -88,6 +88,8 @@ class EstablecimientoController extends Controller{
         $em -> persist($lugar);
         $em -> persist($reserva);
         $em -> flush();
+        
+        
     }
 
     public function misReservasAction($idUsuario){

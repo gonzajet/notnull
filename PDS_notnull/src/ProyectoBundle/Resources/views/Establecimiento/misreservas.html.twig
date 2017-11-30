@@ -54,8 +54,8 @@
                     <td> {{ item.id }}</td>
                     <td> {{ item.idAuto.patente }} </td>
                     <td> {{ item.idLugar.codigo }} </td>
-                    <td> {{ item.fechaDesde }} </td>
-                    <td> {{ item.fechaHasta }} </td>
+                    <td> {{ item.fechaDesde|slice(6,2) }}/{{ item.fechaDesde|slice(4,2) }}/{{ item.fechaDesde|slice(0,4) }} {{ item.fechaDesde|slice(8,2) }}:{{ item.fechaDesde|slice(10,2) }}</td>
+                    <td> {{ item.fechaHasta|slice(6,2) }}/{{ item.fechaHasta|slice(4,2) }}/{{ item.fechaHasta|slice(0,4) }} {{ item.fechaHasta|slice(8,2) }}:{{ item.fechaHasta|slice(10,2) }}</td>
                     <td><button class="btn btn-success" onclick="borrarReserva({{ item.id }})" >borrar</button></td>
                 </tr>
             {% endfor %}

@@ -27,6 +27,9 @@ class LugarController extends Controller
     
     public function newAction(Request $request, $establecimiento)
     {      
+        
+  
+        
         $lugar = new Lugar();
         $form = $this->createForm('ProyectoBundle\Form\LugarType', $lugar);
         $form->handleRequest($request);
@@ -37,14 +40,39 @@ class LugarController extends Controller
             
             for ($i = 1; $i <= $cantLugares; $i++) {
                 
-                $lugar = new Lugar();
-                
                 $em = $this->getDoctrine()->getManager();
-                $lugar->setEstado(false);
-                $lugar->setCodigo("cod" .  uniqid());
-
-
                 $estableci = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+                $lugares = $estableci->getLugares();
+                $secciones = array('seccion1', 'seccion2', 'seccion3','seccion4',
+                    'seccion5', 'seccion6', 'seccion7','seccion8',
+                    'seccion9', 'seccion10');
+                
+                $lugar = new Lugar();
+                $lugar->setEstado(false);
+                
+                if (count($lugares) == 0) {
+                    $claves_aleatorias = array_rand($secciones);
+                    $cod =  $secciones[$claves_aleatorias] ."-cod-". rand(1, 10000);
+                    $lugar->setCodigo($cod);
+                }
+                else {
+                 
+                    $codigos = array();
+                    foreach ($lugares as $item) 
+                       array_push($codigos, $item->getCodigo());
+                    
+                    $end = false;
+                    while(!$end)
+                    {
+                        $claves_aleatorias = array_rand($secciones);
+                        $cod = $secciones[$claves_aleatorias] ."-cod-". rand(1, 10000);
+                        if (in_array($cod, $codigos))
+                          continue;
+                        
+                        $lugar->setCodigo($cod);
+                        $end = true;
+                    }
+                }
                 $estableci->addLugares($lugar);
 
                  // cargo en la base
@@ -115,7 +143,11 @@ class LugarController extends Controller
         $lugares_filtrados = array();
         $i=-1;
         $s= true;
-        if(sizeof($reservas) == 0){$lugares_filtrados = $lugares;}
+        if(sizeof($reservas) == 0)
+        {
+           $lugares_filtrados = $lugares;
+           
+        }
         else {
             foreach ($lugares as $lugar) {
                 $i++;
@@ -124,7 +156,11 @@ class LugarController extends Controller
                         $s=false;
                     }
                 }
-                if ($s){array_push($lugares_filtrados, $lugar);}
+                if ($s)
+                {
+                   
+                    array_push($lugares_filtrados, $lugar);
+                }
                 $s=true;
             }
         }

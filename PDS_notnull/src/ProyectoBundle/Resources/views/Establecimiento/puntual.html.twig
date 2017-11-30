@@ -81,6 +81,10 @@
                 dataType: "json",
                 data: {
                     "id": $idReserva
+
+
+
+
                 }
             }).done(function () {
                 alert("Reserva eliminada");
@@ -112,21 +116,14 @@
         var minutoHasta= document.getElementById("minutoHasta").value;
         var fechaHasta = añoHasta+mesHasta+diaHasta+horaHasta+minutoHasta+"00";
 
+        var url = "{{ path('buscar_lugares_est',
+        {'establecimiento': establecimiento.id ,
+            'fechaDesde' : 'fechaDesde' ,
+            'fechaHasta' : 'fechaHasta'})}}";
 
-
-        $.ajax({
-            url: "{{ path('buscar_lugares') }}",
-            type: "GET",
-            dataType: "json",
-            data: {
-                "establecimiento": {{ establecimiento.id }},
-                "fechaDesde": fechaDesde,
-                "fechaHasta": fechaHasta
-            }
-        }).done(function () {
-            alert("Tenemos los lugares libres");
-        });
-
+        url = url.replace('fechaDesde', fechaDesde);
+        url = url.replace('fechaHasta', fechaHasta);
+        window.location = url;
     };
 
     function search() {
@@ -134,53 +131,14 @@
 
     }
 
-    {#function sampleGet() {
-        $.ajax({
-            url: 'https://jsonplaceholder.typicode.com/posts/1',
-            method: 'GET',
-            dataType: 'json'
-        }).then(function(data) {
-            console.log(data);
-            $("#nombre").text(data.body);
-            $("#id").text(data.id);
-            var a;
-            return data.body;
-        });
-    }
-    $(document).ready(function(){
-        $("#boton").click(fun("asd")
-        /*{
-            $("#table").show();
-            var a = sampleGet();
-            $("#nombre").text(a.val());
-
-
-        })*/;
-        $("#geturl").click(function(){
-            var ab = sampleGet();
-            console.log(ab);
-            alert(ab);
-        });
-    });#}
 </script>
 
 <div class="container">
     <h1>{{ establecimiento.nombre }}</h1>
     lugares disponibles ahora: {{ establecimiento.getLugaresLibres|length }}/{{ establecimiento.lugares | length }}
 
-    <h2>
-        <!--SEPARADOR-->
-    </h2>
-    <!-- Si hay lugares libres, se redirecciona a la página de reserva de uno cualquiera.
-         Sino, muestra mensaje de que no hay lugares disponibles -->
-    {% if((establecimiento.getLugaresLibres|length)>0) %}
-        <span class="label label-warning"> <a href="../reservar/{{ random(establecimiento.getLugaresLibres).id }}">Reservar</a></span>
-    {% else %}
-        No hay lugares libres!
-    {% endif %}
-
-    <h1></h1>
-
+    <br/>
+    <br/>
     <!-- MAPA PARA MOSTRAR A ESTE ESTABLECIMIENTO PUNTUAL -->
     <div id="map1" ></div>
     <script>

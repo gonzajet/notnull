@@ -54,7 +54,6 @@ class EstablecimientoController extends Controller{
      * @Method({"POST"})
      */
     public function reservarAction(Request $request){
-
         $lugar = $request->request->get('lugar');
         $desde = $request->request->get('desde');
         $hasta = $request->request->get('hasta');
@@ -62,15 +61,12 @@ class EstablecimientoController extends Controller{
         $usuario = $request->request->get('usuario');
 
         $reserva = new Reserva();
-
         $lugar = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Lugar')
             ->find($lugar);
-
         $auto = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Auto')
             ->find($auto);
-
         $usuario = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Usuario')
             ->find($usuario);
@@ -85,8 +81,7 @@ class EstablecimientoController extends Controller{
         $em -> persist($reserva);
         $em -> flush();
 
-        $response = new Response();
-        return $response->setStatusCode(Response::HTTP_OK);
+        die();
     }
 
     public function misReservasAction($idUsuario){

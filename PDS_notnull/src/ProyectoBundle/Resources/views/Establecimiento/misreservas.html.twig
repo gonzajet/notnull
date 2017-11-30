@@ -3,7 +3,7 @@
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
 <script>
     function borrarReserva($idReserva) {
-        if (confirm("Esta seguro?"+ $idReserva )){
+        if (confirm("Esta seguro?")){
             $.ajax({
                 url: "{{ path('borrar_reserva') }}",
                 type: "POST",
@@ -12,8 +12,8 @@
                     "id": $idReserva
                 }
             }).always(function () {
-                alert("Reserva eliminada");
-                location.reload(true);
+                alert("Se ha reservado el lugar");
+                $("#"+$idReserva).remove();
             });}
         else{alert("Operación cancelada")}
     }
@@ -49,7 +49,7 @@
 
             </tr>
             {% for item in reservas %}
-                <tr>
+                <tr id="{{ item.id }}">
 
                     <td> {{ item.id }}</td>
                     <td> {{ item.idAuto.patente }} </td>

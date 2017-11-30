@@ -2,7 +2,7 @@
 {% block body %}
     <script>
             function guardarReserva($lugar ,$desde,$hasta,$auto,$usuario) {
-            if (confirm("Esta seguro?"+$usuario)){
+            if (confirm("Esta seguro?")){
                 $.ajax({
                     url: "{{ path('reservar') }}",
                     type: "POST",
@@ -16,8 +16,8 @@
                     },
 
                 }).always(function () {
-                    alert("Reserva eliminada");
-                    location.reload(true);
+                    alert("Se ha reservado el lugar");
+                    $("#"+$lugar).remove();
                 });}
             else{alert("Operación cancelada")}
         }
@@ -65,7 +65,7 @@
                 <th></th>
             </tr>
             {% for item in lugares %}
-                <tr>
+                <tr id="{{ item.id }}">
                     <td>{{ item.codigo }}</td>
                    {% if item.estado == false  %}
                         <td>disponible</td>

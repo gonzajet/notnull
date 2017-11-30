@@ -64,15 +64,16 @@
         <tr>
         <th>Nombre</th>
         <th>Lugares libres</th>
+        <th>Dirección</th>
         <th>Localidad</th>
-        <th></th>
+        {#<th></th>#}
         </tr>
         {% for item in establecimientos %}
             <tr>
                 <td><a href="establecimiento/{{ item.id }}">{{ item.nombre }}</a></td>
                 <td>{{ item.getLugaresLibres|length }} / {{ item.lugares|length }}</td>
-                <td>{{ item.localidad }}</td>
-                <td><a type="button" href="{{ path('lugar_index', { 'id': item.id}) }}"><i class="fa fa-eye" aria-hidden="true" style="color:#5bc0de;" ></i></a></td>
+                <td>{{ item.direccion}}</td><td>{{ item.localidad }}</td>
+                <td><a type="button" href="{{ path('lugar_index', { 'id': item.getId_establecimiento()}) }}"><i class="fa fa-eye" aria-hidden="true" style="color:#5bc0de;" ></i></a></td>
             </tr>
         {% endfor %}
     </table>

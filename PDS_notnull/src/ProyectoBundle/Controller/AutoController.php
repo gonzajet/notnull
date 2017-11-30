@@ -29,7 +29,7 @@ class AutoController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $em->persist($auto);
             $em->flush();
-            return $this->render('ProyectoBundle:Usuario:index.html.twig');
+            return $this->render('ProyectoBundle:Default:index.html.twig');
         }
 // renderizo si esta mal cargado.
         return $this->render('ProyectoBundle:Auto:new.html.twig', array(

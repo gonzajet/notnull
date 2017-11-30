@@ -309,11 +309,14 @@
                     <tr>
                       <th>Establecimiento</th>
                       <th>Lugares Disponibles</th>
+                      <th></th>
                     </tr>
                       {% for item in lugares %}
                         <tr>
                           <td>{{ item.getNombre_establecimiento() }}</td>
                           <td>{{ item.getCantidad_lugares_disponibles()}}</td>
+                          <td><a type="button" href="{{ path('lugar_index', { 'id': item.getId_establecimiento()}) }}"><i class="fa fa-eye" aria-hidden="true" style="color:#5bc0de;" ></i></a></td>
+                          
                         </tr>
                       {% endfor %}
                   </table>
@@ -322,6 +325,7 @@
                     <tr>
                       <th>Establecimiento</th>
                       <th>Cantidad lugares</th>
+                      
                     </tr>
                     <tr>
                       <td colspan="2"  style="text-align: center;" >No encontramos establecimientos</td>

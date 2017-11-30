@@ -6,6 +6,7 @@
   
 <head>
     <title>EstionAR | Establecimientos </title>
+
     <style>
        html, body {
         color: #fff;
@@ -79,7 +80,7 @@
 {% else %}
     No encontramos establecimientos para esa ciudad...
 {% endif %}
-
+<button><a href="/app_dev.php/mis_reservas/{{ app.user.id }}">Mis Reservas</a></button>
 </body>
 
 {% endblock %}    

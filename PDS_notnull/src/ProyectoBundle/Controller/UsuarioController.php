@@ -48,10 +48,10 @@ class UsuarioController extends Controller
             
             array_push($array , $conjunto ); 
         }
-        
+        $auto=$this->getUser()->getAutos();
 //    array_push($nada,$establecimientos[0]->getNombre());
         return $this->render('ProyectoBundle:usuario:index.html.twig'
-            ,array('establecimientos' => $array));
+            ,array('establecimientos' => $array, 'autos'=> $auto));
     
     }
 

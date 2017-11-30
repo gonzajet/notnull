@@ -7,10 +7,10 @@
                     <a class="navbar-brand" href="/">EstacionAR</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
-{#                    <ul class="nav navbar-nav">
-                        <li><a href="/app_dev.php/establecimientos">Establecimientos</a></li>
-                        <li><a href="{{path ('maps')}}"><b>Mapa</b></a></li>
-                    </ul>#}
+                    {#                    <ul class="nav navbar-nav">
+                                            <li><a href="/app_dev.php/establecimientos">Establecimientos</a></li>
+                                            <li><a href="{{path ('maps')}}"><b>Mapa</b></a></li>
+                                        </ul>#}
                     <ul class="nav navbar-nav navbar-right">
                         {% if app.user %}
                             <li><a href='#'><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>   
@@ -73,7 +73,7 @@
                                             <center>
                                                 <h0 style="font-size:2em; color:#00001a">Mis reservas</h0><br>
                                                 <h1 class="glyphicon glyphicon-transfer" style="font-size:9em;color:#00001a"></h1>
-                                                <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Reservas</a></h2> 
+                                                <h2 style="margin-top: 0;color:#00001a"><a href="/app_dev.php/mis_reservas/{{ app.user.id }}" class="btn btn-sm btn-primary btn-block" role="button">Reservas</a></h2> 
                                             </center>
                                         </div>
                                         </div>
@@ -96,11 +96,13 @@
                                                             <a class="list-group-item">Nombre y apellido: {{app.user.nombre}} {{app.user.apellido}}  </a>
                                                             <a class="list-group-item">Telefono: {{app.user.telefono}}</a>
                                                             {#<a class="list-group-item">E-mail:{{app.user.e_mail}} </a>#}
-
-                                                            <a class="list-group-item">Auto: {{ app.user.autos[0].marca }}</a>
-                                                            <a class="list-group-item">Modelo: {{ app.user.autos[0].modelo }}</a>
-                                                            <a class="list-group-item">Dominio:{{ app.user.autos[0].patente }} </a>
-
+                                                            {% if ((autos|length)>0) %}
+                                                                <a class="list-group-item">Auto: {{ app.user.autos[0].marca }}</a>
+                                                                <a class="list-group-item">Modelo: {{ app.user.autos[0].modelo }}</a>
+                                                                <a class="list-group-item">Dominio:{{ app.user.autos[0].patente }} </a>
+                                                            {%else%}
+                                                                <a class="list-group-item" href="{{path('auto_new')}}">DEBE REGISTRAR UN AUTO PARA REALIZAR RESERVAS [click aquí]</a>
+                                                            {% endif%}
                                                         </div>
                                                     </div>
                                                     <!-- /.tab-pane -->
@@ -164,7 +166,7 @@
                                                         markers[est] = [position, cadena];
 
                                                     }
-                                                    
+
                                                     var marc = [];
                                                     for (var i = 0; i < markers.length; i++) {
 
@@ -175,16 +177,16 @@
                                                         });
                                                         var infowindow = new google.maps.InfoWindow({
                                                             content: markers[i][1]
-                                                        }); 
-                                                        marc[i] = [marker,infowindow];
-                                                    }
-{#
-                                                    for (var i; i <= marc.length; i++) {
-                                                        (google.maps.Marker)marc[i][0].addListener('click', function () {
-                                                            marc[i][1].open(map, marc[i][0]);
                                                         });
+                                                        marc[i] = [marker, infowindow];
                                                     }
-#}
+                                            {#
+                                                                                                for (var i; i <= marc.length; i++) {
+                                                                                                    (google.maps.Marker)marc[i][0].addListener('click', function () {
+                                                                                                        marc[i][1].open(map, marc[i][0]);
+                                                                                                    });
+                                                                                                }
+                                            #}
                                                 }
 
                                         </script>

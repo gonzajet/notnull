@@ -28,7 +28,7 @@ class UsuarioController extends Controller
      */
     public function cuentaAction()
     {
-        $nada=["hla","asa","aoq"];
+        
         $establecimientos = $this->getDoctrine()
             ->getRepository('ProyectoBundle:Establecimiento')
             ->findEstablecimientosTodos();
@@ -39,11 +39,19 @@ class UsuarioController extends Controller
        //$normalizers = array(new ObjectNormalizer());
 
         //$serializer = new Serializer($establecimientos, $encoders);
+        $array=[];
+        foreach ($establecimientos as $x){
+            $con=0;
+            $latitud=[$x->getLat(),$x->getLng()];
+            $cadena=[$x->getNombre(),$x->getDireccion(),$x->getLocalidad(),$x->getProvincia()];
+            $conjunto=[$cadena, $latitud];
+            
+            array_push($array , $conjunto ); 
+        }
         
-        //$nada->
-    array_push($nada,$establecimientos[0]->getNombre());
+//    array_push($nada,$establecimientos[0]->getNombre());
         return $this->render('ProyectoBundle:usuario:index.html.twig'
-            ,array('establecimientos' => $nada));
+            ,array('establecimientos' => $array));
     
     }
 

@@ -80,7 +80,6 @@ class EstablecimientoController extends Controller{
         $em = $this->getDoctrine()->getManager();
         $em -> persist($reserva);
         $em -> flush();
-
         die();
     }
 

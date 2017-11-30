@@ -20,14 +20,15 @@ class LugaresDisponibles
 {
   private $nombre_establecimiento;
   private $cantidad_lugares_disponibles;
+  private $idEstablecimiento;
   
-  
-  public function __construct ( $nombre_establecimiento, $cantidad_lugares_disponibles ) {
+  public function __construct ( $id ,$nombre_establecimiento, $cantidad_lugares_disponibles ) {
     $this->nombre_establecimiento = $nombre_establecimiento;
     $this->cantidad_lugares_disponibles = $cantidad_lugares_disponibles;
+    $this->idEstablecimiento= $id;
     
   }
-  
+    
     public function setNombre_establecimiento($nombre_establecimiento)
     {
         $this->nombre_establecimiento = $nombre_establecimiento;
@@ -39,7 +40,11 @@ class LugaresDisponibles
     {
         return $this->nombre_establecimiento;
     }
-    
+    public function getId_establecimiento()
+    {
+        return $this->idEstablecimiento;
+    }
+
       public function setCantidad_lugares_disponibles($cantidad_lugares_disponibles)
     {
         $this->cantidad_lugares_disponibles = $cantidad_lugares_disponibles;
@@ -71,9 +76,10 @@ class AdminController extends Controller
             ->findAll();
 
         foreach($establecimientos as $value){
+            $id=$value->getId();
             $nombre_establecimiento = $value->getNombre();
             $cant_lugares = $value->getLugaresLibres();
-            $item = new  LugaresDisponibles($nombre_establecimiento, count($cant_lugares));
+            $item = new  LugaresDisponibles($id, $nombre_establecimiento, count($cant_lugares));
             array_push($arrayLugares, $item);
         }
         return $this->render('ProyectoBundle:admin:index.html.twig'

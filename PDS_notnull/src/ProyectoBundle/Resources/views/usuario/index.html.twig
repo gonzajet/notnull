@@ -13,7 +13,7 @@
                                         </ul>#}
                     <ul class="nav navbar-nav navbar-right">
                         {% if app.user %}
-                            <li><a href='#'><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>   
+                            <li><a href='{{path('usuario_index')}}'><span class="glyphicon glyphicon-user"></span> {{app.user.usuario}} </a></li>   
                             <li><a href={{ path('logout') }}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                             {% else %}
                             <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

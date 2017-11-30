@@ -4,6 +4,7 @@ namespace ProyectoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use ProyectoBundle\Entity\Lugar;
 use ProyectoBundle\Entity\SeccionLugar;
@@ -133,6 +134,49 @@ class LugarController extends Controller
                            'lugares' => $lugares_filtrados,
                            'Desde'   => $fechaDesde,
                            'Hasta'   => $fechaHasta));
+    }
+
+
+
+    /*
+     * @Method({"GET"})
+     */
+    public function buscarLugaresAction(Request $request)
+    {
+        $establecimiento = $request->request->get('establecimiento');
+        $fechaDesde = $request->request->get('fechaDesde');
+        $fechaHasta = $request->request->get('fechaHasta');
+
+        /*Recuperamos el establecimiento para buscar los lugares que tiene relacionados*/
+        $establecimiento_o = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Establecimiento')
+            ->find($establecimiento);
+        $lugares = $establecimiento_o->getLugares();
+
+        /*Buscamos las reservas que haya en esa franja horaria para esos lugares*/
+        $reservas = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->findPorHorario($fechaDesde,$fechaHasta,$lugares);
+
+        /*Recorremos los lugares y nos fijamos si no estan reservados*/
+        $lugares_filtrados = array();
+        $i=-1;
+        $s= true;
+        if(sizeof($reservas) == 0){$lugares_filtrados = $lugares;}
+        else {
+            foreach ($lugares as $lugar) {
+                $i++;
+                foreach ($reservas as $reserva) {
+                    if ($lugar->getId() == $reserva->getIdLugar()->getId()) {
+                        $s=false;
+                    }
+                }
+                if ($s){array_push($lugares_filtrados, $lugar);}
+                $s=true;
+            }
+        }
+
+        return new JsonResponse(array('lugares_libres'=>"asd"));
     }
 
 }    

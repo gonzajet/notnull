@@ -128,3 +128,7 @@ mis_reservas:
 borrar_reserva:
     path: /borrar_reserva
     defaults: { _controller: ProyectoBundle:Establecimiento:borrarReserva}
+
+buscar_lugares:
+    path: /buscar_lugares
+    defaults: { _controller: ProyectoBundle:Lugar:buscarLugares}

@@ -85,7 +85,8 @@ class EstablecimientoController extends Controller{
         $em -> persist($reserva);
         $em -> flush();
 
-        die();
+        $response = new Response();
+        return $response->setStatusCode(Response::HTTP_OK);
     }
 
     public function misReservasAction($idUsuario){
@@ -112,7 +113,8 @@ class EstablecimientoController extends Controller{
         $em->remove($reserva);
         $em->flush();
 
-        die();
+        $response = new Response();
+        return $response->setStatusCode(Response::HTTP_OK);
     }
 
 }

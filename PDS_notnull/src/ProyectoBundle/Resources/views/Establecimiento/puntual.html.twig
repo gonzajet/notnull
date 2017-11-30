@@ -71,6 +71,26 @@
 
 </head>
 <body>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
+<script>
+    function borrarReserva($idReserva) {
+        if (confirm("Esta seguro?"+ $idReserva )){
+            $.ajax({
+                url: "{{ path('borrar_reserva') }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "id": $idReserva
+                }
+            }).done(function () {
+                alert("Reserva eliminada");
+                location.reload(true);
+            });}
+        else{alert("Operación cancelada")}
+    }
+
+</script>
+
 <script>
     /* Implementar js acá
      * Tenemos que usar:
@@ -92,18 +112,20 @@
         var minutoHasta= document.getElementById("minutoHasta").value;
         var fechaHasta = añoHasta+mesHasta+diaHasta+horaHasta+minutoHasta+"00";
 
-        console.log("Desde: "+fechaDesde+" - "+
-              "Hasta: "+fechaHasta);
 
-        var url = "{{ path('buscar_lugares_est',
-           {'establecimiento': establecimiento.id ,
-            'fechaDesde' : 'fechaDesde' ,
-            'fechaHasta' : 'fechaHasta'})}}";
 
-        /*url = url.replace('establecimiento', establecimiento.id);*/
-        url = url.replace('fechaDesde', fechaDesde);
-        url = url.replace('fechaHasta', fechaHasta);
-        window.location = url;
+        $.ajax({
+            url: "{{ path('buscar_lugares') }}",
+            type: "GET",
+            dataType: "json",
+            data: {
+                "establecimiento": {{ establecimiento.id }},
+                "fechaDesde": fechaDesde,
+                "fechaHasta": fechaHasta
+            }
+        }).done(function () {
+            alert("Tenemos los lugares libres");
+        });
 
     };
 

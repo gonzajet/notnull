@@ -1,50 +1,46 @@
 {% extends "::base.html.twig" %}
-{% block body %} 
+{% block body %}
+    <script>
+            function guardarReserva($lugar ,$desde,$hasta,$auto,$usuario) {
+            if (confirm("Esta seguro?"+$usuario)){
+                $.ajax({
+                    url: "{{ path('reservar') }}",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        "lugar": $lugar,
+                        "desde": $desde,
+                        "hasta": $hasta,
+                        "auto": $auto,
+                        "usuario": $usuario
+                    },
 
+                }).always(function () {
+                    alert("Reserva eliminada");
+                    location.reload(true);
+                });}
+            else{alert("Operación cancelada")}
+        }
+
+    </script>
 
 
 <style>
         html, body {
             color: #fff;
         }
-        
+
          .navbar-inverse{
            position: relative;
         }
-        
+
         .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
             color: black;
         }
-        
-        
+
+
 </style>
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
-<script>
 
-
-    $( ".footer" ).remove();
-
-    function guardarReserva($lugar ,$desde,$hasta,$auto,$usuario) {
-        if (confirm("Esta seguro?"+$usuario)){
-            $.ajax({
-                url: "{{ path('reservar') }}",
-                type: "POST",
-                dataType: "json",
-                data: {
-                    "lugar": $lugar,
-                    "desde": $desde,
-                    "hasta": $hasta,
-                    "auto": $auto,
-                    "usuario": $usuario
-                }
-            }).done(function () {
-                alert("Reserva eliminada");
-                location.reload(true);
-            });}
-        else{alert("Operación cancelada")}
-    }
-
-</script>
 
 <div class="container">
     <h1>Reservas</h1>

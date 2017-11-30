@@ -4,6 +4,7 @@ namespace ProyectoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use ProyectoBundle\Entity\Lugar;
 use ProyectoBundle\Entity\SeccionLugar;
@@ -26,6 +27,9 @@ class LugarController extends Controller
     
     public function newAction(Request $request, $establecimiento)
     {      
+        
+  
+        
         $lugar = new Lugar();
         $form = $this->createForm('ProyectoBundle\Form\LugarType', $lugar);
         $form->handleRequest($request);
@@ -36,14 +40,39 @@ class LugarController extends Controller
             
             for ($i = 1; $i <= $cantLugares; $i++) {
                 
-                $lugar = new Lugar();
-                
                 $em = $this->getDoctrine()->getManager();
-                $lugar->setEstado(false);
-                $lugar->setCodigo("cod" .  uniqid());
-
-
                 $estableci = $em->getRepository('ProyectoBundle:Establecimiento')->find($establecimiento);
+                $lugares = $estableci->getLugares();
+                $secciones = array('seccion1', 'seccion2', 'seccion3','seccion4',
+                    'seccion5', 'seccion6', 'seccion7','seccion8',
+                    'seccion9', 'seccion10');
+                
+                $lugar = new Lugar();
+                $lugar->setEstado(false);
+                
+                if (count($lugares) == 0) {
+                    $claves_aleatorias = array_rand($secciones);
+                    $cod =  $secciones[$claves_aleatorias] ."-cod-". rand(1, 10000);
+                    $lugar->setCodigo($cod);
+                }
+                else {
+                 
+                    $codigos = array();
+                    foreach ($lugares as $item) 
+                       array_push($codigos, $item->getCodigo());
+                    
+                    $end = false;
+                    while(!$end)
+                    {
+                        $claves_aleatorias = array_rand($secciones);
+                        $cod = $secciones[$claves_aleatorias] ."-cod-". rand(1, 10000);
+                        if (in_array($cod, $codigos))
+                          continue;
+                        
+                        $lugar->setCodigo($cod);
+                        $end = true;
+                    }
+                }
                 $estableci->addLugares($lugar);
 
                  // cargo en la base
@@ -114,6 +143,61 @@ class LugarController extends Controller
         $lugares_filtrados = array();
         $i=-1;
         $s= true;
+        if(sizeof($reservas) == 0)
+        {
+           $lugares_filtrados = $lugares;
+           
+        }
+        else {
+            foreach ($lugares as $lugar) {
+                $i++;
+                foreach ($reservas as $reserva) {
+                    if ($lugar->getId() == $reserva->getIdLugar()->getId()) {
+                        $s=false;
+                    }
+                }
+                if ($s)
+                {
+                   
+                    array_push($lugares_filtrados, $lugar);
+                }
+                $s=true;
+            }
+        }
+
+        return $this->render('ProyectoBundle:Establecimiento:test.html.twig'
+            ,array('establecimiento' => $establecimiento_o,
+                           'lugares' => $lugares_filtrados,
+                           'Desde'   => $fechaDesde,
+                           'Hasta'   => $fechaHasta));
+    }
+
+
+
+    /*
+     * @Method({"GET"})
+     */
+    public function buscarLugaresAction(Request $request)
+    {
+        $establecimiento = $request->request->get('establecimiento');
+        $fechaDesde = $request->request->get('fechaDesde');
+        $fechaHasta = $request->request->get('fechaHasta');
+
+        /*Recuperamos el establecimiento para buscar los lugares que tiene relacionados*/
+        $establecimiento_o = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Establecimiento')
+            ->find($establecimiento);
+        $lugares = $establecimiento_o->getLugares();
+
+        /*Buscamos las reservas que haya en esa franja horaria para esos lugares*/
+        $reservas = $this->getDoctrine()
+            ->getRepository('ProyectoBundle:Reserva')
+            ->findPorHorario($fechaDesde,$fechaHasta,$lugares);
+
+        /*Recorremos los lugares y nos fijamos si no estan reservados*/
+        $lugares_filtrados = array();
+        $i=-1;
+        $s= true;
         if(sizeof($reservas) == 0){$lugares_filtrados = $lugares;}
         else {
             foreach ($lugares as $lugar) {
@@ -128,12 +212,7 @@ class LugarController extends Controller
             }
         }
 
-        return $this->render('ProyectoBundle:Establecimiento:test.html.twig'
-            ,array('establecimiento' => $establecimiento_o,
-                           'lugares' => $lugares_filtrados,
-                           'reservas'=> $reservas,
-                           'Desde'   => $fechaDesde,
-                           'Hasta'   => $fechaHasta));
+        return new JsonResponse(array('lugares_libres'=>"asd"));
     }
 
 }    

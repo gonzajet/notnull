@@ -20,5 +20,10 @@
         <join-column name="id_auto" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
+    <many-to-one field="usuario" target-entity="Usuario" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_usuario" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
   </entity>
 </doctrine-mapping>

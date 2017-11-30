@@ -1,43 +1,94 @@
-<h1>test</h1>
-{{ establecimiento.nombre }}
-Reservar con: {{ app.user.autos[0].patente }}
-{%  if lugares %}
-    <div>
-        <table>
+{% extends "::base.html.twig" %}
+{% block body %} 
+
+
+
+<style>
+        html, body {
+            color: #fff;
+        }
+        
+         .navbar-inverse{
+           position: relative;
+        }
+        
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            color: black;
+        }
+        
+        
+</style>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
+<script>
+
+
+    $( ".footer" ).remove();
+
+    function guardarReserva($lugar ,$desde,$hasta,$auto,$usuario) {
+        if (confirm("Esta seguro?"+$usuario)){
+            $.ajax({
+                url: "{{ path('reservar') }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "lugar": $lugar,
+                    "desde": $desde,
+                    "hasta": $hasta,
+                    "auto": $auto,
+                    "usuario": $usuario
+                }
+            }).done(function () {
+                alert("Reserva eliminada");
+                location.reload(true);
+            });}
+        else{alert("Operación cancelada")}
+    }
+
+</script>
+
+<div class="container">
+    <h1>Reservas</h1>
+
+   Reservar en {{ establecimiento.nombre }} con: {{ app.user.autos[0].patente }}
+   El precio será:
+    {% if Hasta > 0%}
+        ${{ (establecimiento.precioHora) * ((Hasta-Desde)/10000 )}} ({{ ((Hasta-Desde)/10000 ) }} horas)
+    {% else %}
+        ${{ (establecimiento.precioHora) }} por hora.
+    {% endif %}
+
+    <div>Seleccione el lugar y se efectuará la reserva:</div>
+    <br/>
+    {%  if lugares %}
+
+        <table class="table table-hover">
             <tr>
                 <th>cod</th>
-                <th>id</th>
                 <th>estado</th>
                 <th>establecimiento</th>
+                <th></th>
             </tr>
             {% for item in lugares %}
                 <tr>
                     <td>{{ item.codigo }}</td>
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.estado }}</td>
-                    <td><a href="/app_dev.php/reservar/{{ item.id }}/{{ Desde }}/{{ Hasta }}/{{ app.user.autos[0].id }}">reservar</a></td>
+                   {% if item.estado == false  %}
+                        <td>disponible</td>
+                   {% else %}
+                       <td>ocupado</td>
+                    {% endif %}
+                    <td>{{establecimiento.getNombre()}}</td>
+                    <td><button  class="btn btn-success" onclick="guardarReserva(
+                                            {{ item.id }},
+                                            {{ Desde }},
+                                            {{ Hasta }},
+                                            {{ app.user.autos[0].id }},
+                                            {{ app.user.id }})" >reservar</button></td>
                 </tr>
             {% endfor %}
         </table>
-    </div>
-{% endif %}
+    {% endif %}
 
-{%  if reservas %}
-    <div>
-        <table>
-            <tr>
-                <th>desde</th>
-                <th>hasta</th>
-            </tr>
-            {% for item in reservas %}
-                <tr>
-                    <td>{{ item.fechaDesde }}</td>
-                    <td>{{ item.fechaHasta}}</td>
-                    <td>{{ item.idLugar.id }}</td>
-
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-{% endif %}
+</div>
+    
+{% endblock %}
 

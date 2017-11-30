@@ -9,7 +9,10 @@
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
-        #map {
+
+        
+        #map1 {
+   
             width: 100%;
             height: 300px;
             background-color: grey;
@@ -68,6 +71,30 @@
 
 </head>
 <body>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script><!-- No borrar esto-->
+<script>
+    function borrarReserva($idReserva) {
+        if (confirm("Esta seguro?"+ $idReserva )){
+            $.ajax({
+                url: "{{ path('borrar_reserva') }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "id": $idReserva
+
+
+
+
+                }
+            }).done(function () {
+                alert("Reserva eliminada");
+                location.reload(true);
+            });}
+        else{alert("Operación cancelada")}
+    }
+
+</script>
+
 <script>
     /* Implementar js acá
      * Tenemos que usar:
@@ -89,19 +116,14 @@
         var minutoHasta= document.getElementById("minutoHasta").value;
         var fechaHasta = añoHasta+mesHasta+diaHasta+horaHasta+minutoHasta+"00";
 
-        console.log("Desde: "+fechaDesde+" - "+
-              "Hasta: "+fechaHasta);
-
         var url = "{{ path('buscar_lugares_est',
-           {'establecimiento': establecimiento.id ,
+        {'establecimiento': establecimiento.id ,
             'fechaDesde' : 'fechaDesde' ,
             'fechaHasta' : 'fechaHasta'})}}";
 
-        /*url = url.replace('establecimiento', establecimiento.id);*/
         url = url.replace('fechaDesde', fechaDesde);
         url = url.replace('fechaHasta', fechaHasta);
         window.location = url;
-
     };
 
     function search() {
@@ -109,55 +131,16 @@
 
     }
 
-    {#function sampleGet() {
-        $.ajax({
-            url: 'https://jsonplaceholder.typicode.com/posts/1',
-            method: 'GET',
-            dataType: 'json'
-        }).then(function(data) {
-            console.log(data);
-            $("#nombre").text(data.body);
-            $("#id").text(data.id);
-            var a;
-            return data.body;
-        });
-    }
-    $(document).ready(function(){
-        $("#boton").click(fun("asd")
-        /*{
-            $("#table").show();
-            var a = sampleGet();
-            $("#nombre").text(a.val());
-
-
-        })*/;
-        $("#geturl").click(function(){
-            var ab = sampleGet();
-            console.log(ab);
-            alert(ab);
-        });
-    });#}
 </script>
 
 <div class="container">
     <h1>{{ establecimiento.nombre }}</h1>
     lugares disponibles ahora: {{ establecimiento.getLugaresLibres|length }}/{{ establecimiento.lugares | length }}
 
-    <h2>
-        <!--SEPARADOR-->
-    </h2>
-    <!-- Si hay lugares libres, se redirecciona a la página de reserva de uno cualquiera.
-         Sino, muestra mensaje de que no hay lugares disponibles -->
-    {% if((establecimiento.getLugaresLibres|length)>0) %}
-        <span class="label label-warning"> <a href="../reservar/{{ random(establecimiento.getLugaresLibres).id }}">Reservar</a></span>
-    {% else %}
-        No hay lugares libres!
-    {% endif %}
-
-    <h1></h1>
-
+    <br/>
+    <br/>
     <!-- MAPA PARA MOSTRAR A ESTE ESTABLECIMIENTO PUNTUAL -->
-    <div id="map" ></div>
+    <div id="map1" ></div>
     <script>
         var map;
 
@@ -165,7 +148,7 @@
             <!-- Tomamos la posicion del establecimiento -->
             var position = {lat: {{ establecimiento.lat }}, lng: {{ establecimiento.lng }}};
             <!-- Generamos el mapa -->
-            map = new google.maps.Map(document.getElementById('map'), {
+            map = new google.maps.Map(document.getElementById('map1'), {
                 center: position,
                 zoom: 15
             });

@@ -13,6 +13,11 @@
          .navbar-inverse{
            position: relative;
         }
+        
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            color: black;
+        }
+        
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -20,10 +25,20 @@
             $("button").click(function(){
                 var a;
                 if (window.location.pathname === "/app_dev.php/establecimientos"
-                    || window.location.pathname === "/app.php/establecimientos"){
-                    a = "establecimientos/"+$("input:text").val();}
-                else{
-                    a = $("input:text").val();}
+                    || window.location.pathname === "/app.php/establecimientos")
+                {
+                    if ($("input:text").val() ==='' || $("input:text").val() === undefined)
+                        a = "establecimientos/"+'todas';
+                    else
+                        a = "establecimientos/"+$("input:text").val();
+                }
+                else
+                {
+                   if ($("input:text").val() ==='' || $("input:text").val() === undefined)
+                        a = 'todas';
+                    else
+                        a = $("input:text").val();
+                }
 
                 window.location.replace(a);
             });

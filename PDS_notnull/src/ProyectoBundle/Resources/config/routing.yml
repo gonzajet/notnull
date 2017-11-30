@@ -106,12 +106,13 @@ establecimiento_puntual:
     defaults: { _controller: ProyectoBundle:Establecimiento:puntual}
 
 reservar:
-    path: /reservar/{lugar}/{desde}/{hasta}/{auto}
+    path: /reservar
     defaults: { _controller: ProyectoBundle:Establecimiento:reservar}
 
 maps:
     path: /maps
     defaults: { _controller: ProyectoBundle:Establecimiento:maps}
+
 auto_new:
     path:     auto/new
     defaults: { _controller: ProyectoBundle:Auto:new }
@@ -119,3 +120,15 @@ auto_new:
 buscar_lugares_est:
     path: /establecimientos/buscar/{establecimiento}/{fechaDesde}/{fechaHasta}
     defaults: { _controller: ProyectoBundle:Lugar:buscarXHorario }
+
+mis_reservas:
+    path: /mis_reservas/{idUsuario}
+    defaults: { _controller: ProyectoBundle:Establecimiento:misReservas }
+
+borrar_reserva:
+    path: /borrar_reserva
+    defaults: { _controller: ProyectoBundle:Establecimiento:borrarReserva}
+
+buscar_lugares:
+    path: /buscar_lugares
+    defaults: { _controller: ProyectoBundle:Lugar:buscarLugares}
